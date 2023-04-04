@@ -135,7 +135,7 @@ function TopBar() {
             </Menu>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Scoli</InputLabel>
-              <Box>
+              {/* <Box>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
@@ -160,7 +160,7 @@ function TopBar() {
                     <MenuItem value={clas.value}>{clas.label}</MenuItem>
                   ))}
                 </Select>
-              </Box>
+              </Box> */}
             </FormControl>
           </Box>
         </Toolbar>
