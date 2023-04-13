@@ -35,7 +35,14 @@ export const RepetitorList = ({ profesors }) => {
                   },
                 }}
               >
-                <Box>
+                <Box
+                  sx={{
+                    textAlign: {
+                      xs: "center",
+                      sm: "left",
+                    },
+                  }}
+                >
                   <Typography sx={{ fontWeight: 700 }} variant="h6">
                     {profesor.name}
                   </Typography>
@@ -43,9 +50,24 @@ export const RepetitorList = ({ profesors }) => {
                     <Typography>{profesor.phone}</Typography>
                   </a>
                   <Typography>Language: </Typography>
-                  <Stack direction="row" spacing={1}>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{
+                      justifyContent: {
+                        xs: "center",
+                        sm: "flex-start",
+                      },
+                      flexWrap: "wrap",
+                    }}
+                  >
                     {profesor.languages.map((language) => (
-                      <Chip color="success" label={language} key={language} />
+                      <Chip
+                        color="success"
+                        label={language}
+                        key={language}
+                        sx={{ marginTop: "8px !important" }}
+                      />
                     ))}
                   </Stack>
                 </Box>
@@ -59,6 +81,11 @@ export const RepetitorList = ({ profesors }) => {
                   order: {
                     xs: 1,
                     sm: 2,
+                  },
+                  display: "flex",
+                  justifyContent: {
+                    xs: "center",
+                    sm: "flex-start",
                   },
                 }}
               >
