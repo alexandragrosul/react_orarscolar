@@ -39,7 +39,6 @@ function Home() {
 
   return (
     <>
-      <Header />
       <Container fixed>
         <Box sx={{ height: "100vh" }}>
           <Repetitori />
