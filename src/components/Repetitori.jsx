@@ -186,7 +186,7 @@ const Repetitori = () => {
   }, []);
   */
 
-  const [selectedMaterial, setSelectedMaterial] = useState(null);
+  const [selectedMaterial, setSelectedMaterial] = useState("");
   const [filteredProfesors, setFilteredProfesors] = useState(profesors);
   return (
     <>
