@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -19,7 +20,13 @@ import lightLogo from "../assets/logo_light.png";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const pages = ["Scoli", "Extrascolare", "Repetitori"];
+// const pages = ["Scoli", "Extrascolare", "Repetitori"];
+const pages = [
+  { label: "Home", link: "/" },
+  { label: "Scoli", link: "/schools" },
+  // { label: "Extrascolare", link: "/exttrascolare" },
+  { label: "Repetitori", link: "/repetitori" },
+];
 const settings = ["Profile", "Account", "Class", "Logout"];
 
 function TopBar() {
@@ -50,7 +57,9 @@ function TopBar() {
     <AppBar position="static" sx={{ backgroundColor: "white" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={lightLogo} alt="logo" className="img-logo" />
+          <Link to="/">
+            <img src={lightLogo} alt="logo" className="img-logo" />
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -81,8 +90,10 @@ function TopBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Link to={page.link}>
+                    <Typography textAlign="center">{page.label}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -90,8 +101,9 @@ function TopBar() {
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
+              <Link
+                key={page.label}
+                to={page.link}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
@@ -100,8 +112,8 @@ function TopBar() {
                   fontWeight: "bold",
                 }}
               >
-                {page}
-              </Button>
+                {page.label}
+              </Link>
             ))}
           </Box>
 
