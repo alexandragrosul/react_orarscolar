@@ -7,8 +7,8 @@ import { Outlet } from "react-router-dom";
 const Wrapper = () => {
   return (
     <>
+      <Header />
       <Container fixed>
-        <Header />
         <Box sx={{ height: "100vh" }}>
           <Outlet />
         </Box>

@@ -41,7 +41,8 @@ function Home() {
     <>
       <Container fixed>
         <Box sx={{ height: "100vh" }}>
-          <Repetitori />
+          <h1>Main Page</h1>
+          {/* <Repetitori /> */}
           {/* <Chip label={material} /> */}
           {/* <Typography variant="body1">Pret: {price}</Typography> */}
         </Box>

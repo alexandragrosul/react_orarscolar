@@ -3,10 +3,13 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import { Stack } from "@mui/system";
+import { red, grey } from "@mui/material/colors";
 import { Card, CardContent, Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Repetitor = ({ profesor }) => {
+  const greyLight = grey[400];
+
   return (
     <Link to={`/repetitori/${profesor.id}`}>
       <Card
@@ -60,10 +63,12 @@ const Repetitor = ({ profesor }) => {
                 >
                   {profesor.languages.map((language) => (
                     <Chip
-                      color="success"
                       label={language}
                       key={language}
-                      sx={{ marginTop: "8px !important" }}
+                      sx={{
+                        marginTop: "8px !important",
+                        backgroundColor: greyLight,
+                      }}
                     />
                   ))}
                 </Stack>

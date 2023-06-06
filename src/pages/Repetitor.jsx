@@ -169,19 +169,23 @@ function Repetitor() {
   useEffect(() => {
     const item = profesors.find((el) => el.id == id);
     setProfesor(item);
-    console.log(item, id);
+    console.log(item);
   }, []);
   return (
-    <Container>
+    <Container
+      sx={{
+        padding: "20px 0",
+      }}
+    >
       <Box>
         <Grid container>
           <Grid item xs={4}>
             <Avatar
               sx={{
-                width: 90,
-                height: 90,
+                width: 180,
+                height: 180,
               }}
-              src="https://picsum.photos/90/90"
+              src="https://picsum.photos/180/180"
             />
           </Grid>
 
@@ -189,6 +193,7 @@ function Repetitor() {
             <Box>
               <Typography variant="h3">{profesor?.name}</Typography>
               <Typography variant="p">{profesor?.city}</Typography>
+              <Typography variant="p">{profesor?.phone}</Typography>
             </Box>
           </Grid>
         </Grid>
