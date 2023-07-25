@@ -86,7 +86,10 @@ function TopBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: {
+                  xs: "block",
+                  md: "none",
+                },
               }}
             >
               {pages.map((page) => (
@@ -99,14 +102,23 @@ function TopBar() {
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              marginLeft: 4,
+              flexGrow: 1,
+              display: {
+                xs: "none",
+                md: "flex",
+              },
+            }}
+          >
             {pages.map((page) => (
               <Link
                 key={page.label}
                 to={page.link}
                 onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
+                style={{
+                  marginRight: "5px",
                   color: "black",
                   display: "block",
                   fontWeight: "bold",
@@ -117,10 +129,10 @@ function TopBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, height: 40 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar src="/static/images/avatar/1.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -146,7 +158,7 @@ function TopBar() {
               ))}
             </Menu>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Scoli</InputLabel>
+              {/* <InputLabel id="demo-simple-select-label">Scoli</InputLabel> */}
               {/* <Box>
                 <Select
                   labelId="demo-simple-select-label"

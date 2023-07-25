@@ -192,14 +192,16 @@ const Repetitori = () => {
     <>
       <h1>Repetitori</h1>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Repetitor</InputLabel>
+        <InputLabel sx={{ m: 0, p: 0 }} id="demo-simple-select-label">
+          Repetitor
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={selectedMaterial}
           label="Age"
           onChange={(e) => filteredByMaterial(e.target.value)}
-          sx={{ borderRadius: 5 }}
+          sx={{ borderRadius: 5, border: "1px solid green" }}
         >
           {Object.values(materialCode).map((repetitori) => (
             <MenuItem value={repetitori} key={repetitori}>

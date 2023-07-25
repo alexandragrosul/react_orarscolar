@@ -6,6 +6,7 @@ import Wrapper from "./components/Wrapper";
 import Schools from "./pages/Schools";
 import RepetitoriPage from "./pages/RepetitoriPage";
 import SchoolPage from "./pages/SchoolPage";
+import Registration from "./pages/Registartion";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/timetable/:schoolId" element={<Timetable />} />
           <Route path="/schools" element={<Schools />} />
           <Route path="/schools/:id" element={<SchoolPage />} />
+          <Route path="/registration" element={<Registration />} />
         </Route>
       </Routes>
     </>
