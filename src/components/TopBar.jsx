@@ -19,6 +19,7 @@ import {
 import lightLogo from "../assets/logo_light.png";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
+// import { makeStyles } from "@mui/styles/makeStyles";
 
 // const pages = ["Scoli", "Extrascolare", "Repetitori"];
 const pages = [
@@ -29,7 +30,14 @@ const pages = [
 ];
 const settings = ["Profile", "Account", "Class", "Logout"];
 
+// const useStyles = makeStyles((theme) => ({
+//   customBurger: {
+//     color: "black", // Ваш желаемый цвет
+//   },
+// }));
+
 function TopBar() {
+  // const classes = useStyles();
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [selectSchool, setSelectSchool] = useState([
@@ -68,6 +76,10 @@ function TopBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{
+                color: "black",
+                "&:hover": { color: "black" },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -101,7 +113,7 @@ function TopBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Box
             sx={{
               marginLeft: 4,
