@@ -4,23 +4,29 @@ import "../App.css";
 import "fontsource-roboto";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import Chip from "@mui/material/Chip";
-import { Typography, Stack } from "@mui/material";
+import { CardComponent } from "../components/Card";
+import {
+  Typography,
+  Stack,
+  Button,
+  Grid,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Box,
+  Container,
+} from "@mui/material";
 import Repetitori from "../components/Repetitori";
 import NewsList from "../components/NewsList";
+import { Link } from "react-router-dom";
 const lessons = [
   { value: "mate", label: "Matematica", price: 120 },
   { value: "romana", label: "Limba romana", price: 150 },
   { value: "istoria", label: "Istoria", price: 100 },
 ];
 
-function Home() {
+function Home({ profesors }) {
   const [repetitori, setRepetitori] = useState("");
 
   const [price, setPrice] = useState("");
@@ -51,13 +57,13 @@ function Home() {
     },
     {
       name: "Two News",
-      text: "Toamna de vara este acum!",
+      text: "Vacanta de toamna este acum!",
       date: "26.11.2023",
       id: 2,
     },
     {
       name: "Three News",
-      text: "Iarna de vara este acum!",
+      text: "Vacanta de iarna este acum!",
       date: "26.01.2024",
       id: 3,
     },
@@ -65,8 +71,85 @@ function Home() {
 
   return (
     <>
-      <Container fixed>
-        <Stack sx={{ height: "100vh" }}>
+      <div className="hero-container">
+        <Container
+          sx={{
+            height: "100%",
+            py: 5,
+          }}
+        >
+          <Box
+            sx={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              component="h1"
+              variant="h4"
+              sx={{
+                maxWidth: 600,
+                mb: 3,
+              }}
+            >
+              Наш сервис даст вам расписание ваших уроков, а если с ними
+              возникнут трудности вы можете найти отличного репетитора!
+            </Typography>
+            <Box>
+              <Link to="/your-link">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{ mr: 2, mb: 2 }}
+                >
+                  Найдите расписание
+                </Button>
+              </Link>
+              <Link to="/your-link">
+                <Button variant="contained" color="primary" sx={{ mb: 2 }}>
+                  Найдите репетитора
+                </Button>
+              </Link>
+            </Box>
+          </Box>
+        </Container>
+      </div>
+      <Box>
+        <Container sx={{ py: 5 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              component="h2"
+              variant="h5"
+              sx={{
+                maxWidth: 600,
+                mb: 3,
+                fontWeight: 700,
+                textAlign: "start",
+              }}
+            >
+              Наши лучшие репетиторы
+            </Typography>
+            <Grid container spacing={2}>
+              {profesors.map((profesor, index) => {
+                return (
+                  <Grid item xs={12} sm={6} lg={3} key={index}>
+                    <CardComponent profesor={profesor} />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Box>
+        </Container>
+      </Box>
+      {/* <Stack sx={{ height: "100vh" }}>
           <h2>Scoli</h2>
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
@@ -105,12 +188,8 @@ function Home() {
             <p>{repetitori}</p>
           </Box>
           <h2>Stiri</h2>
-          <NewsList news={news} />
-          {/* <Repetitori /> */}
-          {/* <Chip label={material} /> */}
-          {/* <Typography variant="body1">Pret: {price}</Typography> */}
-        </Stack>
-      </Container>
+          // <NewsList news={news} />
+        </Stack> */}
     </>
   );
 }
