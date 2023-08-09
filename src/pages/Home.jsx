@@ -1,25 +1,20 @@
-import logo from "../logo.svg";
-import { useState, useEffect } from "react";
-import "../App.css";
-import "fontsource-roboto";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Select from "@mui/material/Select";
-import { CardComponent } from "../components/Card";
+import React, { useState } from "react";
 import {
+  Container,
   Typography,
-  Stack,
-  Button,
   Grid,
-  MenuItem,
+  Box,
   FormControl,
   InputLabel,
-  Box,
-  Container,
+  MenuItem,
+  Select,
 } from "@mui/material";
-import Repetitori from "../components/Repetitori";
-import NewsList from "../components/NewsList";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
+import SearchSharpIcon from "@mui/icons-material/SearchSharp";
+import HomeSearch from "../components/layout/home/HomeSearch";
+
 const lessons = [
   { value: "mate", label: "Matematica", price: 120 },
   { value: "romana", label: "Limba romana", price: 150 },
@@ -28,25 +23,23 @@ const lessons = [
 
 function Home({ profesors }) {
   const [repetitori, setRepetitori] = useState("");
-
   const [price, setPrice] = useState("");
-
   const [material, setMaterial] = useState("");
-
   const [counter, setCounter] = useState(0);
-
   const [scoli, setScoli] = useState("");
-  // useEffect(() => {
-  //   const item = lessons.find((lesson) => lesson.value === repetitori);
-  //   setPrice(item.price);
-  // }, [repetitori]);
-  // const handleChange = (event) => {
-  //   setMaterial(event.target.value);
-  // };
 
   const handleChange = (event) => {
     setRepetitori(event.target.value);
   };
+  // {
+
+  //   useEffect(() => {
+  //     const item = lessons.find((lesson) => lesson.value === repetitori);
+  //     setPrice(item.price);
+  //   }, [repetitori]);
+  //   const handleChange = (event) => {
+  //     setMaterial(event.target.value);
+  //   };}
 
   const news = [
     {
@@ -69,9 +62,18 @@ function Home({ profesors }) {
     },
   ];
 
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+    border: "none",
+  }));
+
   return (
     <>
-      <div className="hero-container">
+      {/* <div className="hero-container">
         <Container
           sx={{
             height: "100%",
@@ -115,8 +117,8 @@ function Home({ profesors }) {
             </Box>
           </Box>
         </Container>
-      </div>
-      <Box>
+      </div> */}
+      {/* <Box>
         <Container sx={{ py: 5 }}>
           <Box
             sx={{
@@ -148,7 +150,96 @@ function Home({ profesors }) {
             </Grid>
           </Box>
         </Container>
+      </Box> */}
+      <Box sx={{ background: "#d7e8d2" }}>
+        <Container
+          // maxWidth="xl"
+          sx={{
+            mt: 2,
+          }}
+        >
+          <Grid container spacing={2} sx={{ background: "transparent" }}>
+            {/* <Grid item xs={12}>
+            <Item> */}
+            {/* <video
+                  src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/school-education-3575820-2997701.mp4?h=700"
+                  autoplay="autoplay"
+                  muted="muted"
+                  loop="loop"
+                  playsinline=""
+                  type="video/mp4"
+                  style={{ width: -"webkit-fill-available" }}
+                ></video> */}
+            {/* <video
+                  src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/teacher-explaining-in-class-8802044-7190393.mp4?h=700"
+                  autoplay="autoplay"
+                  muted="muted"
+                  loop="loop"
+                  playsinline=""
+                  type="video/mp4"
+                ></video> */}
+            {/* <video
+                  src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/teacher-teaching-in-class-8802181-7114820.mp4?h=700"
+                  autoplay="autoplay"
+                  muted="muted"
+                  loop="loop"
+                  playsinline=""
+                  type="video/mp4"
+                ></video> */}
+            {/* </Item>
+          </Grid> */}
+            <Grid item xs={7} sx={{ background: "transparent" }}>
+              {/* <Item sx={{ background: "transparent" }}> */}
+              <Typography
+                variant="h2"
+                component="h2"
+                align="left"
+                sx={{
+                  marginTop: "70px",
+                  fontWeight: "bold",
+                  font: "Noto Sans Vithkuqi",
+                }}
+              >
+                Elevii conduc lumea iar noi îi ajutăm
+              </Typography>
+              <Typography variant="body1" align="left" sx={{ mt: 3 }}>
+                Escoala este o comunitate de partajare a cunoștințelor unde sute
+                de milioane de elevi și experți se ajută între ei pentru a
+                rezolva cele mai grele teme pentru acasă.
+              </Typography>
+              {/* Search */}
+
+              <Box
+                component="form"
+                sx={{
+                  "& > :not(style)": { m: 1, width: "100%" },
+                  mt: 3,
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <HomeSearch />
+              </Box>
+              {/* </Item> */}
+            </Grid>
+
+            {/* <Grid item xs={5} sx={{ display: "flex" }}>
+            <Box sx={{ width: "100%", display: "flex" }}>
+              <video
+                src="https://cdnl.iconscout.com/lottie/premium/preview-watermark/teacher-teaching-in-class-8802181-7114820.mp4?h=700"
+                autoplay="autoplay"
+                muted="muted"
+                loop="loop"
+                playsinline=""
+                type="video/mp4"
+                style={{ width: "inherit" }}
+              ></video>
+            </Box>
+          </Grid> */}
+          </Grid>
+        </Container>
       </Box>
+
       {/* <Stack sx={{ height: "100vh" }}>
           <h2>Scoli</h2>
           <Box sx={{ minWidth: 120 }}>
