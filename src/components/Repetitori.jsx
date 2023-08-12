@@ -166,40 +166,59 @@ const Repetitori = () => {
     },
   ];
 
+  const [coaches, setCoaches] = useState([]);
+  const [selectedMaterial, setSelectedMaterial] = useState("");
+  const [filteredProfesors, setFilteredProfesors] = useState([]);
+  console.log(coaches);
+
   const filteredByMaterial = (material) => {
     setFilteredProfesors(
-      profesors.filter((professor) => {
-        return professor.material.includes(material);
+      coaches.filter((coaches) => {
+        return coaches.material.includes(material);
       })
     );
     setSelectedMaterial(material);
   };
 
-  /* const fetchProfesors = () => {
-    return fetch("https://63fba9cf6ecb7e3702ae4bf6.mockapi.io/professors")
-      .then((response) => response.json())
-      .then((data) => setFilteredProfesors(data));
-  };
-
   useEffect(() => {
-    fetchProfesors();
-  }, []);
-  */
+    fetch(
+      "https://escoala-7b63b-default-rtdb.europe-west1.firebasedatabase.app/coaches.json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          const arrayOfObjects = Object.keys(data).map((key) => ({
+            id: key,
+            city: data[key].city,
+            languages: data[key].languages,
+            material: data[key].material,
+            name: data[key].name,
+            phone: data[key].phone,
+          }));
 
-  const [selectedMaterial, setSelectedMaterial] = useState("");
-  const [filteredProfesors, setFilteredProfesors] = useState(profesors);
+          setCoaches(arrayOfObjects);
+          setFilteredProfesors(arrayOfObjects);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching coaches:", error);
+      });
+  }, []);
+
   return (
     <>
       <h1>Repetitori</h1>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Repetitor</InputLabel>
+        <InputLabel sx={{ m: 0, p: 0 }} id="demo-simple-select-label">
+          Repetitor
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={selectedMaterial}
           label="Age"
           onChange={(e) => filteredByMaterial(e.target.value)}
-          sx={{ borderRadius: 5 }}
+          sx={{ borderRadius: "75px", border: "1px solid green" }}
         >
           {Object.values(materialCode).map((repetitori) => (
             <MenuItem value={repetitori} key={repetitori}>

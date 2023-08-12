@@ -8,11 +8,9 @@ const Wrapper = () => {
   return (
     <>
       <Header />
-      <Container fixed>
-        <Box sx={{ height: "100vh" }}>
-          <Outlet />
-        </Box>
-      </Container>
+      <Box sx={{ height: "100vh" }}>
+        <Outlet />
+      </Box>
     </>
   );
 };

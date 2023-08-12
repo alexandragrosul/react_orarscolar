@@ -1,4 +1,3 @@
-import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
@@ -11,6 +10,7 @@ import { Stack } from "@mui/system";
 import { Card, CardContent, Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import Repetitor from "./Repetitor";
+import React, { useState, useEffect } from "react";
 
 export const RepetitorList = ({ profesors }) => {
   return (
@@ -20,8 +20,8 @@ export const RepetitorList = ({ profesors }) => {
       sx={{ width: "100%", bgcolor: "background.paper" }}
     >
       {profesors.length ? (
-        profesors.map((profesor) => (
-          <Repetitor profesor={profesor} key={profesor.id} />
+        profesors.map((profesor, index) => (
+          <Repetitor profesor={profesor} key={index} />
         ))
       ) : (
         <p>Din pacate nu am gasit profesori!</p>

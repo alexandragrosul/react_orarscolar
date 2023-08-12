@@ -13,7 +13,11 @@ const Repetitor = ({ profesor }) => {
   return (
     <Link to={`/repetitori/${profesor.id}`}>
       <Card
-        sx={{ borderRadius: 10, border: "solid 1px green" }}
+        sx={{
+          borderRadius: "75px",
+          border: "solid 1px green",
+          paddingLeft: "15px",
+        }}
         key={profesor.id}
       >
         <CardContent>
