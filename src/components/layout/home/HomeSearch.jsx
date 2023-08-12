@@ -11,11 +11,17 @@ export default function HomeSearch() {
   return (
     <Paper
       component="form"
-      sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400 }}
+      sx={{
+        p: "2px 4px",
+        display: "flex",
+        alignItems: "center",
+        width: 400,
+        borderRadius: "50px",
+      }}
     >
       <InputBase
         size="big"
-        sx={{ ml: 1, flex: 1 }}
+        sx={{ ml: 1, flex: 1, borderRadius: "50%" }}
         placeholder="Gaseste-ti scoala"
         inputProps={{ "aria-label": "search google maps" }}
       />

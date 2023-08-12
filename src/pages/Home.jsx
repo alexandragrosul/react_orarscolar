@@ -151,14 +151,14 @@ function Home({ profesors }) {
           </Box>
         </Container>
       </Box> */}
-      <Box sx={{ background: "#d7e8d2" }}>
+      <Box sx={{ background: "#d7e8d2", height: "calc(100vh - 100.5px)" }}>
         <Container
           // maxWidth="xl"
           sx={{
             mt: 2,
           }}
         >
-          <Grid container spacing={2} sx={{ background: "transparent" }}>
+          <Grid container spacing={2} sx={{ background: "transparent", pb: 8 }}>
             {/* <Grid item xs={12}>
             <Item> */}
             {/* <video
@@ -188,7 +188,7 @@ function Home({ profesors }) {
                 ></video> */}
             {/* </Item>
           </Grid> */}
-            <Grid item xs={7} sx={{ background: "transparent" }}>
+            <Grid item xs={12} sx={{ background: "transparent" }}>
               {/* <Item sx={{ background: "transparent" }}> */}
               <Typography
                 variant="h2"
@@ -210,9 +210,11 @@ function Home({ profesors }) {
               {/* Search */}
 
               <Box
-                component="form"
                 sx={{
-                  "& > :not(style)": { m: 1, width: "100%" },
+                  "& > :not(style)": {
+                    m: 1,
+                    width: { xs: "100%", sm: "400px" },
+                  },
                   mt: 3,
                 }}
                 noValidate

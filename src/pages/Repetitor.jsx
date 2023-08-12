@@ -3,13 +3,30 @@ import { Box } from "@mui/system";
 import { Avatar, Container, Grid, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
-function Repetitor({ profesors }) {
+function Repetitor() {
   const { id } = useParams();
   const [profesor, setProfesor] = useState(null);
   useEffect(() => {
-    const item = profesors.find((el) => el.id == id);
-    setProfesor(item);
-    console.log(item);
+    fetch(
+      "https://escoala-7b63b-default-rtdb.europe-west1.firebasedatabase.app/coaches.json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          const arrayOfObjects = Object.keys(data).map((key) => ({
+            id: key,
+            city: data[key].city,
+            languages: data[key].languages,
+            material: data[key].material,
+            name: data[key].name,
+            phone: data[key].phone,
+          }));
+          setProfesor(arrayOfObjects.find((prof) => prof.id === id));
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching coaches:", error);
+      });
   }, []);
   return (
     <Container

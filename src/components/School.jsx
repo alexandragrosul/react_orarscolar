@@ -17,7 +17,7 @@ const School = ({ school }) => {
     }
   };
   return (
-    <Card sx={{ marginBottom: 3 }} key={school.id}>
+    <Card sx={{ marginBottom: 3, borderRadius: "75px" }} key={school.id}>
       <CardContent>
         <Grid container sx={{ alignItems: "center" }} spacing={2}>
           <Grid item xs={12} md={6}>
@@ -27,7 +27,7 @@ const School = ({ school }) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Link to={`/schools/${school.id}`}>
-              <Typography sx={{ fontWeight: 700 }} variant="h6">
+              <Typography sx={{ fontWeight: 700, color: "green" }} variant="h6">
                 {school.name}
               </Typography>
             </Link>
@@ -44,7 +44,14 @@ const School = ({ school }) => {
                     .slice(0, 4)
                     .map((adress, index) => <li key={index}>{adress}</li>)}
             </ul>
-            <Button onClick={handleClick} variant="contained">
+            <Button
+              onClick={handleClick}
+              variant="contained"
+              sx={{
+                backgroundColor: "green",
+                ":hover": { backgroundColor: "green" },
+              }}
+            >
               {showAll ? "Hide" : "Show"}
             </Button>
             <Typography>{school.schoolAdress}</Typography>

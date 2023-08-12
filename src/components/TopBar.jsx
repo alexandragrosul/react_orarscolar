@@ -17,6 +17,8 @@ import {
 } from "@mui/material";
 import lightLogo from "../assets/logo_light.png";
 import MenuIcon from "@mui/icons-material/Menu";
+import SchoolIcon from "@mui/icons-material/School";
+import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 
 const pages = [
   { label: "Home", link: "/" },
@@ -99,7 +101,23 @@ function TopBar() {
                   fontWeight: "bold",
                 }}
               >
-                {page.label}
+                <Button
+                  variant="outlined"
+                  startIcon={
+                    page.label === "Scoli" ? (
+                      <SchoolIcon />
+                    ) : page.label === "Repetitori" ? (
+                      <PersonSearchIcon />
+                    ) : null
+                  }
+                  sx={{
+                    color: "green",
+                    border: "1px solid green",
+                    ":hover": { border: "1px solid green" },
+                  }}
+                >
+                  {page.label}
+                </Button>
               </Link>
             ))}
           </Box>
