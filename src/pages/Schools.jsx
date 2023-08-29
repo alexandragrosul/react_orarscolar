@@ -6,17 +6,14 @@ import {
   Box,
   FormControl,
   Grid,
-  InputLabel,
-  MenuItem,
-  Select,
   TextField,
 } from "../../node_modules/@mui/material/index";
 import React from "react";
+
 const Schools = () => {
   const schoolsOptions = (schoolsData) => {
     const schools = [];
     schoolsData?.forEach((school) => {
-      // schools.push({ id: school.id, name: school.name });
       schools.push(school.name);
     });
     return schools;
@@ -26,14 +23,14 @@ const Schools = () => {
   const [value, setValue] = React.useState(options[0]);
   const [inputValue, setInputValue] = React.useState("");
   const [filteredSchools, setFilteredSchools] = React.useState(schoolsData);
+
   const filterSchools = (schools, name) => {
-    console.log({ name });
     if (!name) return schools;
     return schools.filter((school) => {
-      console.log(school.name === name);
       return school.name === name;
     });
   };
+
   return (
     <Container
       sx={{

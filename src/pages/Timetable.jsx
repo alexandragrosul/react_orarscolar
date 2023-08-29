@@ -1,5 +1,5 @@
-import { TabPanel, Tabs, Tab, Box, Grid } from "@mui/material";
-import { useState, useEffect } from "react";
+import { Tabs, Tab, Box, Grid } from "@mui/material";
+import { useState } from "react";
 
 function a11yProps(index) {
   return {

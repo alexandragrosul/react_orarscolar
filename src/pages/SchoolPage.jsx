@@ -15,10 +15,12 @@ import { Container } from "../../node_modules/@mui/material/index";
 const SchoolPage = () => {
   const { id } = useParams();
   const [school, setSchool] = useState(null);
+
   useEffect(() => {
-    const item = schoolsData.find((el) => el.id == id);
+    const item = schoolsData.find((el) => el.id === id);
     setSchool(item);
   }, []);
+
   return (
     <Container>
       <Box sx={{ padding: "5px 0" }}>
@@ -35,6 +37,7 @@ const SchoolPage = () => {
                 <img
                   src="https://picsum.photos/300/200"
                   style={{ borderRadius: "50px" }}
+                  alt={school?.name}
                 />
               </Grid>
               <Grid item xs={12} md={8}>
