@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import RoundButton from "../components/layout/RoundButton";
 
 const Registration = () => {
   const initialValues = {
@@ -112,7 +113,8 @@ const Registration = () => {
             />
             <ErrorMessage name="bio" component="div" />
           </fieldset>
-          <button type="submit">Submit</button>
+          {/* <button type="submit">Submit</button> */}
+          <RoundButton name="Submit" type={"submit"} />
         </Form>
       </Formik>
     </>

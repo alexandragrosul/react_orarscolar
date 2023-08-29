@@ -19,6 +19,7 @@ import lightLogo from "../assets/logo_light.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import SchoolIcon from "@mui/icons-material/School";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
+import RoundButton from "./layout/RoundButton";
 
 const pages = [
   { label: "Home", link: "/" },
@@ -101,8 +102,9 @@ function TopBar() {
                   fontWeight: "bold",
                 }}
               >
-                <Button
+                <RoundButton
                   variant="outlined"
+                  name={page.label}
                   startIcon={
                     page.label === "Scoli" ? (
                       <SchoolIcon />
@@ -110,14 +112,7 @@ function TopBar() {
                       <PersonSearchIcon />
                     ) : null
                   }
-                  sx={{
-                    color: "green",
-                    border: "1px solid green",
-                    ":hover": { border: "1px solid green" },
-                  }}
-                >
-                  {page.label}
-                </Button>
+                />
               </Link>
             ))}
           </Box>

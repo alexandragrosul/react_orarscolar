@@ -13,12 +13,14 @@ import "./App.css";
 import { useAuth } from "./hooks/AuthContext";
 import Login from "./pages/Login";
 import ProtectedRoute from "./navigation/ProtectedRoute";
+import { ThemeProvider } from "@mui/material";
+import { appTheme } from "./theme/theme";
 
 function App() {
   const { isLoggedIn } = useAuth();
 
   return (
-    <>
+    <ThemeProvider theme={appTheme}>
       <Routes>
         <Route path="/" element={<Wrapper />}>
           <Route
@@ -44,7 +46,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
-    </>
+    </ThemeProvider>
   );
 }
 

@@ -5,12 +5,17 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import RepetitorList from "./RepetitorList";
 import { Typography } from "@mui/material";
+import { Box, Grid, Stack } from "../../node_modules/@mui/material/index";
+import RoundButton from "./layout/RoundButton";
+import { Link } from "react-router-dom";
+import { CardComponent } from "./Card";
+
 const Repetitori = () => {
   const materialCode = {
-    rom: "Limba romana",
-    fr: "Limba franceza",
-    eng: "Limba engleza",
-    germ: "Limba germana",
+    rom: "Romana",
+    fr: "Franceza",
+    eng: "English",
+    germ: "Germana",
     mate: "Matematica",
     inf: "Informatica",
     fiz: "Fizica",
@@ -172,6 +177,7 @@ const Repetitori = () => {
   console.log(coaches);
 
   const filteredByMaterial = (material) => {
+    console.log(material);
     setFilteredProfesors(
       coaches.filter((coaches) => {
         return coaches.material.includes(material);
@@ -207,7 +213,18 @@ const Repetitori = () => {
 
   return (
     <>
-      <h1>Repetitori</h1>
+      <Grid container alignItems="center">
+        <Grid item xs={6}>
+          <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
+            Repetitori
+          </h1>
+        </Grid>
+        <Grid item xs={6} align="center">
+          <Link to={"/repetitor/add"}>
+            <RoundButton name={"Adauga Repetitor"} style={{ color: "white" }} />
+          </Link>
+        </Grid>
+      </Grid>
       <FormControl fullWidth>
         <InputLabel sx={{ m: 0, p: 0 }} id="demo-simple-select-label">
           Repetitor
@@ -225,6 +242,7 @@ const Repetitori = () => {
               {repetitori}
             </MenuItem>
           ))}
+          {/* <MenuItem value={"English"}>English</MenuItem> */}
         </Select>
       </FormControl>
       {selectedMaterial && (
@@ -232,7 +250,22 @@ const Repetitori = () => {
           {selectedMaterial}
         </Typography>
       )}
-      <RepetitorList profesors={filteredProfesors} />
+      {/* <RepetitorList profesors={filteredProfesors} /> */}
+
+      <Stack spacing={2} sx={{ marginTop: 2 }}>
+        {filteredProfesors.map((profesor, index) => {
+          return (
+            <Box key={index}>
+              <CardComponent profesor={profesor} />
+            </Box>
+          );
+        })}
+      </Stack>
+      {filteredProfesors.length === 0 && (
+        <Typography align="center" variant="body1">
+          Nu am gasit profesori
+        </Typography>
+      )}
     </>
   );
 };

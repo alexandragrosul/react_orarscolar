@@ -4,7 +4,7 @@ import Repetitori from "../components/Repetitori";
 const RepetitoriPage = () => {
   return (
     <>
-      <Container fixed>
+      <Container>
         <Box sx={{ height: "100vh" }}>
           <Repetitori />
           {/* <Chip label={material} /> */}

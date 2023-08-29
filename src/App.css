@@ -126,3 +126,8 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.adressItem {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
