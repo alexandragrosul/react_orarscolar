@@ -113,7 +113,6 @@ const Registration = () => {
             />
             <ErrorMessage name="bio" component="div" />
           </fieldset>
-          {/* <button type="submit">Submit</button> */}
           <RoundButton name="Submit" type={"submit"} />
         </Form>
       </Formik>

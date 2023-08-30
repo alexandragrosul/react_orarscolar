@@ -26,9 +26,6 @@ const Timetable = () => {
           <Tab label="Item Three" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      {/* <TabPanel value={dayWeek} index={0}>
-        Item One
-      </TabPanel> */}
       <Box sx={{ hidden: dayWeek !== 0 }}>1</Box>
       <Grid container>
         <Grid item xs={2}>

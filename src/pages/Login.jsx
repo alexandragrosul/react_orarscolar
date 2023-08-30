@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import { Formik, Form, Field } from "formik";
-import { Button, TextField, Container, Typography } from "@mui/material";
+import { Formik, Form } from "formik";
+import { TextField, Container, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import {
-  FilledInput,
   FormControl,
   IconButton,
   InputAdornment,
-  InputLabel,
-  OutlinedInput,
 } from "../../node_modules/@mui/material/index";
 import {
   VisibilityOff,
@@ -23,7 +18,6 @@ const Login = () => {
     email: "",
     password: "",
   };
-  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -32,20 +26,12 @@ const Login = () => {
     event.preventDefault();
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword((prevShowPassword) => !prevShowPassword);
-  };
-
   const onSubmit = (values) => {
     console.log(values); // Обработка полученных значений
   };
 
   const roundedInputStyle = {
-    borderRadius: "50px", // Измените значение радиуса по вашему выбору
+    borderRadius: "50px",
   };
 
   return (
@@ -101,74 +87,10 @@ const Login = () => {
                   }
                 />
 
-                <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
-                  {/* <InputLabel htmlFor="filled-adornment-password">
-                    Password
-                  </InputLabel> */}
-                  {/* <FilledInput
-                    name="password"
-                    label="Password"
-                    type={showPassword ? "text" : "password"}
-                    fullWidth
-                    value={values.password}
-                    onChange={handleChange}
-                    required
-                    variant="outlined"
-                    InputProps={{
-                      style: roundedInputStyle,
-                    }}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                  /> */}
-
-                  {/* <OutlinedInput
-                    name="password"
-                    label="Password"
-                    type={showPassword ? "text" : "password"}
-                    fullWidth
-                    value={values.password}
-                    onChange={handleChange}
-                    required
-                    variant="outlined"
-                    InputProps={{
-                      style: roundedInputStyle,
-                    }}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                  /> */}
-                </FormControl>
-
-                {/* <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    borderRadius: "100px",
-                    backgroundColor: "green",
-                  }}
-                >
-                  Login
-                </Button> */}
+                <FormControl
+                  sx={{ m: 1, width: "25ch" }}
+                  variant="filled"
+                ></FormControl>
 
                 <RoundButton
                   name={"Login"}

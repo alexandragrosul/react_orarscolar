@@ -7,8 +7,6 @@ const RepetitoriPage = () => {
       <Container>
         <Box sx={{ height: "100vh" }}>
           <Repetitori />
-          {/* <Chip label={material} /> */}
-          {/* <Typography variant="body1">Pret: {price}</Typography> */}
         </Box>
       </Container>
     </>

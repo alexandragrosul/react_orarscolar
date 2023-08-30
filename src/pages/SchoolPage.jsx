@@ -48,11 +48,8 @@ const SchoolPage = () => {
                 >
                   {school?.name}
                 </Typography>
-
-                {/* <Box display="flex" marginTop={2} sx={{ alignItems: "center" }}> */}
                 <Typography>Phone:</Typography>
                 <Typography sx={{ paddingLeft: 1 }}>{school?.phone}</Typography>
-                {/* </Box> */}
                 <Box display="flex" marginTop={2} sx={{ alignItems: "center" }}>
                   <ul>
                     {school?.serviceAdress.map((adress) => (

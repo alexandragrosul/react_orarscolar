@@ -51,16 +51,13 @@ const Schools = () => {
               const sc = filterSchools(schoolsData, newValue);
               setFilteredSchools(sc);
             }}
-            // getOptionLabel={(option) => option.name}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
               setInputValue(newInputValue);
               console.log(newInputValue);
-              // setFilteredSchools(filterSchools(filteredSchools, newInputValue));
             }}
             id="controllable-states-demo"
             options={options}
-            // sx={{ width: 300 }}
             fullWidth
             renderOption={(props, option) => (
               <Box component="li" {...props}>

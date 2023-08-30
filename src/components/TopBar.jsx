@@ -8,11 +8,8 @@ import {
   Menu,
   Container,
   Avatar,
-  Button,
   Tooltip,
   MenuItem,
-  Select,
-  FormControl,
   IconButton,
 } from "@mui/material";
 import lightLogo from "../assets/logo_light.png";

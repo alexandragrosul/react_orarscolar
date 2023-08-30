@@ -27,12 +27,11 @@ const initialValues = {
 
 const materialCode = {
   eng: "English",
-  // ... другие коды материалов
 };
 
-const cities = ["Chisinau", "Another City"]; // Ваши города
+const cities = ["Chisinau", "Another City"];
 
-const languages = ["English", "Romana"]; // Ваши языки
+const languages = ["English", "Romana"];
 
 const RepetitorAdd = () => {
   const [open, setOpen] = useState(false);
@@ -51,12 +50,11 @@ const RepetitorAdd = () => {
   };
 
   const onSubmit = (values) => {
-    console.log(values); // Обработка полученных значений
+    console.log(values);
     try {
       addCoach(values);
     } catch (error) {
       console.warning(error.message);
-      //TODO show error message to client
     }
   };
   return (

@@ -5,27 +5,16 @@ import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import StarIcon from "@mui/icons-material/Star";
 import InfoIcon from "@mui/icons-material/Info";
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-  Box,
-} from "@mui/material";
+import { Card, CardContent, Typography, Box } from "@mui/material";
 import {
   Link,
   Grid,
   Chip,
   Stack,
-  Avatar,
 } from "../../node_modules/@mui/material/index";
-import { red, grey } from "@mui/material/colors";
 import RoundButton from "./layout/RoundButton";
 
 export const CardComponent = ({ profesor }) => {
-  const greyLight = grey[400];
   return (
     <>
       <Link to={`/repetitori/${profesor.id}`}>
@@ -98,7 +87,6 @@ export const CardComponent = ({ profesor }) => {
                         label={language}
                         key={language}
                         sx={{
-                          // marginTop: "8px !important",
                           marginRight: "3px",
                         }}
                       />
