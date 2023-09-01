@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Typography, Grid, Box } from "@mui/material";
 import HomeSearch from "../components/layout/home/HomeSearch";
+import SchoolsSearch from "../components/school/SchoolsSearch";
 
 function Home({ profesors }) {
   return (

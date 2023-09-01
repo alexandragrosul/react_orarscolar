@@ -1,5 +1,5 @@
 import { schoolsData } from "../utils/schoolsData";
-import School from "../components/School";
+import School from "../components/school/School";
 import { Container } from "@mui/system";
 import {
   Autocomplete,
@@ -47,14 +47,12 @@ const Schools = () => {
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
-              console.log(newValue);
               const sc = filterSchools(schoolsData, newValue);
               setFilteredSchools(sc);
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
               setInputValue(newInputValue);
-              console.log(newInputValue);
             }}
             id="controllable-states-demo"
             options={options}

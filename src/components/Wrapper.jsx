@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Header from "./layout/Header";
 import Box from "@mui/material/Box";
 import { Outlet } from "react-router-dom";
 

@@ -120,7 +120,7 @@ a {
 }
 
 .hero-container {
-  height: calc(100vh - 68.5px);
+  /* height: calc(100vh - 68.5px); */
   width: 100%;
   background-image: url("./assets/bg-hero.jpg");
   background-size: cover;
