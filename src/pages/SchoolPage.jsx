@@ -17,9 +17,12 @@ const SchoolPage = () => {
   const [school, setSchool] = useState(null);
 
   useEffect(() => {
-    const item = schoolsData.find((el) => el.id === id);
+    console.log({ id });
+    const item = schoolsData.find((el) => el.id === id * 1);
     setSchool(item);
   }, []);
+
+  console.log(schoolsData);
 
   return (
     <Container>

@@ -40,7 +40,7 @@ const SchoolsSearch = ({ setFilteredSchools }) => {
       onInputChange={(event, newInputValue) => {
         setInputValue(newInputValue);
       }}
-      id="controllable-states-demo"
+      id="school-search"
       options={options}
       fullWidth
       renderOption={(props, option) => (
@@ -48,7 +48,9 @@ const SchoolsSearch = ({ setFilteredSchools }) => {
           {option}
         </Box>
       )}
-      renderInput={(params) => <TextField {...params} label="Scoli" />}
+      renderInput={(params) => (
+        <TextField {...params} label="Selectati scoala" />
+      )}
       sx={{ borderRadius: "75px" }}
     />
   );

@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import ProtectedRoute from "./navigation/ProtectedRoute";
 import { ThemeProvider } from "@mui/material";
 import { appTheme } from "./theme/theme";
+import Events from "./pages/Events";
 
 function App() {
   const { isLoggedIn } = useAuth();
@@ -44,6 +45,7 @@ function App() {
           <Route path="/schools/:id" element={<SchoolPage />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/events" element={<Events />} />
         </Route>
       </Routes>
     </ThemeProvider>

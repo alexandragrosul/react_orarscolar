@@ -12,16 +12,17 @@ import {
   MenuItem,
   IconButton,
 } from "@mui/material";
-import lightLogo from "../assets/logo_light.png";
+import lightLogo from "../../assets/logo_light.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import SchoolIcon from "@mui/icons-material/School";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
-import RoundButton from "./layout/RoundButton";
+import RoundButton from "./RoundButton";
 
 const pages = [
   { label: "Home", link: "/" },
   { label: "Scoli", link: "/schools" },
   { label: "Repetitori", link: "/repetitori" },
+  { label: "Evenimente", link: "/events" },
 ];
 
 const settings = ["Profile", "Account", "Class", "Logout"];
