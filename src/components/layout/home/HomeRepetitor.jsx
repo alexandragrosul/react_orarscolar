@@ -17,10 +17,10 @@ import repetitorPhoto from "../../../assets/profesor.jpg";
 import RoundButton from "../RoundButton";
 import InfoIcon from "@mui/icons-material/Info";
 
-export default function HomeSearch() {
+export default function HomeRepetitor() {
   return (
     <>
-      <Grid container mb={4}>
+      <Grid container mb={4} alignItems="center">
         <Grid item xs={12} md={6}>
           <Stack spacing={3}>
             <h6
@@ -33,7 +33,7 @@ export default function HomeSearch() {
             >
               Preda cu Escoala
             </h6>
-            <Typography sx={{ textAlign: "left" }}>
+            <Typography style={{ textAlign: "left", marginRight: "15px" }}>
               Câștigă bani împărtășindu-ți cunoștințele de specialitate cu
               studenții. Înscrie-te și începe să predai online cu Escoala
             </Typography>
@@ -72,13 +72,18 @@ export default function HomeSearch() {
                 />
               </Link>
               <InfoIcon
-                sx={{ color: "primary.main", mr: 2, fontSize: "20px" }}
+                sx={{
+                  color: "primary.main",
+                  mr: 2,
+                  fontSize: "20px",
+                  marginLeft: 2,
+                }}
               />
               <Link textAlign={"left"}>Cum functioneaza platforma noastra</Link>
             </Box>
           </Stack>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} sx={{ mt: { xs: 2 } }}>
           <img
             src={repetitorPhoto}
             style={{

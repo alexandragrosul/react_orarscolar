@@ -25,7 +25,7 @@ const pages = [
   { label: "Evenimente", link: "/events" },
 ];
 
-const settings = ["Profile", "Account", "Class", "Logout"];
+// const settings = ["Profile", "Account", "Class", "Logout"];
 
 function TopBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -115,7 +115,7 @@ function TopBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0, height: 40 }}>
+          {/* <Box sx={{ flexGrow: 0, height: 40 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar src="/static/images/avatar/1.jpg" />
@@ -137,7 +137,7 @@ function TopBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

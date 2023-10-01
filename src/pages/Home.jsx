@@ -1,9 +1,11 @@
 import React from "react";
 import { Container, Typography, Grid, Box } from "@mui/material";
-import HomeSearch from "../components/layout/home/HomeSearch";
+import HomeSearch from "../components/layout/home/HomeRepetitor";
 import SchoolsSearch from "../components/school/SchoolsSearch";
 import { Link, Stack } from "../../node_modules/@mui/material/index";
 import RoundButton from "../components/layout/RoundButton";
+import HomeSchools from "../components/layout/home/HomeSchools";
+import HomeRepetitor from "../components/layout/home/HomeRepetitor";
 
 function Home({ profesors }) {
   return (
@@ -14,14 +16,21 @@ function Home({ profesors }) {
           mt: 2,
         }}
       >
-        <Grid container spacing={4} sx={{ background: "#d7e8d2", pb: 8 }}>
+        <Grid
+          container
+          spacing={4}
+          sx={{
+            background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
+            pb: 8,
+          }}
+        >
           <Grid item xs={12} sx={{ background: "transparent", mb: 4 }}>
             <Typography
               variant="h2"
               component="h2"
               align="left"
               sx={{
-                marginTop: "70px",
+                marginTop: "65px",
                 fontWeight: "bold",
                 font: "Noto Sans Vithkuqi",
               }}
@@ -33,30 +42,12 @@ function Home({ profesors }) {
               de milioane de elevi și experți se ajută între ei pentru a rezolva
               cele mai grele teme pentru acasă.
             </Typography>
-            <Stack
-              direction="row"
-              flex
-              sx={{
-                "& > :not(style)": {
-                  m: 1,
-                  width: { xs: "100%", sm: "400px" },
-                },
-                mt: 3,
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <SchoolsSearch setFilteredSchools={undefined} />
-              <Link to={"/repetitor/add"}>
-                <RoundButton
-                  name={"Cauta scoala"}
-                  style={{ color: "white", mr: 2 }}
-                />
-              </Link>
-            </Stack>
           </Grid>
           <Grid item xs={12} sx={{ background: "white" }}>
-            <HomeSearch />
+            <HomeSchools />
+          </Grid>
+          <Grid item xs={12} sx={{ background: "white" }}>
+            <HomeRepetitor />
           </Grid>
         </Grid>
       </Container>
