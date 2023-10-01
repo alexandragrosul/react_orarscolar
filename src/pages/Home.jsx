@@ -50,6 +50,19 @@ function Home({ profesors }) {
             <HomeRepetitor />
           </Grid>
         </Grid>
+        <Grid item xs={12} sx={{ background: "white" }}>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdOWZv0koeXfpNk6SxnXRN7QDjhEPPHLEwiKqldcxuBN-xKbg/viewform?embedded=true"
+            width="640"
+            height="1209"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Adauga scoala"
+          >
+            Загрузка…
+          </iframe>
+        </Grid>
       </Container>
       {/* </Box> */}
     </>
