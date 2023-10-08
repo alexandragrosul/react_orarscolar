@@ -16,7 +16,8 @@ const Schools = () => {
   const schoolsOptions = (schoolsData) => {
     const schools = [];
     schoolsData?.forEach((school) => {
-      schools.push(school.name);
+      console.log(school?.title?.rendered);
+      schools.push(school?.title?.rendered);
     });
     return schools;
   };
@@ -25,7 +26,7 @@ const Schools = () => {
   const [options, setOptions] = React.useState([]);
   const [value, setValue] = React.useState(options[0]);
   const [inputValue, setInputValue] = React.useState("");
-  const [filteredSchools, setFilteredSchools] = React.useState(options);
+  const [filteredSchools, setFilteredSchools] = React.useState([]);
 
   async function fetchData() {
     try {
@@ -34,6 +35,7 @@ const Schools = () => {
       ); // Замените URL на адрес вашего сервера
       const data = response.data;
       setOptions(data);
+      setFilteredSchools(data);
       // Обработка полученных данных
       console.log(data);
     } catch (error) {
@@ -68,19 +70,18 @@ const Schools = () => {
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
-              const sc = filterSchools(options, newValue);
-              setFilteredSchools(sc);
+              setFilteredSchools(filterSchools(options, newValue));
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
-              setInputValue("Waldorf");
+              setInputValue(newInputValue);
             }}
             id="controllable-states-demo"
-            options={options}
+            options={schoolsOptions(options)}
             fullWidth
             renderOption={(props, option) => (
               <Box component="li" {...props}>
-                {option.title.rendered}
+                {option}
               </Box>
             )}
             renderInput={(params) => <TextField {...params} label="Scoli" />}
@@ -90,7 +91,7 @@ const Schools = () => {
       </Box>
 
       <Grid container spacing={2} sx={{ marginTop: 2 }}>
-        {options.map((school, index) => (
+        {filteredSchools.map((school, index) => (
           <Grid item xs={12} sm={6} lg={4} key={index}>
             <School school={school} key={school.id} />
           </Grid>

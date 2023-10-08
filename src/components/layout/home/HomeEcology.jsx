@@ -18,7 +18,7 @@ import RoundButton from "../RoundButton";
 import InfoIcon from "@mui/icons-material/Info";
 import SchoolsSearch from "../../school/SchoolsSearch";
 
-export default function HomeSchools() {
+export default function HomeEcology() {
   return (
     <>
       <Grid container mb={4} spacing={2} alignItems="center">
@@ -46,7 +46,7 @@ export default function HomeSchools() {
                 marginLeft: "25px",
               }}
             >
-              Gaseste Scoala ta
+              Ecologia la Scoala ta
             </h6>
             <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
               Scoala este forate importanta petru un copil

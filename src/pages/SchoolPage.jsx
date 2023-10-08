@@ -9,20 +9,33 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import { schoolsData } from "../utils/schoolsData";
 import { Container } from "../../node_modules/@mui/material/index";
+import axios from "../../node_modules/axios/index";
+import { parseStringToJson } from "../utils/utils.js";
 
 const SchoolPage = () => {
   const { id } = useParams();
   const [school, setSchool] = useState(null);
 
-  useEffect(() => {
-    console.log({ id });
-    const item = schoolsData.find((el) => el.id === id * 1);
-    setSchool(item);
-  }, []);
+  async function fetchSchoolData() {
+    try {
+      const response = await axios.get(
+        `http://escoala.md/admin/wp-json/wp/v2/posts/${id}?_fields=id,slug,content,title`
+      ); // Замените URL на адрес вашего сервера
+      const data = response.data;
+      const parsedObject = parseStringToJson(data.content.rendered);
+      setSchool({ data, ...parsedObject });
+      // Обработка полученных данных
+      console.log("data");
+    } catch (error) {
+      // Обработка ошибки
+      console.error(error);
+    }
+  }
 
-  console.log(schoolsData);
+  useEffect(() => {
+    fetchSchoolData();
+  }, []);
 
   return (
     <Container>
@@ -51,7 +64,7 @@ const SchoolPage = () => {
                 >
                   {school?.name}
                 </Typography>
-                <Typography>Phone:</Typography>
+                <Typography>Phone1:</Typography>
                 <Typography sx={{ paddingLeft: 1 }}>{school?.phone}</Typography>
                 <Box display="flex" marginTop={2} sx={{ alignItems: "center" }}>
                   <ul>

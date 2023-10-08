@@ -9,7 +9,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 const School = ({ school }) => {
   const [showAll, setShowAll] = useState(false);
   const handleClick = () => {
-    if (school?.serviceAdress.length > 4) {
+    if (school?.serviceAdress?.length > 4) {
       setShowAll(!showAll);
     }
   };

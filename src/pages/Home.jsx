@@ -6,6 +6,8 @@ import { Link, Stack } from "../../node_modules/@mui/material/index";
 import RoundButton from "../components/layout/RoundButton";
 import HomeSchools from "../components/layout/home/HomeSchools";
 import HomeRepetitor from "../components/layout/home/HomeRepetitor";
+import HomePsychology from "../components/layout/home/HomePsychology";
+import HomeEcology from "../components/layout/home/HomeEcology";
 
 function Home({ profesors }) {
   return (
@@ -13,24 +15,29 @@ function Home({ profesors }) {
       {/* <Box sx={{ background: "#d7e8d2", height: "calc(100vh - 100.5px)" }}> */}
       <Container
         sx={{
-          mt: 2,
+          // mt: 1,
+          background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
+          //   pb: 8,
+          borderTopRightRadius: "50px",
+          borderTopLeftRadius: "50px",
         }}
       >
         <Grid
           container
-          spacing={4}
-          sx={{
-            background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
-            pb: 8,
-          }}
+          // spacing={4}
+          // sx={{
+          //   background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
+          //   pb: 8,
+          //   borderRadius: "50px",
+          // }}
         >
-          <Grid item xs={12} sx={{ background: "transparent", mb: 4 }}>
+          <Grid item xs={12} sx={{ background: "transparent", mb: 4, p: 2 }}>
             <Typography
-              variant="h2"
+              variant="h3"
               component="h2"
               align="left"
               sx={{
-                marginTop: "65px",
+                mt: 1,
                 fontWeight: "bold",
                 font: "Noto Sans Vithkuqi",
               }}
@@ -43,25 +50,26 @@ function Home({ profesors }) {
               cele mai grele teme pentru acasă.
             </Typography>
           </Grid>
-          <Grid item xs={12} sx={{ background: "white" }}>
+          <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeSchools />
           </Grid>
-          <Grid item xs={12} sx={{ background: "white" }}>
+          <Grid
+            item
+            xs={12}
+            sx={{ background: "white", borderRadius: "50px", p: 2 }}
+          >
+            <HomePsychology />
+          </Grid>
+          <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
+            <HomeEcology />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sx={{ background: "white", borderRadius: "50px", p: 2 }}
+          >
             <HomeRepetitor />
           </Grid>
-        </Grid>
-        <Grid item xs={12} sx={{ background: "white" }}>
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdOWZv0koeXfpNk6SxnXRN7QDjhEPPHLEwiKqldcxuBN-xKbg/viewform?embedded=true"
-            width="640"
-            height="1209"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="Adauga scoala"
-          >
-            Загрузка…
-          </iframe>
         </Grid>
       </Container>
       {/* </Box> */}

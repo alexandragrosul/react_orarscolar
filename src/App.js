@@ -16,6 +16,7 @@ import ProtectedRoute from "./navigation/ProtectedRoute";
 import { ThemeProvider } from "@mui/material";
 import { appTheme } from "./theme/theme";
 import Events from "./pages/Events";
+import SchoolAdd from "./pages/SchoolAdd";
 
 function App() {
   const { isLoggedIn } = useAuth();
@@ -43,6 +44,7 @@ function App() {
           <Route path="/timetable/:schoolId" element={<Timetable />} />
           <Route path="/schools" element={<Schools />} />
           <Route path="/schools/:id" element={<SchoolPage />} />
+          <Route path="/schools/add" element={<SchoolAdd />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/events" element={<Events />} />
