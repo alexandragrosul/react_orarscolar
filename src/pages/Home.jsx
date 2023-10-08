@@ -1,9 +1,5 @@
 import React from "react";
-import { Container, Typography, Grid, Box } from "@mui/material";
-import HomeSearch from "../components/layout/home/HomeRepetitor";
-import SchoolsSearch from "../components/school/SchoolsSearch";
-import { Link, Stack } from "../../node_modules/@mui/material/index";
-import RoundButton from "../components/layout/RoundButton";
+import { Container, Typography, Grid } from "@mui/material";
 import HomeSchools from "../components/layout/home/HomeSchools";
 import HomeRepetitor from "../components/layout/home/HomeRepetitor";
 import HomePsychology from "../components/layout/home/HomePsychology";

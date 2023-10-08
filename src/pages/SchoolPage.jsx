@@ -35,7 +35,7 @@ const SchoolPage = () => {
 
   useEffect(() => {
     fetchSchoolData();
-  }, []);
+  }, [id]);
 
   return (
     <Container>

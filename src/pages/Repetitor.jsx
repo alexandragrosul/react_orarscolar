@@ -27,7 +27,7 @@ function Repetitor() {
       .catch((error) => {
         console.error("Error fetching coaches:", error);
       });
-  }, []);
+  }, [id]);
   return (
     <Container
       sx={{

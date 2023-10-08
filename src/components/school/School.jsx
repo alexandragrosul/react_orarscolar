@@ -26,6 +26,7 @@ const School = ({ school }) => {
           <img
             src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             style={{ width: "300px", height: "auto", borderRadius: "50px" }}
+            alt={school?.name}
           />
           <Box display="flex" marginTop={2} sx={{ alignItems: "center" }}>
             <Typography

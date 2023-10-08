@@ -1,4 +1,3 @@
-import { schoolsData } from "../utils/schoolsData";
 import School from "../components/school/School";
 import { Container } from "@mui/system";
 import axios from "axios";
