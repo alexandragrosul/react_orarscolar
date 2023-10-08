@@ -9,7 +9,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 const School = ({ school }) => {
   const [showAll, setShowAll] = useState(false);
   const handleClick = () => {
-    if (school.serviceAdress.length > 4) {
+    if (school?.serviceAdress.length > 4) {
       setShowAll(!showAll);
     }
   };
@@ -38,7 +38,7 @@ const School = ({ school }) => {
               }}
               variant="h6"
             >
-              {school.name}
+              {school.title.rendered}
             </Typography>
           </Box>
 
@@ -49,14 +49,14 @@ const School = ({ school }) => {
             sx={{ alignItems: "center" }}
           >
             <Typography>Phone:</Typography>
-            <Typography sx={{ paddingLeft: 1 }}>{school.phone}</Typography>
+            <Typography sx={{ paddingLeft: 1 }}>{school?.phone}</Typography>
           </Box>
           <Box display="flex" sx={{ alignItems: "center" }}>
             <LocationOnIcon
               sx={{ color: "primary.main", mr: 2, fontSize: "20px" }}
             />
             <Typography sx={{ color: "primary.main" }}>
-              {school.schoolAdress}
+              {school?.schoolAdress}
             </Typography>
           </Box>
 

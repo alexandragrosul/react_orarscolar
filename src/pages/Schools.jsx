@@ -1,6 +1,7 @@
 import { schoolsData } from "../utils/schoolsData";
 import School from "../components/school/School";
 import { Container } from "@mui/system";
+import axios from "axios";
 import {
   Autocomplete,
   Box,
@@ -9,6 +10,7 @@ import {
   TextField,
 } from "../../node_modules/@mui/material/index";
 import React from "react";
+import { useEffect } from "react";
 
 const Schools = () => {
   const schoolsOptions = (schoolsData) => {
@@ -19,15 +21,34 @@ const Schools = () => {
     return schools;
   };
 
-  const options = schoolsOptions(schoolsData);
+  // const options = schoolsOptions(schoolsData);
+  const [options, setOptions] = React.useState([]);
   const [value, setValue] = React.useState(options[0]);
   const [inputValue, setInputValue] = React.useState("");
-  const [filteredSchools, setFilteredSchools] = React.useState(schoolsData);
+  const [filteredSchools, setFilteredSchools] = React.useState(options);
+
+  async function fetchData() {
+    try {
+      const response = await axios.get(
+        "http://escoala.md/admin/wp-json/wp/v2/posts?categories=3&_fields=id,slug,content,title"
+      ); // Замените URL на адрес вашего сервера
+      const data = response.data;
+      setOptions(data);
+      // Обработка полученных данных
+      console.log(data);
+    } catch (error) {
+      // Обработка ошибки
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const filterSchools = (schools, name) => {
     if (!name) return schools;
     return schools.filter((school) => {
-      return school.name === name;
+      return school.title.rendered === name;
     });
   };
 
@@ -47,19 +68,19 @@ const Schools = () => {
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
-              const sc = filterSchools(schoolsData, newValue);
+              const sc = filterSchools(options, newValue);
               setFilteredSchools(sc);
             }}
             inputValue={inputValue}
             onInputChange={(event, newInputValue) => {
-              setInputValue(newInputValue);
+              setInputValue("Waldorf");
             }}
             id="controllable-states-demo"
             options={options}
             fullWidth
             renderOption={(props, option) => (
               <Box component="li" {...props}>
-                {option}
+                {option.title.rendered}
               </Box>
             )}
             renderInput={(params) => <TextField {...params} label="Scoli" />}
@@ -69,7 +90,7 @@ const Schools = () => {
       </Box>
 
       <Grid container spacing={2} sx={{ marginTop: 2 }}>
-        {filteredSchools.map((school, index) => (
+        {options.map((school, index) => (
           <Grid item xs={12} sm={6} lg={4} key={index}>
             <School school={school} key={school.id} />
           </Grid>
