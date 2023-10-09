@@ -17,21 +17,35 @@ const SchoolPage = () => {
   const { id } = useParams();
   const [school, setSchool] = useState(null);
 
-  async function fetchSchoolData() {
+  // async function fetchSchoolData() {
+  //   try {
+  //     const response = await axios.get(
+  //       `http://escoala.md/admin/wp-json/wp/v2/posts/${id}?_fields=id,slug,content,title`
+  //     ); // Замените URL на адрес вашего сервера
+  //     const data = response.data;
+  //     const parsedObject = parseStringToJson(data.content.rendered);
+  //     setSchool({ data, ...parsedObject });
+  //     // Обработка полученных данных
+  //     console.log("data");
+  //   } catch (error) {
+  //     // Обработка ошибки
+  //     console.error(error);
+  //   }
+  // }
+
+  const fetchSchoolData = useCallback(async () => {
     try {
       const response = await axios.get(
         `http://escoala.md/admin/wp-json/wp/v2/posts/${id}?_fields=id,slug,content,title`
-      ); // Замените URL на адрес вашего сервера
+      );
       const data = response.data;
       const parsedObject = parseStringToJson(data.content.rendered);
       setSchool({ data, ...parsedObject });
-      // Обработка полученных данных
       console.log("data");
     } catch (error) {
-      // Обработка ошибки
       console.error(error);
     }
-  }
+  }, [id]);
 
   useEffect(() => {
     fetchSchoolData();
