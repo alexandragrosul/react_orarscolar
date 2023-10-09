@@ -20,7 +20,7 @@ export default function HomeEcology() {
               width: "100%",
               borderRadius: "89px",
             }}
-            alt="Repetior photo"
+            alt="repetior"
           />
         </Grid>
         <Grid item xs={12} md={6}>

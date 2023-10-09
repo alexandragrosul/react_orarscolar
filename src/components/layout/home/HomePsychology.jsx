@@ -86,7 +86,7 @@ export default function HomePsychology() {
               width: "100%",
               borderRadius: "89px",
             }}
-            alt="Repetior photo"
+            alt="Repetior"
           />
         </Grid>
       </Grid>

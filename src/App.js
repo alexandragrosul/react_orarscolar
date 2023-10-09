@@ -10,7 +10,6 @@ import Registration from "./pages/Registration";
 import { profesors } from "./data";
 import RepetitorAdd from "./pages/RepetitorAdd";
 import "./App.css";
-import { useAuth } from "./hooks/AuthContext";
 import Login from "./pages/Login";
 import ProtectedRoute from "./navigation/ProtectedRoute";
 import { ThemeProvider } from "@mui/material";

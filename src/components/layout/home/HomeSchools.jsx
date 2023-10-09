@@ -20,7 +20,7 @@ export default function HomeSchools() {
               width: "100%",
               borderRadius: "89px",
             }}
-            alt="Repetior photo"
+            alt="Repetior"
           />
         </Grid>
         <Grid item xs={12} md={6}>
