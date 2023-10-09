@@ -12,7 +12,7 @@ const RoundButton = ({
     <Button
       variant={variant}
       startIcon={startIcon}
-      color="primary" // Применяем primary цвет
+      color="primary"
       type={type}
       style={{
         ...style,

@@ -3,7 +3,7 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import { Stack } from "@mui/system";
-import { red, grey } from "@mui/material/colors";
+import { grey } from "@mui/material/colors";
 import { Card, CardContent, Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 

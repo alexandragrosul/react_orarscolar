@@ -7,8 +7,6 @@ import {
   Typography,
   Menu,
   Container,
-  Avatar,
-  Tooltip,
   MenuItem,
   IconButton,
 } from "@mui/material";

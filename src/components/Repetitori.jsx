@@ -3,7 +3,6 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import RepetitorList from "./RepetitorList";
 import { Typography } from "@mui/material";
 import { Box, Grid, Stack } from "../../node_modules/@mui/material/index";
 import RoundButton from "./layout/RoundButton";
