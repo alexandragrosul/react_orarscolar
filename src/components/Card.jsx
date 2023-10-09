@@ -34,6 +34,7 @@ export const CardComponent = ({ profesor }) => {
                   src="https://avatars.preply.com/i/logos/i/logos/avatar_y85iu.jpg?d=320x320&f=webp"
                   height="160"
                   weight="160"
+                  alt="avatar"
                 />
               </Grid>
               <Grid

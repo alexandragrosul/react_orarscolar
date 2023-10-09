@@ -1,21 +1,12 @@
 import * as React from "react";
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
 import {
-  Box,
   Grid,
   Link,
   Stack,
   Typography,
 } from "../../../../node_modules/@mui/material/index";
-import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import schoolPhoto from "../../../assets/school.jpg";
 import RoundButton from "../RoundButton";
-import InfoIcon from "@mui/icons-material/Info";
 import SchoolsSearch from "../../school/SchoolsSearch";
 
 export default function HomeEcology() {
@@ -27,9 +18,6 @@ export default function HomeEcology() {
             src={schoolPhoto}
             style={{
               width: "100%",
-              // maxWidth: "618px",
-              // maxHeight: "412px",
-              // objectFit: "cover",
               borderRadius: "89px",
             }}
             alt="Repetior photo"
@@ -59,7 +47,6 @@ export default function HomeEcology() {
             flex
             sx={{
               "& > :not(style)": {
-                // m: 1,
                 width: { xs: "100%" },
               },
               mt: 3,
@@ -70,12 +57,6 @@ export default function HomeEcology() {
             autoComplete="off"
           >
             <SchoolsSearch setFilteredSchools={undefined} />
-            {/* <Link to={"/repetitor/add"}>
-              <RoundButton
-                name="Cauta scoala"
-                style={{ color: "white", mr: 2, alignItems: "center" }}
-              />
-            </Link> */}
           </Stack>
           <Stack alignItems="center" flex sx={{ mt: 2 }}>
             <Typography style={{ textAlign: "left", marginLeft: "25px" }}>

@@ -19,7 +19,6 @@ import Events from "./pages/Events";
 import SchoolAdd from "./pages/SchoolAdd";
 
 function App() {
-  const { isLoggedIn } = useAuth();
 
   return (
     <ThemeProvider theme={appTheme}>
