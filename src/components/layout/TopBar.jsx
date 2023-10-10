@@ -31,7 +31,7 @@ function TopBar() {
 
   return (
     <AppBar
-      position="static"
+      position="fixed"
       sx={{ backgroundColor: "white", boxShadow: "none", py: 2 }}
     >
       <Container maxWidth="xl">
@@ -39,7 +39,13 @@ function TopBar() {
           <Link to="/">
             <img src={lightLogo} alt="logo" className="img-logo" />
           </Link>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "flex-end",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"

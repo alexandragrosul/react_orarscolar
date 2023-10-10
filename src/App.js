@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Repetitor from "./pages/Repetitor";
+import Repetitor from "./pages/Repetitor/Repetitor";
 import Timetable from "./pages/Timetable";
 import Wrapper from "./components/Wrapper";
 import Schools from "./pages/Schools";
-import RepetitoriPage from "./pages/RepetitoriPage";
+import RepetitoriPage from "./pages/Repetitor/RepetitoriPage";
 import SchoolPage from "./pages/SchoolPage";
 import Registration from "./pages/Registration";
 import { profesors } from "./data";
-import RepetitorAdd from "./pages/RepetitorAdd";
+import RepetitorAdd from "./pages/Repetitor/RepetitorAdd";
 import "./App.css";
 import Login from "./pages/Login";
 import ProtectedRoute from "./navigation/ProtectedRoute";
@@ -18,7 +18,6 @@ import Events from "./pages/Events";
 import SchoolAdd from "./pages/SchoolAdd";
 
 function App() {
-
   return (
     <ThemeProvider theme={appTheme}>
       <Routes>

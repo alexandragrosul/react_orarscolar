@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import AlertDialog from "../components/layout/AlertDialog";
+import AlertDialog from "../../components/layout/AlertDialog";
 
 const initialValues = {
   name: "",
