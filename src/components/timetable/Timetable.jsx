@@ -24,7 +24,6 @@ const colors = [
   "teal",
   "gray",
 ];
-const schedule = ["Математика", "Русский", "Английский"];
 
 // function getRandomColor() {
 //   const randomIndex = Math.floor(Math.random() * colors.length);
@@ -48,22 +47,19 @@ function getRandomColor() {
   return { bgColor, textColor };
 }
 
-const randomColor = getRandomColor();
-
 export const TimeTable = () => {
   const [dense] = React.useState(false);
-  const [secondary] = React.useState(false);
 
   // Сохранение данных в локальное хранилище
-  const saveDataToLocalStorage = (data) => {
-    localStorage.setItem("scheduleData", JSON.stringify(data));
-  };
+  //   const saveDataToLocalStorage = (data) => {
+  //     localStorage.setItem("scheduleData", JSON.stringify(data));
+  //   };
 
   // Загрузка данных из локального хранилища
-  const loadDataFromLocalStorage = () => {
-    const data = localStorage.getItem("scheduleData");
-    return data ? JSON.parse(data) : initialData;
-  };
+  //   const loadDataFromLocalStorage = () => {
+  //     const data = localStorage.getItem("scheduleData");
+  //     return data ? JSON.parse(data) : initialData;
+  //   };
 
   const initialData = {
     week: [
@@ -128,14 +124,6 @@ export const TimeTable = () => {
   const currentDate = new Date();
   const currentDayOfWeek = currentDate.getDay(); // Возвращает номер дня недели (0 - воскресенье, 1 - понедельник, и так далее)
 
-  function getDayOfWeek(data) {
-    // const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const currentDate = new Date();
-    const currentDayOfWeek = currentDate.getDay(); // Возвращает номер дня недели (0 - воскресенье, 1 - понедельник, и так далее)
-
-    return data[currentDayOfWeek];
-  }
-
   const currentDayOrder = initialData.week[currentDayOfWeek];
 
   function getMonthName(date) {
@@ -185,7 +173,7 @@ export const TimeTable = () => {
                   key={item}
                   secondaryAction={
                     <IconButton edge="end" aria-label="delete">
-                      {/* <DeleteIcon /> */}
+                      <DeleteIcon />
                     </IconButton>
                   }
                   sx={{
