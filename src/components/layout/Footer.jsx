@@ -12,11 +12,11 @@ import {
   TextField,
   Toolbar,
 } from "../../../node_modules/@mui/material/index";
-import TableRowsIcon from "@mui/icons-material/TableRows";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import AddIcon from "@mui/icons-material/Add";
 import { styled } from "@mui/material/styles";
 import Fab from "@mui/material/Fab";
+import ViewListIcon from "@mui/icons-material/ViewList";
 
 const StyledFab = styled(Fab)({
   position: "absolute",
@@ -30,18 +30,17 @@ const StyledFab = styled(Fab)({
 function Footer({ onButtonClick }) {
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    onButtonClick("schedule");
-    // setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   onButtonClick("schedule");
+  // };
+
+  const handleClickOpen = onButtonClick.bind(null, "schedule");
 
   const handleClickAddTaskOpen = () => {
     onButtonClick("addTask");
-    // setOpen(true);
   };
   const handleClickTasskOpen = () => {
     onButtonClick("tasks");
-    // setOpen(true);
   };
 
   const handleClose = () => {
@@ -56,7 +55,7 @@ function Footer({ onButtonClick }) {
           aria-label="open drawer"
           onClick={handleClickOpen}
         >
-          <TableRowsIcon />
+          <ViewListIcon />
         </IconButton>
         <StyledFab color="secondary" aria-label="add">
           <AddIcon onClick={handleClickAddTaskOpen} />

@@ -37,7 +37,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-
           <Route path="/timetable/:schoolId" element={<Timetable />} />
           <Route path="/schools" element={<Schools />} />
           <Route path="/schools/:id" element={<SchoolPage />} />

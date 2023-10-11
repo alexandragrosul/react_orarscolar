@@ -32,7 +32,7 @@ function TopBar() {
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: "white", boxShadow: "none", py: 2 }}
+      sx={{ backgroundColor: "white", boxShadow: "none", pb: 1 }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
