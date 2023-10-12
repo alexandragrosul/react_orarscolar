@@ -170,7 +170,7 @@ export const TimeTable = () => {
             currentDayOrder.lessons?.map((item, i) => {
               return (
                 <ListItem
-                  key={item}
+                  key={i}
                   secondaryAction={
                     <IconButton edge="end" aria-label="delete">
                       <DeleteIcon />
