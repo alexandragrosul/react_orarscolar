@@ -1,44 +1,30 @@
 import React, { useEffect, useState } from "react";
 import {
-  Grid,
-  Typography,
   List,
   ListItem,
-  IconButton,
   ListItemAvatar,
   Avatar,
   ListItemText,
-  Stack,
   Container,
+  CardContent,
+  Card,
 } from "../../../node_modules/@mui/material/index";
-import DeleteIcon from "@mui/icons-material/Delete";
 import scheduleDataDefault from "../../assets/schedule.json";
+import quotes from "../../assets/quotes.json";
+import PropTypes from "prop-types";
+import SwipeableViews from "react-swipeable-views";
+import { useTheme } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
-const colors = [
-  "red",
-  "purple",
-  "yellow",
-  "green",
-  "blue",
-  "orange",
-  "pink",
-  "brown",
-  "teal",
-  "gray",
-];
-
-// function getRandomColor() {
-//   const randomIndex = Math.floor(Math.random() * colors.length);
-//   return colors[randomIndex];
-// }
-function getRandomColor() {
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  const bgColor = colors[randomIndex];
-
+function getFontColor(color) {
   // Определите яркость фона
-  const r = parseInt(bgColor.slice(1, 3), 16);
-  const g = parseInt(bgColor.slice(3, 5), 16);
-  const b = parseInt(bgColor.slice(5, 7), 16);
+  const r = parseInt(color.slice(1, 3), 16);
+  const g = parseInt(color.slice(3, 5), 16);
+  const b = parseInt(color.slice(5, 7), 16);
 
   // Рассчитайте яркость на основе яркостей R, G и B
   const brightness = (r * 299 + g * 587 + b * 114) / 1000;
@@ -46,11 +32,56 @@ function getRandomColor() {
   // Выберите цвет текста в зависимости от яркости фона
   const textColor = brightness > 128 ? "black" : "white";
 
-  return { bgColor, textColor };
+  return textColor;
 }
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`full-width-tabpanel-${index}`}
+      aria-labelledby={`full-width-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
 
 export const TimeTable = () => {
   const [dense] = React.useState(false);
+
+  const weekLocalStorage = localStorage.getItem("week");
+  const colorsLocalStorage = localStorage.getItem("colors");
+  const disciplineLocalStorage = localStorage.getItem("discipline");
+
+  useEffect(() => {
+    !disciplineLocalStorage &&
+      localStorage.setItem(
+        "discipline",
+        JSON.stringify(scheduleDataDefault.discipline)
+      );
+    !colorsLocalStorage &&
+      localStorage.setItem(
+        "colors",
+        JSON.stringify(scheduleDataDefault.colors)
+      );
+    !weekLocalStorage &&
+      localStorage.setItem("week", JSON.stringify(scheduleDataDefault.week));
+  }, [disciplineLocalStorage, colorsLocalStorage, weekLocalStorage]);
 
   // Сохранение данных в локальное хранилище
   //   const saveDataToLocalStorage = (data) => {
@@ -63,15 +94,14 @@ export const TimeTable = () => {
   //     return data ? JSON.parse(data) : initialData;
   //   };
 
-  const [week, setWeek] = useState(
-    JSON.parse(localStorage.getItem("week")) || scheduleDataDefault.week
+  const [week] = useState(
+    JSON.parse(weekLocalStorage) || scheduleDataDefault.week
   );
-  const [colors, setColors] = useState(
-    JSON.parse(localStorage.getItem("colors")) || scheduleDataDefault.colors
+  const [colors] = useState(
+    JSON.parse(colorsLocalStorage) || scheduleDataDefault.colors
   );
-  const [discipline, setDiscipline] = useState(
-    JSON.parse(localStorage.getItem("discipline")) ||
-      scheduleDataDefault.discipline
+  const [discipline] = useState(
+    JSON.parse(disciplineLocalStorage) || scheduleDataDefault.discipline
   );
 
   const currentDate = new Date();
@@ -100,87 +130,127 @@ export const TimeTable = () => {
     return months[currentMonth];
   }
 
-  //   useEffect(() => {
-  //     localStorage.setItem("tasks", JSON.stringify(scheduleData.tasks));
-  //     localStorage.setItem("discipline", JSON.stringify(scheduleData.discipline));
-  //     localStorage.setItem("colors", JSON.stringify(scheduleData.colors));
-  //     localStorage.setItem("week", JSON.stringify(scheduleData.week));
-  //   }, []);
+  function a11yProps(index) {
+    return {
+      id: `full-width-tab-${index}`,
+      "aria-controls": `full-width-tabpanel-${index}`,
+    };
+  }
+
+  const theme = useTheme();
+  const [value, setValue] = React.useState(currentDayOfWeek - 1);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
+
+  // Function to select a random quote
+  function getRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+  }
+
+  // Call the function to get a random quote
+  const randomQuote = getRandomQuote();
+
+  const tabPanelContents = ["Luni", "Marti", "Miercuri", "Joi", "Vineri"];
+
   return (
-    <Container>
-      <Grid container>
-        <Grid item xs={6}>
-          <Typography variant="h5" component="h1" size="bold">
-            {currentDayOrder.day}
-          </Typography>
-        </Grid>
-        <Grid item xs={6}>
-          <Stack direction="row" justifyContent="center" alignItems="center">
-            <Typography variant="h6" component="h1" size="bold">
-              {currentDate.getDate()}
+    <Container
+      sx={{
+        background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
+        height: "100vh",
+      }}
+    >
+      <AppBar position="static">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          indicatorColor="secondary"
+          textColor="black"
+          variant="scrollable"
+          aria-label="full width tabs example"
+          sx={{ color: "black" }}
+        >
+          <Tab label="Luni" {...a11yProps(0)} />
+          <Tab label="Marti" {...a11yProps(1)} />
+          <Tab label="Miercuri" {...a11yProps(2)} />
+          <Tab label="Joi" {...a11yProps(3)} />
+          <Tab label="Vineri" {...a11yProps(4)} />
+        </Tabs>
+      </AppBar>
+      <SwipeableViews
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={value}
+        onChangeIndex={handleChangeIndex}
+      >
+        {tabPanelContents.map((day, index) => (
+          <TabPanel value={value} index={index} dir={theme.direction}>
+            <Typography variant="h5" component="h1" size="bold">
+              {day}
             </Typography>
-            <Typography variant="body1" component="p" size="bold">
-              {getMonthName(currentDate)}
-            </Typography>
-          </Stack>
-        </Grid>
-        <Grid item xs={12}>
-          <List dense={dense}>
-            {currentDayOrder &&
-              currentDayOrder?.lessons?.length > 0 &&
-              currentDayOrder.lessons?.map((item, i) => {
-                return (
-                  <ListItem
-                    key={i}
-                    //   secondaryAction={
-                    //     <IconButton edge="end" aria-label="delete">
-                    //       <DeleteIcon />
-                    //     </IconButton>
-                    //   }
-                    sx={{
-                      backgroundColor: colors[discipline[item.subject].bgColor],
-                      color: discipline[item.subject].textColor,
-                    }}
-                  >
-                    <ListItemAvatar>
-                      <Avatar
-                        sx={{
-                          color: "primary.main",
-                          backgroundColor: "white",
-                          fontWeight: "bold",
-                        }}
-                      >
-                        {i + 1}
-                      </Avatar>
-                    </ListItemAvatar>
-                    {/* <ListItemText
-                    sx={{ color: randomColor.textColor }}
-                    primary={`${item.time}/n12:00"`}
-                  />
-                  <ListItemText
-                    sx={{ color: randomColor.textColor }}
-                    primary={`${item.time}- 12:00"`}
-                    secondary={item.subject}
-                  /> */}
-                    {/* <ListItemText primary="Work" secondary="Jan 7, 2014" /> */}
-                    {item.timeStart}
-                    <br />
-                    {item.timeEnd}
-                    <ListItemText
-                      sx={{ my: 0, ml: 2 }}
-                      primary={discipline[item.subject].name}
-                      primaryTypographyProps={{
-                        fontSize: 20,
-                        fontWeight: "medium",
-                        letterSpacing: 0,
+            <List dense={dense}>
+              {currentDayOrder &&
+                currentDayOrder?.lessons?.length > 0 &&
+                currentDayOrder.lessons?.map((item, i) => {
+                  return (
+                    <ListItem
+                      key={i}
+                      sx={{
+                        backgroundColor:
+                          colors[discipline[item.subject].bgColor],
+                        color: getFontColor(
+                          colors[discipline[item.subject].bgColor]
+                        ),
+                        // color: discipline[item.subject].textColor,
                       }}
-                    />
-                  </ListItem>
-                );
-              })}
-          </List>
-        </Grid>
-      </Grid>
+                    >
+                      <ListItemAvatar>
+                        <Avatar
+                          sx={{
+                            color: "primary.main",
+                            backgroundColor: "white",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          {i + 1}
+                        </Avatar>
+                      </ListItemAvatar>
+                      {item.timeStart}
+                      <br />
+                      {item.timeEnd}
+                      <ListItemText
+                        sx={{ my: 0, ml: 2 }}
+                        primary={discipline[item.subject].name}
+                        primaryTypographyProps={{
+                          fontSize: 20,
+                          fontWeight: "medium",
+                          letterSpacing: 0,
+                        }}
+                      />
+                    </ListItem>
+                  );
+                })}
+            </List>
+          </TabPanel>
+        ))}
+      </SwipeableViews>
+      <Card>
+        <CardContent>
+          {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            Quote of the Day
+          </Typography> */}
+
+          <Typography variant="body2" fontWeight="bold" color="text.primary">
+            {randomQuote.quote}
+          </Typography>
+          <Typography color="text.secondary">{randomQuote.author}</Typography>
+        </CardContent>
+      </Card>
     </Container>
   );
 };

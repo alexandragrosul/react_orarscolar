@@ -78,7 +78,7 @@ const Wrapper = () => {
   return (
     <>
       <Header position={appBarPosition} />
-      <Box sx={{ height: "100vh" }}>{renderMainContent()}</Box>
+      <Box sx={{ height: "100vh", p: 0 }}>{renderMainContent()}</Box>
       <Footer onButtonClick={handleClickOpen} />
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Adauga</DialogTitle>

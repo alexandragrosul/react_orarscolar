@@ -19,7 +19,7 @@
     "3": {
       "id": 3,
       "name": "Math",
-      "bgColor": "yellow",
+      "bgColor": "darkBlue",
       "textColor": "black"
     },
     "4": {
@@ -37,7 +37,8 @@
     "lighGreen": "#2accbc",
     "lightBlie": "#44abf1",
     "blue": "##4c7ced",
-    "violet": "#a55fea"
+    "violet": "#a55fea",
+    "darkBlue": "#0f1392"
   },
   "week": [
     {

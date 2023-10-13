@@ -28,7 +28,7 @@ export const TasksList = () => {
     setChecked(newChecked);
   };
 
-  const [tasks, setTasks] = React.useState(
+  const [tasks] = React.useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
 
