@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Grid,
   Typography,
@@ -9,8 +9,10 @@ import {
   Avatar,
   ListItemText,
   Stack,
+  Container,
 } from "../../../node_modules/@mui/material/index";
 import DeleteIcon from "@mui/icons-material/Delete";
+import scheduleDataDefault from "../../assets/schedule.json";
 
 const colors = [
   "red",
@@ -61,70 +63,21 @@ export const TimeTable = () => {
   //     return data ? JSON.parse(data) : initialData;
   //   };
 
-  const initialData = {
-    week: [
-      {
-        day: "Monday",
-        lessons: [
-          { time: "09:00", subject: "Science", tasks: [1, 2] },
-          { time: "10:00", subject: "Math", tasks: [3, 4] },
-          { time: "11:00", subject: "English", tasks: [5, 6] },
-          { time: "12:00", subject: "History", tasks: [7, 8] },
-          { time: "01:00", subject: "Lunch", tasks: [] }, // Обед
-          { time: "02:00", subject: "Physics", tasks: [9, 10] },
-        ],
-      },
-      {
-        day: "Tuesday",
-        lessons: [
-          { time: "09:00", subject: "Science", tasks: [1, 2] },
-          { time: "10:00", subject: "Math", tasks: [3, 4] },
-          { time: "11:00", subject: "English", tasks: [5, 6] },
-          { time: "12:00", subject: "History", tasks: [7, 8] },
-          { time: "01:00", subject: "Lunch", tasks: [] }, // Обед
-          { time: "02:00", subject: "Physics", tasks: [9, 10] },
-        ],
-      },
-      {
-        day: "Wednesday",
-        lessons: [
-          { time: "09:00", subject: "Science", tasks: [1, 2] },
-          { time: "10:00", subject: "Math", tasks: [3, 4] },
-          { time: "11:00", subject: "English", tasks: [5, 6] },
-          { time: "12:00", subject: "History", tasks: [7, 8] },
-          { time: "01:00", subject: "Lunch", tasks: [] }, // Обед
-          { time: "02:00", subject: "Physics", tasks: [9, 10] },
-        ],
-      },
-      {
-        day: "Thursday",
-        lessons: [
-          { time: "09:00", subject: "Science", tasks: [1, 2] },
-          { time: "10:00", subject: "Math", tasks: [3, 4] },
-          { time: "11:00", subject: "English", tasks: [5, 6] },
-          { time: "12:00", subject: "History", tasks: [7, 8] },
-          { time: "01:00", subject: "Lunch", tasks: [] }, // Обед
-          { time: "02:00", subject: "Physics", tasks: [9, 10] },
-        ],
-      },
-      {
-        day: "Friday",
-        lessons: [
-          { time: "09:00", subject: "Science", tasks: [1, 2] },
-          { time: "10:00", subject: "Math", tasks: [3, 4] },
-          { time: "11:00", subject: "English", tasks: [5, 6] },
-          { time: "12:00", subject: "History", tasks: [7, 8] },
-          { time: "01:00", subject: "Lunch", tasks: [] }, // Обед
-          { time: "02:00", subject: "Physics", tasks: [9, 10] },
-        ],
-      },
-    ],
-  };
+  const [week, setWeek] = useState(
+    JSON.parse(localStorage.getItem("week")) || scheduleDataDefault.week
+  );
+  const [colors, setColors] = useState(
+    JSON.parse(localStorage.getItem("colors")) || scheduleDataDefault.colors
+  );
+  const [discipline, setDiscipline] = useState(
+    JSON.parse(localStorage.getItem("discipline")) ||
+      scheduleDataDefault.discipline
+  );
 
   const currentDate = new Date();
   const currentDayOfWeek = currentDate.getDay(); // Возвращает номер дня недели (0 - воскресенье, 1 - понедельник, и так далее)
 
-  const currentDayOrder = initialData.week[currentDayOfWeek];
+  const currentDayOrder = week.length ? week[currentDayOfWeek - 1] : null;
 
   function getMonthName(date) {
     const months = [
@@ -147,43 +100,60 @@ export const TimeTable = () => {
     return months[currentMonth];
   }
 
+  //   useEffect(() => {
+  //     localStorage.setItem("tasks", JSON.stringify(scheduleData.tasks));
+  //     localStorage.setItem("discipline", JSON.stringify(scheduleData.discipline));
+  //     localStorage.setItem("colors", JSON.stringify(scheduleData.colors));
+  //     localStorage.setItem("week", JSON.stringify(scheduleData.week));
+  //   }, []);
   return (
-    <Grid container xs={12} md={6} pt={4}>
-      <Grid item xs={6}>
-        <Typography variant="h5" component="h1" size="bold">
-          {currentDayOrder.day}
-        </Typography>
-      </Grid>
-      <Grid item xs={6}>
-        <Stack direction="row" justifyContent="center" alignItems="center">
-          <Typography variant="h6" component="h1" size="bold">
-            {currentDate.getDate()}
+    <Container>
+      <Grid container>
+        <Grid item xs={6}>
+          <Typography variant="h5" component="h1" size="bold">
+            {currentDayOrder.day}
           </Typography>
-          <Typography variant="body1" component="p" size="bold">
-            {getMonthName(currentDate)}
-          </Typography>
-        </Stack>
-      </Grid>
-      <Grid item xs={12}>
-        <List dense={dense}>
-          {currentDayOrder.lessons.length > 0 &&
-            currentDayOrder.lessons?.map((item, i) => {
-              return (
-                <ListItem
-                  key={i}
-                  secondaryAction={
-                    <IconButton edge="end" aria-label="delete">
-                      <DeleteIcon />
-                    </IconButton>
-                  }
-                  sx={{
-                    backgroundColor: getRandomColor().bgColor,
-                  }}
-                >
-                  <ListItemAvatar>
-                    <Avatar>{i + 1}</Avatar>
-                  </ListItemAvatar>
-                  {/* <ListItemText
+        </Grid>
+        <Grid item xs={6}>
+          <Stack direction="row" justifyContent="center" alignItems="center">
+            <Typography variant="h6" component="h1" size="bold">
+              {currentDate.getDate()}
+            </Typography>
+            <Typography variant="body1" component="p" size="bold">
+              {getMonthName(currentDate)}
+            </Typography>
+          </Stack>
+        </Grid>
+        <Grid item xs={12}>
+          <List dense={dense}>
+            {currentDayOrder &&
+              currentDayOrder?.lessons?.length > 0 &&
+              currentDayOrder.lessons?.map((item, i) => {
+                return (
+                  <ListItem
+                    key={i}
+                    //   secondaryAction={
+                    //     <IconButton edge="end" aria-label="delete">
+                    //       <DeleteIcon />
+                    //     </IconButton>
+                    //   }
+                    sx={{
+                      backgroundColor: colors[discipline[item.subject].bgColor],
+                      color: discipline[item.subject].textColor,
+                    }}
+                  >
+                    <ListItemAvatar>
+                      <Avatar
+                        sx={{
+                          color: "primary.main",
+                          backgroundColor: "white",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {i + 1}
+                      </Avatar>
+                    </ListItemAvatar>
+                    {/* <ListItemText
                     sx={{ color: randomColor.textColor }}
                     primary={`${item.time}/n12:00"`}
                   />
@@ -192,24 +162,25 @@ export const TimeTable = () => {
                     primary={`${item.time}- 12:00"`}
                     secondary={item.subject}
                   /> */}
-                  {/* <ListItemText primary="Work" secondary="Jan 7, 2014" /> */}
-                  {item.time}
-                  <br />
-                  {item.time}
-                  <ListItemText
-                    sx={{ my: 0, ml: 2 }}
-                    primary={item.subject}
-                    primaryTypographyProps={{
-                      fontSize: 20,
-                      fontWeight: "medium",
-                      letterSpacing: 0,
-                    }}
-                  />
-                </ListItem>
-              );
-            })}
-        </List>
+                    {/* <ListItemText primary="Work" secondary="Jan 7, 2014" /> */}
+                    {item.timeStart}
+                    <br />
+                    {item.timeEnd}
+                    <ListItemText
+                      sx={{ my: 0, ml: 2 }}
+                      primary={discipline[item.subject].name}
+                      primaryTypographyProps={{
+                        fontSize: 20,
+                        fontWeight: "medium",
+                        letterSpacing: 0,
+                      }}
+                    />
+                  </ListItem>
+                );
+              })}
+          </List>
+        </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 };

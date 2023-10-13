@@ -2,10 +2,10 @@ import React from "react";
 import TopBar from "./TopBar";
 import { Container } from "@mui/material";
 
-function Header() {
+function Header({ position }) {
   return (
     <Container>
-      <TopBar />
+      <TopBar position={position} />
     </Container>
   );
 }

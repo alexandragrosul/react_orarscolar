@@ -1,0 +1,249 @@
+{
+  "tasks": [
+    { "id": 1, "name": "test", "status": 0, "discipline": 1 },
+    { "id": 2, "name": "test", "status": 0, "discipline": 2 }
+  ],
+  "discipline": {
+    "1": {
+      "id": 1,
+      "name": "English",
+      "bgColor": "pink",
+      "textColor": "white"
+    },
+    "2": {
+      "id": 2,
+      "name": "History",
+      "bgColor": "green",
+      "textColor": "black"
+    },
+    "3": {
+      "id": 3,
+      "name": "Math",
+      "bgColor": "yellow",
+      "textColor": "black"
+    },
+    "4": {
+      "id": 4,
+      "name": "Physics",
+      "bgColor": "violet",
+      "textColor": "white"
+    }
+  },
+  "colors": {
+    "pink": "#fd5b67",
+    "orange": "#fe9745",
+    "yellow": "#fed230",
+    "green": "#26dd82",
+    "lighGreen": "#2accbc",
+    "lightBlie": "#44abf1",
+    "blue": "##4c7ced",
+    "violet": "#a55fea"
+  },
+  "week": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "timeStart": "09:00",
+          "timeEnd": "09:45",
+          "subject": 2,
+          "tasks": [1, 2]
+        },
+        {
+          "timeStart": "10:00",
+          "timeEnd": "10:45",
+          "subject": 3,
+          "tasks": [3, 4]
+        },
+        {
+          "timeStart": "11:00",
+          "timeEnd": "11:45",
+          "subject": 1,
+          "tasks": [5, 6]
+        },
+        {
+          "timeStart": "12:00",
+          "timeEnd": "12:45",
+          "subject": 2,
+          "tasks": [7, 8]
+        },
+        {
+          "timeStart": "01:00",
+          "timeEnd": "01:45",
+          "subject": 3,
+          "tasks": []
+        },
+        {
+          "timeStart": "02:00",
+          "timeEnd": "02:45",
+          "subject": 4,
+          "tasks": [9, 10]
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "timeStart": "09:00",
+          "timeEnd": "09:45",
+          "subject": 1,
+          "tasks": [1, 2]
+        },
+        {
+          "timeStart": "10:00",
+          "timeEnd": "10:45",
+          "subject": 3,
+          "tasks": [3, 4]
+        },
+        {
+          "timeStart": "11:00",
+          "timeEnd": "11:45",
+          "subject": 1,
+          "tasks": [5, 6]
+        },
+        {
+          "timeStart": "12:00",
+          "timeEnd": "12:45",
+          "subject": 2,
+          "tasks": [7, 8]
+        },
+        {
+          "timeStart": "01:00",
+          "timeEnd": "01:45",
+          "subject": 3,
+          "tasks": []
+        },
+        {
+          "timeStart": "02:00",
+          "timeEnd": "02:45",
+          "subject": 4,
+          "tasks": [9, 10]
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "timeStart": "09:00",
+          "timeEnd": "09:45",
+          "subject": 1,
+          "tasks": [1, 2]
+        },
+        {
+          "timeStart": "10:00",
+          "timeEnd": "10:45",
+          "subject": 3,
+          "tasks": [3, 4]
+        },
+        {
+          "timeStart": "11:00",
+          "timeEnd": "11:45",
+          "subject": 1,
+          "tasks": [5, 6]
+        },
+        {
+          "timeStart": "12:00",
+          "timeEnd": "12:45",
+          "subject": 2,
+          "tasks": [7, 8]
+        },
+        {
+          "timeStart": "01:00",
+          "timeEnd": "01:45",
+          "subject": 3,
+          "tasks": []
+        },
+        {
+          "timeStart": "02:00",
+          "timeEnd": "02:45",
+          "subject": 4,
+          "tasks": [9, 10]
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "timeStart": "09:00",
+          "timeEnd": "09:45",
+          "subject": 1,
+          "tasks": [1, 2]
+        },
+        {
+          "timeStart": "10:00",
+          "timeEnd": "10:45",
+          "subject": 3,
+          "tasks": [3, 4]
+        },
+        {
+          "timeStart": "11:00",
+          "timeEnd": "11:45",
+          "subject": 1,
+          "tasks": [5, 6]
+        },
+        {
+          "timeStart": "12:00",
+          "timeEnd": "12:45",
+          "subject": 2,
+          "tasks": [7, 8]
+        },
+        {
+          "timeStart": "01:00",
+          "timeEnd": "01:45",
+          "subject": 3,
+          "tasks": []
+        },
+        {
+          "timeStart": "02:00",
+          "timeEnd": "02:45",
+          "subject": 4,
+          "tasks": [9, 10]
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "timeStart": "09:00",
+          "timeEnd": "09:45",
+          "subject": 1,
+          "tasks": [1, 2]
+        },
+        {
+          "timeStart": "10:00",
+          "timeEnd": "10:45",
+          "subject": 3,
+          "tasks": [3, 4]
+        },
+        {
+          "timeStart": "11:00",
+          "timeEnd": "11:45",
+          "subject": 1,
+          "tasks": [5, 6]
+        },
+        {
+          "timeStart": "12:00",
+          "timeEnd": "12:45",
+          "subject": 2,
+          "tasks": [7, 8]
+        },
+        {
+          "timeStart": "01:00",
+          "timeEnd": "01:45",
+          "subject": 3,
+          "tasks": []
+        },
+        {
+          "timeStart": "02:00",
+          "timeEnd": "02:45",
+          "subject": 4,
+          "tasks": [9, 10]
+        }
+      ]
+    }
+  ]
+}

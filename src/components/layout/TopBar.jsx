@@ -23,18 +23,22 @@ const pages = [
   { label: "Evenimente", link: "/events" },
 ];
 
-function TopBar() {
+function TopBar({ position }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
   const handleCloseNavMenu = () => setAnchorElNav(null);
-
+  console.log({ position });
   return (
     <AppBar
-      position="fixed"
-      sx={{ backgroundColor: "white", boxShadow: "none", pb: 1 }}
+      position={position}
+      sx={{
+        backgroundColor: "white",
+        boxShadow: "none",
+        pb: 1,
+      }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ px: position === "fixed" ? 2 : 0 }}>
         <Toolbar disableGutters>
           <Link to="/">
             <img src={lightLogo} alt="logo" className="img-logo" />

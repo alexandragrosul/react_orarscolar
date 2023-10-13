@@ -18,6 +18,7 @@ import { TasksList } from "./tasks/TasksList";
 const Wrapper = () => {
   const [open, setOpen] = React.useState(false);
   const [dialogType, setDialogType] = React.useState(null);
+  const [appBarPosition, setAppBarPosition] = React.useState("fixed");
 
   const handleClickOpen = (type) => {
     setDialogType(type === dialogType ? null : type);
@@ -29,7 +30,6 @@ const Wrapper = () => {
   };
 
   const renderMainContent = () => {
-    console.count("ren");
     switch (dialogType) {
       case "schedule":
         return <TimeTable />;
@@ -39,6 +39,14 @@ const Wrapper = () => {
         return <Outlet />;
     }
   };
+
+  React.useEffect(() => {
+    if (dialogType === "schedule" || dialogType === "tasks") {
+      setAppBarPosition("sticky");
+    } else {
+      setAppBarPosition("fixed");
+    }
+  }, [dialogType]);
 
   const renderDialogContent = () => {
     switch (dialogType) {
@@ -69,8 +77,8 @@ const Wrapper = () => {
 
   return (
     <>
-      <Header />
-      <Box sx={{ height: "100vh", mt: 5 }}>{renderMainContent()}</Box>
+      <Header position={appBarPosition} />
+      <Box sx={{ height: "100vh" }}>{renderMainContent()}</Box>
       <Footer onButtonClick={handleClickOpen} />
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Adauga</DialogTitle>

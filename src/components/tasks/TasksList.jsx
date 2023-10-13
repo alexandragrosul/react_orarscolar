@@ -8,8 +8,9 @@ import {
   ListItemIcon,
   Checkbox,
   ListItemText,
+  Container,
 } from "../../../node_modules/@mui/material/index";
-import CommentIcon from "@mui/icons-material/Comment";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export const TasksList = () => {
   const [checked, setChecked] = React.useState([0]);
@@ -26,40 +27,62 @@ export const TasksList = () => {
 
     setChecked(newChecked);
   };
-  return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
 
-        return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton
-              role={undefined}
-              onClick={handleToggle(value)}
-              dense
+  const [tasks, setTasks] = React.useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
+
+  //   window.addEventListener("storage", (e) => {
+  //     if (e.key === "tasks") {
+  //       // Обработайте изменение данных, если необходимо
+  //       setTasks(JSON.parse(localStorage.getItem("tasks")));
+  //     }
+  //   });
+
+  //   React.useEffect(() => {
+  //     // Обновите данные в localStorage при изменении состояния
+  //     localStorage.setItem("tasks", tasks);
+  //   }, [tasks]);
+
+  return (
+    <Container>
+      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        {tasks.map((value) => {
+          const labelId = `checkbox-list-label-${value}`;
+
+          return (
+            <ListItem
+              key={value}
+              secondaryAction={
+                <IconButton edge="end" aria-label="delete">
+                  <DeleteIcon />
+                </IconButton>
+              }
+              disablePadding
             >
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ "aria-labelledby": labelId }}
+              <ListItemButton
+                role={undefined}
+                onClick={handleToggle(value)}
+                dense
+              >
+                <ListItemIcon>
+                  <Checkbox
+                    edge="start"
+                    checked={value.status}
+                    tabIndex={-1}
+                    disableRipple
+                    inputProps={{ "aria-labelledby": labelId }}
+                  />
+                </ListItemIcon>
+                <ListItemText
+                  id={labelId}
+                  primary={`Line item ${value.name}`}
                 />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            </ListItemButton>
-          </ListItem>
-        );
-      })}
-    </List>
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
+      </List>
+    </Container>
   );
 };
