@@ -32,18 +32,17 @@ export const TasksList = () => {
     JSON.parse(localStorage.getItem("tasks")) || []
   );
 
-  window.addEventListener("storage", (e) => {
-    if (e.key === "tasks") {
-      // Обработайте изменение данных, если необходимо
-      setTasks(JSON.parse(localStorage.getItem("tasks")));
-    }
-  });
+  // window.addEventListener("storage", (e) => {
+  //   if (e.key === "tasks") {
+  //     // Обработайте изменение данных, если необходимо
+  //     setTasks(JSON.parse(localStorage.getItem("tasks")));
+  //   }
+  // });
 
   //   React.useEffect(() => {
   //     // Обновите данные в localStorage при изменении состояния
   //     localStorage.setItem("tasks", tasks);
   //   }, [tasks]);
-
   return (
     <Container
       sx={{

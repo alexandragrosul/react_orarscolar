@@ -30,7 +30,7 @@ const StyledFab = styled(Fab)({
 
 function Footer({ onButtonClick, selected }) {
   const [open, setOpen] = React.useState(false);
-
+  const [taskName, setTaskName] = React.useState("");
   // const handleClickOpen = () => {
   //   onButtonClick("schedule");
   // };
@@ -47,7 +47,17 @@ function Footer({ onButtonClick, selected }) {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const saveTask = () => {
+    const existingTasks = JSON.parse(localStorage.getItem("tasks"));
+    const payLoad = { name: taskName, id: 4, status: 0 };
+    if (existingTasks) {
+      existingTasks.push(payLoad);
+      localStorage.setItem("tasks", JSON.stringify(existingTasks));
+    } else {
+      localStorage.setItem("tasks", JSON.stringify([payLoad]));
+    }
+    setTaskName("");
+  };
   return (
     <Container sx={{ boxSizing: "unset", px: 0 }}>
       <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
@@ -80,10 +90,14 @@ function Footer({ onButtonClick, selected }) {
               type="text"
               fullWidth
               variant="standard"
+              value={taskName}
+              onChange={(event) => {
+                setTaskName(event.target.value);
+              }}
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Save</Button>
+            <Button onClick={saveTask}>Save</Button>
             <Button onClick={handleClose}>Cancel</Button>
           </DialogActions>
         </Dialog>

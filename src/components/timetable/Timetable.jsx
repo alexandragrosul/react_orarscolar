@@ -106,7 +106,7 @@ export const TimeTable = () => {
 
   const currentDate = new Date();
   const currentDayOfWeek = currentDate.getDay(); // Возвращает номер дня недели (0 - воскресенье, 1 - понедельник, и так далее)
-  const [value, setValue] = React.useState(currentDayOfWeek - 1);
+  const [value, setValue] = React.useState(currentDayOfWeek);
 
   const currentDayOrder = week.length ? week[value] : null;
   function getMonthName(date) {
