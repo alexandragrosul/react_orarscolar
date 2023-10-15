@@ -28,16 +28,16 @@ export const TasksList = () => {
     setChecked(newChecked);
   };
 
-  const [tasks] = React.useState(
+  const [tasks, setTasks] = React.useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
 
-  //   window.addEventListener("storage", (e) => {
-  //     if (e.key === "tasks") {
-  //       // Обработайте изменение данных, если необходимо
-  //       setTasks(JSON.parse(localStorage.getItem("tasks")));
-  //     }
-  //   });
+  window.addEventListener("storage", (e) => {
+    if (e.key === "tasks") {
+      // Обработайте изменение данных, если необходимо
+      setTasks(JSON.parse(localStorage.getItem("tasks")));
+    }
+  });
 
   //   React.useEffect(() => {
   //     // Обновите данные в localStorage при изменении состояния
@@ -45,7 +45,12 @@ export const TasksList = () => {
   //   }, [tasks]);
 
   return (
-    <Container>
+    <Container
+      sx={{
+        background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
+        height: "100vh",
+      }}
+    >
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         {tasks.map((value) => {
           const labelId = `checkbox-list-label-${value}`;
@@ -54,7 +59,7 @@ export const TasksList = () => {
             <ListItem
               key={value}
               secondaryAction={
-                <IconButton edge="end" aria-label="delete">
+                <IconButton edge="end" aria-label="delete" color="secondary">
                   <DeleteIcon />
                 </IconButton>
               }

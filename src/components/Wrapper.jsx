@@ -14,14 +14,17 @@ import {
 } from "../../node_modules/@mui/material/index";
 import { TimeTable } from "./timetable/Timetable";
 import { TasksList } from "./tasks/TasksList";
+import { useLocation } from "react-router-dom";
 
 const Wrapper = () => {
   const [open, setOpen] = React.useState(false);
-  const [dialogType, setDialogType] = React.useState(null);
+  const location = useLocation();
+  const [pageType, setPageType] = React.useState(null);
   const [appBarPosition, setAppBarPosition] = React.useState("fixed");
+  const [footerMenuSelected, setFooterMenuSelected] = React.useState(null);
 
   const handleClickOpen = (type) => {
-    setDialogType(type === dialogType ? null : type);
+    setPageType(type === pageType ? null : type);
     // setOpen(true);
   };
 
@@ -30,7 +33,7 @@ const Wrapper = () => {
   };
 
   const renderMainContent = () => {
-    switch (dialogType) {
+    switch (pageType) {
       case "schedule":
         return <TimeTable />;
       case "tasks":
@@ -41,15 +44,16 @@ const Wrapper = () => {
   };
 
   React.useEffect(() => {
-    if (dialogType === "schedule" || dialogType === "tasks") {
+    if (pageType === "schedule" || pageType === "tasks") {
       setAppBarPosition("sticky");
     } else {
       setAppBarPosition("fixed");
     }
-  }, [dialogType]);
+    setFooterMenuSelected(pageType);
+  }, [pageType]);
 
   const renderDialogContent = () => {
-    switch (dialogType) {
+    switch (pageType) {
       case "schedule":
         return <TimeTable />;
       case "tasks":
@@ -75,11 +79,20 @@ const Wrapper = () => {
     }
   };
 
+  React.useEffect(() => {
+    // Code to execute when the route changes
+    console.log("Current location:", location.pathname);
+    setPageType(null);
+
+    // You can also use the history object to navigate programmatically
+    // For example, you can use history.push('/new-route') to navigate to a different route
+  }, [location.pathname]);
+
   return (
     <>
       <Header position={appBarPosition} />
       <Box sx={{ height: "100vh", p: 0 }}>{renderMainContent()}</Box>
-      <Footer onButtonClick={handleClickOpen} />
+      <Footer onButtonClick={handleClickOpen} selected={footerMenuSelected} />
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Adauga</DialogTitle>
         {renderDialogContent()}

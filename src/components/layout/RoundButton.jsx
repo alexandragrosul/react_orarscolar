@@ -7,6 +7,7 @@ const RoundButton = ({
   startIcon = undefined,
   type = "button",
   onClick = () => {},
+  color = "secondary.main",
 }) => {
   return (
     <Button
@@ -17,7 +18,7 @@ const RoundButton = ({
       style={{
         ...style,
         borderRadius: "100px",
-        backgroundColor: "primary.main",
+        backgroundColor: color,
       }}
       onClick={onClick}
     >

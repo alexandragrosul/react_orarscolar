@@ -245,6 +245,28 @@
           "tasks": [9, 10]
         }
       ]
+    },
+    {
+      "day": "Sataday",
+      "lessons": [
+        {
+          "timeStart": "09:00",
+          "timeEnd": "09:45",
+          "subject": 1,
+          "tasks": [1, 2]
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "timeStart": "09:00",
+          "timeEnd": "09:45",
+          "subject": 1,
+          "tasks": [1, 2]
+        }
+      ]
     }
   ]
 }

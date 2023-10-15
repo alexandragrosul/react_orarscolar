@@ -6,6 +6,8 @@ export const appTheme = createTheme({
     primary: {
       main: "#59A96A",
     },
-    secondary: pink,
+    secondary: {
+      main: "#FB8136",
+    },
   },
 });

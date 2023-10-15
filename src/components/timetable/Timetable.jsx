@@ -106,9 +106,9 @@ export const TimeTable = () => {
 
   const currentDate = new Date();
   const currentDayOfWeek = currentDate.getDay(); // Возвращает номер дня недели (0 - воскресенье, 1 - понедельник, и так далее)
+  const [value, setValue] = React.useState(currentDayOfWeek - 1);
 
-  const currentDayOrder = week.length ? week[currentDayOfWeek - 1] : null;
-
+  const currentDayOrder = week.length ? week[value] : null;
   function getMonthName(date) {
     const months = [
       "January",
@@ -138,7 +138,26 @@ export const TimeTable = () => {
   }
 
   const theme = useTheme();
-  const [value, setValue] = React.useState(currentDayOfWeek - 1);
+  const onlyWorkingDay = (day) => {
+    switch (day) {
+      case 0:
+        return 1;
+      case 1:
+        return 1;
+      case 2:
+        return 2;
+      case 3:
+        return 3;
+      case 4:
+        return 4;
+      case 5:
+        return 5;
+      case 6:
+        return 1;
+      default:
+        return 1;
+    }
+  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -157,7 +176,15 @@ export const TimeTable = () => {
   // Call the function to get a random quote
   const randomQuote = getRandomQuote();
 
-  const tabPanelContents = ["Luni", "Marti", "Miercuri", "Joi", "Vineri"];
+  const tabPanelContents = [
+    "Luni",
+    "Marti",
+    "Miercuri",
+    "Joi",
+    "Vineri",
+    "Sambata",
+    "Duminica",
+  ];
 
   return (
     <Container
@@ -171,7 +198,7 @@ export const TimeTable = () => {
           value={value}
           onChange={handleChange}
           indicatorColor="secondary"
-          textColor="black"
+          textColor="secondary"
           variant="scrollable"
           aria-label="full width tabs example"
           sx={{ color: "black" }}
@@ -181,6 +208,8 @@ export const TimeTable = () => {
           <Tab label="Miercuri" {...a11yProps(2)} />
           <Tab label="Joi" {...a11yProps(3)} />
           <Tab label="Vineri" {...a11yProps(4)} />
+          <Tab label="Sambata" {...a11yProps(5)} />
+          <Tab label="Duminica" {...a11yProps(6)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -188,15 +217,26 @@ export const TimeTable = () => {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        {tabPanelContents.map((day, index) => (
-          <TabPanel value={value} index={index} dir={theme.direction}>
-            <Typography variant="h5" component="h1" size="bold">
+        {tabPanelContents?.map((day, index) => (
+          <TabPanel
+            value={value}
+            index={index}
+            dir={theme.direction}
+            key={index}
+          >
+            {/* <Typography variant="h5" component={div} size="bold"> */}
+            {day}
+            {/* </Typography> */}
+            {/* <Typography
+              sx={{ fontSize: 14 }}
+              color="text.secondary"
+              gutterBottom
+            >
               {day}
-            </Typography>
-            <List dense={dense}>
-              {currentDayOrder &&
-                currentDayOrder?.lessons?.length > 0 &&
-                currentDayOrder.lessons?.map((item, i) => {
+            </Typography> */}
+            {currentDayOrder && currentDayOrder?.lessons?.length > 0 && (
+              <List dense={dense}>
+                {currentDayOrder.lessons?.map((item, i) => {
                   return (
                     <ListItem
                       key={i}
@@ -235,7 +275,8 @@ export const TimeTable = () => {
                     </ListItem>
                   );
                 })}
-            </List>
+              </List>
+            )}
           </TabPanel>
         ))}
       </SwipeableViews>

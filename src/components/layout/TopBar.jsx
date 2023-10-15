@@ -17,10 +17,11 @@ import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import RoundButton from "./RoundButton";
 
 const pages = [
-  { label: "Home", link: "/" },
+  { label: "Acasa", link: "/" },
   { label: "Scoli", link: "/schools" },
   { label: "Repetitori", link: "/repetitori" },
   { label: "Evenimente", link: "/events" },
+  { label: "Contacte", link: "/contacts" },
 ];
 
 function TopBar({ position }) {
@@ -56,10 +57,10 @@ function TopBar({ position }) {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="primary.main"
               sx={{
-                color: "black",
-                "&:hover": { color: "black" },
+                color: "primary.main",
+                "&:hover": { color: "secondary.main" },
               }}
             >
               <MenuIcon />

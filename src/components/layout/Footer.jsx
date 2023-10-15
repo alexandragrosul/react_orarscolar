@@ -3,6 +3,7 @@ import {
   AppBar,
   Box,
   Button,
+  Container,
   Dialog,
   DialogActions,
   DialogContent,
@@ -27,7 +28,7 @@ const StyledFab = styled(Fab)({
   margin: "0 auto",
 });
 
-function Footer({ onButtonClick }) {
+function Footer({ onButtonClick, selected }) {
   const [open, setOpen] = React.useState(false);
 
   // const handleClickOpen = () => {
@@ -37,7 +38,7 @@ function Footer({ onButtonClick }) {
   const handleClickOpen = onButtonClick.bind(null, "schedule");
 
   const handleClickAddTaskOpen = () => {
-    onButtonClick("addTask");
+    setOpen(true);
   };
   const handleClickTasskOpen = () => {
     onButtonClick("tasks");
@@ -48,44 +49,46 @@ function Footer({ onButtonClick }) {
   };
 
   return (
-    <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
-      <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={handleClickOpen}
-        >
-          <ViewListIcon />
-        </IconButton>
-        <StyledFab color="secondary" aria-label="add">
-          <AddIcon onClick={handleClickAddTaskOpen} />
-        </StyledFab>
-        <Box sx={{ flexGrow: 1 }} />
-        <IconButton color="inherit">
-          <PlaylistAddCheckIcon onClick={handleClickTasskOpen} />
-        </IconButton>
-      </Toolbar>
+    <Container sx={{ boxSizing: "unset", px: 0 }}>
+      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
+        <Toolbar>
+          <IconButton
+            color={selected === "schedule" ? "secondary" : "black"}
+            aria-label="open drawer"
+            onClick={handleClickOpen}
+          >
+            <ViewListIcon />
+          </IconButton>
+          <StyledFab color="secondary" aria-label="add">
+            <AddIcon onClick={handleClickAddTaskOpen} />
+          </StyledFab>
+          <Box sx={{ flexGrow: 1 }} />
+          <IconButton color={selected === "tasks" ? "secondary" : "black"}>
+            <PlaylistAddCheckIcon onClick={handleClickTasskOpen} />
+          </IconButton>
+        </Toolbar>
 
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Add the task</DialogTitle>
-        <DialogContent>
-          <DialogContentText>Add the task for homework</DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Save</Button>
-          <Button onClick={handleClose}>Cancel</Button>
-        </DialogActions>
-      </Dialog>
-    </AppBar>
+        <Dialog open={open} onClose={handleClose}>
+          <DialogTitle>Add the task</DialogTitle>
+          <DialogContent>
+            <DialogContentText>Add the task for homework</DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="task_name"
+              label="Denumirea taskului"
+              type="text"
+              fullWidth
+              variant="standard"
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Save</Button>
+            <Button onClick={handleClose}>Cancel</Button>
+          </DialogActions>
+        </Dialog>
+      </AppBar>
+    </Container>
   );
 }
 

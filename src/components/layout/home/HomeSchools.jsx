@@ -65,6 +65,7 @@ export default function HomeSchools() {
             <Link to={"/schools/add"}>
               <RoundButton
                 name="Adauga scoala"
+                color="#FB8136"
                 style={{ color: "white", mr: 2, alignItems: "center" }}
               />
             </Link>
