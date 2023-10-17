@@ -14,28 +14,12 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export const TasksList = () => {
-  const [checked, setChecked] = React.useState([0]);
-
-  //   const handleToggle = (value) => () => {
-  //     const currentIndex = checked.indexOf(value);
-  //     const newChecked = [...checked];
-
-  //     if (currentIndex === -1) {
-  //       newChecked.push(value);
-  //     } else {
-  //       newChecked.splice(currentIndex, 1);
-  //     }
-
-  //     setChecked(newChecked);
-  //   };
-
   const [tasks, setTasks] = React.useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
 
   const handleToggle = (taskId) => () => {
     const restTasks = [];
-    let currentTask = null;
     tasks.forEach((element) => {
       if (element.id === taskId) {
         restTasks.push({ ...element, status: !element.status });
