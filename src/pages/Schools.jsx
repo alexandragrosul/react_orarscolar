@@ -138,7 +138,7 @@ const Schools = () => {
 
       <Grid container spacing={2} sx={{ marginTop: 2 }}>
         {filteredSchools.map((school, index) => (
-          <Grid item xs={12} sm={6} lg={4} key={index}>
+          <Grid item xs={12} md={6} key={index}>
             <School school={school} key={school.id} />
           </Grid>
         ))}
