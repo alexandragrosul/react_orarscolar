@@ -91,7 +91,11 @@ const Wrapper = () => {
   return (
     <>
       <Header position={appBarPosition} />
-      <Box sx={{ height: "100vh", p: 0 }}>{renderMainContent()}</Box>
+      <Box
+        sx={{ height: "100vh", p: 0, pt: appBarPosition === "fixed" ? 6 : 0 }}
+      >
+        {renderMainContent()}
+      </Box>
       <Footer onButtonClick={handleClickOpen} selected={footerMenuSelected} />
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Adauga</DialogTitle>

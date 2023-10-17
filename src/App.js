@@ -16,6 +16,8 @@ import { ThemeProvider } from "@mui/material";
 import { appTheme } from "./theme/theme";
 import Events from "./pages/Events";
 import SchoolAdd from "./pages/SchoolAdd";
+import Contacts from "./pages/Contacts";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </ThemeProvider>

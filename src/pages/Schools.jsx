@@ -67,11 +67,7 @@ const Schools = () => {
   };
 
   return (
-    <Container
-      sx={{
-        padding: "20px 0",
-      }}
-    >
+    <Container>
       <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
         Scoli
       </h1>
