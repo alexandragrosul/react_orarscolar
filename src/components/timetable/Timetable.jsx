@@ -110,26 +110,26 @@ export const TimeTable = () => {
   const [value, setValue] = React.useState(currentDayOfWeek);
 
   const currentDayOrder = week.length ? week[value] : null;
-  function getMonthName(date) {
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
+  //   function getMonthName(date) {
+  //     const months = [
+  //       "January",
+  //       "February",
+  //       "March",
+  //       "April",
+  //       "May",
+  //       "June",
+  //       "July",
+  //       "August",
+  //       "September",
+  //       "October",
+  //       "November",
+  //       "December",
+  //     ];
 
-    const currentMonth = date.getMonth(); // Возвращает номер месяца (0 - январь, 1 - февраль, и так далее)
+  //     const currentMonth = date.getMonth(); // Возвращает номер месяца (0 - январь, 1 - февраль, и так далее)
 
-    return months[currentMonth];
-  }
+  //     return months[currentMonth];
+  //   }
 
   function a11yProps(index) {
     return {
@@ -139,26 +139,26 @@ export const TimeTable = () => {
   }
 
   const theme = useTheme();
-  const onlyWorkingDay = (day) => {
-    switch (day) {
-      case 0:
-        return 1;
-      case 1:
-        return 1;
-      case 2:
-        return 2;
-      case 3:
-        return 3;
-      case 4:
-        return 4;
-      case 5:
-        return 5;
-      case 6:
-        return 1;
-      default:
-        return 1;
-    }
-  };
+  //   const onlyWorkingDay = (day) => {
+  //     switch (day) {
+  //       case 0:
+  //         return 1;
+  //       case 1:
+  //         return 1;
+  //       case 2:
+  //         return 2;
+  //       case 3:
+  //         return 3;
+  //       case 4:
+  //         return 4;
+  //       case 5:
+  //         return 5;
+  //       case 6:
+  //         return 1;
+  //       default:
+  //         return 1;
+  //     }
+  //   };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
