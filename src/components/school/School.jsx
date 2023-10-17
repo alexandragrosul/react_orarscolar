@@ -44,7 +44,7 @@ const School = ({ school }) => {
               style={{
                 width: "300px",
                 height: "200px",
-                borderRadius: "5px",
+                borderRadius: "25px",
                 objectFit: "cover",
               }}
               alt={school?.name}
