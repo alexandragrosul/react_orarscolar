@@ -49,7 +49,11 @@ function Footer({ onButtonClick, selected }) {
   };
   const saveTask = () => {
     const existingTasks = JSON.parse(localStorage.getItem("tasks"));
-    const payLoad = { name: taskName, id: 4, status: 0 };
+    const payLoad = {
+      name: taskName,
+      id: new Date().valueOf(),
+      status: false,
+    };
     if (existingTasks) {
       existingTasks.push(payLoad);
       localStorage.setItem("tasks", JSON.stringify(existingTasks));

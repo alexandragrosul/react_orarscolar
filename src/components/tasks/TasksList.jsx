@@ -9,35 +9,50 @@ import {
   Checkbox,
   ListItemText,
   Container,
+  Typography,
 } from "../../../node_modules/@mui/material/index";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export const TasksList = () => {
   const [checked, setChecked] = React.useState([0]);
 
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+  //   const handleToggle = (value) => () => {
+  //     const currentIndex = checked.indexOf(value);
+  //     const newChecked = [...checked];
 
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
+  //     if (currentIndex === -1) {
+  //       newChecked.push(value);
+  //     } else {
+  //       newChecked.splice(currentIndex, 1);
+  //     }
 
-    setChecked(newChecked);
-  };
+  //     setChecked(newChecked);
+  //   };
 
   const [tasks, setTasks] = React.useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
 
-  // window.addEventListener("storage", (e) => {
-  //   if (e.key === "tasks") {
-  //     // Обработайте изменение данных, если необходимо
-  //     setTasks(JSON.parse(localStorage.getItem("tasks")));
-  //   }
-  // });
+  const handleToggle = (taskId) => () => {
+    const restTasks = [];
+    let currentTask = null;
+    tasks.forEach((element) => {
+      if (element.id === taskId) {
+        restTasks.push({ ...element, status: !element.status });
+      } else {
+        restTasks.push(element);
+      }
+    });
+    setTasks(restTasks);
+  };
+
+  //   window.addEventListener("storage", (e) => {
+  //     if (e.key === "tasks") {
+  //       console.log(e.key);
+  //       // Обработайте изменение данных, если необходимо
+  //       setTasks(JSON.parse(localStorage.getItem("tasks")));
+  //     }
+  //   });
 
   //   React.useEffect(() => {
   //     // Обновите данные в localStorage при изменении состояния
@@ -50,13 +65,16 @@ export const TasksList = () => {
         height: "100vh",
       }}
     >
+      <Typography variant="h4" component="h1" pt="3">
+        Lista de taskuri
+      </Typography>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         {tasks.map((value) => {
           const labelId = `checkbox-list-label-${value}`;
 
           return (
             <ListItem
-              key={value}
+              key={value.id}
               secondaryAction={
                 <IconButton edge="end" aria-label="delete" color="secondary">
                   <DeleteIcon />
@@ -66,7 +84,7 @@ export const TasksList = () => {
             >
               <ListItemButton
                 role={undefined}
-                onClick={handleToggle(value)}
+                onClick={handleToggle(value.id)}
                 dense
               >
                 <ListItemIcon>
@@ -78,10 +96,7 @@ export const TasksList = () => {
                     inputProps={{ "aria-labelledby": labelId }}
                   />
                 </ListItemIcon>
-                <ListItemText
-                  id={labelId}
-                  primary={`Line item ${value.name}`}
-                />
+                <ListItemText id={labelId} primary={value.name} />
               </ListItemButton>
             </ListItem>
           );
