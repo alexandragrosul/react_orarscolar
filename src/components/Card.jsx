@@ -27,8 +27,13 @@ export const CardComponent = ({ profesor }) => {
           key={profesor.id}
         >
           <CardContent>
-            <Grid container>
-              <Grid item xs={2}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} lg={2}>
+                <Box sx={{ 
+                  margin:"0 auto",
+                  width:"100%",
+                  textAlign:"center",
+                 }}>
                 <img
                   style={{ borderRadius: "50px" }}
                   src="https://avatars.preply.com/i/logos/i/logos/avatar_y85iu.jpg?d=320x320&f=webp"
@@ -36,10 +41,12 @@ export const CardComponent = ({ profesor }) => {
                   weight="160"
                   alt="avatar"
                 />
+                </Box>
               </Grid>
               <Grid
                 item
-                xs={8}
+                xs={12}
+                md={8}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -126,7 +133,7 @@ export const CardComponent = ({ profesor }) => {
                   </Box>
                 </Stack>
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={12} md={4} lg={2}>
                 <Stack spacing={2}>
                   <Grid container sx={{ marginTop: 0 }}>
                     <Grid
@@ -145,7 +152,7 @@ export const CardComponent = ({ profesor }) => {
                       <Typography variant="h5" component="span">
                         4.5
                       </Typography>
-                      <Typography>6 recenzii</Typography>
+                      <Typography sx={{ textAlign:"start" }}>6 recenzii</Typography>
                     </Grid>
                     <Grid item xs={6} sx={{ textAlign: "right" }}>
                       <Typography variant="h5" component="span">
