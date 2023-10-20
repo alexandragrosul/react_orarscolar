@@ -34,9 +34,9 @@ function App() {
           <Route
             path="/repetitor/add"
             element={
-              <ProtectedRoute>
+              // <ProtectedRoute>
                 <RepetitorAdd />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             }
           />
           <Route path="/timetable/:schoolId" element={<Timetable />} />

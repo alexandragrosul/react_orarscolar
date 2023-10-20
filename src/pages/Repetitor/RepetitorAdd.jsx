@@ -23,6 +23,9 @@ const initialValues = {
   isVerified: false,
   experience: "",
   workingHours: "",
+  description:"",
+  price:"",
+  class_time:""
 };
 
 const materialCode = {
@@ -58,7 +61,9 @@ const RepetitorAdd = () => {
     }
   };
   return (
-    <Container sx={{ display: "flex", justifyContent: "center" }}>
+    <Container
+      sx={{ display: "flex", justifyContent: "center", marginTop: "40px" }}
+    >
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         {({ values, handleChange, resetForm }) => (
           <Form>
@@ -121,6 +126,33 @@ const RepetitorAdd = () => {
                   ))}
                 </Field>
               </FormControl>
+
+              <TextField
+                name="description"
+                label="Description"
+                fullWidth
+                value={values?.description}
+                onChange={handleChange}
+                required
+              />
+
+              <TextField
+                name="price"
+                label="Price"
+                fullWidth
+                value={values.price}
+                onChange={handleChange}
+                required
+              />
+
+              <TextField
+                name="class_time"
+                label="Class time"
+                fullWidth
+                value={values?.class_time}
+                onChange={handleChange}
+                required
+              />
 
               <Button type="submit" variant="contained" color="primary">
                 Adauga repetitor

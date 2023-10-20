@@ -28,7 +28,7 @@ export const CardComponent = ({ profesor }) => {
         >
           <CardContent>
             <Grid container spacing={2}>
-              <Grid item xs={12} lg={2}>
+              {/* <Grid item xs={12} lg={2}>
                 <Box sx={{ 
                   margin:"0 auto",
                   width:"100%",
@@ -42,7 +42,7 @@ export const CardComponent = ({ profesor }) => {
                   alt="avatar"
                 />
                 </Box>
-              </Grid>
+              </Grid> */}
               <Grid
                 item
                 xs={12}
@@ -110,27 +110,21 @@ export const CardComponent = ({ profesor }) => {
                     />
                     <Typography textAlign={"left"}>{profesor.phone}</Typography>
                   </Box>
-                  <Box
-                    display="flex"
-                    marginTop={2}
-                    sx={{ alignItems: "center" }}
-                  >
-                    <InfoIcon
-                      sx={{ color: "primary.main", mr: 2, fontSize: "20px" }}
-                    />
-                    <Typography textAlign={"left"}>
-                      <strong>Despre mine:</strong>{" "}
-                      <em>
-                        Hello, my name is Calli! I am a Marine Biology Master
-                        starting a PhD at AIX Marseille this fall. I work in
-                        research and have conducted coral health assessments,
-                        sea urchin transcriptomics, and my next project will
-                        focus on pesticide toxicity levels! I am very passionate
-                        about my work, and I love spending time at the sea with
-                        friends.
-                      </em>
-                    </Typography>
-                  </Box>
+                  {profesor?.description && (
+                    <Box
+                      display="flex"
+                      marginTop={2}
+                      sx={{ alignItems: "center" }}
+                    >
+                      <InfoIcon
+                        sx={{ color: "primary.main", mr: 2, fontSize: "20px" }}
+                      />
+                      <Typography textAlign={"left"}>
+                        <strong>Despre mine:</strong>{" "}
+                        <em>{profesor?.description}</em>
+                      </Typography>
+                    </Box>
+                  )}
                 </Stack>
               </Grid>
               <Grid item xs={12} md={4} lg={2}>
@@ -147,20 +141,26 @@ export const CardComponent = ({ profesor }) => {
                     >
                       <FavoriteBorderIcon sx={{ alignSelf: "end" }} />
                     </Grid>
-                    <Grid item xs={6}>
-                      <StarIcon sx={{ color: "#fdc425" }} />
-                      <Typography variant="h5" component="span">
-                        4.5
-                      </Typography>
-                      <Typography sx={{ textAlign:"start" }}>6 recenzii</Typography>
-                    </Grid>
+                    {profesor?.result && (
+                      <Grid item xs={6}>
+                        <StarIcon sx={{ color: "#fdc425" }} />
+                        <Typography variant="h5" component="span">
+                          {profesor?.result}
+                        </Typography>
+                        {/* <Typography sx={{ textAlign:"start" }}>6 recenzii</Typography> */}
+                      </Grid>
+                    )}
                     <Grid item xs={6} sx={{ textAlign: "right" }}>
-                      <Typography variant="h5" component="span">
-                        10$
-                      </Typography>
-                      <Typography sx={{ textAlign: "right" }}>
-                        50 minute
-                      </Typography>
+                      {profesor?.price && (
+                        <Typography variant="h5" component="span">
+                          {profesor?.price}$
+                        </Typography>
+                      )}
+                      {profesor?.class_time && (
+                        <Typography sx={{ textAlign: "right" }}>
+                          {profesor?.class_time} minute
+                        </Typography>
+                      )}
                     </Grid>
                   </Grid>
                   <RoundButton
