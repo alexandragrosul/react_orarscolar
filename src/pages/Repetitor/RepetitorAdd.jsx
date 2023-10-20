@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { Stack } from "@mui/system";
 import AlertDialog from "../../components/layout/AlertDialog";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   name: "",
@@ -38,6 +39,7 @@ const languages = ["English", "Romana"];
 
 const RepetitorAdd = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const addCoach = async (payload) => {
     const request = await fetch(
@@ -56,6 +58,7 @@ const RepetitorAdd = () => {
     console.log(values);
     try {
       addCoach(values);
+      navigate('/repetitori');
     } catch (error) {
       console.warning(error.message);
     }

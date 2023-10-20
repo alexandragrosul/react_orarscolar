@@ -89,10 +89,10 @@ const Wrapper = () => {
   }, [location.pathname]);
 
   return (
-    <>
+    <Box>
       <Header position={appBarPosition} />
       <Box
-        sx={{ height: "100vh", p: 0, pt: appBarPosition === "fixed" ? 6 : 0 }}
+        sx={{ height: "100vh", pt: appBarPosition === "fixed" ? 6 : 0, padding:"40px 0" }}
       >
         {renderMainContent()}
       </Box>
@@ -105,7 +105,7 @@ const Wrapper = () => {
           <Button onClick={handleClose}>Save</Button>
         </DialogActions>
       </Dialog>
-    </>
+    </Box>
   );
 };
 

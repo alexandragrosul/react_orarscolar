@@ -27,7 +27,6 @@ const Repetitori = () => {
   const [coaches, setCoaches] = useState([]);
   const [selectedMaterial, setSelectedMaterial] = useState("");
   const [filteredProfesors, setFilteredProfesors] = useState([]);
-  console.log(coaches);
 
   const filteredByMaterial = (material) => {
     console.log(material);

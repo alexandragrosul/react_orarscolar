@@ -1,10 +1,13 @@
 import Typography from "@mui/material/Typography";
+import { Box } from "../../node_modules/@mui/material/index";
 const Events = () => {
   return (
     <>
-      <Typography variant="h3" component="h1">
-        Evenimente pentru elevi
-      </Typography>
+      <Box>
+        <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
+          Evenimente pentru elevi
+        </h1>
+      </Box>
     </>
   );
 };
