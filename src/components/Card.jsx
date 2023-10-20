@@ -28,7 +28,7 @@ export const CardComponent = ({ profesor }) => {
         >
           <CardContent>
             <Grid container spacing={2}>
-              {/* <Grid item xs={12} lg={2}>
+              <Grid item xs={12} lg={2}>
                 <Box sx={{ 
                   margin:"0 auto",
                   width:"100%",
@@ -42,7 +42,7 @@ export const CardComponent = ({ profesor }) => {
                   alt="avatar"
                 />
                 </Box>
-              </Grid> */}
+              </Grid>
               <Grid
                 item
                 xs={12}
