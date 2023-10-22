@@ -38,24 +38,23 @@ function Home({ profesors }) {
                 font: "Noto Sans Vithkuqi",
               }}
             >
-              Elevii conduc lumea iar noi îi ajutăm
+              Repetitori de incredere
             </Typography>
             <Typography variant="body1" align="left" sx={{ mt: 3 }}>
-              Escoala este o comunitate de partajare a cunoștințelor unde sute
-              de milioane de elevi și experți se ajută între ei pentru a rezolva
-              cele mai grele teme pentru acasă.
+              Escoala este o comunitate a cunoștințelor unde elevi și experți se
+              ajută între ei pentru a rezolva cele mai grele teme pentru acasă.
             </Typography>
           </Grid>
-          <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
+          {/* <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeSchools />
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             item
             xs={12}
             sx={{ background: "white", borderRadius: "50px", p: 2 }}
           >
             <HomePsychology />
-          </Grid>
+          </Grid> */}
           <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeEcology />
           </Grid>

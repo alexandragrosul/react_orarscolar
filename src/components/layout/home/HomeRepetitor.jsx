@@ -3,7 +3,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import {
   Box,
   Grid,
-  Link,
   Stack,
   Typography,
 } from "../../../../node_modules/@mui/material/index";
@@ -12,6 +11,7 @@ import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import repetitorPhoto from "../../../assets/profesor.jpg";
 import RoundButton from "../RoundButton";
 import InfoIcon from "@mui/icons-material/Info";
+import { Link } from "react-router-dom";
 
 export default function HomeRepetitor() {
   return (

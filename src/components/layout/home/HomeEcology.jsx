@@ -1,13 +1,15 @@
 import * as React from "react";
 import {
   Grid,
-  Link,
   Stack,
   Typography,
 } from "../../../../node_modules/@mui/material/index";
+import { Link } from "react-router-dom";
+
 import schoolPhoto from "../../../assets/school.jpg";
 import RoundButton from "../RoundButton";
 import SchoolsSearch from "../../school/SchoolsSearch";
+import repetitorPhoto from "../../../assets/profesor.jpg";
 
 export default function HomeEcology() {
   return (
@@ -15,7 +17,7 @@ export default function HomeEcology() {
       <Grid container mb={4} spacing={2} alignItems="center">
         <Grid item xs={12} md={6} sx={{ mt: { xs: 2 } }}>
           <img
-            src={schoolPhoto}
+            src={repetitorPhoto}
             style={{
               width: "100%",
               borderRadius: "89px",
@@ -34,10 +36,10 @@ export default function HomeEcology() {
                 marginLeft: "25px",
               }}
             >
-              Ecologia la Scoala ta
+              Repetitor pentru tine!
             </h6>
             <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
-              Scoala este forate importanta petru un copil
+              Repetitori de incredere pentru comunicari fara griji
             </Typography>
           </Stack>
           <Stack
@@ -56,15 +58,13 @@ export default function HomeEcology() {
             noValidate
             autoComplete="off"
           >
-            <SchoolsSearch setFilteredSchools={undefined} />
+            {/* <SchoolsSearch setFilteredSchools={undefined} /> */}
           </Stack>
           <Stack alignItems="center" flex sx={{ mt: 2 }}>
-            <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
-              Scoala ta nu este in lista?
-            </Typography>
-            <Link to={"/schools/add"}>
+            <Link to={"/repetitori"}>
               <RoundButton
-                name="Adauga scoala"
+                name="Alege-ti repetitorul"
+                color="#FB8136"
                 style={{ color: "white", mr: 2, alignItems: "center" }}
               />
             </Link>
