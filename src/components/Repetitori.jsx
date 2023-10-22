@@ -52,6 +52,12 @@ const Repetitori = () => {
             material: data[key].material,
             name: data[key].name,
             phone: data[key].phone,
+            description: data[key].description,
+            email: data[key].email,
+            experience: data[key].experience,
+            isVerified: data[key].isVerified,
+            price: data[key].price,
+            workingHours: data[key].workingHours,
           }));
 
           setCoaches(arrayOfObjects);
@@ -86,6 +92,7 @@ const Repetitori = () => {
           id="demo-simple-select"
           value={selectedMaterial}
           label="Age"
+          clearable={true}
           onChange={(e) => filteredByMaterial(e.target.value)}
           sx={{ borderRadius: "75px", border: "1px solid green" }}
         >
@@ -104,7 +111,7 @@ const Repetitori = () => {
       )}
       {/* <RepetitorList profesors={filteredProfesors} /> */}
 
-      <Stack spacing={2} sx={{ marginTop: 2 }}>
+      <Stack spacing={2} sx={{ marginTop: 2, paddingBottom: "70px" }}>
         {filteredProfesors.map((profesor, index) => {
           return (
             <Box key={index}>

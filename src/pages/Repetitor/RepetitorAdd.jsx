@@ -24,13 +24,23 @@ const initialValues = {
   isVerified: false,
   experience: "",
   workingHours: "",
-  description:"",
-  price:"",
-  class_time:""
+  description: "",
+  price: "",
+  class_time: "",
 };
 
 const materialCode = {
+  rom: "Romana",
+  fr: "Franceza",
   eng: "English",
+  germ: "Germana",
+  mate: "Matematica",
+  inf: "Informatica",
+  fiz: "Fizica",
+  chm: "Chimia",
+  geo: "Geografia",
+  ist: "Istoria",
+  chi: "Chineza",
 };
 
 const cities = ["Chisinau", "Another City"];
@@ -58,7 +68,7 @@ const RepetitorAdd = () => {
     console.log(values);
     try {
       addCoach(values);
-      navigate('/repetitori');
+      navigate("/repetitori");
     } catch (error) {
       console.warning(error.message);
     }

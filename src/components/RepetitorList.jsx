@@ -7,6 +7,7 @@ export const RepetitorList = ({ profesors }) => {
     <Stack
       spacing={2}
       mt={2}
+      mb={4}
       sx={{ width: "100%", bgcolor: "background.paper" }}
     >
       {profesors.length ? (
