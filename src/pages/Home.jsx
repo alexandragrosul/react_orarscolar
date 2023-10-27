@@ -45,9 +45,9 @@ function Home({ profesors }) {
               ajută între ei pentru a rezolva cele mai grele teme pentru acasă.
             </Typography>
           </Grid>
-          {/* <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
+          <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeSchools />
-          </Grid> */}
+          </Grid>
           {/* <Grid
             item
             xs={12}

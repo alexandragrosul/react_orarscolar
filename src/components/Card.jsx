@@ -6,6 +6,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import StarIcon from "@mui/icons-material/Star";
 import InfoIcon from "@mui/icons-material/Info";
 import { Card, CardContent, Typography, Box } from "@mui/material";
+import NoPhotographyIcon from "@mui/icons-material/NoPhotography";
 import {
   Link,
   Grid,
@@ -79,7 +80,14 @@ export const CardComponent = ({ profesor }) => {
         >
           <CardContent>
             <Grid container spacing={2}>
-              <Grid item xs={12} lg={2}>
+              <Grid
+                item
+                xs={12}
+                lg={2}
+                sx={{ display: "flex" }}
+                justifyContent="center"
+                alignItems="center"
+              >
                 <Box
                   sx={{
                     margin: "0 auto",
@@ -87,13 +95,17 @@ export const CardComponent = ({ profesor }) => {
                     textAlign: "center",
                   }}
                 >
-                  <img
-                    style={{ borderRadius: "50px" }}
-                    src="https://avatars.preply.com/i/logos/i/logos/avatar_y85iu.jpg?d=320x320&f=webp"
-                    height="160"
-                    weight="160"
-                    alt="avatar"
-                  />
+                  {profesor.image ? (
+                    <img
+                      style={{ borderRadius: "50px" }}
+                      src="https://avatars.preply.com/i/logos/i/logos/avatar_y85iu.jpg?d=320x320&f=webp"
+                      height="160"
+                      weight="160"
+                      alt="avatar"
+                    />
+                  ) : (
+                    <NoPhotographyIcon sx={{ fontSize: 40 }} />
+                  )}
                 </Box>
               </Grid>
               <Grid

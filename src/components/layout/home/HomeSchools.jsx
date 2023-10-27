@@ -1,13 +1,13 @@
 import * as React from "react";
 import {
   Grid,
-  Link,
   Stack,
   Typography,
 } from "../../../../node_modules/@mui/material/index";
 import schoolPhoto from "../../../assets/school.jpg";
 import RoundButton from "../RoundButton";
 import SchoolsSearch from "../../school/SchoolsSearch";
+import { Link } from "react-router-dom";
 
 export default function HomeSchools() {
   return (
@@ -62,9 +62,9 @@ export default function HomeSchools() {
             <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
               Scoala ta nu este in lista?
             </Typography>
-            <Link to={"/schools/add"}>
+            <Link to={"/schools"}>
               <RoundButton
-                name="Adauga scoala"
+                name="Toate scoalile"
                 color="#FB8136"
                 style={{ color: "white", mr: 2, alignItems: "center" }}
               />
