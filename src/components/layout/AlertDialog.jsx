@@ -27,7 +27,7 @@ export default function AlertDialog({ title, message, open, setOpen }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} autoFocus>
-            Okay
+            Ok
           </Button>
         </DialogActions>
       </Dialog>

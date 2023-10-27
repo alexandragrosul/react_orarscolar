@@ -9,9 +9,10 @@ import {
   MenuItem,
   Button,
 } from "../../node_modules/@mui/material/index";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, useFormik } from "formik";
 
 import AlertDialog from "../components/layout/AlertDialog";
+import { useState } from "react";
 
 const Contacts = () => {
   const initialValues = {
@@ -23,6 +24,8 @@ const Contacts = () => {
   };
 
   const sources = ["facebook", "google", "prieteni"];
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openFail, setOpenFail] = useState(false);
 
   const sendMessage = async (payload) => {
     const request = await fetch(
@@ -32,10 +35,13 @@ const Contacts = () => {
         body: JSON.stringify(payload),
       }
     );
+    if (request.ok === false) setOpenFail(true);
+    if (request.ok === true) {
+      setOpenSuccess(true);
+    }
   };
 
   const onSubmit = (values) => {
-    console.log(values);
     try {
       sendMessage(values);
     } catch (error) {
@@ -120,14 +126,20 @@ const Contacts = () => {
           </Form>
         )}
       </Formik>
-      {/* <AlertDialog
+      <AlertDialog
         title={"Error"}
         message={
-          "Nu s-a primit sa creati repetitor, incercati va rog mai tarziu"
+          "Nu s-a primit sa trimiteti mesajul, incercati va rog mai tarziu"
         }
-        open={open}
-        setOpen={setOpen}
-      /> */}
+        open={openFail}
+        setOpen={setOpenFail}
+      />
+      <AlertDialog
+        title={"Success"}
+        message={"Mesajul a fost expediat, va contactam in curand"}
+        open={openSuccess}
+        setOpen={setOpenSuccess}
+      />
     </Container>
   );
 };
