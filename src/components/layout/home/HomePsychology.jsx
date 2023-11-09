@@ -37,7 +37,7 @@ export default function HomePsychology() {
               <SearchIcon
                 sx={{ color: "primary.main", mr: 2, fontSize: "25px" }}
               />
-              <Typography textAlign={"left"}>
+              <Typography sx={{ textAlign: "left" }}>
                 Gaseste-ti noi studenti
               </Typography>
             </Box>
@@ -46,7 +46,7 @@ export default function HomePsychology() {
               <CalendarTodayIcon
                 sx={{ color: "primary.main", mr: 2, fontSize: "25px" }}
               />
-              <Typography textAlign={"left"}>
+              <Typography sx={{ textAlign: "left" }}>
                 Dezvolta-ti activitatea
               </Typography>
             </Box>
@@ -55,7 +55,7 @@ export default function HomePsychology() {
               <PaidOutlinedIcon
                 sx={{ color: "primary.main", mr: 2, fontSize: "25px" }}
               />
-              <Typography textAlign={"left"}>
+              <Typography sx={{ textAlign: "left" }}>
                 Primeste-ti recompensa in siguranta
               </Typography>
             </Box>
@@ -75,7 +75,9 @@ export default function HomePsychology() {
                   marginLeft: 2,
                 }}
               />
-              <Link textAlign={"left"}>Cum functioneaza platforma noastra</Link>
+              <Link sx={{ textAlign: "left" }}>
+                Cum functioneaza platforma noastra
+              </Link>
             </Box>
           </Stack>
         </Grid>

@@ -15,7 +15,7 @@ import ProtectedRoute from "./navigation/ProtectedRoute";
 import { ThemeProvider } from "@mui/material";
 import { appTheme } from "./theme/theme";
 import Events from "./pages/Events";
-import SchoolAdd from "./pages/SchoolAdd";
+import AddSchool from "./pages/AddSchool";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 
@@ -30,14 +30,11 @@ function App() {
           />
           <Route path="/repetitori" element={<RepetitoriPage />} />
           <Route path="/repetitori/:id" element={<Repetitor />} />
-          <Route
-            path="/repetitor/add"
-            element={<RepetitorAdd />}
-          />
+          <Route path="/repetitor/add" element={<RepetitorAdd />} />
           <Route path="/timetable/:schoolId" element={<Timetable />} />
           <Route path="/schools" element={<Schools />} />
           <Route path="/schools/:id" element={<SchoolPage />} />
-          <Route path="/schools/add" element={<SchoolAdd />} />
+          <Route path="/schools/add" element={<AddSchool />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/events" element={<Events />} />

@@ -131,7 +131,7 @@ export const CardComponent = ({ profesor }) => {
                     <AutoStoriesIcon
                       sx={{ color: "primary.main", mr: 2, fontSize: "20px" }}
                     />
-                    {profesor.material.map((el) => {
+                    {profesor?.material?.map((el) => {
                       return (
                         <Chip
                           label={el}

@@ -78,7 +78,9 @@ function TopBar({ position }) {
               {pages.map((page) => (
                 <MenuItem key={page.label} onClick={handleCloseNavMenu}>
                   <Link to={page.link}>
-                    <Typography textAlign="center">{page.label}</Typography>
+                    <Typography sx={{ textAlign: "center" }}>
+                      {page.label}
+                    </Typography>
                   </Link>
                 </MenuItem>
               ))}

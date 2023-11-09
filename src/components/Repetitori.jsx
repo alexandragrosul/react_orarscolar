@@ -45,7 +45,7 @@ const Repetitori = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          const arrayOfObjects = Object.keys(data).map((key) => ({
+          const arrayOfObjects = Object.keys(data)?.map((key) => ({
             id: key,
             city: data[key].city,
             languages: data[key].languages,
