@@ -155,7 +155,7 @@ export const CardComponent = ({ profesor }) => {
                     <LanguageIcon
                       sx={{ color: "primary.main", mr: 2, fontSize: "20px" }}
                     />
-                    {profesor.languages.map((language) => (
+                    {profesor?.languages?.map((language) => (
                       <Chip
                         label={language}
                         key={language}

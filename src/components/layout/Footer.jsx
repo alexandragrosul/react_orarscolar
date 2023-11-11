@@ -77,8 +77,11 @@ function Footer({ onButtonClick, selected }) {
             <AddIcon onClick={handleClickAddTaskOpen} />
           </StyledFab>
           <Box sx={{ flexGrow: 1 }} />
-          <IconButton color={selected === "tasks" ? "secondary" : "black"}>
-            <PlaylistAddCheckIcon onClick={handleClickTasskOpen} />
+          <IconButton
+            onClick={handleClickTasskOpen}
+            color={selected === "tasks" ? "secondary" : "black"}
+          >
+            <PlaylistAddCheckIcon />
           </IconButton>
         </Toolbar>
 

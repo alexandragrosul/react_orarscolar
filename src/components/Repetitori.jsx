@@ -92,7 +92,7 @@ const Repetitori = () => {
           id="demo-simple-select"
           value={selectedMaterial}
           label="Age"
-          clearable={true}
+          clearable="true"
           onChange={(e) => filteredByMaterial(e.target.value)}
           sx={{ borderRadius: "75px", border: "1px solid green" }}
         >

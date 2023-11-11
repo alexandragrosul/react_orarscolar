@@ -4,6 +4,7 @@ import HomeSchools from "../components/layout/home/HomeSchools";
 import HomeRepetitor from "../components/layout/home/HomeRepetitor";
 import HomePsychology from "../components/layout/home/HomePsychology";
 import HomeEcology from "../components/layout/home/HomeEcology";
+import HomeQuestion from "../components/layout/home/HomeQuestion";
 
 function Home({ profesors }) {
   return (
@@ -27,6 +28,10 @@ function Home({ profesors }) {
           //   borderRadius: "50px",
           // }}
         >
+          <Grid item xs={12} sx={{ background: "transparent", mb: 4, p: 2 }}>
+            <HomeQuestion />
+          </Grid>
+
           <Grid item xs={12} sx={{ background: "transparent", mb: 4, p: 2 }}>
             <Typography
               variant="h3"
