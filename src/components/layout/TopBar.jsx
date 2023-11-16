@@ -15,6 +15,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SchoolIcon from "@mui/icons-material/School";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import RoundButton from "./RoundButton";
+import { useTranslation } from 'react-i18next';
+
 
 const pages = [
   { label: "Acasa", link: "/" },
@@ -25,7 +27,12 @@ const pages = [
 ];
 
 function TopBar({ position }) {
-  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);  
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
   const handleCloseNavMenu = () => setAnchorElNav(null);
@@ -86,7 +93,6 @@ function TopBar({ position }) {
               ))}
             </Menu>
           </Box>
-
           <Box
             sx={{
               marginLeft: 4,
@@ -120,6 +126,8 @@ function TopBar({ position }) {
               </Link>
             ))}
           </Box>
+          <button onClick={() => changeLanguage('en')}>English</button>
+        <button onClick={() => changeLanguage('ro')}>Romania</button>
         </Toolbar>
       </Container>
     </AppBar>

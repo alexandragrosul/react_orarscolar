@@ -5,6 +5,7 @@ import {
   Typography,
 } from "../../../../node_modules/@mui/material/index";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 import schoolPhoto from "../../../assets/school.jpg";
 import RoundButton from "../RoundButton";
@@ -12,6 +13,8 @@ import SchoolsSearch from "../../school/SchoolsSearch";
 import repetitorPhoto from "../../../assets/profesor.jpg";
 
 export default function HomeEcology() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Grid container mb={4} spacing={2} alignItems="center">
@@ -36,10 +39,10 @@ export default function HomeEcology() {
                 marginLeft: "25px",
               }}
             >
-              Repetitor pentru tine!
+              {t('homeEcology.tutorForYou')}
             </h6>
             <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
-              Repetitori de incredere pentru comunicari fara griji
+            {t('homeEcology.trustedTutorsForWorryFreeCommunication')}
             </Typography>
           </Stack>
           <Stack
@@ -63,7 +66,7 @@ export default function HomeEcology() {
           <Stack alignItems="center" flex sx={{ mt: 2 }}>
             <Link to={"/repetitori"}>
               <RoundButton
-                name="Alege-ti repetitorul"
+                name={t('homeEcology.chooseYourTutor')}
                 color="#FB8136"
                 style={{ color: "white", mr: 2, alignItems: "center" }}
               />

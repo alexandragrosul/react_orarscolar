@@ -10,15 +10,22 @@ import {
   Typography,
 } from "../../../../node_modules/@mui/material/index";
 import RoundButton from "../RoundButton";
+import { useTranslation } from 'react-i18next';
 
 const HomeQuestion = () => {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
   const handleClickQuestionOpen = () => {
     setOpen(true);
   };
+
   //   const handleClickTasskOpen = () => {
   //     onButtonClick("tasks");
   //   };
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   const handleClose = () => {
     setOpen(false);
@@ -41,6 +48,8 @@ const HomeQuestion = () => {
 
   return (
     <>
+    <div>
+      </div>
       <Typography
         variant="h3"
         component="h2"
@@ -51,18 +60,18 @@ const HomeQuestion = () => {
           font: "Noto Sans Vithkuqi",
         }}
       >
-        Ce vrei să ştii?
+        {t('question.title')}
       </Typography>
       <RoundButton
-        name="Pune intrebarea ta"
+        name={t('question.askButton')}
         style={{ color: "white" }}
         onClick={handleClickQuestionOpen}
       />
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Add the task</DialogTitle>
+        <DialogTitle>{t('question.dialogTitle')}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Întreabă ce nu ştii să faci din temă
+          {t('question.dialogContent')}
           </DialogContentText>
           {/* <TextField
             autoFocus
@@ -80,7 +89,7 @@ const HomeQuestion = () => {
         </DialogContent>
         <DialogActions>
           {/* <Button onClick={saveTask}>Save</Button> */}
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>{t('common.cancel')}</Button>
         </DialogActions>
       </Dialog>
     </>

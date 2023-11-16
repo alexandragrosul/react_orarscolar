@@ -8,8 +8,11 @@ import schoolPhoto from "../../../assets/school.jpg";
 import RoundButton from "../RoundButton";
 import SchoolsSearch from "../../school/SchoolsSearch";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function HomeSchools() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Grid container mb={4} spacing={2} alignItems="center">
@@ -34,10 +37,10 @@ export default function HomeSchools() {
                 marginLeft: "25px",
               }}
             >
-              Gaseste Scoala ta
+              {t("homeSchools.schoolIsVeryImportant")}
             </h6>
             <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
-              Scoala este forate importanta petru un copil
+              {t("homeSchools.schoolNotInList")}
             </Typography>
           </Stack>
           <Stack
@@ -60,11 +63,11 @@ export default function HomeSchools() {
           </Stack>
           <Stack alignItems="center" flex sx={{ mt: 2 }}>
             <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
-              Scoala ta nu este in lista?
+            {t('homeSchools.schoolNotInList')}
             </Typography>
             <Link to={"/schools"}>
               <RoundButton
-                name="Toate scoalile"
+                name={t('homeSchools.allSchools')}
                 color="#FB8136"
                 style={{ color: "white", mr: 2, alignItems: "center" }}
               />
