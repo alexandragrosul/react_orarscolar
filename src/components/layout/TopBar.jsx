@@ -16,19 +16,22 @@ import SchoolIcon from "@mui/icons-material/School";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import RoundButton from "./RoundButton";
 import { useTranslation } from 'react-i18next';
+import { Button } from "../../../node_modules/@mui/material/index";
 
 
 const pages = [
-  { label: "Acasa", link: "/" },
-  { label: "Scoli", link: "/schools" },
-  { label: "Repetitori", link: "/repetitori" },
-  { label: "Evenimente", link: "/events" },
-  { label: "Contacte", link: "/contacts" },
+  { label: 'Home', link: '/' },
+  { label: 'Schools', link: '/schools' },
+  { label: 'Tutors', link: '/repetitori' },
+  { label: 'Events', link: '/events' },
+  { label: 'Contacts', link: '/contacts' },
 ];
+
+
 
 function TopBar({ position }) {
   const [anchorElNav, setAnchorElNav] = useState(null);  
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
@@ -86,7 +89,8 @@ function TopBar({ position }) {
                 <MenuItem key={page.label} onClick={handleCloseNavMenu}>
                   <Link to={page.link}>
                     <Typography sx={{ textAlign: "center" }}>
-                      {page.label}
+                      {/* {page.label} */}
+                      {t(`topBar.${page.label.toUpperCase()}`)}
                     </Typography>
                   </Link>
                 </MenuItem>
@@ -126,8 +130,8 @@ function TopBar({ position }) {
               </Link>
             ))}
           </Box>
-          <button onClick={() => changeLanguage('en')}>English</button>
-        <button onClick={() => changeLanguage('ro')}>Romania</button>
+          <Button onClick={() => changeLanguage('en')}>{t('topBar.english')}</Button>
+          <Button onClick={() => changeLanguage('ro')}>{t('topBar.romania')}</Button>
         </Toolbar>
       </Container>
     </AppBar>
