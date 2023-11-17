@@ -8,8 +8,11 @@ import { Box, Grid, Stack } from "../../node_modules/@mui/material/index";
 import RoundButton from "./layout/RoundButton";
 import { Link } from "react-router-dom";
 import { CardComponent } from "./Card";
+import { useTranslation } from "react-i18next";
+
 
 const Repetitori = () => {
+
   const materialCode = {
     rom: "Romana",
     fr: "Franceza",
@@ -27,6 +30,7 @@ const Repetitori = () => {
   const [coaches, setCoaches] = useState([]);
   const [selectedMaterial, setSelectedMaterial] = useState("");
   const [filteredProfesors, setFilteredProfesors] = useState([]);
+  const { t } = useTranslation();
 
   const filteredByMaterial = (material) => {
     console.log(material);
@@ -74,18 +78,18 @@ const Repetitori = () => {
       <Grid container alignItems="center">
         <Grid item xs={6}>
           <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
-            Repetitori
+          {t('repetitori.title')}
           </h1>
         </Grid>
         <Grid item xs={6} align="center">
           <Link to={"/repetitor/add"}>
-            <RoundButton name={"Adauga Repetitor"} style={{ color: "white" }} />
+            <RoundButton name={t('repetitori.addRepetitor')}  style={{ color: "white" }} />
           </Link>
         </Grid>
       </Grid>
       <FormControl fullWidth>
         <InputLabel sx={{ m: 0, p: 0 }} id="demo-simple-select-label">
-          Repetitor
+        {t('repetitori.repetitorLabel')}
         </InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -122,7 +126,7 @@ const Repetitori = () => {
       </Stack>
       {filteredProfesors.length === 0 && (
         <Typography align="center" variant="body1">
-          Nu am gasit profesori
+          {t('repetitori.noProfessorsFound')}
         </Typography>
       )}
     </>

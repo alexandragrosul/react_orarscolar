@@ -14,8 +14,11 @@ import {
 } from "../../node_modules/@mui/material/index";
 import React from "react";
 import { useEffect } from "react";
+import { useTranslation } from 'react-i18next';
+
 
 const Schools = () => {
+  const { t } = useTranslation();
   const schoolsOptions = (schoolsData) => {
     const schools = [];
     schoolsData?.forEach((school) => {
@@ -48,10 +51,8 @@ const Schools = () => {
       const data = response.data;
       setOptions(data);
       setFilteredSchools(data);
-      // Обработка полученных данных
       console.log(data);
     } catch (error) {
-      // Обработка ошибки
       console.error(error);
     }
   }
@@ -69,7 +70,7 @@ const Schools = () => {
   return (
     <Container>
       <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
-        Scoli
+      {t('schools.title')}
       </h1>
       <Grid container spacing={2} direction="row">
         <Grid item xs={12} md={8}>
@@ -99,7 +100,7 @@ const Schools = () => {
         </Grid>
         <Grid item xs={12} md={4}>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-helper-label">Profil</InputLabel>
+            <InputLabel id="demo-simple-select-helper-label">{t('schools.profileLabel')}</InputLabel>
             <Select
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
@@ -107,14 +108,13 @@ const Schools = () => {
               label="Profil"
               onChange={handleChangeShoolCategory}
             >
-              <MenuItem value={10}>Toate</MenuItem>
-              <MenuItem value={20}>General</MenuItem>
-              <MenuItem value={30}>Musica</MenuItem>
+              <MenuItem value={10}>{t('schools.allProfile')}</MenuItem>
+              <MenuItem value={20}>{t('schools.generalProfile')}</MenuItem>
+              <MenuItem value={30}>{t('schools.musicProfile')}</MenuItem>
             </Select>
-            <FormHelperText>With label + helper text</FormHelperText>
           </FormControl>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-helper-label">Region</InputLabel>
+            <InputLabel id="demo-simple-select-helper-label">{t('schools.regionLabel')}</InputLabel>
             <Select
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
@@ -122,12 +122,11 @@ const Schools = () => {
               label="Profil"
               onChange={handleChangeSchoolRegion}
             >
-              <MenuItem value={10}>Moldova</MenuItem>
-              <MenuItem value={15}>num. Chisinau</MenuItem>
-              <MenuItem value={20}>mun. Balti</MenuItem>
-              <MenuItem value={30}>Chimislia</MenuItem>
+              <MenuItem value={10}>{t('schools.allRegion')}</MenuItem>
+              <MenuItem value={15}>{t('schools.chisinauRegion')}</MenuItem>
+              <MenuItem value={20}>{t('schools.baltiRegion')}</MenuItem>
+              <MenuItem value={30}>{t('schools.chimisliaRegion')}</MenuItem>
             </Select>
-            <FormHelperText>With label + helper text</FormHelperText>
           </FormControl>
         </Grid>
       </Grid>
