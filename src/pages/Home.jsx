@@ -5,8 +5,10 @@ import HomeRepetitor from "../components/layout/home/HomeRepetitor";
 import HomePsychology from "../components/layout/home/HomePsychology";
 import HomeEcology from "../components/layout/home/HomeEcology";
 import HomeQuestion from "../components/layout/home/HomeQuestion";
+import { useTranslation } from "react-i18next";
 
 function Home({ profesors }) {
+  const { t } = useTranslation();
   return (
     <>
       {/* <Box sx={{ background: "#d7e8d2", height: "calc(100vh - 100.5px)" }}> */}
@@ -43,11 +45,10 @@ function Home({ profesors }) {
                 font: "Noto Sans Vithkuqi",
               }}
             >
-              Repetitori de incredere
+              {t("trustedTutors.title")}
             </Typography>
             <Typography variant="body1" align="left" sx={{ mt: 3 }}>
-              Escoala este o comunitate a cunoștințelor unde elevi și experți se
-              ajută între ei pentru a rezolva cele mai grele teme pentru acasă.
+              {t("trustedTutors.description")}
             </Typography>
           </Grid>
           <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>

@@ -10,11 +10,14 @@ import {
   Button,
 } from "../../node_modules/@mui/material/index";
 import { Formik, Form, Field, useFormik } from "formik";
+import { useTranslation } from "react-i18next";
+
 
 import AlertDialog from "../components/layout/AlertDialog";
 import { useState } from "react";
 
 const Contacts = () => {
+  const {t} = useTranslation();
   const initialValues = {
     name: "",
     phone: "",
@@ -61,7 +64,7 @@ const Contacts = () => {
               alignItems={"center"}
             >
               <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
-                Trimiteti mesaj
+              {t('contacts.title')}
               </h1>
               {/* <Typography
                 variant="h3"
@@ -81,14 +84,14 @@ const Contacts = () => {
 
               <TextField
                 name="phone"
-                label="Phone"
+                label={t('contacts.name')}
                 fullWidth
                 value={values.phone}
                 onChange={handleChange}
               />
               <TextField
                 name="email"
-                label="Email"
+                label={t('contacts.email')}
                 fullWidth
                 value={values.email}
                 onChange={handleChange}
@@ -97,7 +100,7 @@ const Contacts = () => {
 
               <TextField
                 name="message"
-                label="Mesajul"
+                label={t('contacts.message')}
                 fullWidth
                 value={values.message}
                 onChange={handleChange}
@@ -105,7 +108,7 @@ const Contacts = () => {
               />
 
               <FormControl fullWidth>
-                <InputLabel>De unde ati aflat despre noi?</InputLabel>
+                <InputLabel>{t('contacts.sourceLabel')}</InputLabel>
                 <Field as={Select} name="source">
                   {sources.map((source) => (
                     <MenuItem key={source} value={source}>
@@ -116,27 +119,25 @@ const Contacts = () => {
               </FormControl>
 
               <Button type="submit" variant="contained" color="primary">
-                Trimite mesaj
+              {t('contacts.sendButton')}
               </Button>
 
               <Button onClick={resetForm} variant="outlined" color="primary">
-                Reset form
+              {t('contacts.resetButton')}
               </Button>
             </Stack>
           </Form>
         )}
       </Formik>
       <AlertDialog
-        title={"Error"}
-        message={
-          "Nu s-a primit sa trimiteti mesajul, incercati va rog mai tarziu"
-        }
+        title={t('contacts.errorTitle')}
+        message={t('contacts.errorMessage')}
         open={openFail}
         setOpen={setOpenFail}
       />
       <AlertDialog
-        title={"Success"}
-        message={"Mesajul a fost expediat, va contactam in curand"}
+        title={t('contacts.successTitle')}
+        message={t('contacts.successMessage')}
         open={openSuccess}
         setOpen={setOpenSuccess}
       />

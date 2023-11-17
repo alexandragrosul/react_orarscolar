@@ -15,17 +15,28 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SchoolIcon from "@mui/icons-material/School";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import RoundButton from "./RoundButton";
+import { useTranslation } from 'react-i18next';
+import { Button } from "../../../node_modules/@mui/material/index";
 
-const pages = [
-  { label: "Acasa", link: "/" },
-  { label: "Scoli", link: "/schools" },
-  { label: "Repetitori", link: "/repetitori" },
-  { label: "Evenimente", link: "/events" },
-  { label: "Contacte", link: "/contacts" },
-];
+
+
+
 
 function TopBar({ position }) {
-  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);  
+  const { i18n, t } = useTranslation();
+
+  const pages = [
+    { label: t('topBar.home'), link: '/' },
+    { label: t('topBar.schools'), link: '/schools' },
+    { label: t('topBar.tutors'), link: '/repetitori' },
+    { label: t('topBar.events'), link: '/events' },
+    { label: t('topBar.contacts'), link: '/contacts' },
+  ];
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
   const handleCloseNavMenu = () => setAnchorElNav(null);
@@ -86,7 +97,6 @@ function TopBar({ position }) {
               ))}
             </Menu>
           </Box>
-
           <Box
             sx={{
               marginLeft: 4,
@@ -120,6 +130,8 @@ function TopBar({ position }) {
               </Link>
             ))}
           </Box>
+          <Button sx={{ p:0 }} onClick={() => changeLanguage('en')}>En</Button>
+          <Button sx={{ p:0 }} onClick={() => changeLanguage('ro')}>Ro</Button>
         </Toolbar>
       </Container>
     </AppBar>

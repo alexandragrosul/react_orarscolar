@@ -13,6 +13,8 @@ import {
 import { Stack } from "@mui/system";
 import AlertDialog from "../../components/layout/AlertDialog";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 
 const initialValues = {
   name: "",
@@ -50,6 +52,7 @@ const languages = ["English", "Romana"];
 const RepetitorAdd = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const {t} = useTranslation();
 
   const addCoach = async (payload) => {
     const request = await fetch(
@@ -87,11 +90,11 @@ const RepetitorAdd = () => {
               alignItems={"center"}
             >
               <Typography variant="h3" component="h1">
-                Adaugarea repetitorilor
+              {t('repetitorAdd.title')}
               </Typography>
               <TextField
                 name="name"
-                label="Name"
+                label={t('repetitorAdd.name')}
                 fullWidth
                 value={values.name}
                 onChange={handleChange}
@@ -100,7 +103,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="phone"
-                label="Phone"
+                label={t('repetitorAdd.phone')}
                 fullWidth
                 value={values.phone}
                 onChange={handleChange}
@@ -108,7 +111,7 @@ const RepetitorAdd = () => {
               />
 
               <FormControl fullWidth>
-                <InputLabel>City</InputLabel>
+                <InputLabel>{t('repetitorAdd.city')}</InputLabel>
                 <Field as={Select} name="city" required>
                   {cities.map((city) => (
                     <MenuItem key={city} value={city}>
@@ -119,7 +122,7 @@ const RepetitorAdd = () => {
               </FormControl>
 
               <FormControl fullWidth>
-                <InputLabel>Material</InputLabel>
+                <InputLabel>{t('repetitorAdd.material')}</InputLabel>
                 <Field as={Select} name="material" multiple required>
                   {Object.keys(materialCode).map((code) => (
                     <MenuItem key={code} value={materialCode[code]}>
@@ -130,7 +133,7 @@ const RepetitorAdd = () => {
               </FormControl>
 
               <FormControl fullWidth>
-                <InputLabel>Languages</InputLabel>
+                <InputLabel>{t('repetitorAdd.languages')}</InputLabel>
                 <Field as={Select} name="languages" multiple required>
                   {languages.map((language) => (
                     <MenuItem key={language} value={language}>
@@ -142,7 +145,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="description"
-                label="Description"
+                label={t('repetitorAdd.description')}
                 fullWidth
                 value={values?.description}
                 onChange={handleChange}
@@ -151,7 +154,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="price"
-                label="Price"
+                label={t('repetitorAdd.price')}
                 fullWidth
                 value={values.price}
                 onChange={handleChange}
@@ -160,7 +163,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="class_time"
-                label="Class time"
+                label={t('repetitorAdd.classTime')}
                 fullWidth
                 value={values?.class_time}
                 onChange={handleChange}
@@ -168,21 +171,19 @@ const RepetitorAdd = () => {
               />
 
               <Button type="submit" variant="contained" color="primary">
-                Adauga repetitor
+              {t('repetitorAdd.addRepetitor')}
               </Button>
 
               <Button onClick={resetForm} variant="outlined" color="primary">
-                Reset form
+              {t('repetitorAdd.resetForm')}
               </Button>
             </Stack>
           </Form>
         )}
       </Formik>
       <AlertDialog
-        title={"Error"}
-        message={
-          "Nu s-a primit sa creati repetitor, incercati va rog mai tarziu"
-        }
+        title={t('repetitorAdd.errorTitle')}
+        message={t('repetitorAdd.errorMessage')}
         open={open}
         setOpen={setOpen}
       />

@@ -12,8 +12,11 @@ import {
   Visibility,
 } from "../../node_modules/@mui/icons-material/index";
 import RoundButton from "../components/layout/RoundButton";
+import { useTranslation } from "react-i18next";
+
 
 const Login = () => {
+  const {t} = useTranslation();
   const initialValues = {
     email: "",
     password: "",
@@ -47,11 +50,11 @@ const Login = () => {
                 alignItems={"center"}
               >
                 <Typography variant="h3" component="h1">
-                  Login
+                {t('login.loginTitle')}
                 </Typography>
                 <TextField
                   name="email"
-                  label="Email Address"
+                  label={t('login.passwordLabel')}
                   fullWidth
                   value={values.email}
                   onChange={handleChange}
@@ -63,7 +66,7 @@ const Login = () => {
                 />
                 <TextField
                   name="password"
-                  label="Password"
+                  label={t('login.passwordLabel')}
                   type={showPassword ? "text" : "password"}
                   fullWidth
                   value={values.password}
@@ -93,7 +96,7 @@ const Login = () => {
                 ></FormControl>
 
                 <RoundButton
-                  name={"Login"}
+                  name={t('login.loginButton')}
                   variant={"contained"}
                   type={"submit"}
                 />

@@ -12,8 +12,11 @@ import repetitorPhoto from "../../../assets/profesor.jpg";
 import RoundButton from "../RoundButton";
 import InfoIcon from "@mui/icons-material/Info";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 export default function HomeRepetitor() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Grid container mb={4} alignItems="center">
@@ -27,18 +30,17 @@ export default function HomeRepetitor() {
                 margin: 0,
               }}
             >
-              Preda cu Escoala
+              {t('homeRepetitor.teachWithEscoala')}
             </h6>
             <Typography style={{ textAlign: "left", marginRight: "15px" }}>
-              Câștigă bani împărtășindu-ți cunoștințele de specialitate cu
-              studenții. Înscrie-te și începe să predai online cu Escoala
+            {t('homeRepetitor.earnMoneyBySharing')}
             </Typography>
             <Box display="flex" marginTop={2} sx={{ alignItems: "center" }}>
               <SearchIcon
                 sx={{ color: "primary.main", mr: 2, fontSize: "25px" }}
               />
               <Typography sx={{ textAlign: "left" }}>
-                Gaseste-ti noi studenti
+              {t('homeRepetitor.findNewStudents')}
               </Typography>
             </Box>
 
@@ -47,7 +49,7 @@ export default function HomeRepetitor() {
                 sx={{ color: "primary.main", mr: 2, fontSize: "25px" }}
               />
               <Typography sx={{ textAlign: "left" }}>
-                Dezvolta-ti activitatea
+              {t('homeRepetitor.growYourBusiness')}
               </Typography>
             </Box>
 
@@ -56,14 +58,14 @@ export default function HomeRepetitor() {
                 sx={{ color: "primary.main", mr: 2, fontSize: "25px" }}
               />
               <Typography sx={{ textAlign: "left" }}>
-                Primeste-ti recompensa in siguranta
+              {t('homeRepetitor.receiveRewardSafely')}
               </Typography>
             </Box>
 
             <Box display="flex" marginTop={2} sx={{ alignItems: "center" }}>
               <Link to={"/repetitor/add"}>
                 <RoundButton
-                  name={"Devina Repetitor"}
+                  name={t('homeRepetitor.becomeTutor')}
                   style={{ color: "white", mr: 2 }}
                 />
               </Link>
@@ -76,7 +78,7 @@ export default function HomeRepetitor() {
                 }}
               />
               <Link sx={{ textAlign: "left" }}>
-                Cum functioneaza platforma noastra
+              {t('homeRepetitor.howOurPlatformWorks')}
               </Link>
             </Box>
           </Stack>
