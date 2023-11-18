@@ -8,9 +8,9 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         question: {
-          title: "What do you want to know?",
+          title: "Ask the expert",
           askButton: "Ask your question",
-          dialogTitle: "Add the task",
+          dialogTitle: "Add new question",
           dialogContent:
             "Ask about what you don't know how to do from your homework",
         },
@@ -114,18 +114,18 @@ i18n.use(initReactI18next).init({
     ro: {
       translation: {
         question: {
-          title: "Ce vrei să ştii?",
+          title: "Intreaba expertul",
           askButton: "Pune întrebarea ta",
-          dialogTitle: "Adaugă task-ul",
-          dialogContent: "Întreabă despre ceea ce nu ştii să faci din temă",
+          dialogTitle: "Adaugă o noua intrebare",
+          dialogContent: "Întreabă ceea ce nu stii din teme",
         },
         common: {
           cancel: "Anulează",
         },
         trustedTutors: {
-          title: "Repetitori de Încredere",
+          title: "Repetitori de incredere",
           description:
-            "Școala este o comunitate a cunoștințelor unde elevii și experții se ajută între ei pentru a rezolva cele mai dificile teme pentru acasă.",
+            "Școala este o comunitate a cunoștințelor unde elevii și experții se ajută între ei pentru a rezolva teme pentru acasă dificile.",
         },
         homeSchools: {
           findYourSchool: "Găsește-ți școala",
@@ -137,7 +137,7 @@ i18n.use(initReactI18next).init({
         homeEcology: {
           tutorForYou: "Repetitor pentru tine!",
           trustedTutorsForWorryFreeCommunication:
-            "Repetitori de încredere pentru comunicări fără griji",
+            "Repetitori de incredere pentru comunicări fără griji",
           chooseYourTutor: "Alege-ți repetitorul",
         },
         homeRepetitor: {
@@ -220,9 +220,9 @@ i18n.use(initReactI18next).init({
     ru: {
       translation: {
         question: {
-          title: "Что вы хотите узнать?",
+          title: "Задайте вопрос эксперту ?",
           askButton: "Задайте свой вопрос",
-          dialogTitle: "Добавить задание",
+          dialogTitle: "Добавить новыи вопрос",
           dialogContent: "Спросите о том, что не знаете из домашнего задания",
         },
         common: {

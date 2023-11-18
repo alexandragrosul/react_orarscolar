@@ -25,12 +25,21 @@ import RoundButton from "./layout/RoundButton";
 import { Formik, Form } from "formik";
 
 export const CardComponent = ({ profesor }) => {
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
+  const [openOneToOne, setOpenOneToOne] = React.useState(false);
+  const [openInGroup, setOpenInGroup] = React.useState(false);
+  const handleCloseOneToOne = () => {
+    setOpenOneToOne(false);
+  };
+
+  const handleCloseGroup = () => {
+    setOpenInGroup(false);
   };
   const handleClickBookLesson = () => {
-    setOpen(true);
+    setOpenOneToOne(true);
+  };
+
+  const handleClickBookLessonInGroup = () => {
+    setOpenInGroup(true);
   };
   const initialValues = {
     repetitor: profesor.id,
@@ -56,13 +65,13 @@ export const CardComponent = ({ profesor }) => {
       }
     );
     if (request.ok === false) {
-      setOpen(false);
+      setOpenOneToOne(false);
     }
   };
   const onSubmit = (values) => {
     try {
       bookLesson(values);
-      setOpen(false);
+      setOpenOneToOne(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -95,10 +104,10 @@ export const CardComponent = ({ profesor }) => {
                     textAlign: "center",
                   }}
                 >
-                  {profesor.image ? (
+                  {!profesor.image ? (
                     <img
                       style={{ borderRadius: "50px" }}
-                      src="https://avatars.preply.com/i/logos/i/logos/avatar_y85iu.jpg?d=320x320&f=webp"
+                      src="https://images.pexels.com/photos/5212320/pexels-photo-5212320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                       height="160"
                       weight="160"
                       alt="avatar"
@@ -252,17 +261,20 @@ export const CardComponent = ({ profesor }) => {
 
                   <RoundButton
                     name={"Lectie in grup"}
-                    style={{ color: "white" }}
-                    onClick={handleClickBookLesson}
+                    variant="outlined"
+                    onClick={handleClickBookLessonInGroup}
                   ></RoundButton>
-                  <Dialog open={open} onClose={handleClose}>
+                  {/* Dialog 1 to 1 */}
+                  <Dialog open={openOneToOne} onClose={handleCloseOneToOne}>
                     <DialogTitle>Aplicare la o lecție </DialogTitle>
                     <Formik initialValues={initialValues} onSubmit={onSubmit}>
                       {({ values, handleChange, resetForm }) => (
                         <>
                           <Form>
                             <DialogContent>
-                              <DialogContentText>Test</DialogContentText>
+                              <DialogContentText>
+                                LECTIE ONLINE
+                              </DialogContentText>
 
                               <TextField
                                 autoFocus
@@ -369,7 +381,156 @@ export const CardComponent = ({ profesor }) => {
                               <Button
                                 onClick={() => {
                                   resetForm();
-                                  handleClose();
+                                  handleCloseOneToOne();
+                                }}
+                                variant="outlined"
+                                color="primary"
+                              >
+                                Inchide
+                              </Button>
+                            </DialogActions>
+                          </Form>
+                        </>
+                      )}
+                    </Formik>
+                  </Dialog>
+                  {/* Dialog group */}
+                  <Dialog open={openInGroup} onClose={handleCloseGroup}>
+                    <DialogTitle>Aplicare la o lecție de grup </DialogTitle>
+                    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+                      {({ values, handleChange, resetForm }) => (
+                        <>
+                          <Form>
+                            <DialogContent>
+                              <DialogContentText>
+                                LECTIE DE GRUP
+                              </DialogContentText>
+
+                              <TextField
+                                autoFocus
+                                margin="dense"
+                                id="material"
+                                label="Material"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                // value={formData.age}
+                                // onChange={(event) => {
+                                //   const age = event.target.value;
+                                //   setFormData((formData) => ({
+                                //     ...age,
+                                //   }));
+                                // }}
+                                value={values.age}
+                                onChange={handleChange}
+                              />
+
+                              <TextField
+                                autoFocus
+                                margin="dense"
+                                id="name"
+                                label="Nume"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                // value={formData.name}
+                                // onChange={(event) => {
+                                //   const name = event.target.value;
+                                //   setFormData((formData) => ({
+                                //     ...name,
+                                //   }));
+                                // }}
+                                value={values.name}
+                                onChange={handleChange}
+                              />
+                              <TextField
+                                autoFocus
+                                margin="dense"
+                                id="phone"
+                                label="Telefon"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                // value={formData.phone}
+                                // onChange={(event) => {
+                                //   const phone = event.target.value;
+                                //   setFormData((formData) => ({
+                                //     ...phone,
+                                //   }));
+                                // }}
+                                value={values.phone}
+                                onChange={handleChange}
+                              />
+                              <TextField
+                                autoFocus
+                                margin="dense"
+                                id="email"
+                                label="Email"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                // value={formData.email}
+                                // onChange={(event) => {
+                                //   const email = event.target.value;
+                                //   setFormData((formData) => ({
+                                //     ...email,
+                                //   }));
+                                // }}
+                                value={values.email}
+                                onChange={handleChange}
+                              />
+                              <TextField
+                                autoFocus
+                                margin="dense"
+                                id="time"
+                                label="Timp"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                // value={formData.time}
+                                // onChange={(event) => {
+                                //   const time = event.target.value;
+                                //   setFormData((formData) => ({
+                                //     ...time,
+                                //   }));
+                                // }}
+                                value={values.time}
+                                onChange={handleChange}
+                              />
+                              <TextField
+                                autoFocus
+                                margin="dense"
+                                id="age"
+                                label="Varsta"
+                                type="text"
+                                fullWidth
+                                variant="standard"
+                                // value={formData.age}
+                                // onChange={(event) => {
+                                //   const age = event.target.value;
+                                //   setFormData((formData) => ({
+                                //     ...age,
+                                //   }));
+                                // }}
+                                value={values.age}
+                                onChange={handleChange}
+                              />
+                            </DialogContent>
+                            <DialogActions>
+                              {/* <Button onClick={}>Rezerveaza</Button>
+                      <Button onClick={handleClose}>Cancel</Button> */}
+                              <Button
+                                type="submit"
+                                variant="contained"
+                                color="primary"
+                              >
+                                Rezerva lectie
+                              </Button>
+
+                              <Button
+                                onClick={() => {
+                                  resetForm();
+                                  handleCloseGroup();
                                 }}
                                 variant="outlined"
                                 color="primary"

@@ -30,11 +30,15 @@ function Home({ profesors }) {
           //   borderRadius: "50px",
           // }}
         >
-          <Grid item xs={12} sx={{ background: "transparent", mb: 4, p: 2 }}>
+          <Grid
+            item
+            xs={12}
+            sx={{ background: "transparent", mb: 4, p: 2, mt: 4 }}
+          >
             <HomeQuestion />
           </Grid>
 
-          <Grid item xs={12} sx={{ background: "transparent", mb: 4, p: 2 }}>
+          {/* <Grid item xs={12} sx={{ background: "transparent", mb: 4, p: 2 }}>
             <Typography
               variant="h3"
               component="h2"
@@ -50,7 +54,7 @@ function Home({ profesors }) {
             <Typography variant="body1" align="left" sx={{ mt: 3 }}>
               {t("trustedTutors.description")}
             </Typography>
-          </Grid>
+          </Grid> */}
           {/* <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeSchools />
           </Grid> */}

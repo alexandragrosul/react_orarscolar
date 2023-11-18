@@ -32,9 +32,9 @@ function App() {
           <Route path="/repetitori/:id" element={<Repetitor />} />
           <Route path="/repetitor/add" element={<RepetitorAdd />} />
           <Route path="/timetable/:schoolId" element={<Timetable />} />
-          <Route path="/schools" element={<Schools />} />
-          <Route path="/schools/:id" element={<SchoolPage />} />
-          <Route path="/schools/add" element={<AddSchool />} />
+          {/* <Route path="/schools" element={<Schools />} /> */}
+          {/* <Route path="/schools/:id" element={<SchoolPage />} /> */}
+          {/* <Route path="/schools/add" element={<AddSchool />} /> */}
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={<Login />} />
           <Route path="/events" element={<Events />} />
