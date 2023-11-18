@@ -10,11 +10,12 @@ import {
   Typography,
 } from "../../../../node_modules/@mui/material/index";
 import RoundButton from "../RoundButton";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const HomeQuestion = () => {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = React.useState(false);
+  const [question, setQuestion] = React.useState("");
   const handleClickQuestionOpen = () => {
     setOpen(true);
   };
@@ -48,8 +49,6 @@ const HomeQuestion = () => {
 
   return (
     <>
-    <div>
-      </div>
       <Typography
         variant="h3"
         component="h2"
@@ -60,36 +59,34 @@ const HomeQuestion = () => {
           font: "Noto Sans Vithkuqi",
         }}
       >
-        {t('question.title')}
+        {t("question.title")}
       </Typography>
       <RoundButton
-        name={t('question.askButton')}
-        style={{ color: "white" }}
+        name={t("question.askButton")}
+        style={{ color: "white", marginTop: "15px", backgroundColor: "orange" }}
         onClick={handleClickQuestionOpen}
       />
+
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>{t('question.dialogTitle')}</DialogTitle>
+        <DialogTitle>{t("question.dialogTitle")}</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-          {t('question.dialogContent')}
-          </DialogContentText>
-          {/* <TextField
+          <DialogContentText>{t("question.dialogContent")}</DialogContentText>
+          <TextField
             autoFocus
             margin="dense"
             id="task_name"
-            label="Denumirea taskului"
             type="text"
             fullWidth
             variant="standard"
-            value={taskName}
+            value={question}
             onChange={(event) => {
-              setTaskName(event.target.value);
+              setQuestion(event.target.value);
             }}
-          /> */}
+          />
         </DialogContent>
         <DialogActions>
           {/* <Button onClick={saveTask}>Save</Button> */}
-          <Button onClick={handleClose}>{t('common.cancel')}</Button>
+          <Button onClick={handleClose}>{t("common.cancel")}</Button>
         </DialogActions>
       </Dialog>
     </>

@@ -64,7 +64,7 @@ function Footer({ onButtonClick, selected }) {
   };
   return (
     <Container sx={{ boxSizing: "unset", px: 0 }}>
-      {/* <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
+      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
         <Toolbar>
           <IconButton
             color={selected === "schedule" ? "secondary" : "black"}
@@ -108,7 +108,7 @@ function Footer({ onButtonClick, selected }) {
             <Button onClick={handleClose}>Cancel</Button>
           </DialogActions>
         </Dialog>
-      </AppBar> */}
+      </AppBar>
     </Container>
   );
 }
