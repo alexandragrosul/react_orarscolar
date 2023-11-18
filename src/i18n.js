@@ -217,6 +217,112 @@ i18n.use(initReactI18next).init({
         },
       },
     },
+    ru: {
+      translation: {
+        question: {
+          title: "Что вы хотите узнать?",
+          askButton: "Задайте свой вопрос",
+          dialogTitle: "Добавить задание",
+          dialogContent: "Спросите о том, что не знаете из домашнего задания",
+        },
+        common: {
+          cancel: "Отмена",
+        },
+        trustedTutors: {
+          title: "Доверенные репетиторы",
+          description:
+            "Школа - это сообщество знаний, где ученики и эксперты помогают друг другу решать самые сложные задания по домашнему заданию.",
+        },
+        homeSchools: {
+          findYourSchool: "Найти свою школу",
+          schoolIsVeryImportant: "Школа очень важна для ребенка",
+          schoolNotInList: "Вашей школы нет в списке?",
+          allSchools: "Все школы",
+        },
+        homeEcology: {
+          tutorForYou: "Репетитор для вас!",
+          trustedTutorsForWorryFreeCommunication:
+            "Доверенные репетиторы для беззаботного общения",
+          chooseYourTutor: "Выберите своего репетитора",
+        },
+        homeRepetitor: {
+          teachWithEscoala: "Обучайте с Escoala",
+          earnMoneyBySharing:
+            "Зарабатывайте, делясь своими знаниями со студентами. Зарегистрируйтесь и начните преподавать онлайн с Escoala.",
+          findNewStudents: "Находите новых студентов",
+          growYourBusiness: "Развивайте свой бизнес",
+          receiveRewardSafely: "Получайте свою награду безопасно",
+          becomeTutor: "Станьте репетитором",
+          howOurPlatformWorks: "Как работает наша платформа",
+        },
+        topBar: {
+          home: "Главная",
+          schools: "Школы",
+          tutors: "Репетиторы",
+          events: "События",
+          contacts: "Контакты",
+          english: "Английский",
+          romania: "Румыния",
+        },
+        schools: {
+          title: "Школы",
+          searchLabel: "Школы",
+          profileLabel: "Профиль",
+          allProfile: "Все",
+          generalProfile: "Общий",
+          musicProfile: "Музыка",
+          regionLabel: "Регион",
+          allRegion: "Все",
+          chisinauRegion: "Кишинев",
+          baltiRegion: "Бельцы",
+          chimisliaRegion: "Кимишлия",
+        },
+        repetitori: {
+          title: "Репетиторы",
+          addRepetitor: "Добавить репетитора",
+          repetitorLabel: "Репетитор",
+          noProfessorsFound: "Профессоры не найдены",
+        },
+        repetitorAdd: {
+          title: "Добавить учителей",
+          name: "Имя",
+          phone: "Телефон",
+          city: "Город",
+          material: "Материал",
+          languages: "Языки",
+          description: "Описание",
+          price: "Цена",
+          classTime: "Время занятий",
+          addRepetitor: "Добавить репетитора",
+          resetForm: "Сбросить форму",
+          errorTitle: "Ошибка",
+          errorMessage:
+            "Не удалось создать учителя. Пожалуйста, попробуйте позже.",
+        },
+        login: {
+          loginTitle: "Войти",
+          emailLabel: "Адрес электронной почты",
+          passwordLabel: "Пароль",
+          loginButton: "Войти",
+        },
+        contacts: {
+          title: "Отправить сообщение",
+          name: "Имя",
+          phone: "Телефон",
+          email: "Электронная почта",
+          message: "Сообщение",
+          sourceLabel: "Откуда вы узнали о нас?",
+          sendButton: "Отправить сообщение",
+          resetButton: "Сбросить форму",
+          errorTitle: "Ошибка",
+          errorMessage:
+            "Мы не смогли получить ваше сообщение. Пожалуйста, попробуйте еще раз позже.",
+          successTitle: "Успех",
+          successMessage:
+            "Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.",
+        },
+      },
+    },
   },
 });
 

@@ -7,6 +7,7 @@ import StarIcon from "@mui/icons-material/Star";
 import InfoIcon from "@mui/icons-material/Info";
 import { Card, CardContent, Typography, Box } from "@mui/material";
 import NoPhotographyIcon from "@mui/icons-material/NoPhotography";
+import Rating from "@mui/material/Rating";
 import {
   Link,
   Grid,
@@ -59,7 +60,6 @@ export const CardComponent = ({ profesor }) => {
     }
   };
   const onSubmit = (values) => {
-    console.log(values);
     try {
       bookLesson(values);
       setOpen(false);
@@ -118,14 +118,29 @@ export const CardComponent = ({ profesor }) => {
                   alignItems: "flex-start",
                 }}
               >
-                <Typography
-                  gutterBottom
-                  variant="h6"
-                  component="h4"
-                  fontWeight="bold"
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
                 >
-                  {profesor.name}
-                </Typography>
+                  <Box>
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      component="h4"
+                      fontWeight="bold"
+                    >
+                      {profesor.name}
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Rating
+                      name="read-only"
+                      value={Math.floor(Math.random() * 5) + 1}
+                      readOnly
+                    />
+                  </Box>
+                </Stack>
                 <Stack spacing={1}>
                   <Box display="flex" sx={{ alignItems: "center" }}>
                     <AutoStoriesIcon
@@ -231,6 +246,12 @@ export const CardComponent = ({ profesor }) => {
 
                   <RoundButton
                     name={"Rezerva lectie"}
+                    style={{ color: "white" }}
+                    onClick={handleClickBookLesson}
+                  ></RoundButton>
+
+                  <RoundButton
+                    name={"Lectie in grup"}
                     style={{ color: "white" }}
                     onClick={handleClickBookLesson}
                   ></RoundButton>

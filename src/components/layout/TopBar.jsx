@@ -15,23 +15,19 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SchoolIcon from "@mui/icons-material/School";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import RoundButton from "./RoundButton";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import { Button } from "../../../node_modules/@mui/material/index";
 
-
-
-
-
 function TopBar({ position }) {
-  const [anchorElNav, setAnchorElNav] = useState(null);  
+  const [anchorElNav, setAnchorElNav] = useState(null);
   const { i18n, t } = useTranslation();
 
   const pages = [
-    { label: t('topBar.home'), link: '/' },
-    { label: t('topBar.schools'), link: '/schools' },
-    { label: t('topBar.tutors'), link: '/repetitori' },
-    { label: t('topBar.events'), link: '/events' },
-    { label: t('topBar.contacts'), link: '/contacts' },
+    { label: t("topBar.home"), link: "/" },
+    { label: t("topBar.schools"), link: "/schools" },
+    { label: t("topBar.tutors"), link: "/repetitori" },
+    { label: t("topBar.events"), link: "/events" },
+    { label: t("topBar.contacts"), link: "/contacts" },
   ];
 
   const changeLanguage = (language) => {
@@ -130,8 +126,36 @@ function TopBar({ position }) {
               </Link>
             ))}
           </Box>
-          <Button sx={{ p:0 }} onClick={() => changeLanguage('en')}>En</Button>
-          <Button sx={{ p:0 }} onClick={() => changeLanguage('ro')}>Ro</Button>
+          {/* <Button sx={{ p: 0 }} onClick={() => changeLanguage("en")}>
+            En
+          </Button>
+          <Button sx={{ p: 0 }} onClick={() => changeLanguage("ro")}>
+            Ro
+          </Button>
+          <Button sx={{ p: 0 }} onClick={() => changeLanguage("ru")}>
+            Ru
+          </Button> */}
+          <a
+            href="#"
+            onClick={() => changeLanguage("en")}
+            style={{ color: "green", padding: "3px" }}
+          >
+            En
+          </a>
+          <a
+            href="#"
+            onClick={() => changeLanguage("ro")}
+            style={{ color: "green", padding: "3px" }}
+          >
+            Ro
+          </a>
+          <a
+            href="#"
+            onClick={() => changeLanguage("ru")}
+            style={{ color: "green", padding: "3px" }}
+          >
+            Ru
+          </a>
         </Toolbar>
       </Container>
     </AppBar>

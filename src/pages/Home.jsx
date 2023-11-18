@@ -51,9 +51,9 @@ function Home({ profesors }) {
               {t("trustedTutors.description")}
             </Typography>
           </Grid>
-          <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
+          {/* <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeSchools />
-          </Grid>
+          </Grid> */}
           {/* <Grid
             item
             xs={12}
