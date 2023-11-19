@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Repetitor from "./pages/Repetitor/Repetitor";
 import Timetable from "./pages/Timetable";
+import Answers from "./pages/Answers";
 import Wrapper from "./components/Wrapper";
 import Schools from "./pages/Schools";
 import RepetitoriPage from "./pages/Repetitor/RepetitoriPage";
@@ -37,6 +38,7 @@ function App() {
           {/* <Route path="/schools/add" element={<AddSchool />} /> */}
           <Route path="/registration" element={<Registration />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/answers" element={<Answers />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />

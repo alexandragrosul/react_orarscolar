@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         question: {
-          title: "Ask the expert",
+          title: "Ask the expert?",
           askButton: "Ask your question",
           dialogTitle: "Add new question",
           dialogContent:
@@ -29,9 +29,12 @@ i18n.use(initReactI18next).init({
           allSchools: "All Schools",
         },
         homeEcology: {
-          tutorForYou: "Tutor for You!",
-          trustedTutorsForWorryFreeCommunication:
-            "Trusted tutors for worry-free communication",
+          tutorForYou: "Unlock Your Potential with Our Exceptional Tutors!",
+          trustedTutorsForWorryFreeCommunication: `Why choose us?
+            1. Expertise
+            2. Personalized Approach
+            3. Flexible Scheduling
+            4. Proven Results`,
           chooseYourTutor: "Choose your tutor",
         },
         homeRepetitor: {
@@ -52,6 +55,7 @@ i18n.use(initReactI18next).init({
           contacts: "Contacts",
           english: "English",
           romania: "Romania",
+          answers: "Answers",
         },
         schools: {
           title: "Schools",
@@ -114,7 +118,7 @@ i18n.use(initReactI18next).init({
     ro: {
       translation: {
         question: {
-          title: "Intreaba expertul",
+          title: "Intreaba expertul?",
           askButton: "Pune întrebarea ta",
           dialogTitle: "Adaugă o noua intrebare",
           dialogContent: "Întreabă ceea ce nu stii din teme",
@@ -135,9 +139,13 @@ i18n.use(initReactI18next).init({
           allSchools: "Toate școlile",
         },
         homeEcology: {
-          tutorForYou: "Repetitor pentru tine!",
-          trustedTutorsForWorryFreeCommunication:
-            "Repetitori de incredere pentru comunicări fără griji",
+          tutorForYou:
+            "Descoperiți-vă potențialul cu profesorii noștri excepționali!",
+          trustedTutorsForWorryFreeCommunication: `De ce să ne alegeți?
+          1. Experiență
+          2. Abordare personalizată
+          3. Program flexibil
+          4. Rezultate dovedite`,
           chooseYourTutor: "Alege-ți repetitorul",
         },
         homeRepetitor: {
@@ -158,6 +166,7 @@ i18n.use(initReactI18next).init({
           contacts: "Contacte",
           english: "Engleza",
           romania: "Romania",
+          answers: "Raspunsuri",
         },
         schools: {
           title: "Scoli",
@@ -240,9 +249,13 @@ i18n.use(initReactI18next).init({
           allSchools: "Все школы",
         },
         homeEcology: {
-          tutorForYou: "Репетитор для вас!",
-          trustedTutorsForWorryFreeCommunication:
-            "Доверенные репетиторы для беззаботного общения",
+          tutorForYou:
+            "Разблокируйте свой потенциал с нашими исключительными репетиторами!",
+          trustedTutorsForWorryFreeCommunication: `Почему выбирать нас?
+          1. Опыт
+          2. Индивидуальный подход
+          3. Гибкое расписание
+          4. Подтвержденные результаты`,
           chooseYourTutor: "Выберите своего репетитора",
         },
         homeRepetitor: {
@@ -263,6 +276,7 @@ i18n.use(initReactI18next).init({
           contacts: "Контакты",
           english: "Английский",
           romania: "Румыния",
+          answers: "Ответы",
         },
         schools: {
           title: "Школы",

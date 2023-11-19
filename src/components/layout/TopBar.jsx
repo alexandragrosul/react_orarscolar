@@ -26,7 +26,8 @@ function TopBar({ position }) {
     { label: t("topBar.home"), link: "/" },
     // { label: t("topBar.schools"), link: "/schools" },
     { label: t("topBar.tutors"), link: "/repetitori" },
-    { label: t("topBar.events"), link: "/events" },
+    { label: t("topBar.answers"), link: "/answers" },
+    // { label: t("topBar.events"), link: "/events" },
     { label: t("topBar.contacts"), link: "/contacts" },
   ];
 

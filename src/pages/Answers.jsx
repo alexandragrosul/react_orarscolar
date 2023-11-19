@@ -6,7 +6,7 @@ import {
   ListItemText,
 } from "../../node_modules/@mui/material/index";
 
-const Questions = () => {
+const Answers = () => {
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       <ListItem>
@@ -15,4 +15,4 @@ const Questions = () => {
     </List>
   );
 };
-export default Questions;
+export default Answers;
