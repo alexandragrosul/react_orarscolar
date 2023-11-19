@@ -37,7 +37,6 @@ function TopBar({ position }) {
 
   const handleOpenNavMenu = (event) => setAnchorElNav(event.currentTarget);
   const handleCloseNavMenu = () => setAnchorElNav(null);
-  console.log({ position });
   return (
     <AppBar
       position={position}

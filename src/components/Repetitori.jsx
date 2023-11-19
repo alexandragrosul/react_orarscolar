@@ -10,9 +10,7 @@ import { Link } from "react-router-dom";
 import { CardComponent } from "./Card";
 import { useTranslation } from "react-i18next";
 
-
 const Repetitori = () => {
-
   const materialCode = {
     rom: "Romana",
     fr: "Franceza",
@@ -33,10 +31,10 @@ const Repetitori = () => {
   const { t } = useTranslation();
 
   const filteredByMaterial = (material) => {
-    console.log(material);
+    console.log(coaches);
     setFilteredProfesors(
-      coaches.filter((coaches) => {
-        return coaches.material.includes(material);
+      coaches.filter((coache) => {
+        return coache?.material?.includes(material);
       })
     );
     setSelectedMaterial(material);
@@ -61,6 +59,8 @@ const Repetitori = () => {
             experience: data[key].experience,
             isVerified: data[key].isVerified,
             price: data[key].price,
+            rating: data[key].rating,
+            video: data[key].video,
             workingHours: data[key].workingHours,
           }));
 
@@ -73,23 +73,31 @@ const Repetitori = () => {
       });
   }, []);
 
+  // Сортировка массива по рейтингу (по убыванию)
+  const sortedProfessors = filteredProfesors
+    .slice()
+    .sort((a, b) => b.rating - a.rating);
+
   return (
     <>
       <Grid container alignItems="center">
         <Grid item xs={6}>
           <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
-          {t('repetitori.title')}
+            {t("repetitori.title")}
           </h1>
         </Grid>
         <Grid item xs={6} align="center">
           <Link to={"/repetitor/add"}>
-            <RoundButton name={t('repetitori.addRepetitor')}  style={{ color: "white" }} />
+            <RoundButton
+              name={t("repetitori.addRepetitor")}
+              style={{ color: "white" }}
+            />
           </Link>
         </Grid>
       </Grid>
       <FormControl fullWidth>
         <InputLabel sx={{ m: 0, p: 0 }} id="demo-simple-select-label">
-        {t('repetitori.repetitorLabel')}
+          {t("repetitori.repetitorLabel")}
         </InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -126,7 +134,7 @@ const Repetitori = () => {
       </Stack>
       {filteredProfesors.length === 0 && (
         <Typography align="center" variant="body1">
-          {t('repetitori.noProfessorsFound')}
+          {t("repetitori.noProfessorsFound")}
         </Typography>
       )}
     </>

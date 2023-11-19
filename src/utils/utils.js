@@ -1,7 +1,6 @@
 export function parseStringToJson(jsonString) {
   // Remove HTML tags and unescape HTML entities
   if (!jsonString) return null;
-  console.log(jsonString);
   const cleanedString = jsonString
     .replace(/<[^>]+>/g, "")
     .replace(/&#91;/g, "[")

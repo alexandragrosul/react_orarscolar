@@ -13,7 +13,6 @@ import { Container } from "../../node_modules/@mui/material/index";
 import axios from "../../node_modules/axios/index";
 import { parseStringToJson } from "../utils/utils.js";
 
-
 const SchoolPage = () => {
   const { id } = useParams();
   const [school, setSchool] = useState(null);
@@ -42,7 +41,6 @@ const SchoolPage = () => {
       const data = response.data;
       const parsedObject = parseStringToJson(data.content.rendered);
       setSchool({ data, ...parsedObject });
-      console.log("data");
     } catch (error) {
       console.error(error);
     }

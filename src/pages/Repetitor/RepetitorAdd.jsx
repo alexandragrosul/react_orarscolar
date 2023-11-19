@@ -15,7 +15,6 @@ import AlertDialog from "../../components/layout/AlertDialog";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-
 const initialValues = {
   name: "",
   phone: "",
@@ -52,7 +51,7 @@ const languages = ["English", "Romana"];
 const RepetitorAdd = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   const addCoach = async (payload) => {
     const request = await fetch(
@@ -68,7 +67,6 @@ const RepetitorAdd = () => {
   };
 
   const onSubmit = (values) => {
-    console.log(values);
     try {
       addCoach(values);
       navigate("/repetitori");
@@ -90,11 +88,11 @@ const RepetitorAdd = () => {
               alignItems={"center"}
             >
               <Typography variant="h3" component="h1">
-              {t('repetitorAdd.title')}
+                {t("repetitorAdd.title")}
               </Typography>
               <TextField
                 name="name"
-                label={t('repetitorAdd.name')}
+                label={t("repetitorAdd.name")}
                 fullWidth
                 value={values.name}
                 onChange={handleChange}
@@ -103,7 +101,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="phone"
-                label={t('repetitorAdd.phone')}
+                label={t("repetitorAdd.phone")}
                 fullWidth
                 value={values.phone}
                 onChange={handleChange}
@@ -111,7 +109,7 @@ const RepetitorAdd = () => {
               />
 
               <FormControl fullWidth>
-                <InputLabel>{t('repetitorAdd.city')}</InputLabel>
+                <InputLabel>{t("repetitorAdd.city")}</InputLabel>
                 <Field as={Select} name="city" required>
                   {cities.map((city) => (
                     <MenuItem key={city} value={city}>
@@ -122,7 +120,7 @@ const RepetitorAdd = () => {
               </FormControl>
 
               <FormControl fullWidth>
-                <InputLabel>{t('repetitorAdd.material')}</InputLabel>
+                <InputLabel>{t("repetitorAdd.material")}</InputLabel>
                 <Field as={Select} name="material" multiple required>
                   {Object.keys(materialCode).map((code) => (
                     <MenuItem key={code} value={materialCode[code]}>
@@ -133,7 +131,7 @@ const RepetitorAdd = () => {
               </FormControl>
 
               <FormControl fullWidth>
-                <InputLabel>{t('repetitorAdd.languages')}</InputLabel>
+                <InputLabel>{t("repetitorAdd.languages")}</InputLabel>
                 <Field as={Select} name="languages" multiple required>
                   {languages.map((language) => (
                     <MenuItem key={language} value={language}>
@@ -145,7 +143,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="description"
-                label={t('repetitorAdd.description')}
+                label={t("repetitorAdd.description")}
                 fullWidth
                 value={values?.description}
                 onChange={handleChange}
@@ -154,7 +152,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="price"
-                label={t('repetitorAdd.price')}
+                label={t("repetitorAdd.price")}
                 fullWidth
                 value={values.price}
                 onChange={handleChange}
@@ -163,7 +161,7 @@ const RepetitorAdd = () => {
 
               <TextField
                 name="class_time"
-                label={t('repetitorAdd.classTime')}
+                label={t("repetitorAdd.classTime")}
                 fullWidth
                 value={values?.class_time}
                 onChange={handleChange}
@@ -171,19 +169,19 @@ const RepetitorAdd = () => {
               />
 
               <Button type="submit" variant="contained" color="primary">
-              {t('repetitorAdd.addRepetitor')}
+                {t("repetitorAdd.addRepetitor")}
               </Button>
 
               <Button onClick={resetForm} variant="outlined" color="primary">
-              {t('repetitorAdd.resetForm')}
+                {t("repetitorAdd.resetForm")}
               </Button>
             </Stack>
           </Form>
         )}
       </Formik>
       <AlertDialog
-        title={t('repetitorAdd.errorTitle')}
-        message={t('repetitorAdd.errorMessage')}
+        title={t("repetitorAdd.errorTitle")}
+        message={t("repetitorAdd.errorMessage")}
         open={open}
         setOpen={setOpen}
       />

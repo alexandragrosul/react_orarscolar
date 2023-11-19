@@ -8,6 +8,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import { Card, CardContent, Typography, Box } from "@mui/material";
 import NoPhotographyIcon from "@mui/icons-material/NoPhotography";
 import Rating from "@mui/material/Rating";
+import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import {
   Link,
   Grid,
@@ -20,13 +21,49 @@ import {
   DialogContentText,
   DialogTitle,
   TextField,
+  AppBar,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Toolbar,
+  Slide,
+  FormControl,
+  FormControlLabel,
+  InputLabel,
+  MenuItem,
+  Select,
+  Switch,
 } from "../../node_modules/@mui/material/index";
 import RoundButton from "./layout/RoundButton";
 import { Formik, Form } from "formik";
+import CloseIcon from "@mui/icons-material/Close";
+import YoutubeEmbed from "./YoutubeEmbed";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
 
 export const CardComponent = ({ profesor }) => {
   const [openOneToOne, setOpenOneToOne] = React.useState(false);
   const [openInGroup, setOpenInGroup] = React.useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const [fullWidth, setFullWidth] = React.useState(true);
+  const [maxWidth, setMaxWidth] = React.useState("sm");
+
   const handleCloseOneToOne = () => {
     setOpenOneToOne(false);
   };
@@ -41,6 +78,17 @@ export const CardComponent = ({ profesor }) => {
   const handleClickBookLessonInGroup = () => {
     setOpenInGroup(true);
   };
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const initialValues = {
     repetitor: profesor.id,
     name: "",
@@ -76,6 +124,8 @@ export const CardComponent = ({ profesor }) => {
       console.log(error.message);
     }
   };
+
+  console.log(profesor);
   return (
     <>
       {/* <Link to={`/repetitori/${profesor.id}`}> */}
@@ -104,10 +154,10 @@ export const CardComponent = ({ profesor }) => {
                   textAlign: "center",
                 }}
               >
-                {!profesor.image ? (
+                {profesor?.photo ? (
                   <img
                     style={{ borderRadius: "50px" }}
-                    src="https://images.pexels.com/photos/5212320/pexels-photo-5212320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    src={`http://escoala.md/images/tutors/${profesor.photo}`}
                     height="160"
                     weight="160"
                     alt="avatar"
@@ -133,6 +183,17 @@ export const CardComponent = ({ profesor }) => {
                 justifyContent="space-between"
                 alignItems="center"
               >
+                {profesor.video && (
+                  <OndemandVideoIcon
+                    onClick={handleClickOpen}
+                    sx={{
+                      color: "primary.main",
+                      mr: 2,
+                      fontSize: "30px",
+                      cursor: "pointer",
+                    }}
+                  />
+                )}
                 <Box>
                   <Typography
                     gutterBottom
@@ -144,7 +205,11 @@ export const CardComponent = ({ profesor }) => {
                   </Typography>
                 </Box>
                 <Box>
-                  <Rating name="read-only" value={0} readOnly />
+                  <Rating
+                    name="read-only"
+                    value={profesor.rating ?? 0}
+                    readOnly
+                  />
                 </Box>
               </Stack>
               <Stack spacing={1}>
@@ -225,7 +290,7 @@ export const CardComponent = ({ profesor }) => {
                       flexDirection: "row-reverse",
                     }}
                   >
-                    <FavoriteBorderIcon sx={{ alignSelf: "end" }} />
+                    {/* <FavoriteBorderIcon sx={{ alignSelf: "end" }} /> */}
                   </Grid>
                   {profesor?.result && (
                     <Grid item xs={6}>
@@ -544,6 +609,28 @@ export const CardComponent = ({ profesor }) => {
                   ></RoundButton> */}
               </Stack>
             </Grid>
+
+            {/* <Button variant="outlined" onClick={handleClickOpen}>
+              Video introduction
+            </Button> */}
+            <Dialog
+              fullWidth={fullWidth}
+              maxWidth={maxWidth}
+              open={open}
+              onClose={handleClose}
+            >
+              <DialogTitle> Video introduction</DialogTitle>
+              <DialogContent sx={{ m: 0 }}>
+                {/* <DialogContentText>
+                  You can set my maximum width and whether to adapt or not.
+                </DialogContentText> */}
+
+                <YoutubeEmbed embedId="eeYoufGhrS8" />
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>Close</Button>
+              </DialogActions>
+            </Dialog>
           </Grid>
         </CardContent>
       </Card>

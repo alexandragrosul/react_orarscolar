@@ -6,7 +6,6 @@ import Typography from "@mui/material/Typography";
 
 const NewsList = ({ news }) => {
   if (news.length === 0) return <p>Din pacte la moment nu avem stiri</p>;
-  console.log(news);
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       {news.map((newsItem) => (
