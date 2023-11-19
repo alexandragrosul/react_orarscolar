@@ -61,6 +61,7 @@ const Repetitori = () => {
             price: data[key].price,
             rating: data[key].rating,
             video: data[key].video,
+            photo: data[key].photo,
             workingHours: data[key].workingHours,
           }));
 

@@ -125,7 +125,7 @@ export const CardComponent = ({ profesor }) => {
     }
   };
 
-  console.log(profesor);
+  console.log(profesor.photo);
   return (
     <>
       {/* <Link to={`/repetitori/${profesor.id}`}> */}
