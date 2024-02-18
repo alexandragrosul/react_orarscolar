@@ -78,6 +78,12 @@ const HomeQuestion = () => {
       console.log(error.message);
     }
   };
+
+  React.useEffect(() => {
+    if (open && openSuccess) {
+      setOpen(false);
+    }
+  }, [openSuccess]);
   return (
     <>
       <Typography
