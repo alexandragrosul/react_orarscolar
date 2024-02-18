@@ -64,10 +64,274 @@ TabPanel.propTypes = {
 
 export const TimeTable = () => {
   const [dense] = React.useState(false);
+  const weekTemp = [
+    {
+      day: "Monday",
+      lessons: [
+        {
+          timeStart: "08:30",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeEnd: "10:20",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeStart: "10:35",
+          timeEnd: "11:20",
+          subject: 10,
+          tasks: [3, 4],
+        },
+        {
+          timeStart: "11:35",
+          timeEnd: "12:20",
+          subject: 10,
+          tasks: [5, 6],
+        },
+        {
+          timeStart: "12:30",
+          timeEnd: "13:15",
+          subject: 4,
+          tasks: [7, 8],
+        },
+        {
+          timeStart: "13:30",
+          timeEnd: "14:15",
+          subject: 6,
+          tasks: [7, 8],
+        },
+      ],
+    },
+    {
+      day: "Tuesday",
+      lessons: [
+        {
+          timeStart: "08:30",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeEnd: "10:20",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeStart: "10:35",
+          timeEnd: "11:20",
+          subject: 10,
+          tasks: [3, 4],
+        },
+        {
+          timeStart: "11:35",
+          timeEnd: "12:20",
+          subject: 10,
+          tasks: [5, 6],
+        },
+        {
+          timeStart: "12:30",
+          timeEnd: "13:15",
+          subject: 4,
+          tasks: [7, 8],
+        },
+      ],
+    },
+    {
+      day: "Wednesday",
+      lessons: [
+        {
+          timeStart: "08:30",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeEnd: "10:20",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeStart: "10:35",
+          timeEnd: "11:20",
+          subject: 10,
+          tasks: [3, 4],
+        },
+        {
+          timeStart: "11:35",
+          timeEnd: "12:20",
+          subject: 10,
+          tasks: [5, 6],
+        },
+        {
+          timeStart: "12:30",
+          timeEnd: "13:15",
+          subject: 7,
+          tasks: [7, 8],
+        },
+      ],
+    },
+    {
+      day: "Thursday",
+      lessons: [
+        {
+          timeStart: "08:30",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeEnd: "10:20",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeStart: "10:35",
+          timeEnd: "11:20",
+          subject: 10,
+          tasks: [3, 4],
+        },
+        {
+          timeStart: "11:35",
+          timeEnd: "12:20",
+          subject: 10,
+          tasks: [5, 6],
+        },
+        {
+          timeStart: "12:30",
+          timeEnd: "13:15",
+          subject: 8,
+          tasks: [7, 8],
+        },
+        {
+          timeStart: "13:30",
+          timeEnd: "14:15",
+          subject: 9,
+          tasks: [7, 8],
+        },
+        ,
+        {
+          timeStart: "14:25",
+          timeEnd: "15:10",
+          subject: 2,
+          tasks: [7, 8],
+        },
+      ],
+    },
+    {
+      day: "Friday",
+      lessons: [
+        {
+          timeStart: "08:30",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeEnd: "10:20",
+          subject: 1,
+          tasks: [1, 2],
+        },
+        {
+          timeStart: "10:35",
+          timeEnd: "11:20",
+          subject: 10,
+          tasks: [3, 4],
+        },
+        {
+          timeStart: "11:35",
+          timeEnd: "12:20",
+          subject: 10,
+          tasks: [5, 6],
+        },
+        {
+          timeStart: "12:30",
+          timeEnd: "13:15",
+          subject: 8,
+          tasks: [7, 8],
+        },
+        {
+          timeStart: "13:30",
+          timeEnd: "14:15",
+          subject: 5,
+          tasks: [7, 8],
+        },
+        ,
+        {
+          timeStart: "14:25",
+          timeEnd: "15:10",
+          subject: 3,
+          tasks: [7, 8],
+        },
+      ],
+    },
+  ];
 
-  const weekLocalStorage = localStorage.getItem("week");
+  const disciplineTemp = {
+    1: {
+      id: 1,
+      name: "Ora de baza I",
+      bgColor: "pink",
+      textColor: "white",
+    },
+    2: {
+      id: 2,
+      name: "Engleza",
+      bgColor: "green",
+      textColor: "black",
+    },
+    3: {
+      id: 3,
+      name: "Germana",
+      bgColor: "darkBlue",
+      textColor: "black",
+    },
+    4: {
+      id: 4,
+      name: "Limba romana",
+      bgColor: "violet",
+      textColor: "white",
+    },
+    5: {
+      id: 5,
+      name: "Informatica",
+      bgColor: "pink",
+      textColor: "white",
+    },
+    6: {
+      id: 6,
+      name: "Ed. PLastica",
+      bgColor: "green",
+      textColor: "white",
+    },
+    7: {
+      id: 7,
+      name: "Ed. Fizica",
+      bgColor: "pink",
+      textColor: "white",
+    },
+    8: {
+      id: 8,
+      name: "Fizica",
+      bgColor: "darkBlue",
+      textColor: "white",
+    },
+    9: {
+      id: 9,
+      name: "Instrument muzical",
+      bgColor: "yellow",
+      textColor: "white",
+    },
+    10: {
+      id: 10,
+      name: "Ora de baza II",
+      bgColor: "yellow",
+      textColor: "white",
+    },
+  };
+
+  // const weekLocalStorage = localStorage.getItem("week");
+  const weekLocalStorage = weekTemp;
   const colorsLocalStorage = localStorage.getItem("colors");
-  const disciplineLocalStorage = localStorage.getItem("discipline");
+  // const disciplineLocalStorage = localStorage.getItem("discipline");
+  const disciplineLocalStorage = disciplineTemp;
 
   useEffect(() => {
     !disciplineLocalStorage &&
@@ -96,13 +360,15 @@ export const TimeTable = () => {
   //   };
 
   const [week] = useState(
-    JSON.parse(weekLocalStorage) || scheduleDataDefault.week
+    // JSON.parse(weekLocalStorage) || scheduleDataDefault.week
+    weekLocalStorage || scheduleDataDefault.week
   );
   const [colors] = useState(
     JSON.parse(colorsLocalStorage) || scheduleDataDefault.colors
   );
   const [discipline] = useState(
-    JSON.parse(disciplineLocalStorage) || scheduleDataDefault.discipline
+    // JSON.parse(disciplineLocalStorage) || scheduleDataDefault.discipline
+    disciplineLocalStorage || scheduleDataDefault.discipline
   );
 
   const currentDate = new Date();
