@@ -12,7 +12,7 @@ import {
 } from "../../node_modules/@mui/material/index";
 import { Formik, Form, Field, useFormik } from "formik";
 import { useTranslation } from "react-i18next";
-import qrCode from "../assets/qr.png";
+// import qrCode from "../assets/qr.png";
 
 import AlertDialog from "../components/layout/AlertDialog";
 import { useState } from "react";
@@ -150,16 +150,6 @@ const Contacts = () => {
               </Form>
             )}
           </Formik>
-        </Grid>
-        <Grid item lg={6} md={6} sm={12}>
-          <img
-            src={qrCode}
-            style={{
-              width: "100%",
-              borderRadius: "89px",
-            }}
-            alt="Repetior"
-          />
         </Grid>
       </Grid>
 

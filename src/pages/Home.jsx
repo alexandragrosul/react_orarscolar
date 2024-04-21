@@ -35,7 +35,22 @@ function Home({ profesors }) {
             xs={12}
             sx={{ background: "transparent", mb: 4, p: 2, mt: 4 }}
           >
-            <HomeQuestion />
+            {/* <HomeQuestion /> */}
+            <Typography
+              variant="h2"
+              component="h1"
+              align="center"
+              sx={{
+                mt: 1,
+                fontWeight: "bold",
+                font: "Noto Sans Vithkuqi",
+              }}
+            >
+              Escoala, toate scolile Moldovei
+            </Typography>
+          </Grid>
+          <Grid item>
+            <HomeSchools />
           </Grid>
 
           {/* <Grid item xs={12} sx={{ background: "transparent", mb: 4, p: 2 }}>
@@ -65,16 +80,16 @@ function Home({ profesors }) {
           >
             <HomePsychology />
           </Grid> */}
-          <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
+          {/* <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeEcology />
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             item
             xs={12}
             sx={{ background: "white", borderRadius: "50px", p: 2 }}
-          >
-            <HomeRepetitor />
-          </Grid>
+          > */}
+          {/* <HomeRepetitor /> */}
+          {/* </Grid> */}
         </Grid>
       </Container>
       {/* </Box> */}
