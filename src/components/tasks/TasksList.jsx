@@ -17,7 +17,6 @@ export const TasksList = () => {
   const [tasks, setTasks] = React.useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
-
   const handleToggle = (taskId) => () => {
     const restTasks = [];
     tasks.forEach((element) => {
@@ -30,18 +29,22 @@ export const TasksList = () => {
     setTasks(restTasks);
   };
 
-  //   window.addEventListener("storage", (e) => {
-  //     if (e.key === "tasks") {
-  //       console.log(e.key);
-  //       // Обработайте изменение данных, если необходимо
-  //       setTasks(JSON.parse(localStorage.getItem("tasks")));
-  //     }
-  //   });
+  window.addEventListener("storage", (event) => {
+    console.log(event.key);
+    if (event.key === "tasks") {
+      // Обработайте изменение данных, если необходимо
+      // setTasks(JSON.parse(localStorage.getItem("tasks")));
+    }
+  });
 
-  //   React.useEffect(() => {
-  //     // Обновите данные в localStorage при изменении состояния
-  //     localStorage.setItem("tasks", tasks);
-  //   }, [tasks]);
+  React.useEffect(() => {
+    console.log("a");
+    // Обновите данные в localStorage при изменении состояния
+    localStorage.setItem(
+      "tasks",
+      JSON.stringify([{ name: "Mate", id: 1714581527891, status: false }])
+    );
+  }, [tasks]);
   return (
     <Container
       sx={{
