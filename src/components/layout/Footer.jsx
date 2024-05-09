@@ -18,6 +18,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { styled } from "@mui/material/styles";
 import Fab from "@mui/material/Fab";
 import ViewListIcon from "@mui/icons-material/ViewList";
+import { Link } from "react-router-dom";
 
 const StyledFab = styled(Fab)({
   position: "absolute",
@@ -77,12 +78,11 @@ function Footer({ onButtonClick, selected }) {
             <AddIcon onClick={handleClickAddTaskOpen} />
           </StyledFab>
           <Box sx={{ flexGrow: 1 }} />
-          <IconButton
-            onClick={handleClickTasskOpen}
-            color={selected === "tasks" ? "secondary" : "black"}
-          >
-            <PlaylistAddCheckIcon />
-          </IconButton>
+          <Link to={"tasks"}>
+            <IconButton color={selected === "tasks" ? "secondary" : "black"}>
+              <PlaylistAddCheckIcon />
+            </IconButton>
+          </Link>
         </Toolbar>
 
         <Dialog open={open} onClose={handleClose}>

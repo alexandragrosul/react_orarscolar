@@ -29,6 +29,12 @@ export const TasksList = () => {
     setTasks(restTasks);
   };
 
+  const removeTask = (id) => {
+    const newTasks = tasks.filter((task) => task.id !== id);
+
+    setTasks(newTasks);
+  };
+
   window.addEventListener("storage", (event) => {
     console.log(event.key);
     if (event.key === "tasks") {
@@ -38,7 +44,6 @@ export const TasksList = () => {
   });
 
   React.useEffect(() => {
-    console.log("a");
     // Обновите данные в localStorage при изменении состояния
     localStorage.setItem(
       "tasks",
@@ -50,6 +55,7 @@ export const TasksList = () => {
       sx={{
         background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
         height: "100vh",
+        mt: 5,
       }}
     >
       <Typography variant="h4" component="h1" pt="3">
@@ -63,7 +69,12 @@ export const TasksList = () => {
             <ListItem
               key={value.id}
               secondaryAction={
-                <IconButton edge="end" aria-label="delete" color="secondary">
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  color="secondary"
+                  onClick={() => removeTask(value.id)}
+                >
                   <DeleteIcon />
                 </IconButton>
               }

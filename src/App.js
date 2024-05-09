@@ -19,6 +19,8 @@ import Events from "./pages/Events";
 import AddSchool from "./pages/AddSchool";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
+import { Task } from "../node_modules/@mui/icons-material/index";
+import { TasksList } from "./components/tasks/TasksList";
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
           <Route path="/answers" element={<Answers />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/timetable" element={<Timetable />} />
+          <Route path="/tasks" element={<TasksList />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

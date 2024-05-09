@@ -90,9 +90,13 @@ const Wrapper = () => {
 
   return (
     <Box>
-      <Header position={appBarPosition} />
+      <Header position={appBarPosition} handleClose={handleClose} />
       <Box
-        sx={{ height: "100vh", pt: appBarPosition === "fixed" ? 6 : 0, padding:"40px 0" }}
+        sx={{
+          height: "100vh",
+          pt: appBarPosition === "fixed" ? 6 : 0,
+          padding: "40px 0",
+        }}
       >
         {renderMainContent()}
       </Box>

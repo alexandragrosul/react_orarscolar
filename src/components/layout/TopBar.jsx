@@ -18,7 +18,7 @@ import RoundButton from "./RoundButton";
 import { useTranslation } from "react-i18next";
 import { Button } from "../../../node_modules/@mui/material/index";
 
-function TopBar({ position }) {
+function TopBar({ position, handleClose }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { i18n, t } = useTranslation();
 

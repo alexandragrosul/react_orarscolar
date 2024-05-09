@@ -1,0 +1,288 @@
+{
+  "data": {
+    "get_current_user": null,
+    "school_sector": {
+      "schools": [
+        {
+          "id": 82,
+          "name": "Instituția Publică Liceul Teoretic „Nicolae Bălcescu”",
+          "schoolAdress": "com. Ciorescu, Str. Al. cel Bun, 10",
+          "sector": "com. Ciorescu",
+          "phone": "+373 22 457848",
+          "freePlaces": 90,
+          "freePlacesLyceum": 36,
+          "serviceAdress": [
+            "Instituţia efectuează înscrierea copiilor în clasa I din districtul comunelor Ciorescu, Făureşti, Goianii  și Goianul Nou"
+          ],
+          "requestsSent": 124,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": 0,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 54,
+          "name": "Instituția Publică Şcoala primară nr. 12 „Anatol Popovici\"",
+          "schoolAdress": "str. P. Zadnipru, 2/4",
+          "sector": "Ciocana",
+          "phone": "+373 22 339256",
+          "freePlaces": 150,
+          "freePlacesLyceum": 0,
+          "serviceAdress": [
+            " Str. Alecu Russo  55, 55/1 - 55/5, 57/2, 57/3, 59/1 – 59/6, 61/6 ",
+            "Str. Petru Zadnipru 1, 2/7, 3, 5, 5/1, 5/2,  5/3, 2, 2/1, 2/2, 4/1, 4/2, 4/3 ",
+            "Str. Mihai Sadoveanu 10/1, 10/2, 12, 12/1, 12/2, 14, 16, 18, 22"
+          ],
+          "requestsSent": 169,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": null,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 93,
+          "name": "Liceul Teoretic \"George Călinescu\"",
+          "schoolAdress": "str. Ceucari, 7",
+          "sector": "Râșcani",
+          "phone": "+373 22 466923",
+          "freePlaces": 180,
+          "freePlacesLyceum": 60,
+          "serviceAdress": [
+            "Str. Socoleni ",
+            "Str. Ceucari ",
+            "Str. Grătieşti ",
+            "Str. Iazului ",
+            "Str. Cucorilor ",
+            "Str-la Studenţilor ",
+            "Str. Gheorghe Madan 46 până la sfârșit",
+            "Str. Doina de la  121 - până la sfârşit                                      ",
+            "Str. V. Crăsescu 59-299, 52-300 ",
+            "Str- la V. Crăsescu 36-88, 37-87 ",
+            "Str. Criuleni 60-82, 67-85 ",
+            "Str-la Criuleni 40-60; 45-61",
+            "Str-la Circului 40-60, 45-63",
+            "Str. L. Damian-60-82, 59-81",
+            "Str. Podgorenilor 86-200",
+            "Str. Moldoviţa 20 până la capăt (numere pare)",
+            "Str-la Liviu Damian ",
+            "Calea Orheiului 109-113, 90, 90 a, ...",
+            "Str. Pitulicii 26-32, 13-29, 37..."
+          ],
+          "requestsSent": 111,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": 0,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 21,
+          "name": "Instituția Publică Liceul Teoretic „Academia Copiilor\" ",
+          "schoolAdress": "str. Albişoara, 16/3",
+          "sector": "Râșcani",
+          "phone": "+373 22 540610",
+          "freePlaces": 50,
+          "freePlacesLyceum": 50,
+          "serviceAdress": ["Str.Albişoara 8-22 ", "Str.Ismail 88-108"],
+          "requestsSent": 50,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": 0,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 71,
+          "name": "Instituția Publică Liceul Teoretic „Mihai Viteazul”",
+          "schoolAdress": "str. Mitropolit G. Grosu, 4",
+          "sector": "Centru",
+          "phone": "+373 22 733987",
+          "freePlaces": 144,
+          "freePlacesLyceum": -15,
+          "serviceAdress": [
+            "Str. Academiei 2, 4, 6/1, 6/2, 8/1, 8/2, 10, 12",
+            "Str. Gh. Asachi 4, 8, 9, 10, 11/1, 11/2, 12, 14, 16, 18, 22, 24, 26, 26/1, 27, 28-34, 37/1, 37/2, 38/1, 40, 40/4, 40/3, 44/2, 52, 58, 60/1, 62/3, 62/4, 62/5, 1-63,",
+            "Str. Gh. Tudor 2, 3, 3a, 5, 4/2a, 2b",
+            "Str. Șos.Hânceşti 3, 5, 11, 15, 21, 22, 22a, 22b, 23, 25, 29, 29/2, 30/3, 31, 32, 33/3, 34, 35, 39, 41, 43, 55, 55/5, 55/6, 57a, 58, 58/1, 58/2, 60 – 62 (toate)",
+            "Str. Mitropolit Gurie Grosu 1, 2, 3, 4, 5, 7, 9/1, 11, 11/2, 12/2, 13/2, 15, 15/1, 15/3",
+            "Str. Docuceaev 1, 1a, 1/2, 1/3, 2,  2/2, 2/3, 2/4, 3, 3/1, 4, 6, 13, 13/1",
+            "Str. R. Williams ",
+            "Str. M. Lomonosov 30 ...., 31....... 40/1, 40/2, 38, 38/2, 40, 49/1, 49/2, 51/1....",
+            "Str. Pomilor",
+            "Str. Academician L. Grosul ",
+            "Str. Lech Kaczynski 2/1, 2/2, 2/3, 2/4",
+            "Str. A. Cosmescu 10-300, 33-299",
+            "Str. Ion Nistor 30a, 38a, 42/1, 44/2, 44, 46",
+            "Str-la Costiujeni 1a, 2a ",
+            "Str. Academician  I. Grosul"
+          ],
+          "requestsSent": 192,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": 0,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 51,
+          "name": "Gimnaziul nr. 53",
+          "schoolAdress": "str. V. Cheltuială, 42",
+          "sector": "Centru",
+          "phone": "+373 22 727005",
+          "freePlaces": 60,
+          "freePlacesLyceum": 0,
+          "serviceAdress": [
+            "Str. Ciocârliei 1a, 2a",
+            "Str. Pietrarilor 1-19, 10, 10/2, 10/5,10/6",
+            "Str. Academiei 1-17",
+            "Str. Drumul Viilor 19a, 28, 28/1, 30-97",
+            "Str. Mioriţa 3-14",
+            "Str. V. Cheltuială ",
+            "Str. Valea Dicescu 53-119, 94-160",
+            "Str. V. Cupcea 26-84, 39-109",
+            "Str. Nucarilor 1-200",
+            "Str. Timiş",
+            "Str. N. Moroșanu ",
+            "Str. G. Grosu 1-25",
+            "Str. Academiei",
+            "Str. Onești 1-11, 2-12",
+            "Str. Gh. Tudor 10, 23",
+            "Str. Cireșilor 58-88, 15-71",
+            "Str. Lăpușnei",
+            "Str. Vânătorilor",
+            "Str. Griviței",
+            "Str. N. Pirogov",
+            "Str. Galbenă",
+            "Str. T. Aman",
+            "Str. Bujorilor",
+            "Str. Belșugului",
+            "Str. Av. Eugenia Crușevan",
+            "Str. Trifan Batâr 2, 9",
+            "Str. Frumoasa 20-300, 15-299"
+          ],
+          "requestsSent": 62,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": null,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 53,
+          "name": "Şcoala primară nr. 83 „Grigore Vieru”",
+          "schoolAdress": "str. N. M. Spătaru, 13/3",
+          "sector": "Ciocana",
+          "phone": "+373 22 487790",
+          "freePlaces": 230,
+          "freePlacesLyceum": 0,
+          "serviceAdress": [
+            "Bd. Mircea cel Bătrîn  8/1, 8/2, 10, 12, 12/1, 14, 14/1,16, 16/1, 18/1, 18/2, 20, 20/2, 20/3, 20/4, 20/5, 20/6, 22/1, 22/2, 22/3, 22/5, 24, 24/1, 26/1, 26/3, 26/6, 26/7, 28, 28/1, 28/2",
+            "Str. Nicolae Milescu-Spătaru 9/4, 11/A, 11/3, 11/6, 11/7, 11/9, 11/10, 11/11, 13, 13/1,13/2, 15, 15/1",
+            "Str. Petru Zadnipru 12/1, 14, 14/1, 14/2, 14/3, 14/6, 16, 16/1-16/3, 10, 10/1, 11, 12, 13, 14/1, 14/2, 15, 15/1, 15/2, 15/3, 16, 16/1, 16/2, 18, 18/1,19, 19/1, 19/2, 19/3, 21",
+            "Str. Igor Vieru 12, 14, 14/1, 14/2, 16, 16/1, 16/2, 18, 18/1, 19, 19/1 ",
+            "Str.Calea Dacilor ",
+            "Str.Eroii Neamului          "
+          ],
+          "requestsSent": 222,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": null,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 65,
+          "name": "Instituția Publică Liceul Teoretic „Traian”",
+          "schoolAdress": "str. Cuza Vodă, 36",
+          "sector": "Botanica",
+          "phone": "+373 22 661401",
+          "freePlaces": 112,
+          "freePlacesLyceum": 0,
+          "serviceAdress": [
+            "Str. Grenoble  130, 130/1-4, 203, 205, 205/2, 209-259 nr. imare",
+            "Str. Independentei 7, 7/1, 7/2, 7/3, 9/1, 9/2, 9/4, 11, 18, 20/1, 20/2, 22/3, 24/1, 24/2, 24/3, 24/5, 26, 28, 28/1, 28/2, 28/3",
+            "Bd. Cuza-Vodă  15 - 51 impare - fără casele 25/2-9, 16 - 44 nr. pare",
+            "Bd. Traian 1-15 impare",
+            "Bd. Dacia 26-38 pare"
+          ],
+          "requestsSent": 92,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": 0,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 47,
+          "name": "Şcoala Primară nr. 120 ”Pas cu Pas”",
+          "schoolAdress": "str. Independenţei, 14",
+          "sector": "Botanica",
+          "phone": "+373 22 550219",
+          "freePlaces": 90,
+          "freePlacesLyceum": 0,
+          "serviceAdress": ["Bd. Traian nr. 17-23"],
+          "requestsSent": 88,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": null,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        },
+        {
+          "id": 38,
+          "name": "Liceul Teoretic „Mihai Eminescu”",
+          "schoolAdress": "str. Varşoviei, 2",
+          "sector": "Botanica",
+          "phone": "+373 22 553096",
+          "freePlaces": 78,
+          "freePlacesLyceum": 90,
+          "serviceAdress": [
+            "Bd. Dacia 23, 25, 27, 29, 33, 37",
+            "Bd. Decebal 99, 139, 139 A, 139/2,  139/5",
+            "Str. Brîncuși ",
+            "Str. Liubliana ",
+            "Str-lele Lvov ",
+            "Str. Belgrad ",
+            "Str. Butucului 12, 14, 16",
+            "Str. Varșovia",
+            "Str. Zagreb",
+            "Str. Praga ",
+            "Str. Sofia ",
+            "Bd. Cuza Vodă 6-14",
+            "Str. Sarmisegetusa 12,  16",
+            "Str–la Praga",
+            "Str. Zelinschi 7, 7/1, 11"
+          ],
+          "requestsSent": 139,
+          "freePlacesProfiles": {
+            "second_tour_places": 0,
+            "second_tour_places_lyceum": 0,
+            "__typename": "FreePlacesProfiles"
+          },
+          "__typename": "School"
+        }
+      ],
+      "counters": {
+        "all": 123,
+        "botanica": 32,
+        "buiucani": 24,
+        "centru": 20,
+        "ciocana": 18,
+        "riscani": 29,
+        "__typename": "Counters"
+      },
+      "__typename": "Sector"
+    }
+  }
+}
