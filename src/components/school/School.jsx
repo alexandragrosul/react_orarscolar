@@ -20,11 +20,11 @@ const School = ({ school }) => {
         textAlign: "center",
         borderRadius: "5px",
         border: "solid 1px green",
-        margin:"0 auto",
-        maxWidth:{
-          xs:"350px",
-          md:"none"
-        }
+        margin: "0 auto",
+        maxWidth: {
+          xs: "350px",
+          md: "none",
+        },
       }}
     >
       <CardContent>
@@ -33,10 +33,10 @@ const School = ({ school }) => {
             sx={{
               display: "flex",
               alignItems: "center",
-              flexDirection:{
-                xs:"column",
-                lg:"row"
-              }
+              flexDirection: {
+                xs: "column",
+                lg: "row",
+              },
             }}
           >
             <img
@@ -52,26 +52,28 @@ const School = ({ school }) => {
             <Box
               sx={{
                 marginLeft: {
-                  sm:0,
-                  lg:"15px"
+                  sm: 0,
+                  lg: "15px",
                 },
               }}
             >
-                <Typography
-                  sx={{
-                    fontWeight: 700,
-                    color: "primary.main",
-                    textOverflow: "ellipsis",
-                    overflow: "hidden",
-                  }}
-                  variant="h6"
-                  align="left"
-                >
-                  {school.title.rendered}
-                </Typography>
-                <Typography align="left" className="school_description">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis molestiae omnis quisquam incidunt consequuntur quae.
-                </Typography>
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  color: "primary.main",
+                  textOverflow: "ellipsis",
+                  overflow: "hidden",
+                }}
+                variant="h6"
+                align="left"
+              >
+                {school.name}
+              </Typography>
+              <Typography align="left" className="school_description">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Perspiciatis molestiae omnis quisquam incidunt consequuntur
+                quae.
+              </Typography>
 
               <Box
                 display="flex"
@@ -91,7 +93,10 @@ const School = ({ school }) => {
                 </Typography>
               </Box>
 
-              <Box display="flex" sx={{ alignItems: "center", marginTop:"10px" }}>
+              <Box
+                display="flex"
+                sx={{ alignItems: "center", marginTop: "10px" }}
+              >
                 <RoundButton
                   onClick={handleClick}
                   name={showAll ? "Hide" : "Show"}

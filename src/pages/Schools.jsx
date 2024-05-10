@@ -43,10 +43,8 @@ const Schools = () => {
 
   async function fetchData() {
     try {
-      const response = await axios.get(
-        "http://escoala.md/admin/wp-json/wp/v2/posts?categories=3&_fields=id,slug,content,title"
-      ); // Замените URL на адрес вашего сервера
-      const data = response.data;
+      const response = await axios.get("data.json"); // Замените URL на адрес вашего сервера
+      const data = response.data.data.school_sector.schools;
       setOptions(data);
       setFilteredSchools(data);
       console.log(data);
@@ -61,7 +59,7 @@ const Schools = () => {
   const filterSchools = (schools, name) => {
     if (!name) return schools;
     return schools.filter((school) => {
-      return school.title.rendered === name;
+      return school.name === name;
     });
   };
 
@@ -77,7 +75,7 @@ const Schools = () => {
               value={value}
               onChange={(event, newValue) => {
                 setValue(newValue);
-                setFilteredSchools(filterSchools(options, newValue));
+                // setFilteredSchools(filterSchools(options, newValue));
               }}
               inputValue={inputValue}
               onInputChange={(event, newInputValue) => {

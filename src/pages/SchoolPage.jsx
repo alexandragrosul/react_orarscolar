@@ -35,12 +35,11 @@ const SchoolPage = () => {
 
   const fetchSchoolData = useCallback(async () => {
     try {
-      const response = await axios.get(
-        `http://escoala.md/admin/wp-json/wp/v2/posts/${id}?_fields=id,slug,content,title`
-      );
-      const data = response.data;
-      const parsedObject = parseStringToJson(data.content.rendered);
-      setSchool({ data, ...parsedObject });
+      const response = await axios.get(`/data.json`);
+      console.log(response);
+      const data = response.data.data.school_sector.schools;
+      const school = data.find((item) => item.id == id);
+      setSchool(school);
     } catch (error) {
       console.error(error);
     }
