@@ -69,11 +69,6 @@ const School = ({ school }) => {
               >
                 {school.name}
               </Typography>
-              <Typography align="left" className="school_description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Perspiciatis molestiae omnis quisquam incidunt consequuntur
-                quae.
-              </Typography>
 
               <Box
                 display="flex"
