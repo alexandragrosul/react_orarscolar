@@ -7,6 +7,9 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        home: {
+          slogan: "Escoala, all the schools of Moldova",
+        },
         question: {
           title: "Ask the expert?",
           askButton: "Ask your question",
@@ -117,6 +120,9 @@ i18n.use(initReactI18next).init({
     },
     ro: {
       translation: {
+        home: {
+          slogan: "Escoala, toate scolile Moldovei",
+        },
         question: {
           title: "Intreaba expertul?",
           askButton: "Pune întrebarea ta",
@@ -228,6 +234,9 @@ i18n.use(initReactI18next).init({
     },
     ru: {
       translation: {
+        home: {
+          slogan: "Ешкола, все школы Молдовы",
+        },
         question: {
           title: "Задайте вопрос эксперту ?",
           askButton: "Задайте свой вопрос",

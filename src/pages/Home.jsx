@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Typography, Grid } from "@mui/material";
 import HomeSchools from "../components/layout/home/HomeSchools";
-// import { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 function Home({ profesors }) {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <>
       {/* <Box sx={{ background: "#d7e8d2", height: "calc(100vh - 100.5px)" }}> */}
@@ -42,7 +42,7 @@ function Home({ profesors }) {
                 font: "Noto Sans Vithkuqi",
               }}
             >
-              Escoala, toate scolile Moldovei
+              {t("home.slogan")}
             </Typography>
           </Grid>
           <Grid item>
