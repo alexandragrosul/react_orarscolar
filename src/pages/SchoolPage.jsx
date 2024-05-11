@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { Container } from "../../node_modules/@mui/material/index";
 import axios from "../../node_modules/axios/index";
-import { parseStringToJson } from "../utils/utils.js";
 
 const SchoolPage = () => {
   const { id } = useParams();
@@ -38,7 +37,7 @@ const SchoolPage = () => {
       const response = await axios.get(`/data.json`);
       console.log(response);
       const data = response.data.data.school_sector.schools;
-      const school = data.find((item) => item.id == id);
+      const school = data.find((item) => item.id === id);
       setSchool(school);
     } catch (error) {
       console.error(error);

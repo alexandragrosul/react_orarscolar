@@ -10,7 +10,7 @@ import {
   Button,
   Grid,
 } from "../../node_modules/@mui/material/index";
-import { Formik, Form, Field, useFormik } from "formik";
+import { Formik, Form, Field } from "formik";
 import { useTranslation } from "react-i18next";
 // import qrCode from "../assets/qr.png";
 

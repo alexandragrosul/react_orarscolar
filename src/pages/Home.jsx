@@ -1,14 +1,10 @@
 import React from "react";
 import { Container, Typography, Grid } from "@mui/material";
 import HomeSchools from "../components/layout/home/HomeSchools";
-import HomeRepetitor from "../components/layout/home/HomeRepetitor";
-import HomePsychology from "../components/layout/home/HomePsychology";
-import HomeEcology from "../components/layout/home/HomeEcology";
-import HomeQuestion from "../components/layout/home/HomeQuestion";
 import { useTranslation } from "react-i18next";
 
 function Home({ profesors }) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (
     <>
       {/* <Box sx={{ background: "#d7e8d2", height: "calc(100vh - 100.5px)" }}> */}

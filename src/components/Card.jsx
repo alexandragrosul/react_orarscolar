@@ -1,8 +1,6 @@
 import React from "react";
 import LanguageIcon from "@mui/icons-material/Language";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import StarIcon from "@mui/icons-material/Star";
 import InfoIcon from "@mui/icons-material/Info";
 import { Card, CardContent, Typography, Box } from "@mui/material";
@@ -10,7 +8,6 @@ import NoPhotographyIcon from "@mui/icons-material/NoPhotography";
 import Rating from "@mui/material/Rating";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import {
-  Link,
   Grid,
   Chip,
   Stack,
@@ -21,24 +18,10 @@ import {
   DialogContentText,
   DialogTitle,
   TextField,
-  AppBar,
-  Divider,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-  Toolbar,
   Slide,
-  FormControl,
-  FormControlLabel,
-  InputLabel,
-  MenuItem,
-  Select,
-  Switch,
 } from "../../node_modules/@mui/material/index";
 import RoundButton from "./layout/RoundButton";
 import { Formik, Form } from "formik";
-import CloseIcon from "@mui/icons-material/Close";
 import YoutubeEmbed from "./YoutubeEmbed";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";

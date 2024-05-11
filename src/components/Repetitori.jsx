@@ -75,9 +75,9 @@ const Repetitori = () => {
   }, []);
 
   // Сортировка массива по рейтингу (по убыванию)
-  const sortedProfessors = filteredProfesors
-    .slice()
-    .sort((a, b) => b.rating - a.rating);
+  // const sortedProfessors = filteredProfesors
+  //   .slice()
+  //   .sort((a, b) => b.rating - a.rating);
 
   return (
     <>

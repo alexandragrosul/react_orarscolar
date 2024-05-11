@@ -5,21 +5,19 @@ import Timetable from "./pages/Timetable";
 import Answers from "./pages/Answers";
 import Wrapper from "./components/Wrapper";
 import Schools from "./pages/Schools";
-import RepetitoriPage from "./pages/Repetitor/RepetitoriPage";
 import SchoolPage from "./pages/SchoolPage";
 import Registration from "./pages/Registration";
 import { profesors } from "./data";
-import RepetitorAdd from "./pages/Repetitor/RepetitorAdd";
 import "./App.css";
 import Login from "./pages/Login";
-import ProtectedRoute from "./navigation/ProtectedRoute";
+// import ProtectedRoute from "./navigation/ProtectedRoute";
 import { ThemeProvider } from "@mui/material";
 import { appTheme } from "./theme/theme";
 import Events from "./pages/Events";
 import AddSchool from "./pages/AddSchool";
 import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
-import { Task } from "../node_modules/@mui/icons-material/index";
+
 import { TasksList } from "./components/tasks/TasksList";
 
 function App() {

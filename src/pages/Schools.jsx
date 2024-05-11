@@ -5,7 +5,6 @@ import {
   Autocomplete,
   Box,
   FormControl,
-  FormHelperText,
   Grid,
   InputLabel,
   MenuItem,
@@ -56,12 +55,12 @@ const Schools = () => {
     fetchData();
   }, []);
 
-  const filterSchools = (schools, name) => {
-    if (!name) return schools;
-    return schools.filter((school) => {
-      return school.name === name;
-    });
-  };
+  // const filterSchools = (schools, name) => {
+  //   if (!name) return schools;
+  //   return schools.filter((school) => {
+  //     return school.name === name;
+  //   });
+  // };
 
   return (
     <Container>

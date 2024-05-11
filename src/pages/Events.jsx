@@ -1,4 +1,3 @@
-import Typography from "@mui/material/Typography";
 import { Box } from "../../node_modules/@mui/material/index";
 const Events = () => {
   return (

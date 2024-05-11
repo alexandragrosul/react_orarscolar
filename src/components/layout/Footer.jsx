@@ -41,9 +41,6 @@ function Footer({ onButtonClick, selected }) {
   const handleClickAddTaskOpen = () => {
     setOpen(true);
   };
-  const handleClickTasskOpen = () => {
-    onButtonClick("tasks");
-  };
 
   const handleClose = () => {
     setOpen(false);
