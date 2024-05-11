@@ -20,4 +20,4 @@ jobs:
         server: escoala.md
         username: files@escoala.md
         password: ${{ secrets.ftp_password }}
-        local-dir: build # Путь к папке сборки
+        local-dir: build/ # Путь к папке сборки
