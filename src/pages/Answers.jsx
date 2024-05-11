@@ -2,14 +2,11 @@ import React from "react";
 import {
   List,
   ListItem,
-  ListItemAvatar,
-  Avatar,
   ListItemText,
   Container,
   Grid,
   Typography,
 } from "../../node_modules/@mui/material/index";
-import { t } from "../../node_modules/i18next/index";
 
 const Answers = () => {
   const [questions, setQuestions] = React.useState([]);

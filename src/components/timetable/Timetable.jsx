@@ -252,7 +252,6 @@ export const TimeTable = () => {
           subject: 5,
           tasks: [7, 8],
         },
-        ,
         {
           timeStart: "14:25",
           timeEnd: "15:10",

@@ -49,7 +49,7 @@ const validateForm = (values) => {
 const AddSchool = () => {
   const handleSubmit = async (values) => {
     // Handle form submission here
-    const request = await fetch(
+    await fetch(
       "https://escoala-7b63b-default-rtdb.europe-west1.firebasedatabase.app/coaches.json",
       {
         method: "POST",

@@ -125,36 +125,31 @@ function TopBar({ position, handleClose }) {
               </Link>
             ))}
           </Box>
-          {/* <Button sx={{ p: 0 }} onClick={() => changeLanguage("en")}>
-            En
-          </Button>
-          <Button sx={{ p: 0 }} onClick={() => changeLanguage("ro")}>
-            Ro
-          </Button>
-          <Button sx={{ p: 0 }} onClick={() => changeLanguage("ru")}>
-            Ru
-          </Button> */}
-          <a
-            href="#"
-            onClick={() => changeLanguage("en")}
-            style={{ color: "green", padding: "3px" }}
-          >
-            En
-          </a>
-          <a
-            href="#"
-            onClick={() => changeLanguage("ro")}
-            style={{ color: "green", padding: "3px" }}
-          >
-            Ro
-          </a>
-          <a
-            href="#"
-            onClick={() => changeLanguage("ru")}
-            style={{ color: "green", padding: "3px" }}
-          >
-            Ru
-          </a>
+          <Box>
+            <IconButton
+              size="small"
+              color="primary"
+              onClick={() => changeLanguage("ro")}
+            >
+              Ro
+            </IconButton>
+
+            <IconButton
+              size="small"
+              color="primary"
+              onClick={() => changeLanguage("ru")}
+            >
+              Ru
+            </IconButton>
+
+            <IconButton
+              size="small"
+              color="primary"
+              onClick={() => changeLanguage("en")}
+            >
+              En
+            </IconButton>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
