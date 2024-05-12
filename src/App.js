@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Timetable from "./pages/Timetable";
+// import Timetable from "./pages/Timetable";
+// import TimeTable from "timetable/Timetable";
 import Answers from "./pages/Answers";
 import Wrapper from "./components/Wrapper";
 import Schools from "./pages/Schools";
@@ -18,6 +19,7 @@ import Contacts from "./pages/Contacts";
 import NotFound from "./pages/NotFound";
 
 import { TasksList } from "./components/tasks/TasksList";
+import { TimeTable } from "./components/timetable/Timetable";
 
 function App() {
   return (
@@ -31,7 +33,7 @@ function App() {
           {/* <Route path="/repetitori" element={<RepetitoriPage />} /> */}
           {/* <Route path="/repetitori/:id" element={<Repetitor />} /> */}
           {/* <Route path="/repetitor/add" element={<RepetitorAdd />} /> */}
-          <Route path="/timetable/:schoolId" element={<Timetable />} />
+          {/* <Route path="/timetable/:schoolId" element={<Timetable />} /> */}
           <Route path="/schools" element={<Schools />} />
           <Route path="/schools/:id" element={<SchoolPage />} />
           <Route path="/schools/add" element={<AddSchool />} />
@@ -40,7 +42,7 @@ function App() {
           <Route path="/answers" element={<Answers />} />
           <Route path="/events" element={<Events />} />
           <Route path="/contacts" element={<Contacts />} />
-          <Route path="/timetable" element={<Timetable />} />
+          <Route path="/timetable" element={<TimeTable />} />
           <Route path="/tasks" element={<TasksList />} />
           <Route path="*" element={<NotFound />} />
         </Route>

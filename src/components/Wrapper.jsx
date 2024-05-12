@@ -98,7 +98,8 @@ const Wrapper = () => {
           padding: "40px 0",
         }}
       >
-        {renderMainContent()}
+        <Outlet />
+        {/* {renderMainContent()} */}
       </Box>
       <Footer onButtonClick={handleClickOpen} selected={footerMenuSelected} />
       <Dialog open={open} onClose={handleClose}>

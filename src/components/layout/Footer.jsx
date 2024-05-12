@@ -64,13 +64,15 @@ function Footer({ onButtonClick, selected }) {
     <Container sx={{ boxSizing: "unset", px: 0 }}>
       <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
         <Toolbar>
-          <IconButton
-            color={selected === "schedule" ? "secondary" : "black"}
-            aria-label="open drawer"
-            onClick={handleClickOpen}
-          >
-            <ViewListIcon />
-          </IconButton>
+          <Link to={"timetable"}>
+            <IconButton
+              color={selected === "schedule" ? "secondary" : "black"}
+              aria-label="open drawer"
+              onClick={handleClickOpen}
+            >
+              <ViewListIcon />
+            </IconButton>
+          </Link>
           <StyledFab color="secondary" aria-label="add">
             <AddIcon onClick={handleClickAddTaskOpen} />
           </StyledFab>

@@ -456,6 +456,7 @@ export const TimeTable = () => {
       sx={{
         background: "linear-gradient(180deg, #d7e8d2, #59a96a)",
         height: "100vh",
+        mt: 5,
       }}
     >
       <AppBar position="static">
