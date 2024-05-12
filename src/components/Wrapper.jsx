@@ -32,16 +32,16 @@ const Wrapper = () => {
     setOpen(false);
   };
 
-  const renderMainContent = () => {
-    switch (pageType) {
-      case "schedule":
-        return <TimeTable />;
-      case "tasks":
-        return <TasksList />;
-      default:
-        return <Outlet />;
-    }
-  };
+  // const renderMainContent = () => {
+  //   switch (pageType) {
+  //     case "schedule":
+  //       return <TimeTable />;
+  //     case "tasks":
+  //       return <TasksList />;
+  //     default:
+  //       return <Outlet />;
+  //   }
+  // };
 
   React.useEffect(() => {
     if (pageType === "schedule" || pageType === "tasks") {
