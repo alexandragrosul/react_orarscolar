@@ -13,7 +13,6 @@ import {
   Button,
 } from "../../node_modules/@mui/material/index";
 import { TimeTable } from "./timetable/Timetable";
-import { TasksList } from "./tasks/TasksList";
 import { useLocation } from "react-router-dom";
 
 const Wrapper = () => {
