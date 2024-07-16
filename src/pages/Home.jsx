@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Typography, Grid } from "@mui/material";
 import HomeSchools from "../components/layout/home/HomeSchools";
 import { useTranslation } from "react-i18next";
+import HomeSchoolInfo from "../components/layout/home/HomeSchoolInfo";
 
 function Home({ profesors }) {
   const { t } = useTranslation();
@@ -69,13 +70,13 @@ function Home({ profesors }) {
           {/* <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeSchools />
           </Grid> */}
-          {/* <Grid
+          <Grid
             item
             xs={12}
             sx={{ background: "white", borderRadius: "50px", p: 2 }}
           >
-            <HomePsychology />
-          </Grid> */}
+            <HomeSchoolInfo />
+          </Grid>
           {/* <Grid item xs={12} sx={{ background: "transparent", pt: 2 }}>
             <HomeEcology />
           </Grid> */}

@@ -7,6 +7,12 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        schoolTitle: {
+          info: "All Schools here",
+        },
+        schoolInfo: {
+          info: "At escoala.md, both public and private schools, lyceums, and gymnasiums are featured. Learn all about secondary education — how to choose a school, where the best preparation for a bachelor's degree is provided, what study profiles are available in upper classes, how to enroll in leading specialized schools. The best schools in Moldova, the school ranking of the Ministry of Education of Moldova, in which schools the winners of the World Olympiad of Schoolchildren study — all this information can be found on our website.",
+        },
         home: {
           slogan: "Escoala, all the schools of Moldova",
         },
@@ -120,6 +126,12 @@ i18n.use(initReactI18next).init({
     },
     ro: {
       translation: {
+        schoolTitle: {
+          info: "Toate scolile aici",
+        },
+        schoolInfo: {
+          info: "În escoala.md sunt prezentate școlile de stat și private, liceele și gimnaziile. Aflați totul despre educația secundară — cum să alegeți școala, unde pregătesc cel mai bine pentru o diplomă de licență, ce profile de studiu există în clasele superioare, cum să intrați la cele mai bune școli specializate. Cele mai bune școli din Moldova, clasamentul școlilor din Ministerul Educației din Moldova, în ce școli învață câștigătorii Olimpiadei Mondiale a Elevilor — toate aceste informații le veți găsi pe site-ul nostru.",
+        },
         home: {
           slogan: "Escoala, toate scolile Moldovei",
         },
@@ -234,6 +246,12 @@ i18n.use(initReactI18next).init({
     },
     ru: {
       translation: {
+        schoolTitle: {
+          info: "Все школы тут",
+        },
+        schoolInfo: {
+          info: "На escoala.md представлены государственные и частные школы, лицеи и гимназии. Узнайте все о среднем образовании — как выбрать школу, где лучше всего готовят к бакалавриату, какие профили обучения есть в старших классах, как поступить в ведущие специализированные школы. Лучшие школы Молдовы, рейтинг школ Министерства образования Молдовы, в каких школах учатся победители Всемирной олимпиады школьников — всю эту информацию вы найдете на нашем сайте.",
+        },
         home: {
           slogan: "Ешкола, все школы Молдовы",
         },

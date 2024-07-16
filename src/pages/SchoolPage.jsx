@@ -9,28 +9,12 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import { Container } from "../../node_modules/@mui/material/index";
+import { Button, Container } from "../../node_modules/@mui/material/index";
 import axios from "../../node_modules/axios/index";
 
 const SchoolPage = () => {
   const { id } = useParams();
   const [school, setSchool] = useState(null);
-
-  // async function fetchSchoolData() {
-  //   try {
-  //     const response = await axios.get(
-  //       `http://escoala.md/admin/wp-json/wp/v2/posts/${id}?_fields=id,slug,content,title`
-  //     ); // Замените URL на адрес вашего сервера
-  //     const data = response.data;
-  //     const parsedObject = parseStringToJson(data.content.rendered);
-  //     setSchool({ data, ...parsedObject });
-  //     // Обработка полученных данных
-  //     console.log("data");
-  //   } catch (error) {
-  //     // Обработка ошибки
-  //     console.error(error);
-  //   }
-  // }
 
   const fetchSchoolData = useCallback(async () => {
     try {
@@ -50,7 +34,52 @@ const SchoolPage = () => {
 
   return (
     <Container>
-      <Box sx={{ padding: "5px 0" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          pt: "72px",
+          mb: 3,
+        }}
+      >
+        <Typography variant="h3" gutterBottom sx={{}}>
+          Школа Технологического колледжа № 21
+        </Typography>
+        <Button variant="contained">Отправить заявку</Button>
+      </Box>
+      <img
+        src="https://static.ucheba.ru/thumbs/809/-/pix/uz_photo/8504.full.webp"
+        alt=""
+      />
+      <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
+        Об учебном заведении
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom>
+        В состав колледжа № 21 входят одна общеобразовательная школа и две школы
+        для детей с ограниченными возможностями здоровья. Здесь созданы условия
+        для коррекционного обучения: есть тренажеры, музыкальные инструменты,
+        развивающие игры и игровые комплексы для коррекционно-развивающих
+        занятий, работают кабинеты логопеда, ЛФК, психолога и дефектолога.
+      </Typography>
+      <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
+        Основная информация
+      </Typography>
+      <Typography
+        variant="body1"
+        gutterBottom
+        sx={{ mt: 2, fontWeight: 700, textAlign: "start" }}
+      >
+        Тип
+      </Typography>
+      <Typography
+        variant="body1"
+        gutterBottom
+        sx={{ mt: 2, textAlign: "start" }}
+      >
+        Общеобразовательная
+      </Typography>
+      {/* <Box sx={{ padding: "5px 0" }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="primary.main" href="/schools">
             Schools
@@ -90,7 +119,7 @@ const SchoolPage = () => {
             </Grid>
           </CardContent>
         </Card>
-      </Box>
+      </Box> */}
     </Container>
   );
 };
