@@ -1,4 +1,4 @@
-import School from "../components/school/School";
+// import School from "../components/school/School";
 import { Container } from "@mui/system";
 import axios from "axios";
 import {
@@ -14,6 +14,7 @@ import {
 import React from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import NewSchool from "../components/school/NewSchool";
 
 const Schools = () => {
   const { t } = useTranslation();
@@ -132,8 +133,9 @@ const Schools = () => {
 
       <Grid container spacing={2} sx={{ marginTop: 2 }}>
         {filteredSchools.map((school, index) => (
-          <Grid item xs={12} md={6} key={index}>
-            <School school={school} key={school.id} />
+          <Grid item xs={12} md={12} key={index}>
+            {/* <School school={school} key={school.id} /> */}
+            {<NewSchool school={school} key={school.id} />}
           </Grid>
         ))}
       </Grid>
