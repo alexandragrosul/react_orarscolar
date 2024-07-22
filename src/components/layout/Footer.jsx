@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppBar,
   Box,
@@ -12,7 +12,7 @@ import {
   IconButton,
   TextField,
   Toolbar,
-} from "../../../node_modules/@mui/material/index";
+} from "@mui/material";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 import AddIcon from "@mui/icons-material/Add";
 import { styled } from "@mui/material/styles";
@@ -30,11 +30,12 @@ const StyledFab = styled(Fab)({
 });
 
 function Footer({ onButtonClick, selected }) {
-  const [open, setOpen] = React.useState(false);
-  const [taskName, setTaskName] = React.useState("");
-  // const handleClickOpen = () => {
-  //   onButtonClick("schedule");
-  // };
+  const [open, setOpen] = useState(false);
+  const [taskName, setTaskName] = useState("");
+  const [time, setTime] = useState("");
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
 
   const handleClickOpen = onButtonClick.bind(null, "schedule");
 
@@ -45,21 +46,27 @@ function Footer({ onButtonClick, selected }) {
   const handleClose = () => {
     setOpen(false);
   };
+
   const saveTask = () => {
-    const existingTasks = JSON.parse(localStorage.getItem("tasks"));
-    const payLoad = {
+    const newTask = {
       name: taskName,
       id: new Date().valueOf(),
       status: false,
+      time: time,
     };
-    if (existingTasks) {
-      existingTasks.push(payLoad);
-      localStorage.setItem("tasks", JSON.stringify(existingTasks));
-    } else {
-      localStorage.setItem("tasks", JSON.stringify([payLoad]));
-    }
+    const updatedTasks = [
+      ...JSON.parse(localStorage.getItem("tasks")),
+      newTask,
+    ];
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    // Вызов пользовательского события
+    window.dispatchEvent(new CustomEvent("tasksUpdated"));
     setTaskName("");
+    setTime("");
+    setOpen(false);
   };
+
   return (
     <Container sx={{ boxSizing: "unset", px: 0 }}>
       <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
@@ -73,6 +80,7 @@ function Footer({ onButtonClick, selected }) {
               <ViewListIcon />
             </IconButton>
           </Link>
+
           <StyledFab color="secondary" aria-label="add">
             <AddIcon onClick={handleClickAddTaskOpen} />
           </StyledFab>
@@ -101,7 +109,24 @@ function Footer({ onButtonClick, selected }) {
                 setTaskName(event.target.value);
               }}
             />
+            <TextField
+              onChange={(event) => {
+                setTime(event.target.value);
+              }}
+              value={time}
+              id="time"
+              label="Alarm clock"
+              type="time"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{
+                step: 300, // 5 min
+              }}
+              sx={{ width: "100%", mt: 2, borderRadius: "50px" }}
+            />
           </DialogContent>
+
           <DialogActions>
             <Button onClick={saveTask}>Save</Button>
             <Button onClick={handleClose}>Cancel</Button>

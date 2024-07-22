@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import {
   List,
   ListItem,
@@ -10,46 +9,60 @@ import {
   ListItemText,
   Container,
   Typography,
-} from "../../../node_modules/@mui/material/index";
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export const TasksList = () => {
   const [tasks, setTasks] = React.useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
+
   const handleToggle = (taskId) => () => {
-    const restTasks = [];
-    tasks.forEach((element) => {
-      if (element.id === taskId) {
-        restTasks.push({ ...element, status: !element.status });
-      } else {
-        restTasks.push(element);
-      }
-    });
-    setTasks(restTasks);
+    const updatedTasks = tasks.map((task) =>
+      task.id === taskId ? { ...task, status: !task.status } : task
+    );
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
   const removeTask = (id) => {
     const newTasks = tasks.filter((task) => task.id !== id);
-
     setTasks(newTasks);
+    console.log(newTasks);
+    localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
 
-  window.addEventListener("storage", (event) => {
-    console.log(event.key);
-    if (event.key === "tasks") {
-      // Обработайте изменение данных, если необходимо
-      // setTasks(JSON.parse(localStorage.getItem("tasks")));
-    }
-  });
+  // React.useEffect(() => {
+  //   const handleStorageChange = (event) => {
+  //     if (event.key === "tasks") {
+  //       setTasks(JSON.parse(event.newValue));
+  //     }
+  //   };
+  //   window.addEventListener("storage", handleStorageChange);
+  //   console.log("Storage changed");
+  //   return () => window.removeEventListener("storage", handleStorageChange);
+  // }, []);
 
   React.useEffect(() => {
-    // Обновите данные в localStorage при изменении состояния
-    localStorage.setItem(
-      "tasks",
-      JSON.stringify([{ name: "Mate", id: 1714581527891, status: false }])
-    );
-  }, [tasks]);
+    const handleStorageChange = (event) => {
+      if (event.key === "tasks") {
+        setTasks(JSON.parse(event.newValue));
+      }
+    };
+
+    const handleTasksUpdated = () => {
+      setTasks(JSON.parse(localStorage.getItem("tasks")) || []);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener("tasksUpdated", handleTasksUpdated);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("tasksUpdated", handleTasksUpdated);
+    };
+  }, []);
+
   return (
     <Container
       sx={{
@@ -61,19 +74,24 @@ export const TasksList = () => {
       <Typography variant="h4" component="h1" pt="3">
         Lista de taskuri
       </Typography>
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        {tasks.map((value) => {
-          const labelId = `checkbox-list-label-${value}`;
 
+      <List sx={{ width: "100%", maxWidth: 360 }}>
+        {tasks.map((task) => {
+          const labelId = `checkbox-list-label-${task.id}`;
           return (
             <ListItem
-              key={value.id}
+              key={task.id}
+              sx={{
+                borderRadius: "50px",
+                bgcolor: "background.paper",
+                my: 2,
+              }}
               secondaryAction={
                 <IconButton
                   edge="end"
                   aria-label="delete"
                   color="secondary"
-                  onClick={() => removeTask(value.id)}
+                  onClick={() => removeTask(task.id)}
                 >
                   <DeleteIcon />
                 </IconButton>
@@ -82,19 +100,22 @@ export const TasksList = () => {
             >
               <ListItemButton
                 role={undefined}
-                onClick={handleToggle(value.id)}
+                onClick={handleToggle(task.id)}
                 dense
               >
                 <ListItemIcon>
                   <Checkbox
                     edge="start"
-                    checked={value.status}
+                    checked={task.status}
                     tabIndex={-1}
                     disableRipple
                     inputProps={{ "aria-labelledby": labelId }}
                   />
                 </ListItemIcon>
-                <ListItemText id={labelId} primary={value.name} />
+                <ListItemText
+                  id={labelId}
+                  primary={`${task.name} (${task.time})`}
+                />
               </ListItemButton>
             </ListItem>
           );

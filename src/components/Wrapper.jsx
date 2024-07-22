@@ -80,7 +80,6 @@ const Wrapper = () => {
 
   React.useEffect(() => {
     // Code to execute when the route changes
-    console.log("Current location:", location.pathname);
     setPageType(null);
 
     // You can also use the history object to navigate programmatically

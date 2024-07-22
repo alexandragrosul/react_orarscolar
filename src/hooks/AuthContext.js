@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }) => {
   //   const analytics = getAnalytics(app);
 
   const auth = getAuth(app);
-  console.log(isLoggedIn, auth);
   return (
     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
       {children}

@@ -31,7 +31,6 @@ const Repetitori = () => {
   const { t } = useTranslation();
 
   const filteredByMaterial = (material) => {
-    console.log(coaches);
     setFilteredProfesors(
       coaches.filter((coache) => {
         return coache?.material?.includes(material);

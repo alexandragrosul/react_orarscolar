@@ -16,8 +16,7 @@ import {
 import BusinessIcon from "@mui/icons-material/Business";
 
 const NewSchool = ({ school }) => {
-  console.log(school.name);
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
     setOpen(!open);
@@ -25,7 +24,7 @@ const NewSchool = ({ school }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" } }}>
       <img
-        style={{ width: "300px", height: "200px" }}
+        style={{ width: "300px", height: "200px", borderRadius: "50px" }}
         src="https://www.ucheba.ru/pix/uz_photo/8504.full.jpeg"
       />
       <Box
@@ -55,7 +54,7 @@ const NewSchool = ({ school }) => {
             <List component="div" disablePadding>
               {school.serviceAdress.map((adress, index) => {
                 return (
-                  <ListItemButton sx={{ pl: 4 }}>
+                  <ListItemButton sx={{ pl: 4 }} key={index}>
                     <ListItemText primary={adress} sx={{ color: "black" }} />
                   </ListItemButton>
                 );

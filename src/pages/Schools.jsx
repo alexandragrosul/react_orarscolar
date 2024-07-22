@@ -21,7 +21,7 @@ const Schools = () => {
   const schoolsOptions = (schoolsData) => {
     const schools = [];
     schoolsData?.forEach((school) => {
-      schools.push(school?.title?.rendered);
+      schools.push({ label: school?.title?.rendered });
     });
     return schools;
   };
@@ -47,7 +47,6 @@ const Schools = () => {
       const data = response.data.data.school_sector.schools;
       setOptions(data);
       setFilteredSchools(data);
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
