@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { Box } from "../../../node_modules/@mui/material/index";
 
 export const TasksList = () => {
   const [tasks, setTasks] = React.useState(
@@ -71,7 +72,7 @@ export const TasksList = () => {
         mt: 5,
       }}
     >
-      <Typography variant="h4" component="h1" pt="3">
+      <Typography variant="h4" component="h1" pt="3" sx={{ pt: 2 }}>
         Lista de taskuri
       </Typography>
 
@@ -112,10 +113,22 @@ export const TasksList = () => {
                     inputProps={{ "aria-labelledby": labelId }}
                   />
                 </ListItemIcon>
-                <ListItemText
-                  id={labelId}
-                  primary={`${task.name} (${task.time})`}
-                />
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                  <span
+                    style={{
+                      display: "block",
+                      color: "gray",
+                      fontSize: "12px",
+                    }}
+                  >
+                    {task.time}
+                  </span>
+                  <ListItemText
+                    id={labelId}
+                    sx={{ textDecoration: task.status && "line-through" }}
+                    primary={`${task.name}`}
+                  />
+                </Box>
               </ListItemButton>
             </ListItem>
           );

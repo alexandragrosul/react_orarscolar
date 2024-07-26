@@ -19,6 +19,7 @@ import { styled } from "@mui/material/styles";
 import Fab from "@mui/material/Fab";
 import ViewListIcon from "@mui/icons-material/ViewList";
 import { Link } from "react-router-dom";
+import { useLocation } from "../../../node_modules/react-router-dom/dist/index";
 
 const StyledFab = styled(Fab)({
   position: "absolute",
@@ -36,6 +37,9 @@ function Footer({ onButtonClick, selected }) {
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
+  const location = useLocation();
+  const isTimetablePage = location.pathname === "/timetable";
+  const timetableLink = isTimetablePage ? "#" : "timetable";
 
   const handleClickOpen = onButtonClick.bind(null, "schedule");
 
@@ -67,11 +71,12 @@ function Footer({ onButtonClick, selected }) {
     setOpen(false);
   };
 
+  console.log(timetableLink);
   return (
     <Container sx={{ boxSizing: "unset", px: 0 }}>
       <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
         <Toolbar>
-          <Link to={"timetable"}>
+          {/* <Link to={timetableLink}>
             <IconButton
               color={selected === "schedule" ? "secondary" : "black"}
               aria-label="open drawer"
@@ -79,7 +84,26 @@ function Footer({ onButtonClick, selected }) {
             >
               <ViewListIcon />
             </IconButton>
-          </Link>
+          </Link> */}
+
+          {isTimetablePage ? (
+            <IconButton
+              color={selected === "schedule" ? "secondary" : "black"}
+              aria-label="open drawer"
+            >
+              <ViewListIcon />
+            </IconButton>
+          ) : (
+            <Link to={"timetable"}>
+              <IconButton
+                color={selected === "schedule" ? "secondary" : "black"}
+                aria-label="open drawer"
+                onClick={handleClickOpen}
+              >
+                <ViewListIcon />
+              </IconButton>
+            </Link>
+          )}
 
           <StyledFab color="secondary" aria-label="add">
             <AddIcon onClick={handleClickAddTaskOpen} />

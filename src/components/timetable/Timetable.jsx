@@ -507,37 +507,57 @@ export const TimeTable = () => {
                     <ListItem
                       key={i}
                       sx={{
-                        backgroundColor:
-                          colors[discipline[item.subject].bgColor],
+                        backgroundColor: i % 2 === 0 ? "#a959a9" : "#59a96a",
+                        // colors[discipline[item.subject].bgColor],
                         color: getFontColor(
                           colors[discipline[item.subject].bgColor]
                         ),
                         // color: discipline[item.subject].textColor,
+                        borderRadius: "20px",
+                        mb: 1,
                       }}
                     >
-                      <ListItemAvatar>
-                        <Avatar
-                          sx={{
-                            color: "primary.main",
-                            backgroundColor: "white",
-                            fontWeight: "bold",
-                          }}
-                        >
-                          {i + 1}
-                        </Avatar>
-                      </ListItemAvatar>
-                      {item.timeStart}
-                      <br />
-                      {item.timeEnd}
-                      <ListItemText
-                        sx={{ my: 0, ml: 2 }}
-                        primary={discipline[item.subject].name}
-                        primaryTypographyProps={{
-                          fontSize: 20,
-                          fontWeight: "medium",
-                          letterSpacing: 0,
+                      <Box
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          width: "100%",
+                          marginRight: "30px",
                         }}
-                      />
+                      >
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <ListItemAvatar>
+                            <Avatar
+                              sx={{
+                                color: "primary.main",
+                                backgroundColor: "white",
+                                fontWeight: "bold",
+                              }}
+                            >
+                              {i + 1}
+                            </Avatar>
+                          </ListItemAvatar>
+
+                          <ListItemText
+                            sx={{ my: 0, ml: 2 }}
+                            primary={discipline[item.subject].name}
+                            primaryTypographyProps={{
+                              fontSize: 20,
+                              fontWeight: "medium",
+                              letterSpacing: 0,
+                            }}
+                          />
+                        </Box>
+                        <Box>
+                          <span style={{ height: "18.5px", display: "block" }}>
+                            {item.timeStart}
+                          </span>
+                          <br />
+                          <span style={{ height: "18.5px", display: "block" }}>
+                            {item.timeEnd}
+                          </span>
+                        </Box>
+                      </Box>
                     </ListItem>
                   );
                 })}
