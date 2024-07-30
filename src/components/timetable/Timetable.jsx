@@ -20,6 +20,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import AlarmOffIcon from "@mui/icons-material/AlarmOff";
+import AlarmOnIcon from "@mui/icons-material/AlarmOn";
 
 function getFontColor(color) {
   // Определите яркость фона
@@ -549,13 +551,33 @@ export const TimeTable = () => {
                           />
                         </Box>
                         <Box>
-                          <span style={{ height: "18.5px", display: "block" }}>
-                            {item.timeStart}
-                          </span>
-                          <br />
-                          <span style={{ height: "18.5px", display: "block" }}>
-                            {item.timeEnd}
-                          </span>
+                          {item.timeStart && (
+                            <>
+                              <Box
+                                sx={{ display: "flex", alignItems: "center" }}
+                              >
+                                <AlarmOnIcon />
+
+                                <span
+                                  style={{ height: "18.5px", display: "block" }}
+                                >
+                                  {item.timeStart}
+                                </span>
+                              </Box>
+                              <br />
+                            </>
+                          )}
+                          {item.timeEnd && (
+                            <Box sx={{ display: "flex", alignItems: "center" }}>
+                              <AlarmOffIcon />
+
+                              <span
+                                style={{ height: "18.5px", display: "block" }}
+                              >
+                                {item.timeEnd}
+                              </span>
+                            </Box>
+                          )}
                         </Box>
                       </Box>
                     </ListItem>
