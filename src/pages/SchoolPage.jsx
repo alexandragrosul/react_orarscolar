@@ -34,12 +34,19 @@ const SchoolPage = () => {
 
   return (
     <Container>
+      <Box sx={{ pt: "72px" }}>
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="inherit" href="/schools">
+            All Schools
+          </Link>
+          <Typography color="text.primary">Breadcrumbs</Typography>
+        </Breadcrumbs>
+      </Box>
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          pt: "72px",
           mb: 3,
         }}
       >

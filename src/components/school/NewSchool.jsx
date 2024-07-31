@@ -6,6 +6,7 @@ import {
 } from "../../../node_modules/@mui/icons-material/index";
 import {
   Box,
+  Breadcrumbs,
   Collapse,
   List,
   ListItemButton,
@@ -14,6 +15,7 @@ import {
   Typography,
 } from "../../../node_modules/@mui/material/index";
 import BusinessIcon from "@mui/icons-material/Business";
+import { Link } from "../../../node_modules/react-router-dom/dist/index";
 
 const NewSchool = ({ school }) => {
   const [open, setOpen] = React.useState(false);
@@ -23,16 +25,20 @@ const NewSchool = ({ school }) => {
   };
   return (
     <Box sx={{ display: "flex", flexDirection: { xs: "column", lg: "row" } }}>
-      <img
-        style={{ width: "300px", height: "200px", borderRadius: "50px" }}
-        src="https://www.ucheba.ru/pix/uz_photo/8504.full.jpeg"
-      />
+      <Link to={`/schools/${school.id}`}>
+        <img
+          style={{ width: "300px", height: "200px", borderRadius: "50px" }}
+          src="https://www.ucheba.ru/pix/uz_photo/8504.full.jpeg"
+        />
+      </Link>
       <Box
         sx={{ marginLeft: { xs: 0, lg: "15px" }, marginTop: { xs: 2, lg: 0 } }}
       >
-        <Typography variant="h5" gutterBottom>
-          {school.name}
-        </Typography>
+        <Link to={`/schools/${school.id}`}>
+          <Typography variant="h5" gutterBottom>
+            {school.name}
+          </Typography>
+        </Link>
         <Typography variant="subtitle1" gutterBottom>
           Sector: {school.sector}
         </Typography>
