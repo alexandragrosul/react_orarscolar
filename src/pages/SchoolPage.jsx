@@ -6,27 +6,47 @@ import {
   Box,
   Grid,
   Breadcrumbs,
-  Link,
   Typography,
 } from "@mui/material";
-import { Button, Container } from "../../node_modules/@mui/material/index";
+import {
+  Button,
+  Collapse,
+  Container,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "../../node_modules/@mui/material/index";
 import axios from "../../node_modules/axios/index";
+import { Link } from "../../node_modules/react-router-dom/dist/index";
+import {
+  ExpandLess,
+  ExpandMore,
+} from "../../node_modules/@mui/icons-material/index";
+import React from "react";
+import BusinessIcon from "@mui/icons-material/Business";
 
 const SchoolPage = () => {
   const { id } = useParams();
   const [school, setSchool] = useState(null);
+  const [open, setOpen] = React.useState(false);
 
   const fetchSchoolData = useCallback(async () => {
     try {
       const response = await axios.get(`/data.json`);
       console.log(response);
       const data = response.data.data.school_sector.schools;
-      const school = data.find((item) => item.id === id);
+      const school = data.find((item) => item.id == id);
+      console.log(school);
       setSchool(school);
     } catch (error) {
       console.error(error);
     }
   }, [id]);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
   useEffect(() => {
     fetchSchoolData();
@@ -36,10 +56,10 @@ const SchoolPage = () => {
     <Container>
       <Box sx={{ pt: "72px" }}>
         <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="inherit" href="/schools">
+          <Link underline="hover" color="inherit" to="/schools">
             All Schools
           </Link>
-          <Typography color="text.primary">Breadcrumbs</Typography>
+          <Typography color="text.primary">{school?.name}</Typography>
         </Breadcrumbs>
       </Box>
       <Box
@@ -51,7 +71,7 @@ const SchoolPage = () => {
         }}
       >
         <Typography variant="h3" gutterBottom sx={{}}>
-          Школа Технологического колледжа № 21
+          {school?.name}
         </Typography>
         <Button variant="contained">Отправить заявку</Button>
       </Box>
@@ -59,33 +79,38 @@ const SchoolPage = () => {
         src="https://static.ucheba.ru/thumbs/809/-/pix/uz_photo/8504.full.webp"
         alt=""
       />
+
       <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
         Об учебном заведении
-      </Typography>
-      <Typography variant="subtitle1" gutterBottom>
-        В состав колледжа № 21 входят одна общеобразовательная школа и две школы
-        для детей с ограниченными возможностями здоровья. Здесь созданы условия
-        для коррекционного обучения: есть тренажеры, музыкальные инструменты,
-        развивающие игры и игровые комплексы для коррекционно-развивающих
-        занятий, работают кабинеты логопеда, ЛФК, психолога и дефектолога.
-      </Typography>
-      <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
-        Основная информация
       </Typography>
       <Typography
         variant="body1"
         gutterBottom
         sx={{ mt: 2, fontWeight: 700, textAlign: "start" }}
       >
-        Тип
+        Numar: {school?.phone}
       </Typography>
-      <Typography
-        variant="body1"
-        gutterBottom
-        sx={{ mt: 2, textAlign: "start" }}
-      >
-        Общеобразовательная
+      <Typography variant="subtitle1" gutterBottom>
+        <ListItemButton onClick={handleClick}>
+          <ListItemIcon>
+            <BusinessIcon />
+          </ListItemIcon>
+          <ListItemText primary="Service Adress" />
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {school?.serviceAdress.map((adress, index) => {
+              return (
+                <ListItemButton sx={{ pl: 4 }} key={index}>
+                  <ListItemText primary={adress} sx={{ color: "black" }} />
+                </ListItemButton>
+              );
+            })}
+          </List>
+        </Collapse>
       </Typography>
+
       {/* <Box sx={{ padding: "5px 0" }}>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="primary.main" href="/schools">
