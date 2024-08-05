@@ -38,7 +38,7 @@ const Schools = () => {
     setSchoolCategory(event.target.value);
   };
   const handleChangeSchoolRegion = (event) => {
-    setSchoolRegion(eavent.target.value);
+    setSchoolRegion(event.target.value);
   };
 
   async function fetchData() {
