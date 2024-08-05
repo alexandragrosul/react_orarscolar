@@ -20,8 +20,8 @@ const Schools = () => {
   const { t } = useTranslation();
   const schoolsOptions = (schoolsData) => {
     const schools = [];
-    schoolsData?.forEach((school) => {
-      schools.push({ label: school?.name, id: school.id });
+    schoolsData?.forEach(({ name, id }) => {
+      schools.push({ label: name, id: id });
     });
     return schools;
   };
@@ -38,7 +38,7 @@ const Schools = () => {
     setSchoolCategory(event.target.value);
   };
   const handleChangeSchoolRegion = (event) => {
-    setSchoolRegion(event.target.value);
+    setSchoolRegion(eavent.target.value);
   };
 
   async function fetchData() {
