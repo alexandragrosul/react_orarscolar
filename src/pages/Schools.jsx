@@ -21,7 +21,7 @@ const Schools = () => {
   const schoolsOptions = (schoolsData) => {
     const schools = [];
     schoolsData?.forEach((school) => {
-      schools.push({ label: school?.title?.rendered });
+      schools.push({ label: school?.name, id: school.id });
     });
     return schools;
   };
@@ -70,7 +70,7 @@ const Schools = () => {
       <Grid container spacing={2} direction="row">
         <Grid item xs={12} md={8}>
           <FormControl fullWidth>
-            <Autocomplete
+            {/* <Autocomplete
               value={value}
               onChange={(event, newValue) => {
                 setValue(newValue);
@@ -84,12 +84,22 @@ const Schools = () => {
               options={schoolsOptions(options)}
               fullWidth
               renderOption={(props, option) => (
-                <Box component="li" {...props}>
-                  {option}
+                <Box component="li" {...props} sx={{ color: "black" }}>
+                  {option.name}
                 </Box>
               )}
               renderInput={(params) => <TextField {...params} label="Scoli" />}
               sx={{ borderRadius: "75px", border: "1px solid green" }}
+            /> */}
+
+            <Autocomplete
+              disablePortal
+              id="combo-box-demo"
+              options={schoolsOptions(options)}
+              sx={{ width: 300 }}
+              renderInput={(params) => (
+                <TextField {...params} label="`School`" />
+              )}
             />
           </FormControl>
         </Grid>
