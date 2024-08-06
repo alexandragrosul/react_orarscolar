@@ -15,6 +15,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import NewSchool from "../components/school/NewSchool";
+import { Link } from "../../node_modules/react-router-dom/dist/index";
 
 const Schools = () => {
   const { t } = useTranslation();
@@ -75,7 +76,7 @@ const Schools = () => {
               onChange={(event, newValue) => {
                 setValue(newValue);
                 // setFilteredSchools(filterSchools(options, newValue));
-              }}
+              }} 
               inputValue={inputValue}
               onInputChange={(event, newInputValue) => {
                 setInputValue(newInputValue);
@@ -94,9 +95,15 @@ const Schools = () => {
 
             <Autocomplete
               disablePortal
+              open={true}
               id="combo-box-demo"
               options={schoolsOptions(options)}
               sx={{ width: 300 }}
+              renderOption={(props, option) => (
+                <Box component="li" {...props} sx={{ color: "black" }}>
+                  <Link to={`/schools/${option.id}`}>{option.label}</Link>
+                </Box>
+              )}
               renderInput={(params) => (
                 <TextField {...params} label="`School`" />
               )}
