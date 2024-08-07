@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Autocomplete,
   Box,
   TextField,
 } from "../../../node_modules/@mui/material/index";
 import { schoolsData } from "../../utils/schoolsData";
+import axios from "../../../node_modules/axios/index";
+import { Link } from "../../../node_modules/react-router-dom/dist/index";
 
 const filterSchools = (schools, name) => {
   if (!name) return schools;
@@ -13,62 +15,41 @@ const filterSchools = (schools, name) => {
   });
 };
 
-const SchoolsSearch = ({ setFilteredSchools }) => {
+const SchoolsSearch = () => {
   const schoolsOptions = (schoolsData) => {
     const schools = [];
-    schoolsData?.forEach((school) => {
-      schools.push(school.name);
+    schoolsData?.forEach(({ name, id }) => {
+      schools.push({ label: name, id: id });
     });
     return schools;
   };
 
-  const options = schoolsOptions(schoolsData);
+  // const options = schoolsOptions(schoolsData);
 
-  const [value, setValue] = React.useState(options[0]);
-  const [inputValue, setInputValue] = React.useState("");
+  // const [value, setValue] = React.useState(options[0]);
+  // const [inputValue, setInputValue] = React.useState("");
+  const [options, setOptions] = React.useState([]);
+  // const [filteredSchools, setFilteredSchools] = React.useState([]);
+
+  async function fetchData() {
+    try {
+      const response = await axios.get("data.json"); // Замените URL на адрес вашего сервера
+      const data = response.data.data.school_sector.schools;
+      setOptions(data);
+      // setFilteredSchools(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    // <Autocomplete
-    //   value={value}
-    //   onChange={(event, newValue) => {
-    //     setValue(newValue);
-    //     if (setFilteredSchools !== undefined) {
-    //       const sc = filterSchools(schoolsData, newValue);
-    //       setFilteredSchools(sc);
-    //     }
-    //   }}
-    //   inputValue={inputValue}
-    //   onInputChange={(event, newInputValue) => {
-    //     setInputValue(newInputValue);
-    //   }}
-    //   id="school-search"
-    //   options={options}
-    //   fullWidth
-    //   renderOption={(props, option) => (
-    //     <Box component="li" {...props}>
-    //       {option}
-    //     </Box>
-    //   )}
-    //   renderInput={(params) => (
-    //     <TextField {...params} label="Selectati scoala" />
-    //   )}
-    // />
-
     <Autocomplete
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-        if (setFilteredSchools !== undefined) {
-          const sc = filterSchools(schoolsData, newValue);
-          setFilteredSchools(sc);
-        }
-      }}
-      inputValue={inputValue}
-      onInputChange={(event, newInputValue) => {
-        setInputValue(newInputValue);
-      }}
-      id="school-search"
-      options={options}
+      disablePortal
       fullWidth
+      id="combo-box-demo"
       sx={{
         "& .MuiInputBase-root": {
           borderRadius: "50px", // Задаем радиус скругления для текстового поля
@@ -80,14 +61,15 @@ const SchoolsSearch = ({ setFilteredSchools }) => {
           borderRadius: "50px", // Задаем радиус скругления для опций в выпадающем списке
         },
       }}
+      options={schoolsOptions(options)}
       renderOption={(props, option) => (
-        <Box component="li" {...props}>
-          {option}
+        <Box component="li" {...props} sx={{ color: "black" }}>
+          <Link to={`/schools/${option.id}`} style={{ width: "100%" }}>
+            {option.label}
+          </Link>
         </Box>
       )}
-      renderInput={(params) => (
-        <TextField {...params} label="Selectati scoala" />
-      )}
+      renderInput={(params) => <TextField {...params} label="`School`" />}
     />
   );
 };

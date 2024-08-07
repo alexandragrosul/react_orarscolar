@@ -16,21 +16,11 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import NewSchool from "../components/school/NewSchool";
 import { Link } from "../../node_modules/react-router-dom/dist/index";
+import SchoolsSearch from "../components/school/SchoolsSearch";
 
 const Schools = () => {
   const { t } = useTranslation();
-  const schoolsOptions = (schoolsData) => {
-    const schools = [];
-    schoolsData?.forEach(({ name, id }) => {
-      schools.push({ label: name, id: id });
-    });
-    return schools;
-  };
 
-  // const options = schoolsOptions(schoolsData);
-  const [options, setOptions] = React.useState([]);
-  const [value, setValue] = React.useState(options[0]);
-  const [inputValue, setInputValue] = React.useState("");
   const [filteredSchools, setFilteredSchools] = React.useState([]);
   const [schoolCategory, setSchoolCategory] = React.useState(10);
   const [schoolRegion, setSchoolRegion] = React.useState(10);
@@ -46,7 +36,6 @@ const Schools = () => {
     try {
       const response = await axios.get("data.json"); // Замените URL на адрес вашего сервера
       const data = response.data.data.school_sector.schools;
-      setOptions(data);
       setFilteredSchools(data);
     } catch (error) {
       console.error(error);
@@ -93,21 +82,7 @@ const Schools = () => {
               sx={{ borderRadius: "75px", border: "1px solid green" }}
             /> */}
 
-            <Autocomplete
-              disablePortal
-              open={true}
-              id="combo-box-demo"
-              options={schoolsOptions(options)}
-              sx={{ width: 300 }}
-              renderOption={(props, option) => (
-                <Box component="li" {...props} sx={{ color: "black" }}>
-                  <Link to={`/schools/${option.id}`}>{option.label}</Link>
-                </Box>
-              )}
-              renderInput={(params) => (
-                <TextField {...params} label="`School`" />
-              )}
-            />
+            <SchoolsSearch />
           </FormControl>
         </Grid>
         <Grid item xs={12} md={4}>

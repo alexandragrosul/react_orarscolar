@@ -73,7 +73,9 @@ const SchoolPage = () => {
         <Typography variant="h3" gutterBottom sx={{}}>
           {school?.name}
         </Typography>
-        <Button variant="contained">Отправить заявку</Button>
+        <Button variant="contained" sx={{ color: "white" }}>
+          Отправить заявку
+        </Button>
       </Box>
       <img
         src="https://static.ucheba.ru/thumbs/809/-/pix/uz_photo/8504.full.webp"
