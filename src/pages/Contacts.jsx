@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 
 import AlertDialog from "../components/layout/AlertDialog";
 import { useState } from "react";
+import RoundButton from "../components/layout/RoundButton";
 
 const Contacts = () => {
   const { t } = useTranslation();
@@ -75,21 +76,6 @@ const Contacts = () => {
                   maxWidth={"500px"}
                   alignItems={"center"}
                 >
-                  {/* <h1
-                    style={{
-                      fontFamily: "Arial, sans-serif",
-                      fontSize: "32px",
-                    }}
-                  >
-                    {t("contacts.title")}
-                  </h1> */}
-                  {/* <Typography
-                variant="h3"
-                component="h1"
-                sx={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}
-              >
-                Trimiteti mesaj
-              </Typography> */}
                   <TextField
                     name="name"
                     label="Name"
@@ -116,6 +102,7 @@ const Contacts = () => {
                   />
 
                   <TextField
+                    sx={{ borderRadius: "75px", border: "1px solid green" }}
                     name="message"
                     label={t("contacts.message")}
                     fullWidth
@@ -135,17 +122,17 @@ const Contacts = () => {
                     </Field>
                   </FormControl>
 
-                  <Button type="submit" variant="contained" color="primary">
-                    {t("contacts.sendButton")}
-                  </Button>
+                  <RoundButton
+                    name={t("contacts.sendButton")}
+                    style={{ color: "white" }}
+                  ></RoundButton>
 
-                  <Button
+                  <RoundButton
+                    name={t("contacts.resetButton")}
+                    style={{ color: "green" }}
                     onClick={resetForm}
                     variant="outlined"
-                    color="primary"
-                  >
-                    {t("contacts.resetButton")}
-                  </Button>
+                  ></RoundButton>
                 </Stack>
               </Form>
             )}

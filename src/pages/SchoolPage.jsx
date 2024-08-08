@@ -25,6 +25,7 @@ import {
 } from "../../node_modules/@mui/icons-material/index";
 import React from "react";
 import BusinessIcon from "@mui/icons-material/Business";
+import RoundButton from "../components/layout/RoundButton";
 
 const SchoolPage = () => {
   const { id } = useParams();
@@ -73,9 +74,13 @@ const SchoolPage = () => {
         <Typography variant="h3" gutterBottom sx={{}}>
           {school?.name}
         </Typography>
-        <Button variant="contained" sx={{ color: "white" }}>
+        {/* <Button variant="contained" sx={{ color: "white" }}>
           Отправить заявку
-        </Button>
+        </Button> */}
+        <RoundButton
+          name={"Отправить заявку"}
+          style={{ color: "white" }}
+        ></RoundButton>
       </Box>
       <img
         src="https://static.ucheba.ru/thumbs/809/-/pix/uz_photo/8504.full.webp"

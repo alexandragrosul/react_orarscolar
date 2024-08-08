@@ -96,6 +96,7 @@ const Schools = () => {
               value={schoolCategory}
               label="Profil"
               onChange={handleChangeShoolCategory}
+              sx={{ borderRadius: "75px", border: "1px solid green" }}
             >
               <MenuItem value={10}>{t("schools.allProfile")}</MenuItem>
               <MenuItem value={20}>{t("schools.generalProfile")}</MenuItem>
@@ -112,6 +113,7 @@ const Schools = () => {
               value={schoolRegion}
               label="Profil"
               onChange={handleChangeSchoolRegion}
+              sx={{ borderRadius: "75px", border: "1px solid green" }}
             >
               <MenuItem value={10}>{t("schools.allRegion")}</MenuItem>
               <MenuItem value={15}>{t("schools.chisinauRegion")}</MenuItem>

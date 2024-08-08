@@ -60,6 +60,8 @@ const SchoolsSearch = () => {
         "& .MuiPaper-root": {
           borderRadius: "50px", // Задаем радиус скругления для опций в выпадающем списке
         },
+        borderRadius: "75px",
+        border: "1px solid green",
       }}
       options={schoolsOptions(options)}
       renderOption={(props, option) => (
