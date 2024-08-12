@@ -77,6 +77,7 @@ const Contacts = () => {
                   alignItems={"center"}
                 >
                   <TextField
+                    sx={{ borderRadius: "75px", border: "1px solid green" }}
                     name="name"
                     label="Name"
                     fullWidth
@@ -84,8 +85,8 @@ const Contacts = () => {
                     onChange={handleChange}
                     required
                   />
-
                   <TextField
+                    sx={{ borderRadius: "75px", border: "1px solid green" }}
                     name="phone"
                     label={t("contacts.name")}
                     fullWidth
@@ -93,6 +94,7 @@ const Contacts = () => {
                     onChange={handleChange}
                   />
                   <TextField
+                    sx={{ borderRadius: "75px", border: "1px solid green" }}
                     name="email"
                     label={t("contacts.email")}
                     fullWidth
@@ -100,7 +102,6 @@ const Contacts = () => {
                     onChange={handleChange}
                     required
                   />
-
                   <TextField
                     sx={{ borderRadius: "75px", border: "1px solid green" }}
                     name="message"
@@ -110,8 +111,10 @@ const Contacts = () => {
                     onChange={handleChange}
                     required
                   />
-
-                  <FormControl fullWidth>
+                  <FormControl
+                    fullWidth
+                    sx={{ borderRadius: "75px", border: "1px solid green" }}
+                  >
                     <InputLabel>{t("contacts.sourceLabel")}</InputLabel>
                     <Field as={Select} name="source">
                       {sources.map((source) => (
@@ -121,15 +124,16 @@ const Contacts = () => {
                       ))}
                     </Field>
                   </FormControl>
-
                   <RoundButton
                     name={t("contacts.sendButton")}
                     style={{ color: "white" }}
                   ></RoundButton>
-
                   <RoundButton
                     name={t("contacts.resetButton")}
-                    style={{ color: "green" }}
+                    style={{
+                      color: "#a959a9", // Цвет текста
+                      borderColor: "#a959a9", // Цвет обводки
+                    }}
                     onClick={resetForm}
                     variant="outlined"
                   ></RoundButton>

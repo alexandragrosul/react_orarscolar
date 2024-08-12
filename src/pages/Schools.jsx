@@ -42,7 +42,15 @@ const Schools = () => {
     }
   }
   useEffect(() => {
-    fetchData();
+    // fetchData();
+    fetch("https://api.escoala.md/api/schools")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.data);
+        setFilteredSchools(data?.data);
+      });
   }, []);
 
   // const filterSchools = (schools, name) => {

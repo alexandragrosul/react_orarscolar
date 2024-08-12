@@ -65,6 +65,7 @@ i18n.use(initReactI18next).init({
           english: "English",
           romania: "Romania",
           answers: "Answers",
+          courses: "Courses",
         },
         schools: {
           title: "Schools",
@@ -185,6 +186,7 @@ i18n.use(initReactI18next).init({
           english: "Engleza",
           romania: "Romania",
           answers: "Raspunsuri",
+          courses: "Cursuri",
         },
         schools: {
           title: "Scoli",
@@ -304,6 +306,7 @@ i18n.use(initReactI18next).init({
           english: "Английский",
           romania: "Румыния",
           answers: "Ответы",
+          courses: "Курсы",
         },
         schools: {
           title: "Школы",

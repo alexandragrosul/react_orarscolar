@@ -105,12 +105,18 @@ function Footer({ onButtonClick, selected }) {
             </Link>
           )}
 
-          <StyledFab color="secondary" aria-label="add">
-            <AddIcon onClick={handleClickAddTaskOpen} />
+          <StyledFab
+            style={{ backgroundColor: "#a959a9", color: "#ffffff" }}
+            aria-label="add"
+            onClick={handleClickAddTaskOpen}
+          >
+            <AddIcon />
           </StyledFab>
           <Box sx={{ flexGrow: 1 }} />
           <Link to={"tasks"}>
+            {/* color={selected === "tasks" ? "secondary" : "black"} */}
             <IconButton color={selected === "tasks" ? "secondary" : "black"}>
+              {/* <IconButton style={{ color: "#a959a9" }} aria-label="add"> */}
               <PlaylistAddCheckIcon />
             </IconButton>
           </Link>

@@ -58,7 +58,7 @@ const NewSchool = ({ school }) => {
           </ListItemButton>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {school.serviceAdress.map((adress, index) => {
+              {JSON.parse(school.service_address).map((adress, index) => {
                 return (
                   <ListItemButton sx={{ pl: 4 }} key={index}>
                     <ListItemText primary={adress} sx={{ color: "black" }} />

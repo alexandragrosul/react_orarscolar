@@ -3,6 +3,7 @@ import { Container, Typography, Grid } from "@mui/material";
 import HomeSchools from "../components/layout/home/HomeSchools";
 import { useTranslation } from "react-i18next";
 import HomeSchoolInfo from "../components/layout/home/HomeSchoolInfo";
+import HomeCourses from "../components/layout/home/HomeCourses";
 
 function Home({ profesors }) {
   const { t } = useTranslation();
@@ -29,6 +30,10 @@ function Home({ profesors }) {
                 mt: 1,
                 fontWeight: "bold",
                 font: "Noto Sans Vithkuqi",
+                fontSize: {
+                  xs: "x-large", // x-large font size on extra-small screens (mobile)
+                  md: "xxx-large", // default font size on medium and larger screens
+                },
               }}
             >
               {t("home.slogan")}
@@ -43,6 +48,13 @@ function Home({ profesors }) {
             sx={{ background: "white", borderRadius: "50px", p: 2 }}
           >
             <HomeSchoolInfo />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sx={{ background: "white", borderRadius: "50px", p: 2, mt: 4 }}
+          >
+            <HomeCourses />
           </Grid>
         </Grid>
       </Container>

@@ -22,6 +22,8 @@ import { TasksList } from "./components/tasks/TasksList";
 import { TimeTable } from "./components/timetable/Timetable";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers";
+import CoursePage from "./pages/CoursePage";
+import Courses from "./pages/Courses";
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/timetable" element={<TimeTable />} />
             <Route path="/tasks" element={<TasksList />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/course/:id" element={<CoursePage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

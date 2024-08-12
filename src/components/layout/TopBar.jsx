@@ -28,6 +28,7 @@ function TopBar({ position, handleClose }) {
     // { label: t("topBar.answers"), link: "/answers" },
     // { label: t("topBar.events"), link: "/events" },
     { label: t("topBar.contacts"), link: "/contacts" },
+    { label: t("topBar.courses"), link: "/courses" },
   ];
 
   const changeLanguage = (language) => {

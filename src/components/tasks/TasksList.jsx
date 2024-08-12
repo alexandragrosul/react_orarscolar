@@ -91,7 +91,7 @@ export const TasksList = () => {
                 <IconButton
                   edge="end"
                   aria-label="delete"
-                  color="secondary"
+                  style={{ color: "#a959a9" }}
                   onClick={() => removeTask(task.id)}
                 >
                   <DeleteIcon />

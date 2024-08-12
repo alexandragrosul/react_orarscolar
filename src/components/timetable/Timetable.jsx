@@ -469,7 +469,24 @@ export const TimeTable = () => {
           textColor="secondary"
           variant="scrollable"
           aria-label="full width tabs example"
-          sx={{ color: "black" }}
+          sx={{
+            "& .MuiTab-root": {
+              // Стиль для всех вкладок
+              color: "black", // Цвет текста для невыбранных вкладок
+              "&:hover": {
+                // Цвет текста при наведении на вкладку
+                color: "#a959a9",
+              },
+            },
+            "& .Mui-selected": {
+              // Цвет текста для выбранной вкладки
+              color: "#a959a9 !important",
+            },
+            "& .MuiTabs-indicator": {
+              // Цвет индикатора (линии под вкладкой)
+              backgroundColor: "#a959a9",
+            },
+          }}
         >
           <Tab label="Luni" {...a11yProps(0)} />
           <Tab label="Marti" {...a11yProps(1)} />
