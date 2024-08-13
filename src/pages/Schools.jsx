@@ -1,21 +1,17 @@
 // import School from "../components/school/School";
 import { Container } from "@mui/system";
-import axios from "axios";
+// import axios from "axios";
 import {
-  Autocomplete,
-  Box,
   FormControl,
   Grid,
   InputLabel,
   MenuItem,
   Select,
-  TextField,
 } from "../../node_modules/@mui/material/index";
 import React from "react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import NewSchool from "../components/school/NewSchool";
-import { Link } from "../../node_modules/react-router-dom/dist/index";
 import SchoolsSearch from "../components/school/SchoolsSearch";
 
 const Schools = () => {
@@ -32,15 +28,15 @@ const Schools = () => {
     setSchoolRegion(event.target.value);
   };
 
-  async function fetchData() {
-    try {
-      const response = await axios.get("data.json"); // Замените URL на адрес вашего сервера
-      const data = response.data.data.school_sector.schools;
-      setFilteredSchools(data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // async function fetchData() {
+  //   try {
+  //     const response = await axios.get("data.json"); // Замените URL на адрес вашего сервера
+  //     const data = response.data.data.school_sector.schools;
+  //     setFilteredSchools(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
   useEffect(() => {
     // fetchData();
     fetch("https://api.escoala.md/api/schools")

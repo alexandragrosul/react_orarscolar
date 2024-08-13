@@ -1,15 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
+import { Box, Breadcrumbs, Typography } from "@mui/material";
 import {
-  Card,
-  CardContent,
-  Box,
-  Grid,
-  Breadcrumbs,
-  Typography,
-} from "@mui/material";
-import {
-  Button,
   Collapse,
   Container,
   List,
@@ -37,7 +29,7 @@ const SchoolPage = () => {
       const response = await axios.get(`/data.json`);
       console.log(response);
       const data = response.data.data.school_sector.schools;
-      const school = data.find((item) => item.id == id);
+      const school = data.find((item) => item.id === id);
       console.log(school);
       setSchool(school);
     } catch (error) {
@@ -50,8 +42,16 @@ const SchoolPage = () => {
   };
 
   useEffect(() => {
-    fetchSchoolData();
-  }, [fetchSchoolData]);
+    // fetchSchoolData();
+    fetch("https://api.escoala.md/api/schools/" + id)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.data);
+        setSchool(data?.data);
+      });
+  }, [fetchSchoolData, id]);
 
   return (
     <Container>
@@ -107,13 +107,15 @@ const SchoolPage = () => {
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {school?.serviceAdress.map((adress, index) => {
-              return (
-                <ListItemButton sx={{ pl: 4 }} key={index}>
-                  <ListItemText primary={adress} sx={{ color: "black" }} />
-                </ListItemButton>
-              );
-            })}
+            {school?.service_address
+              ? JSON.parse(school?.service_address).map((adress, index) => {
+                  return (
+                    <ListItemButton sx={{ pl: 4 }} key={index}>
+                      <ListItemText primary={adress} sx={{ color: "black" }} />
+                    </ListItemButton>
+                  );
+                })
+              : ""}
           </List>
         </Collapse>
       </Typography>

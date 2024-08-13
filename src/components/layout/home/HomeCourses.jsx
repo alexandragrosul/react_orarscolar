@@ -1,18 +1,10 @@
 import * as React from "react";
-import {
-  Grid,
-  Stack,
-  Typography,
-} from "../../../../node_modules/@mui/material/index";
-import schoolPhoto from "../../../assets/school.jpg";
-// import RoundButton from "../RoundButton";
-// import SchoolsSearch from "../../school/SchoolsSearch";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Grid, Stack } from "../../../../node_modules/@mui/material/index";
+// import { useTranslation } from "react-i18next";
 import Carousel from "../Carousel";
 
 export default function HomeSchoolInfo() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <Grid container mb={4} spacing={2} alignItems="center">

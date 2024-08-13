@@ -1,9 +1,4 @@
 import * as React from "react";
-// import AspectRatio from "@mui/joy/AspectRatio";
-// import Box from "@mui/joy/Box";
-// import Typography from "@mui/joy/Typography";
-// import Card from "@mui/joy/Card";
-import { AspectRatio } from "../../../node_modules/@mui/icons-material/index";
 import {
   Box,
   Card,

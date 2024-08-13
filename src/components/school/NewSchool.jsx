@@ -2,11 +2,9 @@ import React from "react";
 import {
   ExpandLess,
   ExpandMore,
-  StarBorder,
 } from "../../../node_modules/@mui/icons-material/index";
 import {
   Box,
-  Breadcrumbs,
   Collapse,
   List,
   ListItemButton,
@@ -29,6 +27,7 @@ const NewSchool = ({ school }) => {
         <img
           style={{ width: "300px", height: "200px", borderRadius: "50px" }}
           src="https://www.ucheba.ru/pix/uz_photo/8504.full.jpeg"
+          alt="school"
         />
       </Link>
       <Box

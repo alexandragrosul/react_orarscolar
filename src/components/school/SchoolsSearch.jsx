@@ -4,16 +4,15 @@ import {
   Box,
   TextField,
 } from "../../../node_modules/@mui/material/index";
-import { schoolsData } from "../../utils/schoolsData";
 import axios from "../../../node_modules/axios/index";
 import { Link } from "../../../node_modules/react-router-dom/dist/index";
 
-const filterSchools = (schools, name) => {
-  if (!name) return schools;
-  return schools.filter((school) => {
-    return school.name === name;
-  });
-};
+// const filterSchools = (schools, name) => {
+//   if (!name) return schools;
+//   return schools.filter((school) => {
+//     return school.name === name;
+//   });
+// };
 
 const SchoolsSearch = () => {
   const schoolsOptions = (schoolsData) => {

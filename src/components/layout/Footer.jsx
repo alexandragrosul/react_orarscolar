@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Box,
@@ -34,9 +34,7 @@ function Footer({ onButtonClick, selected }) {
   const [open, setOpen] = useState(false);
   const [taskName, setTaskName] = useState("");
   const [time, setTime] = useState("");
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
+  const [setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
   const location = useLocation();
   const isTimetablePage = location.pathname === "/timetable";
   const timetableLink = isTimetablePage ? "#" : "timetable";
