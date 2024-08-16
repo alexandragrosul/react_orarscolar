@@ -14,9 +14,8 @@ import {
 import RoundButton from "../components/layout/RoundButton";
 import { useTranslation } from "react-i18next";
 
-
 const Login = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const initialValues = {
     email: "",
     password: "",
@@ -31,6 +30,27 @@ const Login = () => {
 
   const onSubmit = (values) => {
     console.log(values); // Обработка полученных значений
+    fetch("https://api.escoala.md/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          // Если статус ответа не 2xx, выбрасываем ошибку
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("token", data.token);
+      })
+      .catch((error) => {
+        console.error("There was a problem with the fetch operation:", error);
+      });
   };
 
   const roundedInputStyle = {
@@ -39,7 +59,7 @@ const Login = () => {
 
   return (
     <>
-      <Container sx={{ display: "flex", justifyContent: "center" }}>
+      <Container sx={{ display: "flex", justifyContent: "center", mt: 10 }}>
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
           {({ values, handleChange, resetForm }) => (
             <Form>
@@ -50,11 +70,11 @@ const Login = () => {
                 alignItems={"center"}
               >
                 <Typography variant="h3" component="h1">
-                {t('login.loginTitle')}
+                  {t("login.loginTitle")}
                 </Typography>
                 <TextField
                   name="email"
-                  label={t('login.passwordLabel')}
+                  label={t("login.emailLabel")}
                   fullWidth
                   value={values.email}
                   onChange={handleChange}
@@ -66,7 +86,7 @@ const Login = () => {
                 />
                 <TextField
                   name="password"
-                  label={t('login.passwordLabel')}
+                  label={t("login.passwordLabel")}
                   type={showPassword ? "text" : "password"}
                   fullWidth
                   value={values.password}
@@ -96,9 +116,10 @@ const Login = () => {
                 ></FormControl>
 
                 <RoundButton
-                  name={t('login.loginButton')}
+                  name={t("login.loginButton")}
                   variant={"contained"}
                   type={"submit"}
+                  style={{ color: "white" }}
                 />
 
                 <div></div>
