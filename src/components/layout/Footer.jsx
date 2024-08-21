@@ -20,6 +20,8 @@ import Fab from "@mui/material/Fab";
 import ViewListIcon from "@mui/icons-material/ViewList";
 import { Link } from "react-router-dom";
 import { useLocation } from "../../../node_modules/react-router-dom/dist/index";
+import AddTaskIcon from "@mui/icons-material/AddTask";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 
 const StyledFab = styled(Fab)({
   position: "absolute",
@@ -32,11 +34,16 @@ const StyledFab = styled(Fab)({
 
 function Footer({ onButtonClick, selected }) {
   const [open, setOpen] = useState(false);
+  const [openTimetableForm, setOpenTimetableForm] = useState(false);
+  const [lessonTimeStart, setLessonTimeStart] = useState("");
+  const [lessonTimeEnd, setLessonTimeEnd] = useState("");
   const [taskName, setTaskName] = useState("");
+  const [lessonName, setLessonName] = useState("");
   const [time, setTime] = useState("");
   const [setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
   const location = useLocation();
   const isTimetablePage = location.pathname === "/timetable";
+  // const isTasksListPage = location.pathname === "/tasks";
   const timetableLink = isTimetablePage ? "#" : "timetable";
 
   const handleClickOpen = onButtonClick.bind(null, "schedule");
@@ -49,6 +56,14 @@ function Footer({ onButtonClick, selected }) {
     setOpen(false);
   };
 
+  const handleCloseTimetable = () => {
+    setOpenTimetableForm(false);
+  };
+
+  const addNewTimetableItem = () => {
+    console.log("addNewTimetableItem");
+    setOpenTimetableForm(true);
+  };
   const saveTask = () => {
     const newTask = {
       name: taskName,
@@ -56,6 +71,7 @@ function Footer({ onButtonClick, selected }) {
       status: false,
       time: time,
     };
+
     const updatedTasks = [
       ...JSON.parse(localStorage.getItem("tasks")),
       newTask,
@@ -67,6 +83,29 @@ function Footer({ onButtonClick, selected }) {
     setTaskName("");
     setTime("");
     setOpen(false);
+  };
+
+  const saveLesson = () => {
+    const newLesson = {
+      name: lessonName,
+      id: new Date().valueOf(),
+      status: false,
+      time: time,
+    };
+
+    console.log("New Lesson");
+
+    // const updatedTasks = [
+    //   ...JSON.parse(localStorage.getItem("tasks")),
+    //   newTask,
+    // ];
+    // setTasks(updatedTasks);
+    // localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    // // Вызов пользовательского события
+    // window.dispatchEvent(new CustomEvent("tasksUpdated"));
+    // setTaskName("");
+    // setTime("");
+    // setOpen(false);
   };
 
   console.log(timetableLink);
@@ -106,9 +145,12 @@ function Footer({ onButtonClick, selected }) {
           <StyledFab
             style={{ backgroundColor: "#a959a9", color: "#ffffff" }}
             aria-label="add"
-            onClick={handleClickAddTaskOpen}
+            onClick={
+              isTimetablePage ? addNewTimetableItem : handleClickAddTaskOpen
+            }
           >
-            <AddIcon />
+            {/* <AddIcon /> */}
+            {isTimetablePage ? <PlaylistAddIcon /> : <AddTaskIcon />}
           </StyledFab>
           <Box sx={{ flexGrow: 1 }} />
           <Link to={"tasks"}>
@@ -158,6 +200,47 @@ function Footer({ onButtonClick, selected }) {
           <DialogActions>
             <Button onClick={saveTask}>Save</Button>
             <Button onClick={handleClose}>Cancel</Button>
+          </DialogActions>
+        </Dialog>
+
+        <Dialog open={openTimetableForm} onClose={handleCloseTimetable}>
+          <DialogTitle>Add lesson</DialogTitle>
+          <DialogContent>
+            <DialogContentText>Add lesson</DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="lesson_name"
+              label="Denumirea lectiei"
+              type="text"
+              fullWidth
+              variant="standard"
+              value={taskName}
+              onChange={(event) => {
+                setTaskName(event.target.value);
+              }}
+            />
+            <TextField
+              onChange={(event) => {
+                setLessonTimeStart(event.target.value);
+              }}
+              value={time}
+              id="time"
+              label="Alarm clock"
+              type="time"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{
+                step: 300, // 5 min
+              }}
+              sx={{ width: "100%", mt: 2, borderRadius: "50px" }}
+            />
+          </DialogContent>
+
+          <DialogActions>
+            <Button onClick={saveLesson}>Save</Button>
+            <Button onClick={handleCloseTimetable}>Cancel</Button>
           </DialogActions>
         </Dialog>
       </AppBar>

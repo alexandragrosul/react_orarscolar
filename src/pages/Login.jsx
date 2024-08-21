@@ -13,14 +13,17 @@ import {
 } from "../../node_modules/@mui/icons-material/index";
 import RoundButton from "../components/layout/RoundButton";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const initialValues = {
     email: "",
     password: "",
   };
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -40,8 +43,10 @@ const Login = () => {
       .then((response) => {
         if (!response.ok) {
           // Если статус ответа не 2xx, выбрасываем ошибку
+          console.log(response);
           throw new Error("Network response was not ok");
         }
+        // navigate("/");
         return response.json();
       })
       .then((data) => {
@@ -114,6 +119,8 @@ const Login = () => {
                   sx={{ m: 1, width: "25ch" }}
                   variant="filled"
                 ></FormControl>
+
+                {error && <div>{JSON.stringify(error)}</div>}
 
                 <RoundButton
                   name={t("login.loginButton")}
