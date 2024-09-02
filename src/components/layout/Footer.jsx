@@ -22,6 +22,8 @@ import { Link } from "react-router-dom";
 import { useLocation } from "../../../node_modules/react-router-dom/dist/index";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const StyledFab = styled(Fab)({
   position: "absolute",
@@ -88,12 +90,11 @@ function Footer({ onButtonClick, selected }) {
   const saveLesson = () => {
     const newLesson = {
       name: lessonName,
-      id: new Date().valueOf(),
-      status: false,
-      time: time,
+      timeStart: lessonTimeStart,
+      timeEnd: lessonTimeEnd,
     };
 
-    console.log("New Lesson");
+    console.log(newLesson);
 
     // const updatedTasks = [
     //   ...JSON.parse(localStorage.getItem("tasks")),
@@ -215,18 +216,34 @@ function Footer({ onButtonClick, selected }) {
               type="text"
               fullWidth
               variant="standard"
-              value={taskName}
+              value={lessonName}
               onChange={(event) => {
-                setTaskName(event.target.value);
+                setLessonName(event.target.value);
               }}
             />
             <TextField
               onChange={(event) => {
                 setLessonTimeStart(event.target.value);
               }}
-              value={time}
+              value={lessonTimeStart}
               id="time"
-              label="Alarm clock"
+              label="Time start"
+              type="time"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{
+                step: 300, // 5 min
+              }}
+              sx={{ width: "100%", mt: 2, borderRadius: "50px" }}
+            />
+
+            <TextField
+              onChange={(event) => {
+                setLessonTimeEnd(event.target.value);
+              }}
+              value={lessonTimeEnd}
+              label="Time end"
               type="time"
               InputLabelProps={{
                 shrink: true,
