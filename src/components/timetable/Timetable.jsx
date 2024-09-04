@@ -22,6 +22,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import AlarmOffIcon from "@mui/icons-material/AlarmOff";
 import AlarmOnIcon from "@mui/icons-material/AlarmOn";
+import ImportSchedule from "./ImportSchedule";
+import ExportSchedule from "./ExportSchedule";
 
 function getFontColor(color) {
   // Определите яркость фона
@@ -605,6 +607,10 @@ export const TimeTable = () => {
           </TabPanel>
         ))}
       </SwipeableViews>
+      <Card>
+        <ImportSchedule />
+        <ExportSchedule />
+      </Card>
       <Card>
         <CardContent>
           {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>

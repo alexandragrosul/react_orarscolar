@@ -34,7 +34,34 @@ const StyledFab = styled(Fab)({
   margin: "0 auto",
 });
 
+const validationSchema = Yup.object({
+  lessonName: Yup.string().required("Название обязательно"),
+  lessonTimeStart: Yup.string().required("Время начала обязательно"),
+  lessonTimeEnd: Yup.string()
+    .nullable()
+    .when("lessonTimeStart", (lessonTimeStart, schema) => {
+      return schema.test({
+        test: (lessonTimeEnd) => {
+          if (!lessonTimeEnd) return true; // End time is not required
+          return lessonTimeEnd > lessonTimeStart;
+        },
+        message: "Конец урока должен быть позже начала",
+      });
+    }),
+});
+
 function Footer({ onButtonClick, selected }) {
+  const formik = useFormik({
+    initialValues: {
+      lessonName: "",
+      lessonTimeStart: "",
+      lessonTimeEnd: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
   const [open, setOpen] = useState(false);
   const [openTimetableForm, setOpenTimetableForm] = useState(false);
   const [lessonTimeStart, setLessonTimeStart] = useState("");
@@ -93,7 +120,7 @@ function Footer({ onButtonClick, selected }) {
       timeStart: lessonTimeStart,
       timeEnd: lessonTimeEnd,
     };
-
+    localStorage.setItem("lesson", JSON.stringify(newLesson));
     console.log(newLesson);
 
     // const updatedTasks = [
@@ -204,7 +231,7 @@ function Footer({ onButtonClick, selected }) {
           </DialogActions>
         </Dialog>
 
-        <Dialog open={openTimetableForm} onClose={handleCloseTimetable}>
+        {/* <Dialog open={openTimetableForm} onClose={handleCloseTimetable}>
           <DialogTitle>Add lesson</DialogTitle>
           <DialogContent>
             <DialogContentText>Add lesson</DialogContentText>
@@ -259,6 +286,78 @@ function Footer({ onButtonClick, selected }) {
             <Button onClick={saveLesson}>Save</Button>
             <Button onClick={handleCloseTimetable}>Cancel</Button>
           </DialogActions>
+        </Dialog> */}
+
+        <Dialog open={openTimetableForm} onClose={handleCloseTimetable}>
+          <DialogTitle>Add lesson</DialogTitle>
+          <DialogContent>
+            <DialogContentText>Add lesson</DialogContentText>
+            <form onSubmit={formik.handleSubmit}>
+              <TextField
+                autoFocus
+                margin="dense"
+                id="lesson_name"
+                label="Denumirea lectiei"
+                type="text"
+                fullWidth
+                variant="standard"
+                {...formik.getFieldProps("lessonName")}
+                error={
+                  formik.touched.lessonName && Boolean(formik.errors.lessonName)
+                }
+                helperText={
+                  formik.touched.lessonName && formik.errors.lessonName
+                }
+              />
+              <TextField
+                id="time_start"
+                label="Time start"
+                type="time"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                inputProps={{
+                  step: 300, // 5 min
+                }}
+                fullWidth
+                sx={{ mt: 2, borderRadius: "50px" }}
+                {...formik.getFieldProps("lessonTimeStart")}
+                error={
+                  formik.touched.lessonTimeStart &&
+                  Boolean(formik.errors.lessonTimeStart)
+                }
+                helperText={
+                  formik.touched.lessonTimeStart &&
+                  formik.errors.lessonTimeStart
+                }
+              />
+              <TextField
+                id="time_end"
+                label="Time end"
+                type="time"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                inputProps={{
+                  step: 300, // 5 min
+                }}
+                fullWidth
+                sx={{ mt: 2, borderRadius: "50px" }}
+                {...formik.getFieldProps("lessonTimeEnd")}
+                error={
+                  formik.touched.lessonTimeEnd &&
+                  Boolean(formik.errors.lessonTimeEnd)
+                }
+                helperText={
+                  formik.touched.lessonTimeEnd && formik.errors.lessonTimeEnd
+                }
+              />
+              <DialogActions>
+                <Button type="submit">Save</Button>
+                <Button onClick={handleCloseTimetable}>Cancel</Button>
+              </DialogActions>
+            </form>
+          </DialogContent>
         </Dialog>
       </AppBar>
     </Container>
