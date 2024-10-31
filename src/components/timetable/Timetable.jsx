@@ -329,26 +329,26 @@ export const TimeTable = () => {
     },
   };
 
-  // const weekLocalStorage = localStorage.getItem("week");
-  const weekLocalStorage = weekTemp;
+  const weekLocalStorage = JSON.parse(localStorage.getItem("week"));
+  // const weekLocalStorage = weekTemp;
   const colorsLocalStorage = localStorage.getItem("colors");
   // const disciplineLocalStorage = localStorage.getItem("discipline");
   const disciplineLocalStorage = disciplineTemp;
 
-  useEffect(() => {
-    !disciplineLocalStorage &&
-      localStorage.setItem(
-        "discipline",
-        JSON.stringify(scheduleDataDefault.discipline)
-      );
-    !colorsLocalStorage &&
-      localStorage.setItem(
-        "colors",
-        JSON.stringify(scheduleDataDefault.colors)
-      );
-    !weekLocalStorage &&
-      localStorage.setItem("week", JSON.stringify(scheduleDataDefault.week));
-  }, [disciplineLocalStorage, colorsLocalStorage, weekLocalStorage]);
+  // useEffect(() => {
+  //   !disciplineLocalStorage &&
+  //     localStorage.setItem(
+  //       "discipline",
+  //       JSON.stringify(scheduleDataDefault.discipline)
+  //     );
+  //   !colorsLocalStorage &&
+  //     localStorage.setItem(
+  //       "colors",
+  //       JSON.stringify(scheduleDataDefault.colors)
+  //     );
+  //   !weekLocalStorage &&
+  //     localStorage.setItem("week", JSON.stringify(scheduleDataDefault.week));
+  // }, [disciplineLocalStorage, colorsLocalStorage, weekLocalStorage]);
 
   // Сохранение данных в локальное хранилище
   //   const saveDataToLocalStorage = (data) => {
@@ -561,7 +561,7 @@ export const TimeTable = () => {
 
                           <ListItemText
                             sx={{ my: 0, ml: 2 }}
-                            primary={discipline[item.subject].name}
+                            primary={item.subject}
                             primaryTypographyProps={{
                               fontSize: 20,
                               fontWeight: "medium",

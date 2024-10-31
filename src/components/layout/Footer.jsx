@@ -58,8 +58,15 @@ function Footer({ onButtonClick, selected }) {
       lessonTimeEnd: "",
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: (lesson) => {
+      const lessons = JSON.parse(localStorage.getItem("lessons")) || [];
+      if (Array.isArray(lessons)) {
+        lessons.push(lesson);
+        localStorage.setItem("lessons", JSON.stringify(lessons));
+      } else {
+        console.log("Проверьте ключь lessons");
+      }
+      setOpenTimetableForm(false);
     },
   });
   const [open, setOpen] = useState(false);
