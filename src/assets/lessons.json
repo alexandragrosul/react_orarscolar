@@ -2,27 +2,43 @@
   "lessons": [
     {
       "id": 1,
-      "name": "Введение в программирование"
+      "label": "Matematică"
     },
     {
       "id": 2,
-      "name": "Основы HTML"
+      "label": "Fizică"
     },
     {
       "id": 3,
-      "name": "Основы CSS"
+      "label": "Chimie"
     },
     {
       "id": 4,
-      "name": "Введение в JavaScript"
+      "label": "Biologie"
     },
     {
       "id": 5,
-      "name": "Основы Python"
+      "label": "Geografie"
     },
     {
       "id": 6,
-      "name": "Работа с API"
+      "label": "Istorie"
+    },
+    {
+      "id": 7,
+      "label": "Limba română"
+    },
+    {
+      "id": 8,
+      "label": "Literatură"
+    },
+    {
+      "id": 9,
+      "label": "Limba străină"
+    },
+    {
+      "id": 10,
+      "label": "Informatică"
     }
   ]
 }

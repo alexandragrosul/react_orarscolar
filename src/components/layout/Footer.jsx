@@ -24,6 +24,8 @@ import AddTaskIcon from "@mui/icons-material/AddTask";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import LessonSelect from "../timetable/LessonSelect";
+import RoundButton from "./RoundButton";
 
 const StyledFab = styled(Fab)({
   position: "absolute",
@@ -300,6 +302,7 @@ function Footer({ onButtonClick, selected }) {
           <DialogContent>
             <DialogContentText>Add lesson</DialogContentText>
             <form onSubmit={formik.handleSubmit}>
+              <LessonSelect />
               <TextField
                 autoFocus
                 margin="dense"
@@ -360,7 +363,14 @@ function Footer({ onButtonClick, selected }) {
                 }
               />
               <DialogActions>
-                <Button type="submit">Save</Button>
+                {/* <Button type="submit" variant="contained">
+                  Save
+                </Button> */}
+                <RoundButton
+                  type="submit"
+                  name="Save"
+                  style={{ color: "white" }}
+                />
                 <Button onClick={handleCloseTimetable}>Cancel</Button>
               </DialogActions>
             </form>
