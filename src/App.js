@@ -24,6 +24,9 @@ import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import CoursePage from "./pages/CoursePage";
 import Courses from "./pages/Courses";
+import FinPlus from "./pages/FinPlus";
+import ViewInvest from "./entities/invest/ViewInvest";
+import ViewBudget from "./entities/budget/ViewBudget";
 
 function App() {
   return (
@@ -51,6 +54,9 @@ function App() {
             <Route path="/tasks" element={<TasksList />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/course/:id" element={<CoursePage />} />
+            <Route path="/finplus" element={<FinPlus />} />
+            <Route path="/finplus/invest" element={<ViewInvest />} />
+            <Route path="/finplus/budget" element={<ViewBudget />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
