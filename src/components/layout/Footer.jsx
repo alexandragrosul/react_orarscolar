@@ -72,10 +72,10 @@ function Footer({ onButtonClick, selected }) {
   });
   const [open, setOpen] = useState(false);
   const [openTimetableForm, setOpenTimetableForm] = useState(false);
-  const [lessonTimeStart] = useState("");
-  const [lessonTimeEnd] = useState("");
+  // const [lessonTimeStart] = useState("");
+  // const [lessonTimeEnd] = useState("");
   const [taskName, setTaskName] = useState("");
-  const [lessonName] = useState("");
+  // const [lessonName] = useState("");
   const [time, setTime] = useState("");
   const [setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
   const location = useLocation();
