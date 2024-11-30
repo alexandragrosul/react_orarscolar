@@ -66,6 +66,7 @@ i18n.use(initReactI18next).init({
           romania: "Romania",
           answers: "Answers",
           courses: "Courses",
+          finPlus: "Fin+",
         },
         schools: {
           title: "Schools",
@@ -187,6 +188,7 @@ i18n.use(initReactI18next).init({
           romania: "Romania",
           answers: "Raspunsuri",
           courses: "Cursuri",
+          finPlus: "Fin+",
         },
         schools: {
           title: "Scoli",
@@ -307,6 +309,7 @@ i18n.use(initReactI18next).init({
           romania: "Румыния",
           answers: "Ответы",
           courses: "Курсы",
+          finPlus: "Fin+",
         },
         schools: {
           title: "Школы",

@@ -24,6 +24,7 @@ function TopBar({ position, handleClose }) {
   const pages = [
     { label: t("topBar.home"), link: "/" },
     { label: t("topBar.schools"), link: "/schools" },
+    { label: t("topBar.finPlus"), link: "/finplus" },
     // { label: t("topBar.tutors"), link: "/repetitori" },
     // { label: t("topBar.answers"), link: "/answers" },
     // { label: t("topBar.events"), link: "/events" },

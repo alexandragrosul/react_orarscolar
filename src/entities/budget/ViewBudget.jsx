@@ -5,7 +5,7 @@ import BudgetSummary from "./components/BudgetSummary";
 import Recommendations from "./components/Recommendations";
 import BudgetChart from "./components/BudgetChart";
 
-const App = () => {
+const ViewBudget = () => {
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
 
@@ -29,4 +29,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ViewBudget;
