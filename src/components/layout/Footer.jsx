@@ -14,7 +14,6 @@ import {
   Toolbar,
 } from "@mui/material";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
-import AddIcon from "@mui/icons-material/Add";
 import { styled } from "@mui/material/styles";
 import Fab from "@mui/material/Fab";
 import ViewListIcon from "@mui/icons-material/ViewList";
@@ -73,10 +72,10 @@ function Footer({ onButtonClick, selected }) {
   });
   const [open, setOpen] = useState(false);
   const [openTimetableForm, setOpenTimetableForm] = useState(false);
-  const [lessonTimeStart, setLessonTimeStart] = useState("");
-  const [lessonTimeEnd, setLessonTimeEnd] = useState("");
+  const [lessonTimeStart] = useState("");
+  const [lessonTimeEnd] = useState("");
   const [taskName, setTaskName] = useState("");
-  const [lessonName, setLessonName] = useState("");
+  const [lessonName] = useState("");
   const [time, setTime] = useState("");
   const [setTasks] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
   const location = useLocation();
@@ -123,27 +122,27 @@ function Footer({ onButtonClick, selected }) {
     setOpen(false);
   };
 
-  const saveLesson = () => {
-    const newLesson = {
-      name: lessonName,
-      timeStart: lessonTimeStart,
-      timeEnd: lessonTimeEnd,
-    };
-    localStorage.setItem("lesson", JSON.stringify(newLesson));
-    console.log(newLesson);
+  // const saveLesson = () => {
+  //   const newLesson = {
+  //     name: lessonName,
+  //     timeStart: lessonTimeStart,
+  //     timeEnd: lessonTimeEnd,
+  //   };
+  //   localStorage.setItem("lesson", JSON.stringify(newLesson));
+  //   console.log(newLesson);
 
-    // const updatedTasks = [
-    //   ...JSON.parse(localStorage.getItem("tasks")),
-    //   newTask,
-    // ];
-    // setTasks(updatedTasks);
-    // localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-    // // Вызов пользовательского события
-    // window.dispatchEvent(new CustomEvent("tasksUpdated"));
-    // setTaskName("");
-    // setTime("");
-    // setOpen(false);
-  };
+  //   // const updatedTasks = [
+  //   //   ...JSON.parse(localStorage.getItem("tasks")),
+  //   //   newTask,
+  //   // ];
+  //   // setTasks(updatedTasks);
+  //   // localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  //   // // Вызов пользовательского события
+  //   // window.dispatchEvent(new CustomEvent("tasksUpdated"));
+  //   // setTaskName("");
+  //   // setTime("");
+  //   // setOpen(false);
+  // };
 
   console.log(timetableLink);
   return (

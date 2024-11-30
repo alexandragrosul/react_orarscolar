@@ -13,17 +13,15 @@ import {
 } from "../../node_modules/@mui/icons-material/index";
 import RoundButton from "../components/layout/RoundButton";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const initialValues = {
     email: "",
     password: "",
   };
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
