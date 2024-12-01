@@ -29,6 +29,7 @@ import ViewInvest from "./entities/invest/ViewInvest";
 import ViewBudget from "./entities/budget/ViewBudget";
 import ViewLoan from "./entities/loan/ViewLoan";
 import ViewTax from "./entities/tax/ViewTax";
+import ViewSimulator from "./entities/simulator/ViewSimulator";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
             <Route path="/finplus/budget" element={<ViewBudget />} />
             <Route path="/finplus/loan" element={<ViewLoan />} />
             <Route path="/finplus/tax" element={<ViewTax />} />
+            <Route path="/finplus/simulator" element={<ViewSimulator />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
