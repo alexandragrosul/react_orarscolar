@@ -14,7 +14,7 @@ const Schools = () => {
         ? schoolsData.map((school) => (
             <School school={school} key={school.id} />
           ))
-        : "Nu sunt scoli"}
+        : "Nu sunt scoli!"}
     </Container>
   );
 };
