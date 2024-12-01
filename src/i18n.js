@@ -7,6 +7,11 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        finPlus: {
+          title: "Finance Management Mini-Apps",
+          description:
+            "Welcome to the page where you can explore helpful mini-apps designed to optimize your financial decisions. Calculate loans, plan budgets, analyze investments, and understand taxes with ease. These tools are intuitive and user-friendly.",
+        },
         schoolTitle: {
           info: "All Schools here",
         },
@@ -128,6 +133,11 @@ i18n.use(initReactI18next).init({
     },
     ro: {
       translation: {
+        finPlus: {
+          title: "Mini-aplicații pentru gestionarea finanțelor",
+          description:
+            "Bun venit pe pagina unde puteți găsi mini-aplicații utile create pentru a vă optimiza deciziile financiare. Calculați credite, planificați bugetul, analizați investițiile și înțelegeți taxele cu ușurință. Toate instrumentele sunt intuitive și ușor de utilizat.",
+        },
         schoolTitle: {
           info: "Toate scolile aici",
         },
@@ -250,6 +260,11 @@ i18n.use(initReactI18next).init({
     },
     ru: {
       translation: {
+        finPlus: {
+          title: "Мини-приложения для управления финансами",
+          description:
+            "Добро пожаловать на страницу, где вы найдете полезные мини-приложения, созданные для оптимизации ваших финансов. С их помощью вы можете рассчитывать кредиты, планировать бюджет, анализировать инвестиции и изучать налоги. Все инструменты интуитивно понятны и просты в использовании.",
+        },
         schoolTitle: {
           info: "Все школы тут",
         },
