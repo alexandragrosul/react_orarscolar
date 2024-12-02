@@ -36,6 +36,12 @@ const routes = [
     description: "Understand and calculate taxes.",
     img: "/images/tax.jpg",
   },
+  {
+    path: "/finplus/simulator",
+    title: "Market simulation",
+    description: "Understand how market works.",
+    img: "/images/economy.jpg",
+  },
 ];
 const FinPlus = () => {
   const { t } = useTranslation();

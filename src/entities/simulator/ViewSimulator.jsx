@@ -4,6 +4,7 @@ import MarketChart from "./components/MarketChart";
 import MarketStats from "./components/MarketStats";
 import MarketTips from "./components/MarketTips";
 import { calculateMarketEquilibrium } from "./utils/marketCalculations";
+import { Container } from "@mui/system";
 
 const ViewSimulator = () => {
   const [price, setPrice] = useState(10);
@@ -11,7 +12,7 @@ const ViewSimulator = () => {
     calculateMarketEquilibrium(price);
 
   return (
-    <div>
+    <Container>
       <h1>Симулятор спроса и предложения</h1>
       <MarketControlPanel price={price} setPrice={setPrice} />
       <MarketStats
@@ -23,7 +24,7 @@ const ViewSimulator = () => {
       />
       <MarketChart price={price} />
       <MarketTips />
-    </div>
+    </Container>
   );
 };
 
