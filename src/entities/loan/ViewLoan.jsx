@@ -4,6 +4,7 @@ import PaymentSummary from "./components/PaymentSummary";
 import RepaymentChart from "./components/RepaymentChart";
 import Recommendations from "./components/Recommendations";
 import { calculateAnnuityPayment } from "./components/loanCalculations";
+import { Container } from "@mui/system";
 
 const ViewLoan = () => {
   const [results, setResults] = useState(null);
@@ -16,7 +17,7 @@ const ViewLoan = () => {
   };
 
   return (
-    <div>
+    <Container>
       <h1>Калькулятор кредита</h1>
       <LoanForm onCalculate={handleCalculate} />
       {results && (
@@ -36,7 +37,7 @@ const ViewLoan = () => {
           />
         </>
       )}
-    </div>
+    </Container>
   );
 };
 
