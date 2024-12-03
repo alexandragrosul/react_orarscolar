@@ -14,7 +14,7 @@ const ViewTax = () => {
       incomeType,
       country
     );
-    setResults({ taxAmount, netIncome, taxRate });
+    setResults({ taxAmount, netIncome, taxRate, income });
   };
 
   return (
@@ -27,6 +27,8 @@ const ViewTax = () => {
             taxAmount={results.taxAmount}
             netIncome={results.netIncome}
             taxRate={results.taxRate}
+            income={results.income}
+            medTaxRate={9}
           />
           <TaxDistributionChart
             taxAmount={results.taxAmount}
