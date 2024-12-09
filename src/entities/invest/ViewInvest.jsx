@@ -13,9 +13,9 @@ const ViewInvest = () => {
     const { initialAmount, monthlyContribution, annualRate, years } = data;
 
     const scenarios = [
-      { scenario: "Оптимистичный", rate: 10 },
-      { scenario: "Средний", rate: 5 },
-      { scenario: "Пессимистичный", rate: 2 },
+      { scenario: "Optimistic", rate: 10 },
+      { scenario: "Average", rate: 5 },
+      { scenario: "Pessimistic", rate: 2 },
     ];
 
     const calculatedResults = scenarios.map(({ scenario, rate }) => {
@@ -49,7 +49,7 @@ const ViewInvest = () => {
 
   return (
     <div>
-      <h1>Симулятор инвестиций</h1>
+      <h1>Investment Simulator</h1>
       <InvestmentForm onSubmit={handleFormSubmit} />
       {results.length > 0 && (
         <>

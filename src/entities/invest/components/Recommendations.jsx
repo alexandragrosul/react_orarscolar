@@ -9,13 +9,13 @@ const Recommendations = ({
   return (
     <div>
       <p>
-        Инвестируя <b>{monthlyContribution} ₽</b> в месяц под{" "}
-        <b>{annualRate}%</b> годовых, вы накопите{" "}
-        <b>{futureValue.toFixed(2)} ₽</b> через {years} лет.
+        By investing <b>{monthlyContribution.toFixed(2)} MDL</b> monthly at an{" "}
+        <b>{annualRate}%</b> annual interest rate, you will accumulate{" "}
+        <b>{futureValue.toFixed(2)} MDL</b> in {years} years.
       </p>
       <p>
-        Чтобы увеличить доход, попробуйте увеличить ежемесячное пополнение или
-        выбрать более выгодные инструменты.
+        To increase your returns, consider increasing your monthly contribution
+        or selecting higher-yield investment options.
       </p>
     </div>
   );

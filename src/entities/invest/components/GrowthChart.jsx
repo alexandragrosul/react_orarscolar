@@ -2,25 +2,25 @@ import React, { useRef, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 
 const GrowthChart = ({ data }) => {
-  const chartRef = useRef(null); // Ссылка на canvas
-  const chartInstanceRef = useRef(null); // Ссылка на экземпляр графика
+  const chartRef = useRef(null); // Reference to canvas
+  const chartInstanceRef = useRef(null); // Reference to the chart instance
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
 
-    // Уничтожаем старый график, если он существует
+    // Destroy old chart if it exists
     if (chartInstanceRef.current) {
       chartInstanceRef.current.destroy();
     }
 
-    // Создаем новый график
+    // Create a new chart
     chartInstanceRef.current = new Chart(ctx, {
       type: "line",
       data: {
         labels: data.years,
         datasets: [
           {
-            label: "Рост капитала",
+            label: "Capital Growth",
             data: data.values,
             borderColor: "rgba(75,192,192,1)",
             fill: false,
@@ -35,13 +35,13 @@ const GrowthChart = ({ data }) => {
       },
     });
 
-    // Очистка ресурса при размонтировании компонента
+    // Clean up the resource on component unmount
     return () => {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
       }
     };
-  }, [data]); // Перерисовываем график, если изменились данные
+  }, [data]); // Redraw chart if data changes
 
   return <canvas ref={chartRef}></canvas>;
 };
