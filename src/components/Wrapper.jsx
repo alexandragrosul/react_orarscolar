@@ -22,10 +22,10 @@ const Wrapper = () => {
   const [appBarPosition, setAppBarPosition] = React.useState("fixed");
   // const [footerMenuSelected, setFooterMenuSelected] = React.useState(null);
 
-  const handleClickOpen = (type) => {
-    setPageType(type === pageType ? null : type);
-    // setOpen(true);
-  };
+  // const handleClickOpen = (type) => {
+  //   setPageType(type === pageType ? null : type);
+  //   // setOpen(true);
+  // };
 
   const handleClose = () => {
     setOpen(false);

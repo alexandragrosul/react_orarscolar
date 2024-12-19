@@ -1,39 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Paper, Typography } from "@mui/material";
 
 const EventCard = ({ stage, updateBalance, year, age }) => {
   const [event, setEvent] = useState(null);
 
   // Определяем случайные события для каждого этапа
-  const events = {
-    Student: [
-      { description: "You received a scholarship! (+200 MDL)", value: 200 },
-      { description: "You lost your textbook! (-100 MDL)", value: -100 },
-    ],
-    Professional: [
-      { description: "You got a salary bonus! (+3000 MDL)", value: 3000 },
-      { description: "Your car broke down! (-1500 MDL)", value: -1500 },
-    ],
-    Investor: [
-      { description: "Stock market boom! (+5000 MDL)", value: 5000 },
-      { description: "Stock market crash! (-2000 MDL)", value: -2000 },
-    ],
-  };
+  const events = useMemo(() => {
+    return {
+      Student: [
+        { description: "You received a scholarship! (+200 MDL)", value: 200 },
+        { description: "You lost your textbook! (-100 MDL)", value: -100 },
+      ],
+      Professional: [
+        { description: "You got a salary bonus! (+3000 MDL)", value: 3000 },
+        { description: "Your car broke down! (-1500 MDL)", value: -1500 },
+      ],
+      Investor: [
+        { description: "Stock market boom! (+5000 MDL)", value: 5000 },
+        { description: "Stock market crash! (-2000 MDL)", value: -2000 },
+      ],
+    };
+  }, []);
 
-  const decisions = {
-    Child: [
-      { label: "Save pocket money (+100 MDL)", value: 100, progress: 2 },
-      { label: "Buy a book (-150 MDL)", value: -50, progress: 1 },
-    ],
-    Worker: [
-      { label: "Invest in Stocks (+5000 MDL)", value: 5000, progress: 15 },
-      { label: "Buy a car (-10000 MDL)", value: -10000, progress: 10 },
-    ],
-    Retiree: [
-      { label: "Spend on Travel (-3000 MDL)", value: -3000, progress: 5 },
-      { label: "Reinvest Dividends (+2000 MDL)", value: 2000, progress: 10 },
-    ],
-  };
+  // const decisions = {
+  //   Child: [
+  //     { label: "Save pocket money (+100 MDL)", value: 100, progress: 2 },
+  //     { label: "Buy a book (-150 MDL)", value: -50, progress: 1 },
+  //   ],
+  //   Worker: [
+  //     { label: "Invest in Stocks (+5000 MDL)", value: 5000, progress: 15 },
+  //     { label: "Buy a car (-10000 MDL)", value: -10000, progress: 10 },
+  //   ],
+  //   Retiree: [
+  //     { label: "Spend on Travel (-3000 MDL)", value: -3000, progress: 5 },
+  //     { label: "Reinvest Dividends (+2000 MDL)", value: 2000, progress: 10 },
+  //   ],
+  // };
 
   // const getDecisions = () => {
   //   if (age < 18) return decisions.Child;
