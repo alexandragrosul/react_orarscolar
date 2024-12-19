@@ -2,6 +2,7 @@ import * as React from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import { Outlet } from "react-router-dom";
 import {
   Dialog,
@@ -98,8 +99,16 @@ const Wrapper = () => {
       >
         <Outlet />
         {/* {renderMainContent()} */}
+        <Box
+          sx={{ background: "#66bb6a", padding: "40px 0", textAlign: "center" }}
+        >
+          <Typography variant="h6" sx={{ color: "black" }}>
+            © 2024 Escoala.md. All Rights Reserved. | Empowering education for a
+            brighter future.
+          </Typography>
+        </Box>
       </Box>
-      <Footer onButtonClick={handleClickOpen} selected={footerMenuSelected} />
+      {/* <Footer onButtonClick={handleClickOpen} selected={footerMenuSelected} /> */}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Adauga</DialogTitle>
         {renderDialogContent()}
@@ -108,6 +117,7 @@ const Wrapper = () => {
           <Button onClick={handleClose}>Save</Button>
         </DialogActions>
       </Dialog>
+      {/* Footer Section */}
     </Box>
   );
 };

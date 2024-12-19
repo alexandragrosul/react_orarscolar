@@ -25,6 +25,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import CoursePage from "./pages/CoursePage";
 import Courses from "./pages/Courses";
 import FinPlus from "./pages/FinPlus";
+import GameApp from "./entities/game/GameApp";
 import ViewInvest from "./entities/invest/ViewInvest";
 import ViewBudget from "./entities/budget/ViewBudget";
 import ViewLoan from "./entities/loan/ViewLoan";
@@ -63,6 +64,7 @@ function App() {
             <Route path="/finplus/loan" element={<ViewLoan />} />
             <Route path="/finplus/tax" element={<ViewTax />} />
             <Route path="/finplus/simulator" element={<ViewSimulator />} />
+            <Route path="/game" element={<GameApp />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
