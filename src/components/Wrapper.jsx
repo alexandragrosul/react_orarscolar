@@ -48,7 +48,7 @@ const Wrapper = () => {
     } else {
       setAppBarPosition("fixed");
     }
-    setFooterMenuSelected(pageType);
+    // setFooterMenuSelected(pageType);
   }, [pageType]);
 
   const renderDialogContent = () => {
