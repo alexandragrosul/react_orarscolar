@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Typography, Button, Grid, Paper } from "@mui/material";
+import { Container, Typography, Grid } from "@mui/material";
 import LifeStage from "./LifeStage";
 import DecisionPanel from "./DecisionPanel";
 import ProgressBar from "./ProgressBar";
@@ -9,7 +9,7 @@ import Leaderboard from "./LeaderBoard";
 const Game = () => {
   const [stage, setStage] = useState("Student");
   const [balance, setBalance] = useState(1000); // Start with 1000 MDL
-  const [goal, setGoal] = useState(1000000); // Goal: 1,000,000 MDL
+  const [goal] = useState(1000000); // Goal: 1,000,000 MDL
   const [progress, setProgress] = useState(0); // Progress percentage
   const [year, setYear] = useState(1);
   const [age, setAge] = useState(14);
@@ -95,12 +95,12 @@ const Game = () => {
     }
   };
 
-  const nextStage = () => {
-    if (stage === "Student") setStage("Professional");
-    else if (stage === "Professional") setStage("Investor");
-    else if (stage === "Investor") setStage("Retirement");
-    else alert("Congratulations! You've completed all stages of the game!");
-  };
+  // const nextStage = () => {
+  //   if (stage === "Student") setStage("Professional");
+  //   else if (stage === "Professional") setStage("Investor");
+  //   else if (stage === "Investor") setStage("Retirement");
+  //   else alert("Congratulations! You've completed all stages of the game!");
+  // };
 
   return (
     <Container sx={{ marginTop: 5 }}>

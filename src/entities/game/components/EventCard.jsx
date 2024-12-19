@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Paper, Typography, Button } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 
 const EventCard = ({ stage, updateBalance, year, age }) => {
   const [event, setEvent] = useState(null);
@@ -35,11 +35,11 @@ const EventCard = ({ stage, updateBalance, year, age }) => {
     ],
   };
 
-  const getDecisions = () => {
-    if (age < 18) return decisions.Child;
-    if (age >= 18 && age <= 63) return decisions.Worker;
-    return decisions.Retiree;
-  };
+  // const getDecisions = () => {
+  //   if (age < 18) return decisions.Child;
+  //   if (age >= 18 && age <= 63) return decisions.Worker;
+  //   return decisions.Retiree;
+  // };
 
   // const renderDecisions = getDecisions().map((decision, index) => (
   //   <button key={index} onClick={() => handleDecision(decision)}>
@@ -48,17 +48,17 @@ const EventCard = ({ stage, updateBalance, year, age }) => {
   // ));
 
   // Генерация случайного события
-  const generateRandomEvent = () => {
-    const stageEvents = events[stage];
-    const randomEvent =
-      stageEvents[Math.floor(Math.random() * stageEvents.length)];
-    setEvent(randomEvent);
-    updateBalance(randomEvent.value); // Обновляем баланс
-  };
-
   useEffect(() => {
+    const generateRandomEvent = () => {
+      const stageEvents = events[stage];
+      const randomEvent =
+        stageEvents[Math.floor(Math.random() * stageEvents.length)];
+      setEvent(randomEvent);
+      updateBalance(randomEvent.value); // Обновляем баланс
+    };
+
     generateRandomEvent();
-  }, [year]); // Генерируем событие при изменении стадии
+  }, [year, stage, updateBalance, events]); // Генерируем событие при изменении стадии
 
   return (
     <Paper sx={{ padding: 2 }}>

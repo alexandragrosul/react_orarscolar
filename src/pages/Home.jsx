@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Typography, Grid, Box } from "@mui/material";
+import { Container, Typography, Grid } from "@mui/material";
 import HomeSchools from "../components/layout/home/HomeSchools";
 import { useTranslation } from "react-i18next";
 import HomeSchoolInfo from "../components/layout/home/HomeSchoolInfo";
-import HomeCourses from "../components/layout/home/HomeCourses";
+// import HomeCourses from "../components/layout/home/HomeCourses";
 import HomeFinPlus from "../components/layout/home/HomeFinPlus";
 
 function Home({ profesors }) {

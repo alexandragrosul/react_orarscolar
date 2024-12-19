@@ -5,13 +5,13 @@ import {
   Typography,
 } from "../../../../node_modules/@mui/material/index";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import RoundButton from "../RoundButton";
 import financePhoto from "../../../assets/finance.jpg";
 
 function HomeFinPlus() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <Grid container mb={4} spacing={2} alignItems="center">

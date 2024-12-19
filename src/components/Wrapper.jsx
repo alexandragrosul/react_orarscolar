@@ -1,6 +1,5 @@
 import * as React from "react";
 import Header from "./layout/Header";
-import Footer from "./layout/Footer";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Outlet } from "react-router-dom";
@@ -21,7 +20,7 @@ const Wrapper = () => {
   const location = useLocation();
   const [pageType, setPageType] = React.useState(null);
   const [appBarPosition, setAppBarPosition] = React.useState("fixed");
-  const [footerMenuSelected, setFooterMenuSelected] = React.useState(null);
+  // const [footerMenuSelected, setFooterMenuSelected] = React.useState(null);
 
   const handleClickOpen = (type) => {
     setPageType(type === pageType ? null : type);
