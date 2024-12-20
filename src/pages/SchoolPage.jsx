@@ -17,7 +17,7 @@ import {
 } from "../../node_modules/@mui/icons-material/index";
 import React from "react";
 import BusinessIcon from "@mui/icons-material/Business";
-import RoundButton from "../components/layout/RoundButton";
+// import RoundButton from "../components/layout/RoundButton";
 
 const SchoolPage = () => {
   const { id } = useParams();
