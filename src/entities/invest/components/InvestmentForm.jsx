@@ -44,7 +44,12 @@ const InvestmentForm = ({ onSubmit }) => {
       </div>
       <div>
         <label>Annual Interest Rate (%):</label>
-        <input type="number" {...register("annualRate")} />
+        {/* <input type="number" {...register("annualRate")} /> */}
+        <select {...register("annualRate")}>
+          <option value="2">2%</option>
+          <option value="5">5%</option>
+          <option value="10">10%</option>
+        </select>
         <p>{errors.annualRate?.message}</p>
       </div>
       <div>

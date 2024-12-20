@@ -8,10 +8,11 @@ import { calculateCompoundInterest } from "./utils/calculateCompoundInterest";
 const ViewInvest = () => {
   const [results, setResults] = useState([]);
   const [chartData, setChartData] = useState(null);
+  const [mntContribution, setMntContribution] = useState(0);
 
   const handleFormSubmit = (data) => {
     const { initialAmount, monthlyContribution, annualRate, years } = data;
-
+    setMntContribution(monthlyContribution);
     const scenarios = [
       { scenario: "Optimistic", rate: 10 },
       { scenario: "Average", rate: 5 },
@@ -56,7 +57,8 @@ const ViewInvest = () => {
           <ResultTable results={results} />
           {chartData && <GrowthChart data={chartData} />}
           <Recommendations
-            monthlyContribution={results[1]?.value / Number(results[1]?.years)}
+            // monthlyContribution={results[1]?.value / Number(results[1]?.years)}
+            monthlyContribution={mntContribution}
             annualRate={5}
             futureValue={results[1]?.value}
             years={results[1]?.years}
