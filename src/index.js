@@ -5,15 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./hooks/AuthContext";
-import './i18n';
+import "./i18n";
+// import LocaleWrapper from "./LocaleWrapper";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      {/* <LocaleWrapper> */}
       <AuthProvider>
         <App />
       </AuthProvider>
+      {/* </LocaleWrapper> */}
     </BrowserRouter>
   </React.StrictMode>
 );
