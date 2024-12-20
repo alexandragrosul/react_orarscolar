@@ -71,16 +71,16 @@ const SchoolPage = () => {
           mb: 3,
         }}
       >
-        <Typography variant="h3" gutterBottom sx={{}}>
+        <Typography variant="h3" gutterBottom sx={{ fontSize: "2rem" }}>
           {school?.name}
         </Typography>
         {/* <Button variant="contained" sx={{ color: "white" }}>
           Отправить заявку
         </Button> */}
-        <RoundButton
+        {/* <RoundButton
           name={"Отправить заявку"}
           style={{ color: "white" }}
-        ></RoundButton>
+        ></RoundButton> */}
       </Box>
       <img
         src="https://static.ucheba.ru/thumbs/809/-/pix/uz_photo/8504.full.webp"

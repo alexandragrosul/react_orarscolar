@@ -39,9 +39,9 @@ export default function HomeSchools() {
             >
               {t("homeSchools.schoolIsVeryImportant")}
             </h6>
-            <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
+            {/* <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
               {t("homeSchools.schoolNotInList")}
-            </Typography>
+            </Typography> */}
           </Stack>
           <Stack
             direction="row"
@@ -59,12 +59,12 @@ export default function HomeSchools() {
             noValidate
             autoComplete="off"
           >
-            <SchoolsSearch setFilteredSchools={undefined} />
+            {/* <SchoolsSearch setFilteredSchools={undefined} /> */}
           </Stack>
           <Stack alignItems="center" flex sx={{ mt: 2 }}>
-            <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
+            {/* <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
               {t("homeSchools.schoolNotInList")}
-            </Typography>
+            </Typography> */}
             <Link to={"/schools"}>
               <RoundButton
                 name={t("homeSchools.allSchools")}
