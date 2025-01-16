@@ -1,142 +1,122 @@
-// import School from "../components/school/School";
-import { Container } from "@mui/system";
-// import axios from "axios";
 import {
-  FormControl,
+  Container,
   Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-} from "../../node_modules/@mui/material/index";
-import React from "react";
-import { useEffect } from "react";
+  Box,
+  Typography,
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import NewSchool from "../components/school/NewSchool";
-import SchoolsSearch from "../components/school/SchoolsSearch";
 
 const Schools = () => {
   const { t } = useTranslation();
+  const [schools, setSchools] = useState([]);
 
-  const [filteredSchools, setFilteredSchools] = React.useState([]);
-  const [schoolCategory, setSchoolCategory] = React.useState(10);
-  const [schoolRegion, setSchoolRegion] = React.useState(10);
-
-  const handleChangeShoolCategory = (event) => {
-    setSchoolCategory(event.target.value);
-  };
-  const handleChangeSchoolRegion = (event) => {
-    setSchoolRegion(event.target.value);
-  };
-
-  // async function fetchData() {
-  //   try {
-  //     const response = await axios.get("data.json"); // Замените URL на адрес вашего сервера
-  //     const data = response.data.data.school_sector.schools;
-  //     setFilteredSchools(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
   useEffect(() => {
-    // fetchData();
     fetch("https://api.escoala.md/api/schools")
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
-        console.log(data.data);
-        setFilteredSchools(data?.data);
-      });
+        setSchools(data?.data || []);
+      })
+      .catch((error) => console.error("Error fetching schools:", error));
   }, []);
 
-  // const filterSchools = (schools, name) => {
-  //   if (!name) return schools;
-  //   return schools.filter((school) => {
-  //     return school.name === name;
-  //   });
-  // };
-
   return (
-    <Container>
-      <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
-        {t("schools.title")}
-      </h1>
-      <Grid container spacing={2} direction="row">
-        <Grid item xs={12} md={8}>
-          <FormControl fullWidth>
-            {/* <Autocomplete
-              value={value}
-              onChange={(event, newValue) => {
-                setValue(newValue);
-                // setFilteredSchools(filterSchools(options, newValue));
-              }} 
-              inputValue={inputValue}
-              onInputChange={(event, newInputValue) => {
-                setInputValue(newInputValue);
-              }}
-              id="controllable-states-demo"
-              options={schoolsOptions(options)}
-              fullWidth
-              renderOption={(props, option) => (
-                <Box component="li" {...props} sx={{ color: "black" }}>
-                  {option.name}
-                </Box>
-              )}
-              renderInput={(params) => <TextField {...params} label="Scoli" />}
-              sx={{ borderRadius: "75px", border: "1px solid green" }}
-            /> */}
+    <Box
+      sx={{
+        backgroundColor: "#EAFBEA",
+        padding: "50px 0",
+        minHeight: "100vh",
+      }}
+    >
+      <Container
+        sx={{
+          backgroundColor: "#ffffff",
+          borderRadius: "20px",
+          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+          padding: "40px",
+        }}
+      >
+        <Typography
+          variant="h3"
+          sx={{
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: "bold",
+            color: "#388E3C",
+            textAlign: "center",
+            marginBottom: "30px",
+          }}
+        >
+          {t("schools.title")}
+        </Typography>
 
-            <SchoolsSearch />
-          </FormControl>
+        {/* Список школ */}
+        <Grid container spacing={4}>
+          {schools.map((school, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card
+                sx={{
+                  backgroundColor: "#F1F8E9",
+                  borderRadius: "20px",
+                  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                  transition: "transform 0.3s, box-shadow 0.3s",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
+                  },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image={
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Staples_High_School%2C_Westport%2C_CT.jpg/1200px-Staples_High_School%2C_Westport%2C_CT.jpg" ||
+                    "https://via.placeholder.com/300x140?text=No+Image"
+                  }
+                  alt={school.name}
+                  sx={{
+                    borderTopLeftRadius: "20px",
+                    borderTopRightRadius: "20px",
+                  }}
+                />
+                <CardContent>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: "bold",
+                      fontFamily: "'Roboto', sans-serif",
+                      textAlign: "center",
+                      color: "#2E7D32",
+                    }}
+                  >
+                    {school.name}
+                  </Typography>
+                  <Box textAlign="center" marginTop={2}>
+                    <Button
+                      variant="contained"
+                      color="success"
+                      href={`/schools/${school.id}`}
+                      sx={{
+                        textTransform: "none",
+                        borderRadius: "20px",
+                        padding: "10px 20px",
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {"View Details"}
+                    </Button>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
-        <Grid item xs={12} md={4}>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-helper-label">
-              {t("schools.profileLabel")}
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-helper-label"
-              id="demo-simple-select-helper"
-              value={schoolCategory}
-              label="Profil"
-              onChange={handleChangeShoolCategory}
-              sx={{ borderRadius: "75px", border: "1px solid green" }}
-            >
-              <MenuItem value={10}>{t("schools.allProfile")}</MenuItem>
-              <MenuItem value={20}>{t("schools.generalProfile")}</MenuItem>
-              <MenuItem value={30}>{t("schools.musicProfile")}</MenuItem>
-            </Select>
-          </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-helper-label">
-              {t("schools.regionLabel")}
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-helper-label"
-              id="demo-simple-select-helper"
-              value={schoolRegion}
-              label="Profil"
-              onChange={handleChangeSchoolRegion}
-              sx={{ borderRadius: "75px", border: "1px solid green" }}
-            >
-              <MenuItem value={10}>{t("schools.allRegion")}</MenuItem>
-              <MenuItem value={15}>{t("schools.chisinauRegion")}</MenuItem>
-              <MenuItem value={20}>{t("schools.baltiRegion")}</MenuItem>
-              <MenuItem value={30}>{t("schools.chimisliaRegion")}</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-      </Grid>
-
-      <Grid container spacing={2} sx={{ marginTop: 2 }}>
-        {filteredSchools.map((school, index) => (
-          <Grid item xs={12} md={12} key={index}>
-            {/* <School school={school} key={school.id} /> */}
-            {<NewSchool school={school} key={school.id} />}
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
