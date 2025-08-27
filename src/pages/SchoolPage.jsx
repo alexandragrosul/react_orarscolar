@@ -1,167 +1,225 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
-import { Box, Breadcrumbs, Typography } from "@mui/material";
 import {
-  Collapse,
+  Box,
+  Breadcrumbs,
+  Typography,
   Container,
+  Card,
+  CardContent,
+  CardMedia,
+  Button,
+  Collapse,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-} from "../../node_modules/@mui/material/index";
-import axios from "../../node_modules/axios/index";
-import { Link } from "../../node_modules/react-router-dom/dist/index";
-import {
-  ExpandLess,
-  ExpandMore,
-} from "../../node_modules/@mui/icons-material/index";
-import React from "react";
+  CircularProgress,
+  Fade,
+  Slide,
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import BusinessIcon from "@mui/icons-material/Business";
-// import RoundButton from "../components/layout/RoundButton";
+import React from "react";
 
 const SchoolPage = () => {
   const { id } = useParams();
   const [school, setSchool] = useState(null);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchSchoolData = useCallback(async () => {
     try {
-      const response = await axios.get(`/data.json`);
-      console.log(response);
-      const data = response.data.data.school_sector.schools;
-      const school = data.find((item) => item.id === id);
-      console.log(school);
-      setSchool(school);
+      const response = await axios.get(
+        `https://api.escoala.md/api/schools/${id}`
+      );
+      setSchool(response.data?.data);
+      setLoading(false);
     } catch (error) {
       console.error(error);
+      setLoading(false);
     }
   }, [id]);
+
+  useEffect(() => {
+    fetchSchoolData();
+  }, [fetchSchoolData]);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
-  useEffect(() => {
-    // fetchSchoolData();
-    fetch("https://api.escoala.md/api/schools/" + id)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.data);
-        setSchool(data?.data);
-      });
-  }, [fetchSchoolData, id]);
-
-  return (
-    <Container>
-      <Box sx={{ pt: "72px" }}>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="inherit" to="/schools">
-            All Schools
-          </Link>
-          <Typography color="text.primary">{school?.name}</Typography>
-        </Breadcrumbs>
-      </Box>
+  if (loading) {
+    return (
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
-          mb: 3,
+          height: "100vh",
+          background: "linear-gradient(135deg, #EAFBEA, #C8E6C9)",
         }}
       >
-        <Typography variant="h3" gutterBottom sx={{ fontSize: "2rem" }}>
-          {school?.name}
-        </Typography>
-        {/* <Button variant="contained" sx={{ color: "white" }}>
-          Отправить заявку
-        </Button> */}
-        {/* <RoundButton
-          name={"Отправить заявку"}
-          style={{ color: "white" }}
-        ></RoundButton> */}
+        <CircularProgress size={70} thickness={4} color="success" />
       </Box>
-      <img
-        src="https://static.ucheba.ru/thumbs/809/-/pix/uz_photo/8504.full.webp"
-        alt=""
-      />
+    );
+  }
 
-      <Typography variant="h4" gutterBottom sx={{ mt: 2 }}>
-        Об учебном заведении
-      </Typography>
-      <Typography
-        variant="body1"
-        gutterBottom
-        sx={{ mt: 2, fontWeight: 700, textAlign: "start" }}
-      >
-        Numar: {school?.phone}
-      </Typography>
-      <Typography variant="subtitle1" gutterBottom>
-        <ListItemButton onClick={handleClick}>
-          <ListItemIcon>
-            <BusinessIcon />
-          </ListItemIcon>
-          <ListItemText primary="Service Adress" />
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </ListItemButton>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            {school?.service_address
-              ? JSON.parse(school?.service_address).map((adress, index) => {
-                  return (
-                    <ListItemButton sx={{ pl: 4 }} key={index}>
-                      <ListItemText primary={adress} sx={{ color: "black" }} />
-                    </ListItemButton>
-                  );
-                })
-              : ""}
-          </List>
-        </Collapse>
-      </Typography>
+  return (
+    <Box
+      sx={{
+        background: "linear-gradient(135deg, #EAFBEA, #F0FFF4)",
+        minHeight: "100vh",
+        py: 6,
+      }}
+    >
+      <Fade in timeout={700}>
+        <Container
+          sx={{
+            backgroundColor: "#fff",
+            borderRadius: "30px",
+            boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
+            padding: "50px",
+            maxWidth: "1100px",
+          }}
+        >
+          {/* Хлебные крошки */}
+          <Breadcrumbs aria-label="breadcrumb" sx={{ mb: 4, fontSize: "16px" }}>
+            <Link
+              to="/schools"
+              style={{
+                textDecoration: "none",
+                color: "#4CAF50",
+                fontWeight: 600,
+              }}
+            >
+              Все школы
+            </Link>
+            <Typography sx={{ color: "#666" }}>{school?.name}</Typography>
+          </Breadcrumbs>
 
-      {/* <Box sx={{ padding: "5px 0" }}>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="primary.main" href="/schools">
-            Schools
-          </Link>
-          <Typography color="text.primary">{school?.name}</Typography>
-        </Breadcrumbs>
-        <Card sx={{ marginBottom: 3, marginTop: 3, borderRadius: "50px" }}>
-          <CardContent>
-            <Grid container sx={{ alignItems: "center" }}>
-              <Grid item xs={12} md={4}>
-                <img
-                  src="https://picsum.photos/300/200"
-                  style={{ borderRadius: "50px" }}
-                  alt={school?.name}
-                />
-              </Grid>
-              <Grid item xs={12} md={8}>
+          {/* Главная карточка */}
+          <Slide in direction="up" timeout={800}>
+            <Card
+              sx={{
+                borderRadius: "30px",
+                overflow: "hidden",
+                mb: 5,
+                boxShadow: "0 10px 40px rgba(0,0,0,0.12)",
+                transition: "transform 0.4s ease",
+                "&:hover": { transform: "scale(1.02)" },
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="400"
+                image={
+                  school?.image ||
+                  "https://static.ucheba.ru/thumbs/809/-/pix/uz_photo/8504.full.webp"
+                }
+                alt={school?.name}
+                sx={{ objectFit: "cover" }}
+              />
+              <CardContent sx={{ textAlign: "center", p: 5 }}>
                 <Typography
-                  align="center"
-                  variant="h5"
-                  sx={{ fontWeight: 700, m: 3, color: "primary.main" }}
+                  variant="h3"
+                  sx={{
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: "bold",
+                    color: "#2E7D32",
+                    mb: 2,
+                  }}
                 >
                   {school?.name}
                 </Typography>
-                <Typography>Phone1:</Typography>
-                <Typography sx={{ paddingLeft: 1 }}>{school?.phone}</Typography>
-                <Box display="flex" marginTop={2} sx={{ alignItems: "center" }}>
-                  <ul>
-                    {school?.serviceAdress.map((adress) => (
-                      <li key={adress}>{adress}</li>
-                    ))}
-                  </ul>
-                </Box>
+                <Typography
+                  variant="h6"
+                  sx={{ color: "#666", mb: 4, fontSize: "18px" }}
+                >
+                  Телефон: {school?.phone || "Не указан"}
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="success"
+                  sx={{
+                    textTransform: "none",
+                    borderRadius: "30px",
+                    padding: "12px 40px",
+                    fontWeight: "bold",
+                    fontSize: "18px",
+                    background: "linear-gradient(90deg, #43A047, #66BB6A)",
+                    boxShadow: "0 6px 20px rgba(67,160,71,0.4)",
+                    "&:hover": {
+                      background: "linear-gradient(90deg, #388E3C, #4CAF50)",
+                    },
+                  }}
+                >
+                  Отправить заявку
+                </Button>
+              </CardContent>
+            </Card>
+          </Slide>
 
-                <Typography>{school?.schoolAdress}</Typography>
-              </Grid>
-            </Grid>
-          </CardContent>
-        </Card>
-      </Box> */}
-    </Container>
+          {/* Адрес */}
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "bold",
+              mb: 3,
+              color: "#2E7D32",
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
+            Адреса обслуживания
+          </Typography>
+          <List>
+            <ListItemButton
+              onClick={handleClick}
+              sx={{
+                borderRadius: "15px",
+                backgroundColor: "#F1F8E9",
+                mb: 2,
+                boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
+                "&:hover": { backgroundColor: "#E8F5E9" },
+              }}
+            >
+              <ListItemIcon>
+                <BusinessIcon color="success" />
+              </ListItemIcon>
+              <ListItemText
+                primary="Показать адреса"
+                primaryTypographyProps={{ fontWeight: 600 }}
+              />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Fade in={open} timeout={600}>
+                <List component="div" disablePadding>
+                  {school?.service_address
+                    ? JSON.parse(school.service_address).map(
+                        (address, index) => (
+                          <ListItemButton
+                            key={index}
+                            sx={{
+                              pl: 6,
+                              borderBottom: "1px solid #eee",
+                              "&:hover": { backgroundColor: "#FAFAFA" },
+                            }}
+                          >
+                            <ListItemText primary={address} />
+                          </ListItemButton>
+                        )
+                      )
+                    : "Нет данных"}
+                </List>
+              </Fade>
+            </Collapse>
+          </List>
+        </Container>
+      </Fade>
+    </Box>
   );
 };
 
