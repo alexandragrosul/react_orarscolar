@@ -17,6 +17,8 @@ import {
   CircularProgress,
   Fade,
   Slide,
+  Modal,
+  TextField,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -29,6 +31,8 @@ const SchoolPage = () => {
   const [school, setSchool] = useState(null);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [form, setForm] = useState({ name: "", phone: "", message: "" });
 
   const fetchSchoolData = useCallback(async () => {
     try {
@@ -47,8 +51,16 @@ const SchoolPage = () => {
     fetchSchoolData();
   }, [fetchSchoolData]);
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleClick = () => setOpen(!open);
+  const handleModalOpen = () => setModalOpen(true);
+  const handleModalClose = () => setModalOpen(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Форма отправлена:", form);
+    setModalOpen(false);
+    setForm({ name: "", phone: "", message: "" });
+    alert("Заявка отправлена! Мы свяжемся с вами.");
   };
 
   if (loading) {
@@ -142,12 +154,13 @@ const SchoolPage = () => {
                 </Typography>
                 <Button
                   variant="contained"
-                  color="success"
+                  onClick={handleModalOpen}
                   sx={{
                     textTransform: "none",
                     borderRadius: "30px",
                     padding: "12px 40px",
                     fontWeight: "bold",
+                    color: "#fff",
                     fontSize: "18px",
                     background: "linear-gradient(90deg, #43A047, #66BB6A)",
                     boxShadow: "0 6px 20px rgba(67,160,71,0.4)",
@@ -156,7 +169,7 @@ const SchoolPage = () => {
                     },
                   }}
                 >
-                  Отправить заявку
+                  Связаться со школой
                 </Button>
               </CardContent>
             </Card>
@@ -219,6 +232,101 @@ const SchoolPage = () => {
           </List>
         </Container>
       </Fade>
+
+      {/* Модальное окно */}
+      <Modal
+        open={modalOpen}
+        onClose={handleModalClose}
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
+        <Fade in={modalOpen}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{
+              backgroundColor: "#fff",
+              borderRadius: "20px",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
+              p: 5,
+              width: "100%",
+              maxWidth: "500px",
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                textAlign: "center",
+                color: "#2E7D32",
+              }}
+            >
+              Связаться со школой
+            </Typography>
+
+            <TextField
+              fullWidth
+              label="Ваше имя"
+              variant="outlined"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              sx={{
+                mb: 3,
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "30px",
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              label="Телефон"
+              variant="outlined"
+              value={form.phone}
+              onChange={(e) => setForm({ ...form, phone: e.target.value })}
+              sx={{
+                mb: 3,
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "30px",
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              label="Сообщение"
+              multiline
+              rows={4}
+              variant="outlined"
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              sx={{
+                mb: 3,
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "30px",
+                },
+              }}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              sx={{
+                background: "linear-gradient(90deg, #43A047, #66BB6A)",
+                borderRadius: "30px",
+                fontWeight: "bold",
+                fontSize: "16px",
+                textTransform: "none",
+                py: 1.5,
+                color: "#fff",
+                "&:hover": {
+                  background: "linear-gradient(90deg, #388E3C, #4CAF50)",
+                },
+              }}
+            >
+              Отправить
+            </Button>
+          </Box>
+        </Fade>
+      </Modal>
     </Box>
   );
 };
