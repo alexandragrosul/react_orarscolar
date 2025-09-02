@@ -107,26 +107,32 @@ function TopBar({ position, handleClose }) {
                 to={page.link}
                 onClick={handleCloseNavMenu}
                 style={{
-                  marginRight: "5px",
-                  color: "black",
+                  marginRight: "10px",
                   display: "block",
-                  fontWeight: "bold",
                 }}
               >
                 <RoundButton
-                  variant="outlined"
+                  variant="text"
+                  gradient={false} // текстовое меню без градиента
                   name={page.label}
                   startIcon={
-                    page.label === "Scoli" ? (
-                      <SchoolIcon />
-                    ) : page.label === "Repetitori" ? (
-                      <PersonSearchIcon />
+                    page.label === t("topBar.schools") ? (
+                      <SchoolIcon sx={{ mr: 0.5 }} />
+                    ) : page.label === t("topBar.tutors") ? (
+                      <PersonSearchIcon sx={{ mr: 0.5 }} />
                     ) : null
                   }
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                    fontSize: "16px",
+                    textTransform: "none",
+                  }}
                 />
               </Link>
             ))}
           </Box>
+
           <Box>
             <IconButton
               size="small"
