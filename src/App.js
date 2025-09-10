@@ -32,6 +32,7 @@ import ViewLoan from "./entities/loan/ViewLoan";
 import ViewTax from "./entities/tax/ViewTax";
 import ViewSimulator from "./entities/simulator/ViewSimulator";
 import DashasBday from "./pages/DashasBday";
+import DadsBday from "./pages/DadsBday";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
             <Route path="/finplus/simulator" element={<ViewSimulator />} />
             <Route path="/game" element={<GameApp />} />
             <Route path="/dasha" element={<DashasBday />} />
+            <Route path="/dad" element={<DadsBday />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
