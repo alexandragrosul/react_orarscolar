@@ -1,37 +1,31 @@
 import React, { useEffect, useRef } from "react";
 
-import moment1 from "../images/moment1.jpg";
-import moment2 from "../images/moment2.jpg";
-import moment3 from "../images/moment3.jpg";
-import moment4 from "../images/moment4.jpg";
-import moment5 from "../images/moment5.jpg";
-import moment6 from "../images/moment6.jpg";
-import moment7 from "../images/moment7.jpg";
-import moment8 from "../images/moment8.jpg";
-import moment9 from "../images/moment9.jpg";
-import moment10 from "../images/moment10.jpg";
-import moment11 from "../images/moment11.jpg";
-import moment12 from "../images/moment12.jpg";
-import moment13 from "../images/moment13.jpg";
-import moment14 from "../images/moment14.jpg";
-import moment15 from "../images/moment15.jpg";
+import moment1 from "../images/dani/moment1.jpg";
+import moment2 from "../images/dani/moment2.jpg";
+import moment3 from "../images/dani/moment3.jpg";
+import moment4 from "../images/dani/moment4.jpg";
+import moment5 from "../images/dani/moment5.jpg";
+import moment6 from "../images/dani/moment6.jpg";
+import moment7 from "../images/dani/moment7.jpg";
+import moment8 from "../images/dani/moment8.jpg";
+import moment9 from "../images/dani/moment9.jpg";
 
 const moments = [
-  { img: moment1, text: "💜 Daniela, prima dată..." },
-  { img: moment2, text: "Daniela, La mulți ani!!..." },
-  { img: moment3, text: "Un album plin..." },
-  { img: moment4, text: "Ești o prietenă..." },
-  { img: moment5, text: "Îți mulțumesc..." },
-  { img: moment6, text: "Prietenia adevărată..." },
-  { img: moment7, text: "Un suflet bun..." },
-  { img: moment8, text: "Împreună am creat..." },
-  { img: moment9, text: "Mereu aduci zâmbet..." },
-  { img: moment10, text: "Îți doresc un viitor..." },
-  { img: moment11, text: "Tu ești motivul..." },
-  { img: moment12, text: "Cu tine, lumea..." },
-  { img: moment13, text: "Cele mai bune prietenii..." },
-  { img: moment14, text: "Daniela, ești cea mai..." },
-  { img: moment15, text: "Un nou capitol începe..." },
+  {
+    img: moment1,
+    text: "💜 Daniela, eu te iubesc FOARTE TARE. Eu ma bucur ca esti prietena mea cea mai buna. Eu cam tazriu iti fac siteul pentru ca eu am uitat de el sa ma scuzi te rog 😭🙏. Dar ma bucur ca acum deja de 3-4 ani avem acest grup al nostru. Scuze ca nu mai sunt copilul tau dar totusi te socot ca mama mea. Te ador. Chiar nu imi inchipui lectiile fara tine. Imi vine sa plang cand ma gandesc ca tu pleci dupa a 9 si asta este ultimul an cu tine. Daniii eu nu pot nici sa explic cand de bucuroasa sunt ca esti prietena mea!!!Esti desteapta, frumoasa, buna, generoasa, toate calitatile cele mai bune! Sper sa dai examenele pe 10 si 9! TE IUBESC 💜",
+  },
+  { img: moment2, text: "Daniela, La mulți ani!! 🍇" },
+  {
+    img: moment3,
+    text: "Un album plin de amintiri 🦄(eu nu stiu pentru unicornul asta dar ok)",
+  },
+  { img: moment4, text: "Ești o prietenă minunata 💜" },
+  { img: moment5, text: "Îți mulțumesc pentru tot 💟" },
+  { img: moment6, text: "Prietenie adevărată 🥹" },
+  { img: moment7, text: "Un suflet bun 👾" },
+  { img: moment8, text: "Împreună am creat cele mai frumoase amintiri 🌠" },
+  { img: moment9, text: "Mereu aduci zâmbet 🪻" },
 ];
 
 function AnimatedOnView({ children, direction = "left", className = "" }) {
@@ -252,7 +246,10 @@ export default function DanielaPage() {
         ></div>
       ))}
 
-      <h1>💜 Daniela, Our Magical Moments 👾</h1>
+      <h1>
+        💜 Daniela "Psihologul Clasei"
+        <br /> Our Magical Moments 👾
+      </h1>
 
       {/* Конфетти */}
       {Array.from({ length: 25 }).map((_, i) => (
@@ -303,7 +300,7 @@ export default function DanielaPage() {
           viitor plin de magie! ✨💜
           <br />
           <br />
-          With all our love, <br />
+          With all my love, <br />
           Alexandra!🍇
           <br />
           <br />

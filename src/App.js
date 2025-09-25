@@ -34,6 +34,7 @@ import ViewSimulator from "./entities/simulator/ViewSimulator";
 import DashasBday from "./pages/DashasBday";
 import DadsBday from "./pages/DadsBday";
 import DanielasBday from "./pages/DanielasBday";
+// import DanielasBday from "./pages/DanielasBday";
 
 function App() {
   return (
