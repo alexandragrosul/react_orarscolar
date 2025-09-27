@@ -6,10 +6,11 @@ import {
   CardContent,
   Typography,
   Grid,
+  CardMedia,
 } from "@mui/material";
-import { CardMedia } from "../../node_modules/@mui/material/index";
 import { useTranslation } from "react-i18next";
 import { Container } from "@mui/system";
+import { Box } from "../../node_modules/@mui/material/index";
 
 const routes = [
   {
@@ -43,55 +44,84 @@ const routes = [
     img: "/images/economy.jpg",
   },
 ];
+
 const FinPlus = () => {
   const { t } = useTranslation();
   return (
-    <Container>
-      <h1 style={{ fontFamily: "Arial, sans-serif", fontSize: "32px" }}>
-        {t("finPlus.title")}
-      </h1>
-      <Typography
-        gutterBottom
-        variant="h6"
-        component="div"
-        sx={{ textAlign: "center" }}
-      >
-        {t("finPlus.description")}
-      </Typography>
-      <Grid container spacing={3} sx={{ padding: 3 }}>
-        {routes.map((route) => (
-          <Grid item xs={12} sm={6} md={4} key={route.path}>
-            <Card sx={{ maxWidth: 345, height: "100%" }}>
-              <CardActionArea component={Link} to={route.path}>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={route.img}
-                  alt={`${route.title} image`}
-                />
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    sx={{ textAlign: "center" }}
-                  >
-                    {route.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ textAlign: "center" }}
-                  >
-                    {route.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+    <Box sx={{ backgroundColor: "#f0fdf4", py: 8 }}>
+      {/* светло-зелёный фон секции */}
+      <Container maxWidth="lg">
+        <Typography
+          variant="h3"
+          align="center"
+          sx={{
+            mb: 2,
+            fontWeight: 700,
+            fontFamily: "Inter, sans-serif",
+            color: "#2e7d32", // тёмно-зелёный акцент
+          }}
+        >
+          {t("finPlus.title")}
+        </Typography>
+        <Typography
+          variant="h6"
+          align="center"
+          sx={{
+            color: "text.secondary",
+            mb: 5,
+            maxWidth: "700px",
+            mx: "auto",
+          }}
+        >
+          {t("finPlus.description")}
+        </Typography>
+        <Grid container spacing={4}>
+          {routes.map((route) => (
+            <Grid item xs={12} sm={6} md={4} key={route.path}>
+              <Card
+                sx={{
+                  height: "100%",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  backgroundColor: "#fff",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                  transition: "transform 0.3s, box-shadow 0.3s",
+                  "&:hover": {
+                    transform: "translateY(-5px)",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+                  },
+                }}
+              >
+                <CardActionArea component={Link} to={route.path}>
+                  <CardMedia
+                    component="img"
+                    height="180"
+                    image={route.img}
+                    alt={`${route.title} image`}
+                  />
+                  <CardContent sx={{ textAlign: "center", p: 3 }}>
+                    <Typography
+                      variant="h5"
+                      component="div"
+                      sx={{
+                        fontWeight: 600,
+                        mb: 1,
+                        color: "#2e7d32", // зелёный акцент
+                      }}
+                    >
+                      {route.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {route.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 
