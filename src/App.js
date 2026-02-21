@@ -34,6 +34,7 @@ import ViewSimulator from "./entities/simulator/ViewSimulator";
 import DashasBday from "./pages/DashasBday";
 import DadsBday from "./pages/DadsBday";
 import DanielasBday from "./pages/DanielasBday";
+import AnonymousMessage from "./pages/AnonymousMessage";
 // import DanielasBday from "./pages/DanielasBday";
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/finplus/loan" element={<ViewLoan />} />
             <Route path="/finplus/tax" element={<ViewTax />} />
             <Route path="/finplus/simulator" element={<ViewSimulator />} />
+            <Route path="/anonymous" element={<AnonymousMessage />} />
             <Route path="/game" element={<GameApp />} />
             <Route path="/dasha" element={<DashasBday />} />
             <Route path="/dad" element={<DadsBday />} />

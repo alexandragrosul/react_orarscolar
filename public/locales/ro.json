@@ -1,5 +1,13 @@
 {
-    "greeting": "Bonjour, le Monde!",
-    "farewell": "Au revoir!"
+  "greeting": "Bonjour, le Monde!",
+  "farewell": "Au revoir!",
+  "anonymous": {
+    "title": "Trimite un mesaj anonim",
+    "messageLabel": "Mesajul tău",
+    "sendButton": "Trimite",
+    "successTitle": "Mesaj trimis",
+    "successMessage": "Mesajul tău a fost trimis anonim. Îți mulțumim pentru împărtășire.",
+    "errorTitle": "Eroare",
+    "errorMessage": "A apărut o eroare la trimiterea mesajului. Încearcă din nou mai târziu."
   }
-  
+}
