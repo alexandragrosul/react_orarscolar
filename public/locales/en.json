@@ -1,5 +1,13 @@
 {
-    "greeting": "Hello, World!",
-    "farewell": "Goodbye!"
+  "greeting": "Hello, World!",
+  "farewell": "Goodbye!",
+  "anonymous": {
+    "title": "Send an Anonymous Message",
+    "messageLabel": "Your Message",
+    "sendButton": "Send",
+    "successTitle": "Message Sent",
+    "successMessage": "Your message has been sent anonymously. Thank you for sharing.",
+    "errorTitle": "Error",
+    "errorMessage": "There was an error sending your message. Please try again later."
   }
-  
+}

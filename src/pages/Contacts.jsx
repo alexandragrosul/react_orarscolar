@@ -52,20 +52,46 @@ const Contacts = () => {
     }
   };
 
+  const fieldStyles = {
+    "& .MuiOutlinedInput-root": {
+      borderRadius: "16px",
+      backgroundColor: "#f9fafb",
+      transition: "all 0.2s ease",
+      "& fieldset": {
+        borderColor: "#d1d5db",
+      },
+      "&:hover fieldset": {
+        borderColor: "#22c55e",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#16a34a",
+        borderWidth: 2,
+      },
+    },
+  };
+
   return (
     <Container
       maxWidth="lg"
       sx={{
         py: 6,
-        backgroundColor: "#f0fdf4", // светло-зелёный фон
+        backgroundColor: "#f0fdf4",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        textAlign: "center",
         minHeight: "100vh",
       }}
     >
-      <Grid container spacing={4} justifyContent="center">
-        <Grid item xs={12}>
+      <Grid
+        container
+        spacing={4}
+        justifyContent="center"
+        alignItems="center"
+        sx={{ flexGrow: 1 }}
+      >
+        <Grid item xs={12} textAlign="center">
           <Typography
             variant="h3"
             component="h1"
@@ -76,8 +102,7 @@ const Contacts = () => {
               fontWeight: "bold",
               mb: 2,
               color: "#166534",
-              position: "relative",
-              display: "inline-block",
+              width: "100%", // важно!
               "&::after": {
                 content: '""',
                 display: "block",
@@ -97,9 +122,9 @@ const Contacts = () => {
             elevation={6}
             sx={{
               p: 5,
-              borderRadius: "32px", // больше скругление
+              borderRadius: "32px",
               backgroundColor: "white",
-              mt: 0, // убираем промежуток
+              mt: 0,
             }}
           >
             <Formik initialValues={initialValues} onSubmit={onSubmit}>
@@ -114,15 +139,7 @@ const Contacts = () => {
                       onChange={handleChange}
                       required
                       variant="outlined"
-                      sx={{
-                        "& .MuiOutlinedInput-root": {
-                          borderRadius: "50px",
-                          "&.Mui-focused fieldset": {
-                            borderColor: "#16a34a",
-                            borderWidth: 2,
-                          },
-                        },
-                      }}
+                      sx={fieldStyles}
                     />
                     <TextField
                       name="phone"
@@ -131,15 +148,7 @@ const Contacts = () => {
                       value={values.phone}
                       onChange={handleChange}
                       variant="outlined"
-                      sx={{
-                        "& .MuiOutlinedInput-root": {
-                          borderRadius: "50px",
-                          "&.Mui-focused fieldset": {
-                            borderColor: "#16a34a",
-                            borderWidth: 2,
-                          },
-                        },
-                      }}
+                      sx={fieldStyles}
                     />
                     <TextField
                       name="email"
@@ -149,15 +158,7 @@ const Contacts = () => {
                       onChange={handleChange}
                       required
                       variant="outlined"
-                      sx={{
-                        "& .MuiOutlinedInput-root": {
-                          borderRadius: "50px",
-                          "&.Mui-focused fieldset": {
-                            borderColor: "#16a34a",
-                            borderWidth: 2,
-                          },
-                        },
-                      }}
+                      sx={fieldStyles}
                     />
                     <TextField
                       name="message"
@@ -169,22 +170,14 @@ const Contacts = () => {
                       onChange={handleChange}
                       required
                       variant="outlined"
-                      sx={{
-                        "& .MuiOutlinedInput-root": {
-                          borderRadius: "24px",
-                          "&.Mui-focused fieldset": {
-                            borderColor: "#16a34a",
-                            borderWidth: 2,
-                          },
-                        },
-                      }}
+                      sx={fieldStyles}
                     />
-                    <FormControl fullWidth>
+                    <FormControl fullWidth sx={fieldStyles}>
                       <InputLabel>{t("contacts.sourceLabel")}</InputLabel>
                       <Field
                         as={Select}
                         name="source"
-                        sx={{ borderRadius: "50px" }}
+                        label={t("contacts.sourceLabel")}
                       >
                         {sources.map((source) => (
                           <MenuItem key={source} value={source}>
