@@ -279,7 +279,7 @@ const resources = {
         successMessage: "Mesajul a fost trimis. Vă vom contacta în curând.",
       },
       anonymous: {
-        heroTitle: "Oprește bullying-ul. Vorbește în siguranță.",
+        heroTitle: "Oprește bullying-ul. \nVorbește în siguranță.",
         heroText:
           "Această pagină permite elevilor din Moldova să raporteze bullying-ul anonim.",
         howTitle: "Cum funcționează",
@@ -431,7 +431,7 @@ const resources = {
           "Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.",
       },
       anonymous: {
-        heroTitle: "Остановим буллинг. Говори безопасно.",
+        heroTitle: "Остановим буллинг. \nГовори безопасно.",
         heroText:
           "Эта страница позволяет ученикам в Молдове анонимно сообщать о буллинге.",
         howTitle: "Как это работает",

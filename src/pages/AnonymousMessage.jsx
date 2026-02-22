@@ -80,6 +80,9 @@ const AnonymousMessage = () => {
             fontWeight="bold"
             color="#166534"
             gutterBottom
+            sx={{
+              whiteSpace: "pre-line",
+            }}
           >
             {t("anonymous.heroTitle")}
           </Typography>
@@ -101,11 +104,6 @@ const AnonymousMessage = () => {
             <Typography>{t("anonymous.step3")}</Typography>
           </Stack>
         </Box>
-
-        {/* EMERGENCY */}
-        <Alert severity="warning" sx={{ borderRadius: 3 }}>
-          {t("anonymous.emergency")}
-        </Alert>
 
         {/* FORM */}
         <Paper
@@ -139,7 +137,11 @@ const AnonymousMessage = () => {
                     value={values.message}
                     onChange={handleChange}
                     error={touched.message && Boolean(errors.message)}
-                    helperText={touched.message && errors.message}
+                    helperText={
+                      (touched.message && errors.message) ||
+                      `${values.message.length}/500`
+                    }
+                    inputProps={{ maxLength: 500 }}
                     sx={fieldStyles}
                   />
 
