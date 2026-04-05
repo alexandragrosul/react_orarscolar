@@ -16,6 +16,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import RoundButton from "./RoundButton";
 import { useTranslation } from "react-i18next";
+import AnonymousMessage from "../../pages/AnonymousMessage";
 
 function TopBar({ position, handleClose }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -29,6 +30,7 @@ function TopBar({ position, handleClose }) {
     // { label: t("topBar.answers"), link: "/answers" },
     // { label: t("topBar.events"), link: "/events" },
     { label: t("topBar.contacts"), link: "/contacts" },
+    { label: t("topBar.anonymous"), link: "/anonymous" },
     // { label: t("topBar.courses"), link: "/courses" },
   ];
 
@@ -92,6 +94,9 @@ function TopBar({ position, handleClose }) {
                   </Link>
                 </MenuItem>
               ))}
+              <MenuItem component={AnonymousMessage} to="/anonymous">
+                {t("anonymous.title")}
+              </MenuItem>
             </Menu>
           </Box>
           <Box

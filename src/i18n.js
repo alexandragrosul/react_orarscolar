@@ -70,6 +70,7 @@ const resources = {
         answers: "Answers",
         courses: "Courses",
         finPlus: "Fin+",
+        anonymous: "Anonymous Message",
       },
       schools: {
         title: "Schools",
@@ -125,6 +126,35 @@ const resources = {
           "We couldn't receive your message. Please try again later.",
         successTitle: "Success",
         successMessage: "Your message has been sent. We will contact you soon.",
+      },
+      anonymous: {
+        heroTitle: "Stop Bullying. Speak Safely.",
+        heroText:
+          "This page allows students in Moldova to report bullying anonymously. Your identity is not shared.",
+        howTitle: "How it works",
+        step1: "1️⃣ You send an anonymous report",
+        step2: "2️⃣ The school administration reviews it",
+        step3: "3️⃣ Measures are taken safely",
+        emergency:
+          "If someone is in immediate danger, call 112 immediately. This form is not for emergencies.",
+        school: "School Name",
+        class: "Class (optional but helps us respond faster)",
+        message: "Describe what is happening",
+        danger: "Someone is in danger right now",
+        send: "Send Anonymous Report",
+        successTitle: "Message Sent",
+        successMessage: "Your anonymous report has been submitted.",
+        errorTitle: "Error",
+        errorMessage: "There was a problem sending your message.",
+        whyText:
+          "Bullying can deeply affect a student's emotional and mental well-being. Speaking up helps create a safer school environment for everyone. Your voice matters.",
+        validation: {
+          schoolRequired: "School is required",
+          messageRequired: "Message is required",
+        },
+        forAdultsTitle: "For Parents & Teachers",
+        forAdultsText:
+          "This platform supports safe school environments and responsible intervention. All reports are handled confidentially.",
       },
     },
   },
@@ -195,6 +225,7 @@ const resources = {
         answers: "Raspunsuri",
         courses: "Cursuri",
         finPlus: "Fin+",
+        anonymous: "Mesaj Anonim",
       },
       schools: {
         title: "Scoli",
@@ -251,6 +282,35 @@ const resources = {
           "Nu am putut să primim mesajul dvs. Încercați vă rog mai târziu.",
         successTitle: "Succes",
         successMessage: "Mesajul a fost trimis. Vă vom contacta în curând.",
+      },
+      anonymous: {
+        heroTitle: "Oprește bullying-ul. \nVorbește în siguranță.",
+        heroText:
+          "Această pagină permite elevilor din Moldova să raporteze bullying-ul anonim.",
+        howTitle: "Cum funcționează",
+        step1: "1️⃣ Trimiți un raport anonim",
+        step2: "2️⃣ Administrația școlii îl analizează",
+        step3: "3️⃣ Se iau măsuri în siguranță",
+        emergency:
+          "Dacă cineva este în pericol imediat, sună la 112. Acest formular nu este pentru urgențe.",
+        school: "Numele școlii",
+        class: "Clasa (opțional, dar ne ajută să reacționăm mai rapid)",
+        message: "Descrie ce se întâmplă",
+        danger: "Cineva este în pericol chiar acum",
+        send: "Trimite raport anonim",
+        successTitle: "Mesaj trimis",
+        successMessage: "Raportul anonim a fost trimis.",
+        errorTitle: "Eroare",
+        errorMessage: "A apărut o problemă la trimitere.",
+        whyText:
+          "Bullying-ul poate afecta profund starea emoțională și mentală a unui elev. A vorbi deschis ajută la crearea unui mediu școlar mai sigur pentru toți. Vocea ta contează.",
+        validation: {
+          schoolRequired: "Școala este obligatorie",
+          messageRequired: "Mesajul este obligatoriu",
+        },
+        forAdultsTitle: "Pentru părinți și profesori",
+        forAdultsText:
+          "Această platformă susține un mediu școlar sigur și intervenții responsabile. Toate rapoartele sunt tratate confidențial.",
       },
     },
   },
@@ -321,6 +381,7 @@ const resources = {
         answers: "Ответы",
         courses: "Курсы",
         finPlus: "Fin+",
+        anonymous: "Анонимное сообщение",
       },
       schools: {
         title: "Школы",
@@ -378,6 +439,35 @@ const resources = {
         successTitle: "Успех",
         successMessage:
           "Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.",
+      },
+      anonymous: {
+        heroTitle: "Остановим буллинг. \nГовори безопасно.",
+        heroText:
+          "Эта страница позволяет ученикам в Молдове анонимно сообщать о буллинге.",
+        howTitle: "Как это работает",
+        step1: "1️⃣ Ты отправляешь анонимное сообщение",
+        step2: "2️⃣ Администрация школы его рассматривает",
+        step3: "3️⃣ Принимаются меры",
+        emergency:
+          "Если кто-то в опасности, немедленно звоните 112. Эта форма не для экстренных случаев.",
+        school: "Название школы",
+        class: "Класс (необязательно, но это поможет быстрее отреагировать)",
+        message: "Опишите, что происходит",
+        danger: "⚠ Кто-то в опасности прямо сейчас",
+        send: "Отправить анонимно",
+        successTitle: "Сообщение отправлено",
+        successMessage: "Ваш анонимный отчёт отправлен.",
+        errorTitle: "Ошибка",
+        errorMessage: "Произошла ошибка при отправке.",
+        whyText:
+          "Буллинг может серьёзно повлиять на эмоциональное и психическое состояние ученика. Сообщая о проблеме, ты помогаешь создать более безопасную школьную среду для всех. Твой голос важен.",
+        validation: {
+          schoolRequired: "Название школы обязательно",
+          messageRequired: "Сообщение обязательно",
+        },
+        forAdultsTitle: "Для родителей и учителей",
+        forAdultsText:
+          "Эта платформа поддерживает безопасную школьную среду и ответственное вмешательство. Все сообщения обрабатываются конфиденциально.",
       },
     },
   },
