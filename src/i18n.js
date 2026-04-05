@@ -146,10 +146,15 @@ const resources = {
         successMessage: "Your anonymous report has been submitted.",
         errorTitle: "Error",
         errorMessage: "There was a problem sending your message.",
+        whyText:
+          "Bullying can deeply affect a student's emotional and mental well-being. Speaking up helps create a safer school environment for everyone. Your voice matters.",
         validation: {
           schoolRequired: "School is required",
           messageRequired: "Message is required",
         },
+        forAdultsTitle: "For Parents & Teachers",
+        forAdultsText:
+          "This platform supports safe school environments and responsible intervention. All reports are handled confidentially.",
       },
     },
   },
@@ -297,10 +302,15 @@ const resources = {
         successMessage: "Raportul anonim a fost trimis.",
         errorTitle: "Eroare",
         errorMessage: "A apărut o problemă la trimitere.",
+        whyText:
+          "Bullying-ul poate afecta profund starea emoțională și mentală a unui elev. A vorbi deschis ajută la crearea unui mediu școlar mai sigur pentru toți. Vocea ta contează.",
         validation: {
           schoolRequired: "Școala este obligatorie",
           messageRequired: "Mesajul este obligatoriu",
         },
+        forAdultsTitle: "Pentru părinți și profesori",
+        forAdultsText:
+          "Această platformă susține un mediu școlar sigur și intervenții responsabile. Toate rapoartele sunt tratate confidențial.",
       },
     },
   },
@@ -443,16 +453,21 @@ const resources = {
         school: "Название школы",
         class: "Класс (необязательно, но это поможет быстрее отреагировать)",
         message: "Опишите, что происходит",
-        danger: "Кто-то в опасности прямо сейчас",
+        danger: "⚠ Кто-то в опасности прямо сейчас",
         send: "Отправить анонимно",
         successTitle: "Сообщение отправлено",
         successMessage: "Ваш анонимный отчёт отправлен.",
         errorTitle: "Ошибка",
         errorMessage: "Произошла ошибка при отправке.",
+        whyText:
+          "Буллинг может серьёзно повлиять на эмоциональное и психическое состояние ученика. Сообщая о проблеме, ты помогаешь создать более безопасную школьную среду для всех. Твой голос важен.",
         validation: {
           schoolRequired: "Название школы обязательно",
           messageRequired: "Сообщение обязательно",
         },
+        forAdultsTitle: "Для родителей и учителей",
+        forAdultsText:
+          "Эта платформа поддерживает безопасную школьную среду и ответственное вмешательство. Все сообщения обрабатываются конфиденциально.",
       },
     },
   },

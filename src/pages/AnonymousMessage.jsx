@@ -8,6 +8,7 @@ import {
   Alert,
   FormControlLabel,
   Checkbox,
+  Fade,
 } from "@mui/material";
 import { Formik, Form } from "formik";
 import { useTranslation } from "react-i18next";
@@ -20,7 +21,6 @@ const AnonymousMessage = () => {
   const { t } = useTranslation();
 
   const initialValues = {
-    school: "",
     className: "",
     message: "",
     dangerNow: false,
@@ -28,11 +28,10 @@ const AnonymousMessage = () => {
 
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openFail, setOpenFail] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const validate = (values) => {
     const errors = {};
-    if (!values.school)
-      errors.school = t("anonymous.validation.schoolRequired");
     if (!values.message)
       errors.message = t("anonymous.validation.messageRequired");
     return errors;
@@ -52,14 +51,16 @@ const AnonymousMessage = () => {
   };
 
   const onSubmit = async (values, { resetForm }) => {
+    setLoading(true);
     await sendMessage(values);
+    setLoading(false);
     resetForm();
   };
 
   const fieldStyles = {
     "& .MuiOutlinedInput-root": {
       borderRadius: "16px",
-      backgroundColor: "#f9fafb",
+      backgroundColor: "#ffffff",
       "&.Mui-focused fieldset": {
         borderColor: "#16a34a",
         borderWidth: 2,
@@ -70,45 +71,123 @@ const AnonymousMessage = () => {
   return (
     <Container
       maxWidth="md"
-      sx={{ py: 8, backgroundColor: "#f0fdf4", minHeight: "100vh" }}
+      sx={{
+        py: 10,
+        minHeight: "100vh",
+        background: "linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%)",
+      }}
     >
-      <Stack spacing={6} alignItems="center">
+      <Stack spacing={10} alignItems="center">
         {/* HERO */}
-        <Box textAlign="center">
-          <Typography
-            variant="h3"
-            fontWeight="bold"
-            color="#166534"
-            gutterBottom
+        <Fade in timeout={1000}>
+          <Box
+            textAlign="center"
             sx={{
-              whiteSpace: "pre-line",
+              background: "linear-gradient(135deg, #dcfce7, #5aa86aa6)",
+              p: 6,
+              borderRadius: "32px",
+              width: "calc(100% - 222px)", // Adjust width to prevent overflow
+              maxWidth: "100%", // Ensure it doesn't exceed the container width
+              margin: "0 auto", // Center the box
             }}
           >
-            {t("anonymous.heroTitle")}
-          </Typography>
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              color="#166534"
+              gutterBottom
+              sx={{ whiteSpace: "pre-line" }}
+            >
+              {t("anonymous.heroTitle")}
+            </Typography>
 
-          <Typography maxWidth="600px" mx="auto" color="text.secondary">
-            {t("anonymous.heroText")}
-          </Typography>
+            <Typography maxWidth="600px" mx="auto" color="text.secondary">
+              {t("anonymous.heroText")}
+            </Typography>
+          </Box>
+        </Fade>
+
+        {/* TRUST BADGES */}
+        <Stack
+          direction="row"
+          spacing={3}
+          flexWrap="wrap"
+          justifyContent="center"
+        >
+          <Paper sx={{ p: 2, borderRadius: 4 }}>🔒 100% Anonymous</Paper>
+          <Paper sx={{ p: 2, borderRadius: 4 }}>
+            ⚡ Sent Directly to Administration
+          </Paper>
+          <Paper sx={{ p: 2, borderRadius: 4 }}>🛡 Safe & Confidential</Paper>
+        </Stack>
+
+        {/* WHY SPEAK UP */}
+        <Box maxWidth="700px">
+          <Alert severity="info" sx={{ borderRadius: "16px" }}>
+            {t("anonymous.whyText")}
+          </Alert>
         </Box>
 
         {/* HOW IT WORKS */}
-        <Box textAlign="center">
-          <Typography variant="h5" fontWeight="bold" mb={2}>
+        <Box textAlign="center" width="100%">
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            mb={4}
+            sx={{ color: "#166534", textTransform: "uppercase" }}
+          >
             {t("anonymous.howTitle")}
           </Typography>
 
-          <Stack spacing={1}>
-            <Typography>{t("anonymous.step1")}</Typography>
-            <Typography>{t("anonymous.step2")}</Typography>
-            <Typography>{t("anonymous.step3")}</Typography>
+          <Stack spacing={2}>
+            <Paper
+              sx={{
+                p: 1,
+                borderRadius: 4,
+                background: "none",
+                boxShadow: "none",
+              }}
+            >
+              {t("anonymous.step1")}
+            </Paper>
+            <Paper
+              sx={{
+                p: 1,
+                borderRadius: 4,
+                background: "none",
+                boxShadow: "none",
+              }}
+            >
+              {t("anonymous.step2")}
+            </Paper>
+            <Paper
+              sx={{
+                p: 1,
+                borderRadius: 4,
+                background: "none",
+                boxShadow: "none",
+              }}
+            >
+              {t("anonymous.step3")}
+            </Paper>
           </Stack>
         </Box>
 
-        {/* FORM */}
+        {/*1FORM */}
         <Paper
-          elevation={6}
-          sx={{ p: 5, borderRadius: "24px", width: "100%", maxWidth: "600px" }}
+          elevation={0}
+          sx={{
+            p: 6,
+            borderRadius: "28px",
+            width: "100%",
+            maxWidth: "650px",
+            background: "#ffffff",
+            boxShadow: "0 20px 60px rgba(22, 163, 74, 0.15)",
+            transition: "0.3s ease",
+            "&:hover": {
+              boxShadow: "0 25px 80px rgba(22, 163, 74, 0.25)",
+            },
+          }}
         >
           <Formik
             initialValues={initialValues}
@@ -117,7 +196,7 @@ const AnonymousMessage = () => {
           >
             {({ values, handleChange, errors, touched }) => (
               <Form>
-                <Stack spacing={3}>
+                <Stack spacing={4}>
                   <TextField
                     name="className"
                     label={t("anonymous.class")}
@@ -133,7 +212,7 @@ const AnonymousMessage = () => {
                     fullWidth
                     multiline
                     required
-                    minRows={4}
+                    minRows={5}
                     value={values.message}
                     onChange={handleChange}
                     error={touched.message && Boolean(errors.message)}
@@ -152,23 +231,30 @@ const AnonymousMessage = () => {
                         checked={values.dangerNow}
                         onChange={handleChange}
                         sx={{
-                          color: "#16a34a",
-                          "&.Mui-checked": { color: "#16a34a" },
+                          color: "#ef4444",
+                          "&.Mui-checked": { color: "#dc2626" },
                         }}
                       />
                     }
                     label={t("anonymous.danger")}
                   />
 
+                  <Typography variant="caption" color="text.secondary">
+                    {t("anonymous.noPersonalDataWarning")}
+                  </Typography>
+
                   <RoundButton
                     type="submit"
-                    name={t("anonymous.send")}
+                    disabled={loading}
+                    name={
+                      loading ? t("anonymous.sending") : t("anonymous.send")
+                    }
                     startIcon={<SendIcon />}
                     style={{
                       color: "white",
                       background: "linear-gradient(90deg, #22c55e, #16a34a)",
                       borderRadius: "40px",
-                      padding: "12px 32px",
+                      padding: "14px 36px",
                     }}
                   />
                 </Stack>
@@ -176,6 +262,16 @@ const AnonymousMessage = () => {
             )}
           </Formik>
         </Paper>
+
+        {/* FOR PARENTS / TEACHERS */}
+        <Box textAlign="center" maxWidth="600px">
+          <Typography variant="h6" fontWeight="bold" gutterBottom>
+            {t("anonymous.forAdultsTitle")}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {t("anonymous.forAdultsText")}
+          </Typography>
+        </Box>
       </Stack>
 
       <AlertDialog
