@@ -8,16 +8,17 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-    
-    - name: 🛠️ Build React app
-      run: npm install && npm run build
-      
-    - name: 📂 Sync build folder
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: escoala.md
-        username: files@escoala.md
-        password: ${{ secrets.ftp_password }}
-        local-dir: build/ # Путь к папке сборки
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      # - name: 🛠️ Build React app
+      # run: npm install && npm run build
+
+      - name: 📂 FTP uploud
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: escoala.md
+          username: files@escoala.md
+          password: ${{ secrets.ftp_password }}
+          local-dir: build/ # Путь к папке сборки
+          server-dir: ./
