@@ -17,6 +17,7 @@
     "firebase": "^10.1.0",
     "fontsource-roboto": "^4.0.0",
     "formik": "^2.4.3",
+    "framer-motion": "^12.38.0",
     "i18next": "^22.5.1",
     "i18next-browser-languagedetector": "^7.0.1",
     "moment": "^2.30.1",
