@@ -117,7 +117,8 @@ function Home() {
                     >
                       webinare gratuite
                     </Box>{" "}
-                    pentru părinți
+                    pentru copii 7-15 ani, care vor să învețe programare de la
+                    zero.
                   </Typography>
                 </motion.div>
 
