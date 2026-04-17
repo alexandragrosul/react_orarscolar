@@ -1,75 +1,53 @@
 import * as React from "react";
-import {
-  Grid,
-  Stack,
-  Typography,
-} from "../../../../node_modules/@mui/material/index";
+import { Grid, Stack, Typography, Card, CardContent, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export default function HomeSchoolInfo() {
   const { t } = useTranslation();
 
   return (
-    <Grid container mb={4} spacing={2} alignItems="center">
-      <Grid item xs={12} md={6} sx={{ mt: { xs: 2 } }}>
-        {/* <img
-            src={schoolPhoto}
-            style={{
-              width: "100%",
-              borderRadius: "89px",
-            }}
-            alt="Repetior"
-          /> */}
-      </Grid>
+    <Grid item xs={12} display="flex" justifyContent="center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <Card
+          sx={{
+            borderRadius: "24px",
+            p: { xs: 2, md: 4 },
+            boxShadow: "0 20px 60px rgba(0,0,0,0.06)",
+          }}
+        >
+          <CardContent>
+            <Stack spacing={2}>
+              <Typography variant="h4" fontWeight={800}>
+                {t("schoolTitle.info")}
+              </Typography>
 
-      <Grid item xs={12} md={12} sx={{ marginBottom: "100px" }}>
-        <Stack spacing={3}>
-          <h6
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontSize: "32px",
-              textAlign: "left",
-              margin: 0,
-              marginLeft: "25px",
-            }}
-          >
-            {t("schoolTitle.info")}
-          </h6>
-          <Typography style={{ textAlign: "center", marginLeft: "25px" }}>
-            {t("schoolInfo.info")}
-          </Typography>
-        </Stack>
-        {/* <Stack
-            direction="row"
-            align="center"
-            alignItems="center"
-            flex
-            sx={{
-              "& > :not(style)": {
-                width: { xs: "100%" },
-              },
-              mt: 3,
-              backgroundColor: "white",
-              borderRadius: "50px",
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <SchoolsSearch setFilteredSchools={undefined} />
-          </Stack>
-          <Stack alignItems="center" flex sx={{ mt: 2 }}>
-            <Typography style={{ textAlign: "left", marginLeft: "25px" }}>
-              {t("homeSchools.schoolNotInList")}
-            </Typography>
-            <Link to={"/schools"}>
-              <RoundButton
-                name={t("homeSchools.allSchools")}
-                color="#FB8136"
-                style={{ color: "white", mr: 2, alignItems: "center" }}
+              <Box
+                sx={{
+                  width: "60px",
+                  height: "4px",
+                  background: "#58a667",
+                  borderRadius: "10px",
+                }}
               />
-            </Link>
-          </Stack> */}
-      </Grid>
+
+              <Typography
+                sx={{
+                  color: "#555",
+                  lineHeight: 1.6,
+                  maxWidth: "600px",
+                }}
+              >
+                {t("schoolInfo.info")}
+              </Typography>
+            </Stack>
+          </CardContent>
+        </Card>
+      </motion.div>
     </Grid>
   );
 }

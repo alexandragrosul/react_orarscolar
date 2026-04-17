@@ -1,84 +1,79 @@
 import * as React from "react";
-import {
-  Grid,
-  Stack,
-  Typography,
-} from "../../../../node_modules/@mui/material/index";
+import { Grid, Stack, Typography, Card, CardContent, Box } from "@mui/material";
 import { Link } from "react-router-dom";
-// import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 import RoundButton from "../RoundButton";
 import financePhoto from "../../../assets/finance.jpg";
 
-function HomeFinPlus() {
-  // const { t } = useTranslation();
+const fade = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
 
+function HomeFinPlus() {
   return (
-    <Grid container mb={4} spacing={2} alignItems="center">
-      <Grid item xs={12} md={6}>
-        <Stack spacing={3}>
-          <h6
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontSize: "32px",
-              textAlign: "left",
-              margin: 0,
-              marginLeft: "25px",
-            }}
-          >
-            Fin+
-          </h6>
-          <Typography
-            sx={{
-              textAlign: "left",
-              "@media (min-width:1024px)": {
-                marginLeft: "25px",
-              },
-            }}
-          >
-            Services Fin+ offers innovative financial solutions to enhance your
-            financial literacy and empower you to make smarter financial
-            decisions for a secure future.
-          </Typography>
-        </Stack>
-        <Stack
-          direction="row"
-          align="center"
-          alignItems="center"
-          flex
+    <Grid item xs={12} display="flex" justifyContent="center">
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        variants={fade}
+      >
+        <Card
           sx={{
-            "& > :not(style)": {
-              width: { xs: "100%" },
-            },
-            mt: 3,
-            backgroundColor: "white",
-            borderRadius: "50px",
+            borderRadius: "24px",
+            p: { xs: 2, md: 4 },
+            boxShadow: "0 20px 60px rgba(0,0,0,0.06)",
           }}
-          noValidate
-          autoComplete="off"
         >
-          {/* <SchoolsSearch setFilteredSchools={undefined} /> */}
-        </Stack>
-        <Stack alignItems="center" flex sx={{ mt: 2 }}>
-          <Link to={"/finplus"}>
-            <RoundButton
-              name="Finance mini-apps"
-              color="#a959a9"
-              style={{ color: "white", mr: 2, alignItems: "center" }}
-            />
-          </Link>
-        </Stack>
-      </Grid>
-      <Grid item xs={12} md={6} sx={{ mt: { xs: 2 } }}>
-        <img
-          src={financePhoto}
-          style={{
-            width: "100%",
-            borderRadius: "89px",
-          }}
-          alt="repetior"
-        />
-      </Grid>
+          <CardContent>
+            <Grid container spacing={4} alignItems="center">
+              {/* TEXT */}
+              <Grid item xs={12} md={6}>
+                <Stack spacing={3}>
+                  <Typography variant="h4" fontWeight={800}>
+                    Fin<span style={{ color: "#6d63ff" }}>+</span>
+                  </Typography>
+
+                  <Typography sx={{ color: "#555", lineHeight: 1.6 }}>
+                    Instrumente simple și interactive care ajută copiii să
+                    înțeleagă banii și să dezvolte gândire financiară sănătoasă.
+                  </Typography>
+
+                  <Box>
+                    <Link to={"/finplus"} style={{ textDecoration: "none" }}>
+                      <RoundButton
+                        name="Finance mini-apps"
+                        color="#6d63ff"
+                        style={{ color: "white" }}
+                      />
+                    </Link>
+                  </Box>
+                </Stack>
+              </Grid>
+
+              {/* IMAGE */}
+              <Grid item xs={12} md={6}>
+                <Box
+                  component="img"
+                  src={financePhoto}
+                  alt="finance"
+                  sx={{
+                    width: "100%",
+                    borderRadius: "20px",
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                  }}
+                />
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
+      </motion.div>
     </Grid>
   );
 }

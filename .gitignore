@@ -6,9 +6,11 @@
 .pnp.js
 
 # testing
-/coveragex
+/coverage
 /build
 build.zip
+
+
 
 # misc
 .DS_Store
