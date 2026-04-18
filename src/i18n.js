@@ -1,6 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
+import { Details } from "../node_modules/@mui/icons-material/index";
 //Переводы
 const resources = {
   en: {
@@ -83,6 +84,7 @@ const resources = {
         chisinauRegion: "Chisinau",
         baltiRegion: "Balti",
         chimisliaRegion: "Chimislia",
+        details: "Details",
       },
       repetitori: {
         title: "Repetitors",
@@ -125,6 +127,11 @@ const resources = {
           "We couldn't receive your message. Please try again later.",
         successTitle: "Success",
         successMessage: "Your message has been sent. We will contact you soon.",
+      },
+      notFound: {
+        pageNotExist: "Page doesn’t exist",
+        goHome: "Back to home",
+        textNotFound: "Looks like you’ve reached a place that doesn’t exist 😅",
       },
     },
   },
@@ -208,6 +215,7 @@ const resources = {
         chisinauRegion: "num. Chisinau",
         baltiRegion: "mun. Balti",
         chimisliaRegion: "Chimislia",
+        details: "Detalii",
       },
       repetitori: {
         title: "Repetitori",
@@ -251,6 +259,11 @@ const resources = {
           "Nu am putut să primim mesajul dvs. Încercați vă rog mai târziu.",
         successTitle: "Succes",
         successMessage: "Mesajul a fost trimis. Vă vom contacta în curând.",
+      },
+      notFound: {
+        pageNotExist: "Pagina nu există",
+        goHome: "Înapoi acasă",
+        textNotFound: "Se pare că ai ajuns într-un loc care nu există 😅",
       },
     },
   },
@@ -334,6 +347,7 @@ const resources = {
         chisinauRegion: "Кишинев",
         baltiRegion: "Бельцы",
         chimisliaRegion: "Кимишлия",
+        details: "Детали",
       },
       repetitori: {
         title: "Репетиторы",
@@ -378,6 +392,11 @@ const resources = {
         successTitle: "Успех",
         successMessage:
           "Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.",
+      },
+      notFound: {
+        pageNotExist: "Страница не существует",
+        goHome: "Назад на главную",
+        textNotFound: "Похоже, вы попали в место, которого не существует 😅",
       },
     },
   },

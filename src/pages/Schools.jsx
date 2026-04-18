@@ -107,7 +107,7 @@ const Schools = () => {
                         fontWeight: "bold",
                       }}
                     >
-                      {"View Details"}
+                      {t("schools.details")}
                     </Button>
                   </Box>
                 </CardContent>
