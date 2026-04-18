@@ -2,7 +2,7 @@ import * as React from "react";
 import Header from "./layout/Header";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import {
   Dialog,
   DialogTitle,
@@ -11,36 +11,18 @@ import {
   TextField,
   DialogActions,
   Button,
-} from "../../node_modules/@mui/material/index";
+  Paper,
+} from "@mui/material";
+
 import { TimeTable } from "./timetable/Timetable";
-import { useLocation } from "react-router-dom";
 
 const Wrapper = () => {
   const [open, setOpen] = React.useState(false);
   const location = useLocation();
   const [pageType, setPageType] = React.useState(null);
   const [appBarPosition, setAppBarPosition] = React.useState("fixed");
-  // const [footerMenuSelected, setFooterMenuSelected] = React.useState(null);
 
-  // const handleClickOpen = (type) => {
-  //   setPageType(type === pageType ? null : type);
-  //   // setOpen(true);
-  // };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  // const renderMainContent = () => {
-  //   switch (pageType) {
-  //     case "schedule":
-  //       return <TimeTable />;
-  //     case "tasks":
-  //       return <TasksList />;
-  //     default:
-  //       return <Outlet />;
-  //   }
-  // };
+  const handleClose = () => setOpen(false);
 
   React.useEffect(() => {
     if (pageType === "schedule" || pageType === "tasks") {
@@ -48,8 +30,11 @@ const Wrapper = () => {
     } else {
       setAppBarPosition("fixed");
     }
-    // setFooterMenuSelected(pageType);
   }, [pageType]);
+
+  React.useEffect(() => {
+    setPageType(null);
+  }, [location.pathname]);
 
   const renderDialogContent = () => {
     switch (pageType) {
@@ -60,12 +45,11 @@ const Wrapper = () => {
           <DialogContent>
             <DialogContentText>
               To subscribe to this website, please enter your email address
-              here. We will send updates occasionally.
+              here.
             </DialogContentText>
             <TextField
               autoFocus
               margin="dense"
-              id="name"
               label="Email Address"
               type="email"
               fullWidth
@@ -78,45 +62,101 @@ const Wrapper = () => {
     }
   };
 
-  React.useEffect(() => {
-    // Code to execute when the route changes
-    setPageType(null);
-
-    // You can also use the history object to navigate programmatically
-    // For example, you can use history.push('/new-route') to navigate to a different route
-  }, [location.pathname]);
-
   return (
-    <Box>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        background: `
+          radial-gradient(circle at 10% 10%, rgba(110,200,114,0.18), transparent 35%),
+          radial-gradient(circle at 90% 20%, rgba(76,175,80,0.12), transparent 40%),
+          radial-gradient(circle at 50% 100%, rgba(63,203,109,0.08), transparent 45%),
+          linear-gradient(180deg, #f6fff7 0%, #eefaf0 100%)
+        `,
+      }}
+    >
+      {/* HEADER */}
       <Header position={appBarPosition} handleClose={handleClose} />
+
+      {/* CONTENT */}
       <Box
         sx={{
-          height: "100vh",
-          pt: appBarPosition === "fixed" ? 6 : 0,
-          padding: "40px 0",
+          flex: 1,
+          pt: appBarPosition === "fixed" ? "64px" : 0,
+          px: 0,
+          pb: 0,
         }}
       >
         <Outlet />
-        {/* {renderMainContent()} */}
-        <Box
-          sx={{ background: "#66bb6a", padding: "40px 0", textAlign: "center" }}
-        >
-          <Typography variant="h6" sx={{ color: "black" }}>
-            © 2024 Escoala.md. All Rights Reserved. | Empowering education for a
-            brighter future.
-          </Typography>
-        </Box>
       </Box>
-      {/* <Footer onButtonClick={handleClickOpen} selected={footerMenuSelected} /> */}
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Adauga</DialogTitle>
+
+      {/* FOOTER (WOW GLASS STYLE) */}
+      <Paper
+        elevation={0}
+        sx={{
+          mt: "auto",
+          py: 4,
+          px: 2,
+          textAlign: "center",
+          background: "rgba(255,255,255,0.6)",
+          backdropFilter: "blur(12px)",
+          borderTop: "1px solid rgba(76,175,80,0.15)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* glow effect */}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(circle at 50% 0%, rgba(110,200,114,0.25), transparent 60%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <Typography
+          sx={{
+            fontSize: { xs: "13px", md: "14px" },
+            color: "rgba(0,0,0,0.65)",
+            fontWeight: 500,
+            position: "relative",
+          }}
+        >
+          © 2024 Escoala.md · All Rights Reserved · Built with ❤️ for education
+        </Typography>
+      </Paper>
+
+      {/* DIALOG */}
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          sx: {
+            borderRadius: "18px",
+            padding: 1,
+          },
+        }}
+      >
+        <DialogTitle sx={{ fontWeight: 700 }}>Adaugă</DialogTitle>
+
         {renderDialogContent()}
+
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Save</Button>
+          <Button
+            variant="contained"
+            sx={{
+              background: "linear-gradient(135deg, #6EC872, #499f4d)",
+            }}
+            onClick={handleClose}
+          >
+            Save
+          </Button>
         </DialogActions>
       </Dialog>
-      {/* Footer Section */}
     </Box>
   );
 };
