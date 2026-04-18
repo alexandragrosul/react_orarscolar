@@ -13,6 +13,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
+    "baseline-browser-mapping": "^2.10.19",
+    "caniuse-lite": "^1.0.30001788",
     "chart.js": "^4.4.6",
     "firebase": "^10.1.0",
     "fontsource-roboto": "^4.0.0",
