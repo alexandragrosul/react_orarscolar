@@ -1,13 +1,11 @@
 import React from "react";
-import { Container, Typography, Grid, Button, Box } from "@mui/material";
+import { Container, Typography, Grid, Box } from "@mui/material";
 import { motion } from "framer-motion";
 
 import HomeSchools from "../components/layout/home/HomeSchools";
 import HomeSchoolInfo from "../components/layout/home/HomeSchoolInfo";
 import HomeFinPlus from "../components/layout/home/HomeFinPlus";
-import HomeWebinar from "../components/layout/home/HomeWebinar";
-
-import { useTranslation } from "react-i18next";
+import codingVideo from "../assets/videos/coding.mp4";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,8 +21,6 @@ const fadeUp = {
 };
 
 function Home() {
-  const { t } = useTranslation();
-
   return (
     <Box sx={{ background: "#f8fafc" }}>
       <Container maxWidth="lg">
@@ -34,148 +30,220 @@ function Home() {
             <Box
               sx={{
                 position: "relative",
-                borderRadius: "28px",
+                borderRadius: { xs: "22px", md: "32px" },
                 overflow: "hidden",
-                py: { xs: 6, md: 12 },
-                px: { xs: 3, md: 6 },
+                py: { xs: 4, md: 7 },
+                px: { xs: 2.5, md: 5 },
                 maxWidth: "1100px",
                 mx: "auto",
-                boxShadow: "0 20px 60px rgba(108,99,255,0.25)",
+                textAlign: "left",
+                boxShadow: "0 24px 70px rgba(41, 130, 64, 0.22)",
                 background:
-                  "linear-gradient(135deg,rgb(176, 212, 182),rgb(58, 169, 73))",
+                  "linear-gradient(135deg, rgb(39, 154, 74) 0%, rgb(68, 182, 88) 54%, rgb(190, 231, 199) 100%)",
               }}
             >
-              <Box sx={{ position: "relative", zIndex: 2 }}>
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="show"
-                  custom={1}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: { xs: "28px", sm: "40px", md: "64px" },
-                      fontWeight: 900,
-                      lineHeight: 1.1,
-                      color: "white",
-                      px: { xs: 1, md: 0 },
-                    }}
-                  >
-                    {t("home.slogan")}
-                  </Typography>
-                </motion.div>
+              <Box
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "radial-gradient(circle at 8% 12%, rgba(255,255,255,0.34), transparent 28%), radial-gradient(circle at 78% 84%, rgba(108,99,255,0.18), transparent 32%)",
+                  pointerEvents: "none",
+                }}
+              />
 
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="show"
-                  custom={2}
-                >
-                  <Typography
-                    sx={{
-                      mt: 2,
-                      fontSize: { xs: "14px", md: "18px" },
-                      color: "rgba(255,255,255,0.9)",
-                      px: { xs: 1, md: 0 },
-                    }}
+              <Grid
+                container
+                spacing={{ xs: 4, md: 6 }}
+                alignItems="center"
+                sx={{ position: "relative", zIndex: 2 }}
+              >
+                <Grid item xs={12} md={7} sx={{ textAlign: "center" }}>
+                  <motion.div
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="show"
+                    custom={1}
                   >
-                    Ghid +{" "}
-                    <Box
-                      component="span"
+                    <Typography
                       sx={{
-                        color: "#6d63ff",
-                        fontWeight: 700,
+                        fontSize: { xs: "36px", sm: "48px", md: "68px" },
+                        fontFamily: '"Playwrite", "Roboto", sans-serif',
+                        fontWeight: 900,
+                        lineHeight: 1.25,
+                        color: "white",
+                        maxWidth: "760px",
+                        mx: "auto",
+                        textShadow: "0 2px 0 rgba(255,255,255,0.16)",
                       }}
                     >
-                      webinare gratuite
-                    </Box>{" "}
-                    pentru copii 7-15 ani, care vor să învețe programare de la
-                    zero.
-                  </Typography>
-                </motion.div>
+                      Programare pentru copii 7-16 ani
+                    </Typography>
+                  </motion.div>
 
-                <motion.div
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate="show"
-                  custom={3}
-                >
-                  <Box mt={4}>
-                    <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSeAiJnkUTtGSzEH6HP15yQTWPtB59uEEEAaQYcnGepu-xGvRA/viewform?usp=header"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none" }}
+                  <motion.div
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="show"
+                    custom={2}
+                  >
+                    <Typography
+                      sx={{
+                        mt: 2.5,
+                        fontSize: { xs: "16px", md: "20px" },
+                        lineHeight: 1.6,
+                        color: "rgba(255,255,255,0.92)",
+                        maxWidth: "680px",
+                        mx: "auto",
+                      }}
+                    >
+                      Sprijin copiii în participarea la hackathoane, concursuri,
+                      granturi și programe educaționale (Maib, Tekwill,
+                      Yep!Moldova etc.).
+                    </Typography>
+                  </motion.div>
+
+                  <motion.div
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="show"
+                    custom={3}
+                  >
+                    <Box
+                      sx={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                        gap: { xs: 0.8, sm: 1.2 },
+                        mt: 3,
+                      }}
+                    >
+                      {[
+                        "Pentru copii curioși",
+                        "Clar pentru părinți",
+                        "Primul proiect rapid",
+                      ].map((text) => (
+                        <Box
+                          key={text}
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            minHeight: { xs: 48, sm: 50 },
+                            px: { xs: 0.8, sm: 1.6 },
+                            py: { xs: 0.8, sm: 1 },
+                            borderRadius: "999px",
+                            background: "rgba(255,255,255,0.16)",
+                            color: "white",
+                            fontSize: { xs: "11px", sm: "13px", md: "14px" },
+                            fontWeight: 800,
+                            lineHeight: 1.15,
+                            textAlign: "center",
+                            border: "1px solid rgba(255,255,255,0.22)",
+                          }}
+                        >
+                          {text}
+                        </Box>
+                      ))}
+                    </Box>
+
+                    <Box mt={4} sx={{ textAlign: "center" }}>
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdqe_hr9Cnbq-e4Lh3IJWrwkta2PyldrNyPl2pc-2ZUeJHb4Q/viewform?usp=preview"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Box
+                          sx={{
+                            display: "inline-block",
+                            minWidth: { xs: "240px", sm: "280px" },
+                            px: { xs: 5, md: 6 },
+                            py: { xs: 1.8, md: 2 },
+                            borderRadius: "999px",
+                            fontWeight: 900,
+                            fontSize: { xs: "18px", md: "20px" },
+                            background: "white",
+                            color: "#2e7d32",
+                            boxShadow: "0 14px 30px rgba(0,0,0,0.18)",
+                            transition: "0.2s ease",
+                            "&:hover": {
+                              transform: "translateY(-2px)",
+                              boxShadow: "0 18px 36px rgba(0,0,0,0.22)",
+                            },
+                          }}
+                        >
+                          Începe gratuit
+                        </Box>
+                      </a>
+                    </Box>
+                  </motion.div>
+                </Grid>
+
+                <Grid item xs={12} md={5}>
+                  <motion.div
+                    variants={fadeUp}
+                    initial="hidden"
+                    animate="show"
+                    custom={4}
+                  >
+                    <Box
+                      sx={{
+                        position: "relative",
+                        borderRadius: { xs: "20px", md: "26px" },
+                        overflow: "hidden",
+                        aspectRatio: "4 / 5",
+                        minHeight: { xs: 300, sm: 360, md: 430 },
+                        background: "rgba(255,255,255,0.2)",
+                        boxShadow: "0 24px 50px rgba(13, 73, 31, 0.28)",
+                        border: "1px solid rgba(255,255,255,0.28)",
+                      }}
                     >
                       <Box
+                        component="video"
+                        src={codingVideo}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
                         sx={{
-                          display: "inline-block",
-                          px: 4,
-                          py: 1.5,
-                          borderRadius: "999px",
-                          fontWeight: 700,
-                          fontSize: "15px",
-                          background: "white",
-                          color: "#2e7d32",
-                          boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          display: "block",
+                        }}
+                      />
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          inset: 0,
+                          background:
+                            "linear-gradient(180deg, transparent 45%, rgba(21, 95, 43, 0.62) 100%)",
+                        }}
+                      />
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          left: 18,
+                          right: 18,
+                          bottom: 18,
+                          p: 2,
+                          borderRadius: "18px",
+                          background: "rgba(255,255,255,0.9)",
+                          color: "#1f5f31",
                         }}
                       >
-                        Începe gratuit
+                        <Typography sx={{ fontWeight: 900, fontSize: "16px" }}>
+                          Copiii învață făcând
+                        </Typography>
+                        <Typography sx={{ mt: 0.5, fontSize: "13px" }}>
+                          Jocuri, pagini web și idei pe care le pot arăta cu
+                          mândrie.
+                        </Typography>
                       </Box>
-                    </a>
-                  </Box>
-                </motion.div>
-              </Box>
-            </Box>
-          </Grid>
-
-          {/* WEBINAR */}
-          <Grid item xs={12}>
-            <Box
-              sx={{
-                borderRadius: "20px",
-                p: { xs: 2, md: 6 },
-                background: "#fff",
-                boxShadow: "0 10px 40px rgba(0,0,0,0.05)",
-              }}
-            >
-              <HomeWebinar />
-            </Box>
-          </Grid>
-
-          {/* GHID */}
-          <Grid item xs={12}>
-            <Box
-              sx={{
-                borderRadius: "24px",
-                p: { xs: 2, md: 6 },
-                textAlign: "center",
-                background: "#fff",
-                boxShadow: "0 15px 50px rgba(0,0,0,0.06)",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: { xs: "22px", md: "36px" },
-                  fontWeight: 800,
-                }}
-              >
-                Primește ghidul gratuit
-              </Typography>
-
-              <Typography sx={{ mt: 1, color: "#666", fontSize: "14px" }}>
-                Tot ce trebuie să știi pentru înscriere
-              </Typography>
-
-              <Box mt={3}>
-                <iframe
-                  title="Ghid"
-                  src="https://forms.gle/uYeHgxVj4QDJfrxf7"
-                  width="100%"
-                  height="420"
-                  style={{ border: "none", borderRadius: "16px" }}
-                />
-              </Box>
+                    </Box>
+                  </motion.div>
+                </Grid>
+              </Grid>
             </Box>
           </Grid>
 
