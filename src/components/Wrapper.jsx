@@ -125,7 +125,8 @@ const Wrapper = () => {
             position: "relative",
           }}
         >
-          © 2024 Escoala.md · All Rights Reserved · Built with ❤️ for education
+          © 2026 Escoala.md · All Rights Reserved · Built with ❤️ by Alexandra
+          Grosul
         </Typography>
       </Paper>
 
