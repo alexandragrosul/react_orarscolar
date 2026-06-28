@@ -1,0 +1,30 @@
+export const schoolImages = {
+  5: "/images/schools/5.png",
+  21: "/images/schools/21.png",
+  22: "/images/schools/22.png",
+  23: "/images/schools/23.jpeg",
+  25: "/images/schools/25.jpg",
+  30: "/images/schools/30.png",
+  31: "/images/schools/31.png",
+  55: "/images/schools/55.png",
+  56: "/images/schools/56.png",
+  57: "/images/schools/57.png",
+  58: "/images/schools/58.png",
+  60: "/images/schools/60.png",
+  62: "/images/schools/62.png",
+  79: "/images/schools/79.jpeg",
+  80: "/images/schools/80.png",
+  82: "/images/schools/82.png",
+  91: "/images/schools/91.jpg",
+  93: "/images/schools/93.png",
+  94: "/images/schools/94.png",
+  95: "/images/schools/95.png",
+  110: "/images/schools/110.png",
+  111: "/images/schools/111.png",
+  113: "/images/schools/113.jpeg",
+  121: "/images/schools/121.jpg",
+  192: "/images/schools/192.png",
+};
+
+export const hasSchoolImage = (school) =>
+  Boolean(schoolImages[String(school?.id)]);

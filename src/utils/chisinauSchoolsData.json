@@ -1,0 +1,1447 @@
+[
+  {
+    "id": 1001,
+    "name": "Gimnaziul „Galata”",
+    "schoolAdress": "bd. Dacia, 75",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "70",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 30,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1002,
+    "name": "Instituția Publică Liceul Teoretic Seral nr.2",
+    "schoolAdress": "bd. Traian 11",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "76",
+    "freePlacesLyceum": "73",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1003,
+    "name": "Instituția Publică Liceul Teoretic „Dimitrie Cantemir”",
+    "schoolAdress": "bd. Dacia, 28/3",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1004,
+    "name": "Instituția Publică Liceul Teoretic „Grigore Vieru”",
+    "schoolAdress": "Băcioi, str. Independenței 52",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "49",
+    "freePlacesLyceum": "18",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1005,
+    "name": "Instituția Publică Liceul Teoretic „Liviu Rebreanu”",
+    "schoolAdress": "str. Hristo Botev, 9/2",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1006,
+    "name": "Instituția Publică Liceul Teoretic „Petru Movilă”",
+    "schoolAdress": "str. Botanica Veche, 11A",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "75",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1007,
+    "name": "Instituția Publică Liceul Teoretic „Rambam”",
+    "schoolAdress": "str. Independenţei, 5/2",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "25",
+    "freePlacesLyceum": "8",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1008,
+    "name": "Instituția Publică Liceul Teoretic „Traian”",
+    "schoolAdress": "str. Cuza Vodă, 36",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "119 / 54",
+    "freePlacesLyceum": "0 / 17",
+    "serviceAdress": [],
+    "requestsSent": 86,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1009,
+    "name": "Instituția Publică Liceul Teoretic „Tudor Vladimirescu”",
+    "schoolAdress": "str. Plaiului, 17",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "38",
+    "freePlacesLyceum": "16",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1010,
+    "name": "Instituția Publică Liceul cu Profil Arte „Iurie Harmelin”",
+    "schoolAdress": "str. Cuza Vodă, 19/3",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "26",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1011,
+    "name": "Liceul Teoretic cu Profil Arte „Mihai Grecu”",
+    "schoolAdress": "str. Valea Crucii, 4/2",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "43",
+    "freePlacesLyceum": "13",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1012,
+    "name": "Liceul Teoretic cu Profil Sportiv „Gloria”",
+    "schoolAdress": "str. Teilor, 7",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "40",
+    "freePlacesLyceum": "14",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1013,
+    "name": "Liceul Teoretic cu profil de arte „Elena Alistar”",
+    "schoolAdress": "bd. Decebal, 74",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "82 / 76",
+    "freePlacesLyceum": "0 / 21",
+    "serviceAdress": [],
+    "requestsSent": 105,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1014,
+    "name": "Liceul Teoretic „Bogdan Petriceicu Haşdeu”",
+    "schoolAdress": "str. N. Zelinschi, 36/4",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "72",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1015,
+    "name": "Liceul Teoretic „Iulia Haşdeu”",
+    "schoolAdress": "str. N. Titulescu, 18",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "72",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1016,
+    "name": "Liceul Teoretic „Mihai Eminescu”",
+    "schoolAdress": "str. Varşoviei, 2",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "81 / 90",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 122,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1017,
+    "name": "Liceul Teoretic „Mircea cel Bătrân”",
+    "schoolAdress": "str. Sarmisezetusa, 39",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1018,
+    "name": "Liceul Teoretic „Pro Succes”",
+    "schoolAdress": "str. Aşhabad, 129",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1019,
+    "name": "Liceul Teoretic „Vasile Alecsandri”",
+    "schoolAdress": "str. Mazililor 34 A",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "53",
+    "freePlacesLyceum": "26",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1020,
+    "name": "Şcoala Primară nr. 120 „Pas cu Pas”",
+    "schoolAdress": "str. Independenţei, 14",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "70",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 78,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1021,
+    "name": "Şcoala Primară „Spiridon Vangheli”",
+    "schoolAdress": "bd. Dacia, 52",
+    "sector": "Botanica",
+    "phone": "",
+    "freePlaces": "120",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 69,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1022,
+    "name": "Instituția Publică Liceul Teoretic „Toader Bubuiog”",
+    "schoolAdress": "str. Ștefan cel Mare, 21",
+    "sector": "Bubuieci",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1023,
+    "name": "Instituția Publică Liceul Teoretic „Budeşti”",
+    "schoolAdress": "str. Școlii, 5",
+    "sector": "Budești",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "30",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1024,
+    "name": "Instituția Publică Liceul Teoretic „Alexandr Pușkin”",
+    "schoolAdress": "str. Mitropolit Petru Movilă, 20",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "71",
+    "freePlacesLyceum": "18",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1025,
+    "name": "Instituția Publică Liceul Teoretic „Ion şi Doina Aldea-Teodorovici”",
+    "schoolAdress": "str. Doina şi Ion Aldea Teodorovici, 13",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "56",
+    "freePlacesLyceum": "16",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1026,
+    "name": "Instituția Publică Liceul Teoretic „Liviu Deleanu”",
+    "schoolAdress": "str. L. Deleanu, 5/4",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1027,
+    "name": "Instituția Publică Liceul Teoretic „Mircea Eliade”",
+    "schoolAdress": "str. Mitropolit Bănulescu Bodoni, 33",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "64 / 0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 91,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1028,
+    "name": "Instituția Publică Liceul Teoretic „Onisifor Ghibu”",
+    "schoolAdress": "str. N. Costin, 63A",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "128 / 0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 167,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1029,
+    "name": "Instituția Publică Liceul Teoretic „Petru Rareş”",
+    "schoolAdress": "str. N. Costin, 61/6",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "52",
+    "freePlacesLyceum": "2",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1030,
+    "name": "Instituția Publică Liceul Teoretic „Principesa Natalia Dadiani”",
+    "schoolAdress": "str. Calea Ieşilor, 21",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "64",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1031,
+    "name": "Instituția Publică Liceul Teoretic „Spiru Haret”",
+    "schoolAdress": "str. Maria Cebotari 53",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1032,
+    "name": "Instituția Publică Liceul Teoretic „Vasile Vasilache”",
+    "schoolAdress": "str. A. Corobceanu, 16",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "50",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1033,
+    "name": "Instituție Publică Liceul Teoretic „Anton P. Cehov”",
+    "schoolAdress": "str. Alba Iulia, 200/2",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1034,
+    "name": "Liceul Teoretic „Antioh Cantemir”",
+    "schoolAdress": "str. Toma Ciorbă, 5",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "75",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1035,
+    "name": "Liceul Teoretic „I. S. Neciui Leviţki”",
+    "schoolAdress": "str. I. Pelivan, 24",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "18",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1036,
+    "name": "Liceul Teoretic „Mihai Marinciuc”",
+    "schoolAdress": "str. I. Pelivan, 30/2",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1037,
+    "name": "Liceul Teoretic „Nicolai Gogol”",
+    "schoolAdress": "str. A. Şciusev, 90",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "112",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1038,
+    "name": "Liceul cu Profil Sportiv Buiucani",
+    "schoolAdress": "str. Alba-Iulia, 200/2",
+    "sector": "Buiucani",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1039,
+    "name": "Gimnaziul nr. 53",
+    "schoolAdress": "str. V. Cheltuială, 42",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 36,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1040,
+    "name": "Instituția Publică Liceul Teoretic Seral nr.1",
+    "schoolAdress": "str. Vl. Korolenko 1",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "47",
+    "freePlacesLyceum": "71",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1041,
+    "name": "Instituția Publică Liceul Teoretic cu Profil de Arte „Nicolae Sulac”",
+    "schoolAdress": "str. Grenoble, 108",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1042,
+    "name": "Instituția Publică Liceul Teoretic „Gheorghe Asachi”",
+    "schoolAdress": "str. Bucureşti, 64",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "35",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1043,
+    "name": "Instituția Publică Liceul Teoretic „Mihai Viteazul”",
+    "schoolAdress": "str. Mitropolit G. Grosu, 4",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "144",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 117,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1044,
+    "name": "Instituția Publică Liceul Teoretic „Minerva”",
+    "schoolAdress": "str. 31 august 1989, 50",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1045,
+    "name": "Instituția Publică Liceul Teoretic „Universul”",
+    "schoolAdress": "şos. Hînceşti, 136",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1046,
+    "name": "Liceul Teoretic pentru copii cu deficiențe de vedere",
+    "schoolAdress": "str. Vlaicu Pîrcălab, 32",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "5",
+    "freePlacesLyceum": "5",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1047,
+    "name": "Liceul Teoretic „Academician Constantin Sibirschi”",
+    "schoolAdress": "str. Lech Kaczynski, 4",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "48",
+    "freePlacesLyceum": "5",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1048,
+    "name": "Liceul Teoretic „Miguel de Cervantes Saavedra”",
+    "schoolAdress": "str. Avram Iancu, 34",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "72",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1049,
+    "name": "Liceul Teoretic „Mihail Koţiubinski”",
+    "schoolAdress": "str. Mihai Eminescu, 54",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1050,
+    "name": "Liceul Teoretic „Titu Maiorescu”",
+    "schoolAdress": "şos. Hînceşti, 13",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "36",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1051,
+    "name": "Liceul Teoretic „Vasile Lupu”",
+    "schoolAdress": "str. Petru Ungureanu, 17",
+    "sector": "Centru",
+    "phone": "",
+    "freePlaces": "32",
+    "freePlacesLyceum": "5",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1052,
+    "name": "Instituția Publică Liceul Teoretic cu Profil de Arte „Mihail Berezovschi”",
+    "schoolAdress": "str. I. Vieru, 15/4",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1053,
+    "name": "Instituția Publică Liceul Teoretic „Constantin Negruzzi”",
+    "schoolAdress": "str. I. Vieru, 6/2",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "-1",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1054,
+    "name": "Instituția Publică Liceul Teoretic „Ginta Latină”",
+    "schoolAdress": "str. Ginta Latină, 7/3",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "55",
+    "freePlacesLyceum": "2",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1055,
+    "name": "Instituția Publică Liceul Teoretic „Olimp”",
+    "schoolAdress": "str. Petru Zadnipru, 7/1",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "70",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1056,
+    "name": "Instituția Publică Liceul Teoretic „Petru Zadnipru”",
+    "schoolAdress": "str. Nicolae Milescu Spătaru 9/3",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "17",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1057,
+    "name": "Instituția Publică Liceul cu profil sportiv „Avante”",
+    "schoolAdress": "str. A. Russo, 57",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "37",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1058,
+    "name": "Instituția Publică Şcoala Primară „Anatol Popovici”",
+    "schoolAdress": "str. P. Zadnipru, 2/4",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "150",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 159,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1059,
+    "name": "Liceul Teoretic „Dacia”",
+    "schoolAdress": "str. P. Zadnipru, 16/4",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "40",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1060,
+    "name": "Liceul Teoretic „Gaudeamus”",
+    "schoolAdress": "str. Petru Zadnipru 14/4",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1061,
+    "name": "Liceul Teoretic „Ștefan Vodă”",
+    "schoolAdress": "Ștefan cel Mare 11",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "40",
+    "freePlacesLyceum": "11",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1062,
+    "name": "Şcoala Primară nr. 82",
+    "schoolAdress": "str. M. Drăgan, 8/2",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "124",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 65,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1063,
+    "name": "Şcoala Primară „Grigore Vieru”",
+    "schoolAdress": "str. N. M. Spătaru, 13/3",
+    "sector": "Ciocana",
+    "phone": "",
+    "freePlaces": "240",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 216,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1064,
+    "name": "Instituția Publică Complexul Educațional nr. 88",
+    "schoolAdress": "str. Costiujeni, 10",
+    "sector": "Codru",
+    "phone": "",
+    "freePlaces": "30",
+    "freePlacesLyceum": 0,
+    "serviceAdress": [],
+    "requestsSent": 26,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1065,
+    "name": "Instituția Publică Liceul Teoretic „Grătiești”",
+    "schoolAdress": "str. Ștefan cel Mare, 17",
+    "sector": "Grătiești",
+    "phone": "",
+    "freePlaces": "20",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1066,
+    "name": "Instituția Publică Complexul Educațional Liceul-Grădiniță „Kiril şi Metodii”",
+    "schoolAdress": "str. Al. Haşdeu, 72",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "50",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1067,
+    "name": "Instituția Publică Liceul Teoretic „Academia Copiilor”",
+    "schoolAdress": "str. Albişoara, 16/3",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "70 / 44",
+    "freePlacesLyceum": "0 / 13",
+    "serviceAdress": [],
+    "requestsSent": 69,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1068,
+    "name": "Instituția Publică Liceul Teoretic „Alexandru Ioan Cuza”",
+    "schoolAdress": "str. Poştei, 44",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1069,
+    "name": "Instituția Publică Liceul Teoretic „Beniamin Zeev Herţli”",
+    "schoolAdress": "str. Dimo, 7",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "37",
+    "freePlacesLyceum": "3",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1070,
+    "name": "Instituția Publică Liceul Teoretic „Ion Creangă”",
+    "schoolAdress": "str. Studenţilor, 10/3",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "84",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 107,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1071,
+    "name": "Instituția Publică Liceul Teoretic „Matei Basarab”",
+    "schoolAdress": "str. Matei Basarab, 14",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "36",
+    "freePlacesLyceum": "4",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1072,
+    "name": "Instituția Publică Liceul Teoretic „Mihail Kogălniceanu”",
+    "schoolAdress": "str. Miron Costin, 3",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "7",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1073,
+    "name": "Instituția Publică Liceul Teoretic „Nicolae Milescu-Spătaru”",
+    "schoolAdress": "str. Florilor, 14/3",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1074,
+    "name": "Instituția Publică Liceul Teoretic „Ștefan cel Mare”",
+    "schoolAdress": "str. Florilor, 4",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "0",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1075,
+    "name": "Liceul Teoretic „Alecu Russo”",
+    "schoolAdress": "str. A. Russo, 10",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1076,
+    "name": "Liceul Teoretic „George Călinescu”",
+    "schoolAdress": "str. Ceucari, 7",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "180 / 60",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 99,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1077,
+    "name": "Liceul Teoretic „Lucian Blaga”",
+    "schoolAdress": "str. A. Russo, 10",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1078,
+    "name": "Liceul Teoretic „Mihail Lomonosov”",
+    "schoolAdress": "str. Gh. Madan, 83",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "20",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1079,
+    "name": "Liceul Teoretic „Mihail Sadoveanu”",
+    "schoolAdress": "str. Aerodromului, 5",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "56",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1080,
+    "name": "Liceul Teoretic „Natalia Gheorghiu”",
+    "schoolAdress": "str. Florilor, 6",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1081,
+    "name": "Liceul Teoretic „Vasil Levski”",
+    "schoolAdress": "str. Studenţilor, 3/3",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "34",
+    "freePlacesLyceum": "21",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1082,
+    "name": "Liceul Teoretic „Waldorf”",
+    "schoolAdress": "str. Studenților, 11",
+    "sector": "Râșcani",
+    "phone": "",
+    "freePlaces": "60 / 34",
+    "freePlacesLyceum": "0 / 13",
+    "serviceAdress": [],
+    "requestsSent": 106,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1083,
+    "name": "Instituția Publică Liceul Teoretic „Dragoș Vodă”",
+    "schoolAdress": "str. Livezilor, 2",
+    "sector": "Stăuceni",
+    "phone": "",
+    "freePlaces": "36",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1084,
+    "name": "Instituția Publică Liceul Teoretic „Alexandru cel Bun”",
+    "schoolAdress": "str. 31 August, 35/1",
+    "sector": "Sângera",
+    "phone": "",
+    "freePlaces": "50",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 0,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  },
+  {
+    "id": 1085,
+    "name": "Instituția Publică Liceul Teoretic „Nicolae Bălcescu”",
+    "schoolAdress": "com. Ciorescu, str. Alexandru cel Bun, 10",
+    "sector": "com. Ciorescu",
+    "phone": "",
+    "freePlaces": "90 / 44",
+    "freePlacesLyceum": "0",
+    "serviceAdress": [],
+    "requestsSent": 99,
+    "freePlacesProfiles": {
+      "second_tour_places": 0,
+      "second_tour_places_lyceum": 0,
+      "__typename": "FreePlacesProfiles"
+    },
+    "__typename": "School"
+  }
+]
