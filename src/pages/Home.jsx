@@ -137,7 +137,7 @@ function Home() {
                       >
                         <Box
                           component="a"
-                          href="tel:069170185"
+                          href="tel:+37369170185"
                           sx={{
                             px: 2,
                             py: 1.2,
@@ -150,7 +150,7 @@ function Home() {
                             boxShadow: "0 10px 22px rgba(0,0,0,0.12)",
                           }}
                         >
-                          Telefon: 069170185
+                          069170185
                         </Box>
                         <Box
                           component="a"
@@ -161,12 +161,12 @@ function Home() {
                             px: 2,
                             py: 1.2,
                             borderRadius: "999px",
-                            background: "rgba(255,255,255,0.18)",
-                            color: "white",
+                            background: "rgba(255,255,255,0.92)",
+                            color: "#2e7d32",
                             fontWeight: 950,
                             textDecoration: "none",
                             textAlign: "center",
-                            border: "1px solid rgba(255,255,255,0.3)",
+                            boxShadow: "0 10px 22px rgba(0,0,0,0.12)",
                           }}
                         >
                           Instagram: @escoala.md
@@ -181,43 +181,6 @@ function Home() {
                     animate="show"
                     custom={3}
                   >
-                    <Box
-                      sx={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                        gap: { xs: 0.8, sm: 1.2 },
-                        mt: 3,
-                      }}
-                    >
-                      {[
-                        "Pentru copii curioși",
-                        "Clar pentru părinți",
-                        "Primul proiect rapid",
-                      ].map((text) => (
-                        <Box
-                          key={text}
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            minHeight: { xs: 48, sm: 50 },
-                            px: { xs: 0.8, sm: 1.6 },
-                            py: { xs: 0.8, sm: 1 },
-                            borderRadius: "999px",
-                            background: "rgba(255,255,255,0.16)",
-                            color: "white",
-                            fontSize: { xs: "11px", sm: "13px", md: "14px" },
-                            fontWeight: 800,
-                            lineHeight: 1.15,
-                            textAlign: "center",
-                            border: "1px solid rgba(255,255,255,0.22)",
-                          }}
-                        >
-                          {text}
-                        </Box>
-                      ))}
-                    </Box>
-
                     <Box mt={4} sx={{ textAlign: "center" }}>
                       <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSdqe_hr9Cnbq-e4Lh3IJWrwkta2PyldrNyPl2pc-2ZUeJHb4Q/viewform?usp=preview"
