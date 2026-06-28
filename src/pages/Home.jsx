@@ -3,6 +3,7 @@ import { Container, Typography, Grid, Box } from "@mui/material";
 import { motion } from "framer-motion";
 
 import HomeSchools from "../components/layout/home/HomeSchools";
+import HomeEnrollment from "../components/layout/home/HomeEnrollment";
 import HomeSchoolInfo from "../components/layout/home/HomeSchoolInfo";
 import HomeFinPlus from "../components/layout/home/HomeFinPlus";
 import codingVideo from "../assets/videos/coding.mp4";
@@ -101,6 +102,77 @@ function Home() {
                       granturi și programe educaționale (Maib, Tekwill,
                       Yep!Moldova etc.).
                     </Typography>
+
+                    <Box
+                      sx={{
+                        mt: 3,
+                        maxWidth: "660px",
+                        mx: "auto",
+                        p: { xs: 1.4, sm: 1.6 },
+                        borderRadius: "22px",
+                        background: "rgba(255,255,255,0.16)",
+                        border: "1px solid rgba(255,255,255,0.28)",
+                        boxShadow: "0 16px 36px rgba(13, 73, 31, 0.18)",
+                        backdropFilter: "blur(10px)",
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          mb: 1.2,
+                          color: "rgba(255,255,255,0.9)",
+                          fontSize: { xs: "13px", md: "15px" },
+                          fontWeight: 900,
+                          textAlign: "center",
+                        }}
+                      >
+                        Pentru înregistrare, sună sau scrie-ne direct
+                      </Typography>
+
+                      <Box
+                        sx={{
+                          display: "grid",
+                          gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
+                          gap: 1,
+                        }}
+                      >
+                        <Box
+                          component="a"
+                          href="tel:+37369170185"
+                          sx={{
+                            px: 2,
+                            py: 1.2,
+                            borderRadius: "999px",
+                            background: "rgba(255,255,255,0.92)",
+                            color: "#2e7d32",
+                            fontWeight: 950,
+                            textDecoration: "none",
+                            textAlign: "center",
+                            boxShadow: "0 10px 22px rgba(0,0,0,0.12)",
+                          }}
+                        >
+                          069170185
+                        </Box>
+                        <Box
+                          component="a"
+                          href="https://www.instagram.com/escoala.md/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            px: 2,
+                            py: 1.2,
+                            borderRadius: "999px",
+                            background: "rgba(255,255,255,0.92)",
+                            color: "#2e7d32",
+                            fontWeight: 950,
+                            textDecoration: "none",
+                            textAlign: "center",
+                            boxShadow: "0 10px 22px rgba(0,0,0,0.12)",
+                          }}
+                        >
+                          Instagram: @escoala.md
+                        </Box>
+                      </Box>
+                    </Box>
                   </motion.div>
 
                   <motion.div
@@ -109,43 +181,6 @@ function Home() {
                     animate="show"
                     custom={3}
                   >
-                    <Box
-                      sx={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-                        gap: { xs: 0.8, sm: 1.2 },
-                        mt: 3,
-                      }}
-                    >
-                      {[
-                        "Pentru copii curioși",
-                        "Clar pentru părinți",
-                        "Primul proiect rapid",
-                      ].map((text) => (
-                        <Box
-                          key={text}
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            minHeight: { xs: 48, sm: 50 },
-                            px: { xs: 0.8, sm: 1.6 },
-                            py: { xs: 0.8, sm: 1 },
-                            borderRadius: "999px",
-                            background: "rgba(255,255,255,0.16)",
-                            color: "white",
-                            fontSize: { xs: "11px", sm: "13px", md: "14px" },
-                            fontWeight: 800,
-                            lineHeight: 1.15,
-                            textAlign: "center",
-                            border: "1px solid rgba(255,255,255,0.22)",
-                          }}
-                        >
-                          {text}
-                        </Box>
-                      ))}
-                    </Box>
-
                     <Box mt={4} sx={{ textAlign: "center" }}>
                       <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSdqe_hr9Cnbq-e4Lh3IJWrwkta2PyldrNyPl2pc-2ZUeJHb4Q/viewform?usp=preview"
@@ -248,6 +283,10 @@ function Home() {
           </Grid>
 
           {/* RESTUL SECȚIUNILOR */}
+          <Grid item xs={12}>
+            <HomeEnrollment />
+          </Grid>
+
           <Grid item xs={12}>
             <HomeSchools />
           </Grid>

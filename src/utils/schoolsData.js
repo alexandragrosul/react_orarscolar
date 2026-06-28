@@ -1,3 +1,5 @@
+import chisinauSchoolsData from "./chisinauSchoolsData.json";
+
 const riscani1 = [
   {
     id: 82,
@@ -956,4 +958,9 @@ const riscani3 = [
   },
 ];
 
-export const schoolsData = [...riscani1, ...riscani2, ...riscani3];
+export const schoolsData = [
+  ...riscani1,
+  ...riscani2,
+  ...riscani3,
+  ...chisinauSchoolsData,
+];

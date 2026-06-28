@@ -1,7 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { Details } from "../node_modules/@mui/icons-material/index";
 //Переводы
 const resources = {
   en: {
@@ -40,6 +39,12 @@ const resources = {
         schoolIsVeryImportant: "School is very important for a child",
         schoolNotInList: "Your school is not in the list?",
         allSchools: "All Schools",
+      },
+      homeEnrollment: {
+        title: "School enrollment and applications",
+        description:
+          "Find the right school, check its details, and start the application process from one place.",
+        button: "View schools",
       },
       homeEcology: {
         tutorForYou: "Unlock Your Potential with Our Exceptional Tutors!",
@@ -85,6 +90,47 @@ const resources = {
         baltiRegion: "Balti",
         chimisliaRegion: "Chimislia",
         details: "Details",
+        reviews: "reviews",
+        readReviews: "Read reviews",
+        noReviews: "No reviews yet.",
+        writeReview: "Write a review",
+        yourName: "Your name",
+        yourRating: "Your rating",
+        yourReview: "Your review",
+        submitReview: "Submit review",
+        submittingReview: "Submitting...",
+        reviewPendingApproval:
+          "Thank you! Your review was sent and will appear after moderation.",
+        reviewSubmitError:
+          "We could not send your review. Please try again later.",
+        reviewSavedLocally:
+          "The API is not available, so your review was saved on this device.",
+        anonymous: "Anonymous",
+      },
+      schoolPage: {
+        backToSchools: "All schools",
+        school: "School",
+        overview: "School overview",
+        phone: "Phone",
+        phoneMissing: "Not specified",
+        address: "Address",
+        noData: "No data available",
+        freePlaces: "Free places",
+        lyceumPlaces: "Lyceum places",
+        requests: "Requests",
+        contactSchool: "Contact school",
+        enrollment: "Enrollment",
+        districtTitle: "Service addresses",
+        districtDescription:
+          "Check the streets and districts assigned to this school.",
+        showDistricts: "Show addresses",
+        hideDistricts: "Hide addresses",
+        formTitle: "Contact school",
+        yourName: "Your name",
+        yourPhone: "Phone",
+        message: "Message",
+        send: "Send",
+        sentMessage: "Request sent. We will contact you soon.",
       },
       repetitori: {
         title: "Repetitors",
@@ -171,6 +217,12 @@ const resources = {
         schoolNotInList: "Școala ta nu este în listă?",
         allSchools: "Toate școlile",
       },
+      homeEnrollment: {
+        title: "Înscrierea și trimiterea cererii la școală",
+        description:
+          "Găsește școala potrivită, verifică informațiile importante și începe procesul de depunere a cererii dintr-un singur loc.",
+        button: "Vezi toate școlile",
+      },
       homeEcology: {
         tutorForYou:
           "Descoperiți-vă potențialul cu profesorii noștri excepționali!",
@@ -216,6 +268,47 @@ const resources = {
         baltiRegion: "mun. Balti",
         chimisliaRegion: "Chimislia",
         details: "Detalii",
+        reviews: "recenzii",
+        readReviews: "Citește recenziile",
+        noReviews: "Nu există recenzii încă.",
+        writeReview: "Scrie o recenzie",
+        yourName: "Numele tău",
+        yourRating: "Ratingul tău",
+        yourReview: "Recenzia ta",
+        submitReview: "Trimite recenzia",
+        submittingReview: "Se trimite...",
+        reviewPendingApproval:
+          "Mulțumim! Recenzia a fost trimisă și va apărea după moderare.",
+        reviewSubmitError:
+          "Nu am putut trimite recenzia. Încearcă te rog mai târziu.",
+        reviewSavedLocally:
+          "API-ul nu este disponibil, așa că recenzia a fost salvată pe acest dispozitiv.",
+        anonymous: "Anonim",
+      },
+      schoolPage: {
+        backToSchools: "Toate școlile",
+        school: "Școală",
+        overview: "Despre școală",
+        phone: "Telefon",
+        phoneMissing: "Nu este indicat",
+        address: "Adresă",
+        noData: "Nu sunt date disponibile",
+        freePlaces: "Locuri libere",
+        lyceumPlaces: "Locuri la liceu",
+        requests: "Cereri",
+        contactSchool: "Contactează școala",
+        enrollment: "Înscrieri",
+        districtTitle: "Adrese de deservire",
+        districtDescription:
+          "Verifică străzile și zonele atribuite acestei școli.",
+        showDistricts: "Afișează adresele",
+        hideDistricts: "Ascunde adresele",
+        formTitle: "Contactează școala",
+        yourName: "Numele tău",
+        yourPhone: "Telefon",
+        message: "Mesaj",
+        send: "Trimite",
+        sentMessage: "Cererea a fost trimisă. Vă vom contacta în curând.",
       },
       repetitori: {
         title: "Repetitori",
@@ -303,6 +396,12 @@ const resources = {
         schoolNotInList: "Вашей школы нет в списке?",
         allSchools: "Все школы",
       },
+      homeEnrollment: {
+        title: "Запись и подача заявления в школу",
+        description:
+          "Найдите подходящую школу, проверьте важную информацию и начните подачу заявления из одного места.",
+        button: "Посмотреть школы",
+      },
       homeEcology: {
         tutorForYou:
           "Разблокируйте свой потенциал с нашими исключительными репетиторами!",
@@ -348,6 +447,47 @@ const resources = {
         baltiRegion: "Бельцы",
         chimisliaRegion: "Кимишлия",
         details: "Детали",
+        reviews: "отзывов",
+        readReviews: "Читать отзывы",
+        noReviews: "Пока нет отзывов.",
+        writeReview: "Написать отзыв",
+        yourName: "Ваше имя",
+        yourRating: "Ваша оценка",
+        yourReview: "Ваш отзыв",
+        submitReview: "Отправить отзыв",
+        submittingReview: "Отправка...",
+        reviewPendingApproval:
+          "Спасибо! Отзыв отправлен и появится после модерации.",
+        reviewSubmitError:
+          "Не удалось отправить отзыв. Пожалуйста, попробуйте позже.",
+        reviewSavedLocally:
+          "API недоступен, поэтому отзыв сохранен на этом устройстве.",
+        anonymous: "Аноним",
+      },
+      schoolPage: {
+        backToSchools: "Все школы",
+        school: "Школа",
+        overview: "О школе",
+        phone: "Телефон",
+        phoneMissing: "Не указан",
+        address: "Адрес",
+        noData: "Нет данных",
+        freePlaces: "Свободные места",
+        lyceumPlaces: "Места в лицее",
+        requests: "Заявки",
+        contactSchool: "Связаться со школой",
+        enrollment: "Запись",
+        districtTitle: "Адреса обслуживания",
+        districtDescription:
+          "Проверьте улицы и районы, закрепленные за этой школой.",
+        showDistricts: "Показать адреса",
+        hideDistricts: "Скрыть адреса",
+        formTitle: "Связаться со школой",
+        yourName: "Ваше имя",
+        yourPhone: "Телефон",
+        message: "Сообщение",
+        send: "Отправить",
+        sentMessage: "Заявка отправлена. Мы свяжемся с вами.",
       },
       repetitori: {
         title: "Репетиторы",
